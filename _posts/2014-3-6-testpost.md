@@ -4,8 +4,6 @@ title: Post de prueba
 author: fdavidcl
 ---
 
-Test mentions: @fdavidcl
-
 ### Probando kramdown
 [kramdown](http://kramdown.gettalong.org/quickref.html) es el procesador de Markdown que
 [Jekyll](http://jekyllrb.com) utiliza para convertir los archivos *.md* en código HTML
