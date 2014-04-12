@@ -3,6 +3,7 @@ layout: chapter
 title: Post de prueba
 authors:
   - fdavidcl
+category: informatica
 ---
 
 ### Probando kramdown
