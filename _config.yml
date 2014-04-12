@@ -15,6 +15,9 @@ permalink: /:title
 paginate: 4
 paginate_path: /p/:num
 
+gems:
+  - jekyll-mentions
+
 #nav_list:
 # Inicio: '/'
 # Archivo: '/archive'

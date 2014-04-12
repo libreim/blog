@@ -1,6 +1,7 @@
 ---
 layout: chapter
 title: Post de prueba
+author: @fdavidcl
 ---
 
 ### Probando kramdown

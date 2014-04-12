@@ -6,7 +6,8 @@ permalink: /
 
 {% for post in paginator.posts %}
 	<article>
-		<a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+		<a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
+		<p><span class="author">{{ post.author }}</span> &mdash; <span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
 		{{ post.content }}
 	</article>
 {% endfor %}

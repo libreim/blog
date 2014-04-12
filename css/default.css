@@ -4,17 +4,17 @@ body {
 	margin: 0;
 }
 
-header {
-    background: #333;
-    padding: 6px 20px;
-    color: #EEE;
-}
-
-header, article, nav, footer {
+article, nav, footer {
 	background: #fff;
 	margin: 0 auto;
 	padding: 2%;
 	width: 92%;
+}
+
+header {
+    background: #333;
+    padding: 6px 20px;
+    color: #EEE;
 }
 
 @media screen and (min-width: 800px) {
@@ -24,20 +24,25 @@ header, article, nav, footer {
 	}
 }
 
-header h1 {
+header a {
     max-width: 980px;
     margin: 0px auto;
     font-size: 14px;
     font-weight: normal;
 }
 
-h2 {
+h1, h2 {
 	margin: 0;
 }
 
-h4 {
+h3 {
 	text-transform: uppercase;
 	font-size: 100%;
+}
+
+h4 {
+	color: #444;
+	font-weight: normal;
 }
 
 a {
