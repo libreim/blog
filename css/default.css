@@ -1,5 +1,5 @@
 body {
-	font-family: PT Serif, 'PT Serif', serif;
+	font-family: PT Sans, 'PT Sans', Arial, sans-serif;
 	background: #e0e0e0;
 	margin: 0;
 }
@@ -18,7 +18,7 @@ header {
 }
 
 @media screen and (min-width: 800px) {
-	header, article, nav, footer {
+	article, nav, footer {
 		max-width: 960px;
 		min-width: 400px;
 	}
@@ -29,6 +29,7 @@ header a {
     margin: 0px auto;
     font-size: 14px;
     font-weight: normal;
+    text-decoration: none;
 }
 
 h1, h2 {
