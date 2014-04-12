@@ -1,8 +1,7 @@
 Temas a tratar
 =======
 
-Geometría
-----
+### Geometría
 Geometría computacional:
  * Diagramas de Voronoi.
  * Triangulaciones.
@@ -12,16 +11,17 @@ Geometría clásica:
  * Construcciones con regla y compás.
  * Curvas planas. Ciclioides y cardioides.
 
-
-Análisis
-----
+### Análisis
 Análisis:
  * Transformadas de Fourier y Laplace.
  * Desarrollos en serie de Taylor.
 
+### Topología
+Topología algebraica:
+ * Homotopías.
+ * Grupo fundamental
 
-Álgebra
-----
+### Álgebra
 Estructuras algebraicas:
  * Grupos, anillos y cuerpos.
  * Curvas elípticas.
@@ -36,8 +36,7 @@ Otras:
  * Teoría de conjuntos.
 
 
-Lógica y metamatemática
-----
+### Lógica y metamatemática
 Sistemas axiomáticos:
  * Teorema de Gödel.
  * Hipótesis del continuo.
@@ -45,20 +44,27 @@ Sistemas axiomáticos:
  * ZFC.
 
 
-Computación
-----
+### Computación
 Computabilidad:
  * Máquinas de Turing.
  * Problema de la parada.
  * P = NP?
 
-Algorítmica y estructuras de datos
-----
+
+### Algorítmica y estructuras de datos
 Árboles:
  * B-trees
  * Árboles binarios de búsqueda. Red-black tree.
 
-Programación
-----
+
+### Programación
 Lenguajes:
  * Programación funcional.
+
+
+### Matemática aplicada
+Música:
+ * Teoría de Fourier.
+ * Consonancia y armónicos.
+ * Temperamento y escalas.
+ * Cánones y fugas.
