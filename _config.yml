@@ -13,7 +13,7 @@ markdown: kramdown
 kramdown:
   parse_span_html: false
 
-permalink: /:title
+permalink: /:year/:month/:day/:title
 paginate: 4
 paginate_path: /p/:num
 
