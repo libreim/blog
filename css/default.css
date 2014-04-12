@@ -4,6 +4,12 @@ body {
 	margin: 0;
 }
 
+header {
+    background: #333;
+    padding: 6px 20px;
+    color: #EEE;
+}
+
 header, article, nav, footer {
 	background: #fff;
 	margin: 0 auto;
@@ -19,9 +25,10 @@ header, article, nav, footer {
 }
 
 header h1 {
-	margin: 0;
-	font-weight: 300;
-	font-size: 250%;
+    max-width: 980px;
+    margin: 0px auto;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 h2 {
