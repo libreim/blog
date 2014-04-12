@@ -68,3 +68,12 @@ div.footnotes {
 	margin: 0.6em 0 0;
 	border-top: 1px solid #c0c0c0;
 }
+
+/*** post ***/
+.author, .date {
+	color: #666;
+	font-style: italic;
+}
+.author:after {
+	content: " &mdash; ";
+}

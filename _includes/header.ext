@@ -1,1 +1,1 @@
-<header><a href="{{ site.baseurl }}"><h1>{{ site.name }}</h1></a></header>
+<header><a href="{{ site.baseurl }}">{{ site.name }}</a></header>
