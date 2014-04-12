@@ -18,6 +18,13 @@ paginate_path: /p/:num
 gems:
   - jekyll-mentions
 
+# Autores
+authors:
+  fdavidcl:
+    name: David Charte
+    github: fdavidcl
+
+
 #nav_list:
 # Inicio: '/'
 # Archivo: '/archive'
