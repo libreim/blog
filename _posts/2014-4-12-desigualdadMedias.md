@@ -3,8 +3,6 @@ layout: chapter
 title: La desigualdad de las medias.
 ---
 
-================================
-
 ### Introducción
 
 En varios problemas de extremos, tanto en Cálculo como en Análisis I se pide estudiar el mínimo o máximo de una función determinada de varias variables, condicionando su suma o producto. Habitualmente, se procede a calcular la derivada de una función sobre la que se ha aplicado ya la restricción y a buscar extremos absolutos entre sus puntos críticos.
