@@ -4,6 +4,8 @@ title: Post de prueba
 authors:
   - fdavidcl
 category: informatica
+categories:
+  - matematicas
 ---
 
 ### Probando kramdown

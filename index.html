@@ -12,7 +12,7 @@ permalink: /
 {% for post in paginator.posts %}
 	<article>
 		<a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
-		<p><span class="author">
+		<p><span class="author">por 
 			{% assign authorCount = post.authors | size %}
 			{% if authorCount == 0 %}
 			    Sin autor
@@ -29,7 +29,8 @@ permalink: /
 			            , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
 			        {% endif %}
 			    {% endfor %}
-			{% endif %}
+			{% endif %} 
+			en {{ post.categories | category_links }}
 		</span>
 		<span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
 		{{ post.content }}
