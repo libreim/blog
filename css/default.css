@@ -1,0 +1,58 @@
+body {
+	font-family: PT Serif, 'PT Serif', serif;
+	background: #e0e0e0;
+	margin: 0;
+}
+
+header, article, nav, footer {
+	background: #fff;
+	margin: 0 auto;
+	padding: 2%;
+	width: 92%;
+}
+
+@media screen and (min-width: 800px) {
+	header, article, nav, footer {
+		max-width: 960px;
+		min-width: 400px;
+	}
+}
+
+header h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 250%;
+}
+
+h2 {
+	margin: 0;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 100%;
+}
+
+a {
+	color: inherit;
+}
+
+dl dt {
+	font-weight: bold;
+}
+
+code.hljs {
+	background: #f6f6f6;
+	border: 1px solid #d0d0d0;
+	overflow-x: auto;
+}
+code.has-jax {
+	font: inherit; 
+	font-size: 85%; 
+	background: inherit; 
+	border: inherit;
+}
+div.footnotes {
+	margin: 0.6em 0 0;
+	border-top: 1px solid #c0c0c0;
+}

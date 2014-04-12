@@ -1,0 +1,20 @@
+# Github defaults:
+# safe: true
+# lsi: false
+# pygments: true
+
+# Settings
+baseurl: /blog
+name: Doble Grado en Ingeniería Informática y Matemáticas
+
+markdown: kramdown
+kramdown:
+  parse_span_html: false
+
+permalink: /:title
+paginate: 4
+paginate_path: /p/:num
+
+#nav_list:
+# Inicio: '/'
+# Archivo: '/archive'

@@ -1,0 +1,26 @@
+---
+title: Blog - DGIIM
+layout: default
+permalink: /
+---
+
+{% for post in paginator.posts %}
+	<article>
+		<a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.title }}</h2></a>
+		{{ post.content }}
+	</article>
+{% endfor %}
+
+<nav>
+	{% if paginator.previous_page %}
+		{% if paginator.previous_page == 1 %}
+			<a href="{{ site.baseurl }}">&larr; Más nuevo</a>
+		{% else %}
+			<a href="{{ site.baseurl }}p/{{paginator.previous_page}}">&larr; Más nuevo</a>
+		{% endif %}
+	{% endif %}
+	<span class="page_number">{{paginator.page}} de {{paginator.total_pages}}</span>
+	{% if paginator.next_page %}
+		<a href="{{ site.baseurl }}p/{{paginator.next_page}}" class="next ">Más antiguo &rarr;</a>
+	{% endif %}
+</nav>

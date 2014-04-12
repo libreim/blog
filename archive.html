@@ -1,0 +1,12 @@
+---
+title: Archivo
+layout: default
+permalink: /archive/
+---
+
+<article>
+	<h2>Archivo</h2>
+	{% for post in site.posts %}
+		<a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
+	{% endfor %}
+</article>
