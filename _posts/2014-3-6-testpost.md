@@ -3,6 +3,7 @@ layout: chapter
 title: Post de prueba
 authors:
   - fdavidcl
+  - mario
 ---
 
 ### Probando kramdown

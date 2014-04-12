@@ -75,5 +75,5 @@ div.footnotes {
 	font-style: italic;
 }
 .author:after {
-	content: " &mdash; ";
+	content: " — ";
 }
