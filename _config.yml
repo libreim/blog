@@ -18,6 +18,8 @@ paginate_path: /p/:num
 gems:
   - jekyll-mentions
 
+category_title_prefix: Categoría:
+
 # Autores
 authors:
   fdavidcl:

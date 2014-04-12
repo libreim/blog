@@ -18,14 +18,14 @@ header {
 }
 
 @media screen and (min-width: 800px) {
-	article, nav, footer {
+	header a, article, nav, footer {
 		max-width: 960px;
 		min-width: 400px;
 	}
 }
 
 header a {
-    max-width: 980px;
+	display: block;
     margin: 0px auto;
     font-size: 14px;
     font-weight: normal;
