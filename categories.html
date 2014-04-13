@@ -1,0 +1,34 @@
+---
+layout: default
+title: Categorías
+permalink: /categories/
+---
+
+{% for category in site.categories %}
+    <ul class="posts">
+    {% for post in site.categories[category] %}
+        <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+        <p><span class="author">por 
+            {% assign authorCount = post.authors | size %}
+            {% if authorCount == 0 %}
+                Sin autor
+            {% else %}
+                {% for author in post.authors %}
+                    {% if forloop.first %}
+                        {% assign authdata = site.authors[author] %}
+                        <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                    {% elsif forloop.last %}
+                        {% assign authdata = site.authors[author] %}
+                        y <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                    {% else %}
+                        {% assign authdata = site.authors[author] %}
+                        , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %} 
+            en {{ post.categories | category_links }}
+        </span>
+        <span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
+    {% endfor %}
+    </ul>
+{% endfor %}
