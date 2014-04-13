@@ -13,7 +13,7 @@ permalink: /categories/
 </article>
 {% for category in site.categories %}
     <article>
-        <h1 id="{{ category | first }}">{{ category | first }}</h1>
+        <h3 id="{{ category | first }}">{{ category | first }}</h3>
         <ul class="posts">
         {% assign posts = category | last %}
         {% for post in posts %}
