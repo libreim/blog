@@ -1,13 +1,14 @@
 body {
 	font-family: PT Sans, 'PT Sans', Arial, sans-serif;
-	background: #fff;
+	background: #EBEBEB;
 	margin: 0;
 }
 
 article, nav.pagination, nav.links div, footer {
-	margin: 0 auto;
-	padding: 1.2% 2%;
+	margin: 0.8% auto;
+	padding: 0.8% 2%;
 	width: 92%;
+	background: #fff;
 }
 
 header {
@@ -21,6 +22,7 @@ nav.links {
 }
 nav.links div {
 	padding: 0;
+	background: inherit;
 }
 nav.links a {
 	padding: 1.2% 1em;
@@ -42,6 +44,10 @@ header a {
     font-size: 14px;
     font-weight: normal;
     text-decoration: none;
+}
+
+h1 {
+	font-size: 240%;
 }
 
 h1, h2 {
