@@ -4,11 +4,6 @@ layout: default
 permalink: /
 ---
 
-<div class="categories">
-	<a href="/categories/matematicas">Matemáticas</a>
-	<a href="/categories/informatica">Informática</a>
-</div>
-
 {% for post in paginator.posts %}
 	<article>
 		<a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
