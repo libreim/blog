@@ -24,8 +24,7 @@ permalink: /
 			            , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
 			        {% endif %}
 			    {% endfor %}
-			{% endif %} 
-			en {{ post.categories | category_links }}
+			{% endif %}
 		</span>
 		<span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
 		{{ post.content }}

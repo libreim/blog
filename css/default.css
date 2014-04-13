@@ -36,6 +36,10 @@ h1, h2 {
 	margin: 0;
 }
 
+ul h2 {
+	display: inline;
+}
+
 h3 {
 	text-transform: uppercase;
 	font-size: 100%;

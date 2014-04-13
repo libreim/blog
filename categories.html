@@ -4,14 +4,21 @@ title: Categorías
 permalink: /categories/
 ---
 
+<article>
+    {% for category in site.categories %}
+        <ul class="categories">
+            <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
+        </ul>
+    {% endfor %}
+</article>
 {% for category in site.categories %}
     <article>
-        <h1>{{ category | first }}</h1>
+        <h1 id="{{ category | first }}">{{ category | first }}</h1>
         <ul class="posts">
         {% assign posts = category | last %}
         {% for post in posts %}
             <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-            <p><span class="author">por 
+            <span class="author">por 
                 {% assign authorCount = post.authors | size %}
                 {% if authorCount == 0 %}
                     Sin autor
@@ -28,10 +35,9 @@ permalink: /categories/
                             , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
                         {% endif %}
                     {% endfor %}
-                {% endif %} 
-                en {{ post.categories | category_links }}
+                {% endif %}
             </span>
-            <span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
+            <span class="date">{{ post.date | date: "%e-%m-%Y" }}
         {% endfor %}
         </ul>
     </article>
