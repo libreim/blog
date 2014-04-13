@@ -1,13 +1,12 @@
 body {
 	font-family: PT Sans, 'PT Sans', Arial, sans-serif;
-	background: #e0e0e0;
+	background: #fff;
 	margin: 0;
 }
 
-article, nav, footer {
-	background: #fff;
+article, nav.pagination, nav.links div, footer {
 	margin: 0 auto;
-	padding: 2%;
+	padding: 1.2% 2%;
 	width: 92%;
 }
 
@@ -17,8 +16,12 @@ header {
     color: #EEE;
 }
 
+nav.links {
+	background: #EBEBEB;
+}
+
 @media screen and (min-width: 800px) {
-	header a, article, nav, footer {
+	header a, article, nav.pagination, nav.links div, footer {
 		max-width: 960px;
 		min-width: 400px;
 	}

@@ -1,5 +1,8 @@
 <header><a href="{{ site.baseurl }}">{{ site.name }}</a></header>
-<div class="categories">
-	<a href="/categories/matematicas">Matemáticas</a>
-	<a href="/categories/informatica">Informática</a>
-</div>
+<nav class="links">
+	<div>
+		<a href="/blog">Inicio</a>
+		<a href="/categories">Categorías</a>
+		<a href="/foro">Foro</a>
+	</div>
+</nav>
