@@ -12,7 +12,7 @@ layout: none
         <item>
             <title>{{ post.title | xml_escape }}</title>
             <description>
-                {% assign content = post.content.gsub(/\$\$\s*(.*?)\s*\$\$/, "<div style=\"text-align:center;\"><img src=\"http://latex.codecogs.com/png.latex?\\1\" alt=\"\\1\" /></div>").gsub(/\$\s*(.*?)\s*\$/, "<img src=\"http://latex.codecogs.com/png.latex?\\1\\inline\"/>") %}
+                {% assign content = post.excerpt %}
                 {{ content | xml_escape }}</description>
             <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
             <link>{{ site.url }}{{ post.url }}</link>
