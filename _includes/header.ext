@@ -1,8 +1,9 @@
 <header><a href="{{ site.baseurl }}">{{ site.name }}</a></header>
 <nav class="links">
 	<div>
-		<a href="/blog">Inicio</a>
-		<a href="/categories">Categorías</a>
-		<a href="/foro">Foro</a>
+		<a href="/blog" class="l-home">Inicio</a>
+		<a href="/blog/categories" class="l-cat">Categorías</a>
+		<a href="/blog/archive" class="l-arc">Archivo</a>
+		<a href="/foro" class="l-foro">Foro</a>
 	</div>
 </nav>

@@ -19,6 +19,15 @@ header {
 nav.links {
 	background: #EBEBEB;
 }
+nav.links div {
+	padding: 0;
+}
+nav.links a {
+	padding: 1.2% 1em;
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+}
 
 @media screen and (min-width: 800px) {
 	header a, article, nav.pagination, nav.links div, footer {
