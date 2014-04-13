@@ -4,9 +4,9 @@ body {
 	margin: 0;
 }
 
-article, nav.pagination, nav.links div, footer {
-	margin: 0.8% auto;
-	padding: 0.8% 2%;
+article, nav.pagination, footer {
+	margin: 0 auto 4%;
+	padding: 1.2% 2%;
 	width: 92%;
 	background: #fff;
 }
@@ -21,7 +21,9 @@ nav.links {
 	background: #EBEBEB;
 }
 nav.links div {
+	margin: 0 auto;
 	padding: 0;
+	width: 92%;
 	background: inherit;
 }
 nav.links a {
