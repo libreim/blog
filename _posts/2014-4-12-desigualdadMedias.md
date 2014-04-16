@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: La desigualdad de las medias.
+title: La desigualdad de las medias
 authors:
   - mario
 category: matematicas
