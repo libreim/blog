@@ -22,10 +22,10 @@ permalink: /
 		<span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
 		{{ post.content }}
 		<div class="share">
-			<a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt"><img alt="Twitter" title="Compartir en Twitter" src="assets/sq_twitter.png" /></a>
-			<a href="http://facebook.com/share?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-fb"><img alt="Facebook" title="Compartir en Facebook" src="assets/sq_facebook.png" /></a>
-			<a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-di"><img alt="Diaspora" title="Compartir en Diaspora*" src="assets/sq_diaspora.png" /></a>
-			<a href="http://www.feedly.com/home#subscription/feed/{{ site.url | url_escape }}feed.xml" class="share-fd"><img alt="Feedly" title="Suscribirse con Feedly" src="assets/sq_feedly.png" /></a>
+			<a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="assets/sq_twitter.png" /></a>
+			<a href="http://facebook.com/share?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="assets/sq_facebook.png" /></a>
+			<a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="assets/sq_diaspora.png" /></a>
+			<a href="http://www.feedly.com/home#subscription/feed/{{ site.url | url_escape }}feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="assets/sq_feedly.png" /></a>
 		</div>
 	</article>
 {% endfor %}

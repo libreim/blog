@@ -13,7 +13,7 @@ article, nav.pagination, footer {
 
 article .share {
 	padding: 1rem 0;
-	opacity: .8;
+	opacity: .6;
 }
 
 article .share:hover {
