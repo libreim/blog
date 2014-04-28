@@ -22,6 +22,8 @@ article .share:hover {
 
 article .share a img {
 	width: 1.75rem;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 header {
