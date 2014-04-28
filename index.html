@@ -22,7 +22,7 @@ permalink: /
 		<span class="date">{{ post.date | date: "%e-%m-%Y" }}</p>
 		{{ post.content }}
 		<div class="share">
-			<a href="{{ site.url }}{{ post.url }}#disqus_thread">Comentarios</a>
+			<a class="dsq-comment-count comment" href="{{ site.url }}{{ post.url }}#disqus_thread"><img alt="Comentarios" title="Comentarios" src="assets/sq_comments.png" /></a>
 			<a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="assets/sq_twitter.png" /></a>
 			<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="assets/sq_facebook.png" /></a>
 			<a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="assets/sq_diaspora.png" /></a>
