@@ -6,7 +6,6 @@
 				{% for author in site.authors %}
 					{% assign data = author | last %}
 					<li><a href="http://github.com/{{ data.github }}">{{ data.name }}</a></li>
-					{{ author }}<br />{{ data }}
 				{% endfor %}
 	        </ul>
 		</div>
