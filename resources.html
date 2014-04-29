@@ -9,7 +9,9 @@ permalink: /resources/
 {% assign category = site.categories["recursos"] %}
 {% assign posts = category | last %}
 
-{{ category }}<p>{{ posts }}<p>
-{% for post in posts %}
+<!--{{ category }}<p>{{ posts }}<p>-->
+
+
+{% for post in category %}
     {% include post.ext %}
 {% endfor %}
