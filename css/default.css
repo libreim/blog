@@ -20,6 +20,15 @@ article .share:hover {
 	opacity: 1;
 }
 
+article .share .dsq-comment-count {
+    background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% transparent;
+    display: inline-block;
+    height: 1.6rem;
+    padding-left: 2rem;
+    border: 0.1rem solid #333;
+    vertical-align: middle;
+}
+
 article .share a img {
 	width: 1.75rem;
 	display: inline-block;
