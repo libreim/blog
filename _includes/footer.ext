@@ -2,13 +2,20 @@
 	<div>
 		<div>
 			<h3>Colaboradores</h3>
-			{% for author in site.authors %}
-	    		{% assign authdata = site.authors[author] %}
-				<a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-			{% endfor %}
+	        <ul>
+				{% for author in site.authors %}
+		    		{% assign authdata = site.authors[author] %}
+					<li><a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a></li>
+				{% endfor %}
+	        </ul>
 		</div>
 		<div>
-
+			<h3>Categorías</h3>
+	        <ul>
+		    	{% for category in site.categories %}
+		            <li><a href="{{ site.baseurl }}/categories/#{{ category | first }}">{{ category | first }}</a></li>
+		    	{% endfor %}
+	        </ul>
 		</div>
 		<div>
 			

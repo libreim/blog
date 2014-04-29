@@ -7,11 +7,11 @@ permalink: /categories/
 <style type="text/css">.l-cat { background: #fff; }</style>
 <article>
     <h1>Categorías</h1>
-    {% for category in site.categories %}
-        <ul class="categories">
+    <ul class="categories">
+        {% for category in site.categories %}
             <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
-        </ul>
-    {% endfor %}
+        {% endfor %}
+    </ul>
 </article>
 {% for category in site.categories %}
     <article>
