@@ -1,1 +1,16 @@
-<footer></footer>
+<footer>
+	<div>
+		<div>
+			<h3>Colaboradores</h3>
+			{% for author in site.authors %}
+				<a href="http://github.com/{{ author.github }}">{{ author.name }}</a>
+			{% endfor %}
+		</div>
+		<div>
+			
+		</div>
+		<div>
+			
+		</div>
+	</div>
+</footer>
