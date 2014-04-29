@@ -21,12 +21,12 @@ article .share:hover {
 }
 
 article .share .dsq-comment-count {
-    background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% transparent;
+    background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% #303030;
+    color: #fff;
     display: inline-block;
-    height: 1.6rem;
-    padding: 0 0.35rem 0 2rem;
+    height: 1.65rem;
+    padding: 0.1rem 0.35rem 0 1.9rem;
     text-decoration: none;
-    border: 0.1rem solid #333;
     vertical-align: middle;
 }
 
