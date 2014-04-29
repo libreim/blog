@@ -133,6 +133,11 @@ article .share a img {
 	vertical-align: middle;
 }
 
+/**** Pagination ****/
+nav.pagination .page-number {
+	color: #666;
+}
+
 /**** Footer ****/
 footer {
 	background: #EBEBEB;

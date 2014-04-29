@@ -4,6 +4,7 @@
 			<h3>Colaboradores</h3>
 	        <ul>
 				{% for author in site.authors %}
+					{% assign data = author | last %}
 					<li><a href="http://github.com/{{ author.github }}">{{ author.name }}</a></li>
 					{{ author }}
 				{% endfor %}
