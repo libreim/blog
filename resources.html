@@ -1,0 +1,13 @@
+---
+layout: default
+title: Recursos
+permalink: /resources/
+---
+
+<style type="text/css">.l-res { background: #fff; }</style>
+
+{% assign category = site.categories["recursos"] %}
+{% assign posts = category | last %}
+{% for post in posts %}
+    {% include post.ext %}
+{% endfor %}

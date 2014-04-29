@@ -142,9 +142,12 @@ nav.pagination .page-number {
 footer {
 	background: #EBEBEB;
 }
-footer>div>div {
-	display: inline-block;
-	width: 30%;
-	padding-right: 3%;
-	vertical-align: top;
+@media screen and (min-width: 800px) {
+	/** Si cabe en la pantalla, ponemos los 3 div en paralelo **/
+	footer>div>div {
+		display: inline-block;
+		width: 30%;
+		padding-right: 3%;
+		vertical-align: top;
+	}
 }
