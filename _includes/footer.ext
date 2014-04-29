@@ -4,8 +4,8 @@
 			<h3>Colaboradores</h3>
 	        <ul>
 				{% for author in site.authors %}
-		    		{% assign authdata = site.authors[author] %}
-					<li><a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a></li>
+					<li><a href="http://github.com/{{ author.github }}">{{ author.name }}</a></li>
+					{{ author }}
 				{% endfor %}
 	        </ul>
 		</div>
