@@ -4,6 +4,19 @@ layout: default
 
 <article>
 	<h1>{{ page.title }}</h1>
+	<p><span class="author">por 
+		{% assign authorCount = page.authors | size %}
+		{% if authorCount == 0 %}
+		    Sin autor
+		{% else %}
+		    {% for author in page.authors %}
+	    		{% assign authdata = site.authors[author] %}
+		        {% if forloop.first %} {% elsif forloop.last %}	y {% else %}, {% endif %}
+	    		<a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+		    {% endfor %}
+		{% endif %}
+	</span>
+	<span class="date">{{ page.date | date: "%e-%m-%Y" }}</p>
 	{{ content }}
 	<div class="share">
 		<a class="dsq-comment-count" href="{{ site.url }}{{ post.url }}#disqus_thread"></a>
