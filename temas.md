@@ -11,6 +11,9 @@ Geometría clásica:
  * Construcciones con regla y compás.
  * Curvas planas. Ciclioides y cardioides.
 
+Geometría Afín:
+ * Tabla de Composiciones entre Movimientos Rígidos.
+
 ### Análisis
 Análisis:
  * Transformadas de Fourier y Laplace.
@@ -65,7 +68,6 @@ Computabilidad:
 ### Programación
 Lenguajes:
  * Programación funcional.
-
 
 ### Matemática aplicada
 Música:
