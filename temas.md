@@ -66,6 +66,13 @@ Computabilidad:
 ### Programación
 Lenguajes:
  * Programación funcional.
+ * Javascript, programación con prototipos
+
+### Arquitectura
+Procesadores:
+ * Arquitecturas ARM. SoCs. Familias de procesadores ARM. 
+Otros componentes:
+ * Nuevas arquitecturas RAM: Stacked RAM ([NVidia Volta](http://www.anandtech.com/show/6846/nvidia-updates-gpu-roadmap-announces-volta-family-for-beyond-2014)), Hybrid Memory Cube, Resistive RAM.
 
 ### Matemática aplicada
 Música:
