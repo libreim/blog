@@ -142,6 +142,9 @@ nav.pagination .page-number {
 footer {
 	background: #EBEBEB;
 }
+footer>div {
+	margin-bottom: 0;
+}
 @media screen and (min-width: 800px) {
 	/** Si cabe en la pantalla, ponemos los 3 div en paralelo **/
 	footer>div>div {

@@ -6,7 +6,7 @@ permalink: /categories/
 
 <style type="text/css">.l-cat { background: #fff; }</style>
 <article>
-    <h1>Categorías</h1>
+    <h3>Lista de categorías</h3>
     <ul class="categories">
         {% for category in site.categories %}
             <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
@@ -16,10 +16,8 @@ permalink: /categories/
 {% for category in site.categories %}
     <article>
         <h3 id="{{ category | first }}">{{ category | first }}</h3>
-        <ul class="posts">
         {% assign posts = category | last %}
         {% for post in posts %}
-            <li>
             <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
             <span class="author">por 
                 {% assign authorCount = post.authors | size %}
@@ -40,9 +38,7 @@ permalink: /categories/
                     {% endfor %}
                 {% endif %}
             </span>
-            <span class="date">{{ post.date | date: "%e-%m-%Y" }}</span>
-            </li>
+            <span class="date">{{ post.date | date: "%e-%m-%Y" }}</span><br />
         {% endfor %}
-        </ul>
     </article>
 {% endfor %}
