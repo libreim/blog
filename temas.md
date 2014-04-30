@@ -10,8 +10,6 @@ Geometría computacional:
 Geometría clásica:
  * Construcciones con regla y compás.
  * Curvas planas. Ciclioides y cardioides.
-
-Geometría Afín:
  * Tabla de Composiciones entre Movimientos Rígidos.
 
 ### Análisis
