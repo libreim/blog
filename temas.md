@@ -10,6 +10,7 @@ Geometría computacional:
 Geometría clásica:
  * Construcciones con regla y compás.
  * Curvas planas. Ciclioides y cardioides.
+ * Tabla de Composiciones entre Movimientos Rígidos.
 
 ### Análisis
 Análisis:
@@ -65,7 +66,6 @@ Computabilidad:
 ### Programación
 Lenguajes:
  * Programación funcional.
-
 
 ### Matemática aplicada
 Música:
