@@ -25,6 +25,7 @@ web correcta y añadir los datos necesarios:
     ---
 
 Algunas aclaraciones:
+
  * El `layout` debe ser siempre `chapter`. Existen otros layouts
  para otras páginas, pero no para los posts.
  * El título debe ser conciso y son preferibles los sustantivos a
@@ -107,8 +108,18 @@ end
 
 ### Las matemáticas
 Para incrustar ecuaciones en Latex, hay que hacerlo entre tildes
-invertidas y dólares `` `$ ... $` ``, dos dólares para las ecuaciones
-en modo *display* `` `$$ ... $$` ``. Ejemplos: `$E = mc^2$`
+invertidas y dólares, dos dólares para las ecuaciones
+en modo *display*. Ejemplos:
+
+~~~markdown
+`$E = mc^2$`
+~~~
+
+genera `$E = mc^2$`, y
+
+~~~markdown
+`$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$`
+~~~
 
 `$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$`
 
