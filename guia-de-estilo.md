@@ -11,7 +11,7 @@ Esta guía recoge algunos consejos sobre el estilo a seguir
 a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.md).
 
 ## Datos del post
-Los datos del post son de la cajita que debe aparecer al principio
+Los datos del post forman la cajita que debe aparecer al principio
 de cada publicación. No serán interpretados por el procesador
 Markdown sino por Jekyll, para poder incrustar el post en la página
 web correcta y añadir los datos necesarios:
@@ -65,12 +65,23 @@ importantes, nunca resaltéis párrafos enteros.
 
 ### Títulos y secciones
 Tenéis disponibles los títulos desde el nivel 2 (`##`) hasta nivel 6
-(`######`). El nivel 1 se utiliza automáticamente para el título del
+(`######`), aunque no os recomendaría usar tantos niveles. El nivel 1
+se utiliza automáticamente para el título del
 post. De nuevo, no escribáis un punto al final de un título. Evitad
 utilizar cualquier otro tipo de separación entre apartados, no uséis
 líneas horizontales (`* * *`) ni otro tipo de marcas. Si véis que la
 estructura de los posts no es suficientemente visible, mandadme un
 mensaje y mejoro el estilo de los títulos de sección.
+
+Ejemplos:
+
+---
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+###### Título 6
+---
 
 ### El código
 Para escribir código tenemos dos sintaxis. o bien dejar 4 espacios de
