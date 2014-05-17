@@ -97,9 +97,9 @@ code.hljs {
 	overflow-x: auto;
 }
 code.has-jax {
-	font: inherit; 
-	font-size: 85%; 
-	background: inherit; 
+	font: inherit;
+	font-size: 85%;
+	background: inherit;
 	border: inherit;
 }
 div.MathJax_Display {
@@ -111,6 +111,12 @@ div.MathJax_Display {
 div.footnotes {
 	margin: 0.6rem 0 0;
 	border-top: 1px solid #c0c0c0;
+}
+
+blockquote {
+	margin-left: 2%;
+	padding-left: 2%;
+	border-left: 0.4em solid rgb(224, 224, 224);
 }
 
 /**** Sharing/comments bar ****/

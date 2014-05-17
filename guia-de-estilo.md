@@ -8,7 +8,7 @@ permalink: /styleguide/
 ---
 
 Esta guía recoge algunos consejos sobre el estilo a seguir
-a la hora de escribir un post, y además podrá servir de plantilla.
+a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.mdhttps://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.md).
 
 ## Datos del post
 Los datos del post son de la cajita que debe aparecer al principio
@@ -55,7 +55,7 @@ permanente del post, así que no lo hagais largo (en general debe
 
 ### El texto
 Poco que decir aquí. No hace falta decir que cuidéis la ortografía y
-la gramática :smile:. Si usáis un editor con vista previa de Markdown
+la gramática :). Si usáis un editor con vista previa de Markdown
 (como [Atom](http://www.webupd8.org/2014/05/install-atom-text-editor-in-ubuntu-via-ppa.html),
 o [StackEdit](https://stackedit.io/)) mejor que mejor, así no hay
 problemas de formato tampoco.
