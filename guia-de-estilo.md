@@ -78,8 +78,6 @@ mensaje y mejoro el estilo de los títulos de sección.
 
 Ejemplos:
 
----
-
 ## Título 2
 
 ### Título 3
@@ -89,8 +87,6 @@ Ejemplos:
 ##### Título 5
 
 ###### Título 6
-
----
 
 ### El código
 Para escribir código tenemos dos sintaxis. o bien dejar 4 espacios de
