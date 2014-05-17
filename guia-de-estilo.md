@@ -73,14 +73,23 @@ líneas horizontales (`* * *`) ni otro tipo de marcas. Si véis que la
 estructura de los posts no es suficientemente visible, mandadme un
 mensaje y mejoro el estilo de los títulos de sección.
 
+> **Nota**: El procesador de Markdown del blog requiere una línea en
+> blanco antes de cada título.
+
 Ejemplos:
 
 ---
+
 ## Título 2
+
 ### Título 3
+
 #### Título 4
+
 ##### Título 5
+
 ###### Título 6
+
 ---
 
 ### El código
