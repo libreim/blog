@@ -8,7 +8,7 @@ permalink: /styleguide/
 ---
 
 Esta guía recoge algunos consejos sobre el estilo a seguir
-a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.mdhttps://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.md).
+a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/dgiim/blog/gh-pages/guia-de-estilo.md).
 
 ## Datos del post
 Los datos del post son de la cajita que debe aparecer al principio
@@ -107,7 +107,7 @@ end
 ~~~
 
 ### Las matemáticas
-Para incrustar ecuaciones en Latex, hay que hacerlo entre tildes
+Para incrustar ecuaciones en `$\LaTeX$`, hay que hacerlo entre tildes
 invertidas y dólares, dos dólares para las ecuaciones
 en modo *display*. Ejemplos:
 
