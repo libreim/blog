@@ -53,15 +53,63 @@ permanente del post, así que no lo hagais largo (en general debe
 
 ## Contenido del post
 
-### El texto
-Poco que decir aquí. No hace falta decir que cuidéis la ortografía y
+### Texto y formato
+No hace falta decir que cuidéis la ortografía y
 la gramática :). Si usáis un editor con vista previa de Markdown
 (como [Atom](http://www.webupd8.org/2014/05/install-atom-text-editor-in-ubuntu-via-ppa.html),
 o [StackEdit](https://stackedit.io/)) mejor que mejor, así no hay
-problemas de formato tampoco.
+problemas de formato tampoco. Pero no os paséis con el formato. Reservad
+la negrita para cosas muy importantes, nunca destaquéis párrafos enteros.
 
-Ah, no os paséis con el formato. Reservad la negrita para cosas muy
-importantes, nunca resaltéis párrafos enteros.
+> **Nota**: Hay algunas diferencias entre el intérprete de Markdown del
+> blog y el de Atom/Github. En general, el del blog es más estricto con las
+> líneas en blanco. Añadid siempre líneas en blanco para separar elementos
+> y párrafos de cualquier otra cosa (listas, código, etc.).
+
+#### Teoremas, definiciones
+Usad la siguiente notación para denotar teoremas, lemas, definiciones y
+todo lo que tenga un "enunciado":
+
+~~~markdown
+
+Teorema
+: No existen números naturales mayores que 7.
+~~~
+
+Teorema
+: No existen números naturales mayores que 7.
+
+#### Referencias
+Para añadir referencias lo podemos hacer mediante notas a pie de página.
+Kramdown incluye una sintaxis específica para esta tarea[^kramsyntax]:
+[^kramsyntax]: [Kramdown Syntax](http://kramdown.gettalong.org/syntax.html#footnotes)
+
+~~~markdown
+Kramdown incluye una sintaxis específica para esta tarea[^kramsyntax]
+
+[^kramsyntax]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
+~~~
+
+En general trataremos de seguir el siguiente formato para las referencias
+de libros:
+
+~~~markdown
+Libro, Autor - Sección (página NN)
+~~~
+
+y este para las referencias a sitios web:
+
+~~~markdown
+[Página web](http://example.org)
+~~~
+
+Si no tenéis un sitio concreto para ubicar la marca de referencia, añadid
+una frase al final al estilo de:
+
+Más información en [^1], [^2]
+
+[^1]: Constant Mean Curvature Surfaces with Boundary, Rafael López Camino -  The Dirichlet Problem in Hyperbolic Space
+[^2]: [Math and Programming](http://jeremykun.com/)
 
 ### Títulos y secciones
 Tenéis disponibles los títulos desde el nivel 2 (`##`) hasta nivel 6
