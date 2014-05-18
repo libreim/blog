@@ -81,13 +81,14 @@ Teorema
 
 #### Referencias
 Para añadir referencias lo podemos hacer mediante notas a pie de página.
-Kramdown incluye una sintaxis específica para esta tarea[^kramsyntax]:
-[^kramsyntax]: [Kramdown Syntax](http://kramdown.gettalong.org/syntax.html#footnotes)
+Kramdown incluye una sintaxis específica para esta tarea[^3]:
+
+[^3]: [Kramdown Syntax](http://kramdown.gettalong.org/syntax.html#footnotes)
 
 ~~~markdown
-Kramdown incluye una sintaxis específica para esta tarea[^kramsyntax]
+Kramdown incluye una sintaxis específica para esta tarea[^3]
 
-[^kramsyntax]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
+[^3]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
 ~~~
 
 En general trataremos de seguir el siguiente formato para las referencias
@@ -106,7 +107,7 @@ y este para las referencias a sitios web:
 Si no tenéis un sitio concreto para ubicar la marca de referencia, añadid
 una frase al final al estilo de:
 
-Más información en [^1], [^2]
+Más información [^1], [^2]
 
 [^1]: Constant Mean Curvature Surfaces with Boundary, Rafael López Camino -  The Dirichlet Problem in Hyperbolic Space
 [^2]: [Math and Programming](http://jeremykun.com/)
