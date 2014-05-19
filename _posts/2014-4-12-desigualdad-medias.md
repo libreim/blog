@@ -22,6 +22,7 @@ Al comprobar que la acotación da un caso de igualdad, obtenemos el extremo
 absoluto.
 
 
+
 ## Generalizando la media
 
 ### Las medias pitagóricas
@@ -42,7 +43,6 @@ específico `$\{w_i\}$`:
 Aquí la media aritmética surge como caso particular tomando pesos: `$w_i = \frac{1}{n}$`.
 
 #### La media geométrica
-
 La **media geométrica** generaliza el punto que es al menor como el mayor es a él
 `$\frac{x_1}{m} = \frac{m}{x_2}$`. Sería el lado del hipercubo que tuviera
 igual volumen al hiperrectángulo que tiene como lados los valores dados:
@@ -53,10 +53,16 @@ En su versión ponderada:
 
 `$$ \displaystyle \left( \prod_{i=1}^n x_i^{w_i} \right)^{\frac{1}{\sum_{i=1}^n w_i}} = \sqrt[w_1+w_2+ \dots +w_n]{  x_1^{w_1} x_2^{w_2} \dots x_n^{w_n} }$$`
 
+#### La media harmónica
+
+#### La media cuadrática
 
 
 ### Medias de Hölder
 
+Las medias de Hölder generalizan las medias pitagóricas. [^1]
+
+[^1]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
 
 
@@ -82,7 +88,7 @@ de igualdad cuando todos los términos son iguales.*
 
 ### La desigualdad de las medias
 
-La desigualdad de las medias completa incluye a la media cuadrática y armónica, de esta forma:
+La desigualdad de las medias completa incluye a las medias pitagóricas, de esta forma:
 `$$ \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}} \leq \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} \leq \sqrt{\frac{x_1^2+x_2^2+\dots+x_n^2}{n}} $$`
 Todavía puede generalizarse más, notando que, fijado un vector `$ x \in (\mathbb{R^+})^n $`, la siguiente función `$ f: \mathbb{R} \to \mathbb{R} $` es creciente:
 `$$ f(a) = \left\{ \begin{matrix} \left(\frac{x_1^a+x_2^a+\dots+x_n^a}{n}\right)^{1/a} & si & a \neq 0 \\ \displaystyle \sqrt[n]{x_1x_2 \dots x_n} & si & a = 0\end{matrix} \right.$$`
@@ -91,9 +97,9 @@ Todavía puede generalizarse más, notando que, fijado un vector `$ x \in (\math
 
 ## Cálculo de extremos
 
-### Un ejemplo simple
+### Maximizar área
 
-La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, que permite hallar el extremo absoluto de la suma dado el producto o viceversa. Puede verse en el siguiente ejemplo simple:
+La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, que permite hallar el extremo absoluto de la suma dado el producto o viceversa. Puede verse en el siguiente problema:
 
 **Hallar, entre todos los rectángulos de perímetro 4, aquel con área máxima.**
 
