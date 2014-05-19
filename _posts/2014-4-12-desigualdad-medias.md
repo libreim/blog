@@ -51,7 +51,7 @@ igual volumen al hiperrectángulo que tiene como lados los valores dados:
 
 En su versión ponderada:
 
-`$$\displaystyle \left( \prod_{i=1}^n x_i^{w_i}} \right)^{\sum_{i=1}^n w_i} = \sqrt[w_1+w_2+\dots+w_n]{x_1^{w_1}x_2^{w_2} \dots x_n^{w_n}}$$`
+`$$\displaystyle \left( \prod_{i=1}^n x_i^{w_i} \right)^{\sum_{i=1}^n w_i} = \sqrt[w_1+w_2+\dots+w_n]{x_1^{w_1}x_2^{w_2} \dots x_n^{w_n}}$$`
 
 
 
