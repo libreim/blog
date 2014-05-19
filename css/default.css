@@ -63,7 +63,7 @@ h1, h2 {
 
 h2 {
     padding: 1% 0px;
-    border-top: 2px solid #F0F0F0;
+    border-bottom: 2px solid #F0F0F0;
     font-size: 160%;
 }
 
@@ -74,12 +74,11 @@ ul h2 {
 h3 {
 	text-transform: uppercase;
 	font-size: 120%;
+	color: #444;
 }
 
 h4 {
 	font-size: 110%;
-	color: #444;
-	font-weight: normal;
 }
 
 a {
