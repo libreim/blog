@@ -81,9 +81,9 @@ Mi   | 660Hz
 
 ### Medias de Hölder
 
-Las medias de Hölder generalizan las medias pitagóricas. [^2]
+Las medias de Hölder generalizan las medias pitagóricas. [^holdermean]
 
-[^2]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
+[^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
 
 
