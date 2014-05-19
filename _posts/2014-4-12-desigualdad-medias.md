@@ -45,17 +45,26 @@ La **media geométrica** generaliza el punto que es al menor como el mayor es a 
 `$\frac{x_1}{g} = \frac{g}{x_2}$`. Sería el lado del hipercubo que tuviera
 igual volumen al hiperrectángulo que tiene como lados los valores dados:
 
-`$$\sqrt[n]{\prod_{i=1}^n x_i} = \sqrt[n]{x_1x_2 \dots x_n}$$`
+`$$\displaystyle \sqrt[n]{\prod_{i=1}^n x_i} = \sqrt[n]{x_1x_2 \dots x_n}$$`
 
 En su versión ponderada:
 
-`$$ \displaystyle \left( \prod_{i=1}^n x_i^{w_i} \right)^{\frac{1}{\sum_{i=1}^n w_i}} = \sqrt[w_1+w_2+ \dots +w_n]{  x_1^{w_1} x_2^{w_2} \dots x_n^{w_n} }$$`
+`$$\displaystyle \left( \prod_{i=1}^n x_i^{w_i} \right)^{\frac{1}{\sum_{i=1}^n w_i}} = \sqrt[w_1+w_2+ \dots +w_n]{  x_1^{w_1} x_2^{w_2} \dots x_n^{w_n} }$$`
 
 #### La media armónica
 La **media armónica**, (o *harmónica*, dependiendo de la pedantería del autor)
  es inversa de la media aritmética de las inversas de los
 elementos. Generaliza el punto en el que la razón de las diferencias a él
 es igual a la razón entre los números: `$\frac{x_1-h}{h-x_2} = \frac{x_1}{x_2}$`.
+
+Queda definida por:
+
+`$$\displaystyle \frac{n}{\sum_{i=1}^n \frac{1}{x_i}} = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$$`
+
+Y en su versión ponderada por:
+
+`$$\displaystyle \frac{\sum_{i=1}^n w_i}{\sum_{i=1}^n \frac{w_i}{x_i}} = \frac{w_1+w_2+\dots+w_n}{\frac{w_1}{x_1} + \frac{w_2}{x_2} + \dots + \frac{w_n}{x_n}}$$`
+
 Además, en un acorde mayor, la frecuencia de nota intermedia es la media armónica de las
 otras dos notas que componen el acorde. Por ejemplo, el en el acorde de La Mayor
 `$\mathtt{La-Do\#-Mi}$`:
@@ -66,13 +75,6 @@ La   | 440Hz
 Do#  | 528Hz
 Mi   | 660Hz
 
-Queda definida por:
-
-`$$\frac{n}{\sum_{i=1}^n \frac{1}{x_i}} = \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$$`
-
-Y en su versión ponderada por:
-
-`$$\frac{\sum_{i=1}^n w_i}{\sum_{i=1}^n \frac{w_i}{x_i}} = \frac{w_1+w_2+\dots+w_n}{\frac{w_1}{x_1} + \frac{w_2}{x_2} + \dots + \frac{w_n}{x_n}}$$`
 
 #### La media cuadrática
 
