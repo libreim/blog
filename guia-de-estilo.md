@@ -107,10 +107,10 @@ y este para las referencias a sitios web:
 Si no tenéis un sitio concreto para ubicar la marca de referencia, añadid
 una frase al final al estilo de:
 
-Más información [^1], [^2]
+Más información [^1], [^mandp]
 
 [^1]: Constant Mean Curvature Surfaces with Boundary, Rafael López Camino -  The Dirichlet Problem in Hyperbolic Space
-[^2]: [Math and Programming](http://jeremykun.com/)
+[^mandp]: [Math and Programming](http://jeremykun.com/)
 
 ### Títulos y secciones
 Tenéis disponibles los títulos desde el nivel 2 (`##`) hasta nivel 6
