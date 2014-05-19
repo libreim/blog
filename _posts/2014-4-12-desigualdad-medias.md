@@ -9,21 +9,37 @@ category: matematicas
 ## Introducción
 
 En varios problemas de optimización se pide
-estudiar el mínimo o máximo de una función de varias variables,
+estudiar el mínimo o máximo de una función de varias variables
 fijando su suma o su producto. El procedimiento estándar es calcular la
 derivada de una función sobre la que se ha aplicado ya la restricción y buscar
 extremos absolutos entre sus puntos críticos o aplicar el método de los
 [multiplicadores de Lagrange](http://es.wikipedia.org/wiki/Multiplicadores_de_Lagrange).
 
 Pero existe otra forma de proceder, en ocasiones más simple. La función puede
-quedar acotada superior o inferiormente por la suma que tenemos condicionada, y
-al comprobar que la acotación da un caso de igualdad, obtenemos el extremo
+quedar acotada superior o inferiormente por la suma que tenemos condicionada,
+quedando acotada por una constante.
+Al comprobar que la acotación da un caso de igualdad, obtenemos el extremo
 absoluto.
 
 
+## Generalizando la media
+
+#### La media arimética ponderada
+
+La media aritmética de una serie de valores positivos `$\{x_i\}$` es su promedio:
+
+`$$ \frac{1}{n} \sum_{i=1}^n x_i $$`
+
+Y podemos tomar una media aritmética ponderada otorgando a cada valor un peso
+específico `$\{w_i\}$`:
+
+`$$ \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i}  $$`
+
+Aquí la media aritmética surge como caso particular tomando pesos: `$\{w_i\} = \frac{1}{n}$`.
+
 ## La desigualdad
 
-### Media Geométrica y Aritmética
+### Medias aritmética y geométrica
 
 Las medias aritmética y geométrica cumplen la siguiente desigualdad, que se
 convierte en igualdad si y sólo si todos los términos son iguales:
