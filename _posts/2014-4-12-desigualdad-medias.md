@@ -27,7 +27,7 @@ absoluto.
 ### Las medias pitagóricas
 
 #### La media aritmética
-La **media aritmética** `$\overline{x}$` de una serie de valores positivos
+La **media aritmética**  ( `$\overline{x}$` ) de una serie de valores positivos
 `$x_1, x_2 \dots x_n$` es su promedio.
 Generaliza el punto medio entre dos valores `$\overline{x} = \frac{x_1+x_2}{2}$`,
 definiendo un centro de gravedad que minimiza las desviaciones:
@@ -37,13 +37,13 @@ definiendo un centro de gravedad que minimiza las desviaciones:
 Y podemos tomar una **media aritmética ponderada** otorgando a cada valor un peso
 específico `$\{w_i\}$`:
 
-`$$ \displaystyle \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i}  $$`
+`$$ \displaystyle \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i} = \frac{x_1w_1 + x_2w_2 + \dots + x_nw_n}{w_1+w_2+\dots+w_n} $$`
 
 Aquí la media aritmética surge como caso particular tomando pesos: `$w_i = \frac{1}{n}$`.
 
 #### La media geométrica
 
-La **media geométrica** generaliza el punto que es al menor como el menor es a él
+La **media geométrica** generaliza el punto que es al menor como el mayor es a él
 `$\frac{x_1}{m} = \frac{m}{x_2}$`. Sería el lado del hipercubo que tuviera
 igual volumen al hiperrectángulo que tiene como lados los valores dados:
 
@@ -51,7 +51,7 @@ igual volumen al hiperrectángulo que tiene como lados los valores dados:
 
 En su versión ponderada:
 
-`$$\displaystyle \sqrt[\sum_{i=1}^n w_i]{\prod_{i=1}^n x_i^{w_i}} = \sqrt[w_1+w_2+\dots+w_n]{x_1^{w_1}x_2^{w_2} \dots x_n^{w_n}}$$`
+`$$\displaystyle \left( \prod_{i=1}^n x_i^{w_i}} \right)^{\sum_{i=1}^n w_i} = \sqrt[w_1+w_2+\dots+w_n]{x_1^{w_1}x_2^{w_2} \dots x_n^{w_n}}$$`
 
 
 
