@@ -26,25 +26,36 @@ absoluto.
 
 ### Las medias pitagóricas
 
-##### La media aritmética ponderada
-La **media aritmética** `$\overline{x}$` de una serie de valores positivos `$\{x_i\}$` es su promedio.
+#### La media aritmética
+La **media aritmética** `$\overline{x}$` de una serie de valores positivos
+`$x_1, x_2 \dots x_n$` es su promedio.
 Generaliza el punto medio entre dos valores `$\overline{x} = \frac{x_1+x_2}{2}$`,
-definiendo un centro de gravedad entre los valores:
+definiendo un centro de gravedad que minimiza las desviaciones:
 
-`$$ \frac{1}{n} \sum_{i=1}^n x_i = x_1 + x_2 + \dots + x_n $$`
+`$$ \frac{1}{n} \sum_{i=1}^n x_i = \frac{x_1 + x_2 + \dots + x_n}{n}$$`
 
 Y podemos tomar una **media aritmética ponderada** otorgando a cada valor un peso
 específico `$\{w_i\}$`:
 
-`$$ \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i}  $$`
+`$$ \displaystyle \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i}  $$`
 
 Aquí la media aritmética surge como caso particular tomando pesos: `$w_i = \frac{1}{n}$`.
 
-##### La media geométrica
+#### La media geométrica
+
+La **media geométrica** generaliza el punto que es al menor como el menor es a él
+`$\frac{x_1}{m} = \frac{m}{x_2}$`. Sería el lado del hipercubo que tuviera
+igual volumen al hiperrectángulo que tiene como lados los valores dados:
+
+`$$\sqrt[n]{\prod_{i=1}^n x_i} = \sqrt[n]{x_1x_2 \dots x_n}$$`
+
+En su versión ponderada:
+
+`$$\displaystyle \sqrt[\sum_{i=1}^n w_i]{\prod_{i=1}^n x_i^{w_i}} = \sqrt[w_1+w_2+\dots+w_n]{x_1^{w_1}x_2^{w_2} \dots x_n^{w_n}}$$`
 
 
 
-#### Medias de Hölder
+### Medias de Hölder
 
 
 
