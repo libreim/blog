@@ -6,8 +6,6 @@ authors:
 category: matematicas
 ---
 
-## Introducción
-
 En varios problemas de optimización se pide
 estudiar el mínimo o máximo de una función de varias variables
 fijando su suma o su producto. El procedimiento estándar es calcular la
