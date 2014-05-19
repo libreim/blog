@@ -24,18 +24,30 @@ absoluto.
 
 ## Generalizando la media
 
-#### La media arimética ponderada
+### Las medias pitagóricas
 
-La media aritmética de una serie de valores positivos `$\{x_i\}$` es su promedio:
+##### La media aritmética ponderada
+La **media aritmética** `$\overline{x}$` de una serie de valores positivos `$\{x_i\}$` es su promedio.
+Generaliza el punto medio entre dos valores `$\overline{x} = \frac{x_1+x_2}{2}$`,
+definiendo un centro de gravedad entre los valores:
 
-`$$ \frac{1}{n} \sum_{i=1}^n x_i $$`
+`$$ \frac{1}{n} \sum_{i=1}^n x_i = x_1 + x_2 + \dots + x_n $$`
 
-Y podemos tomar una media aritmética ponderada otorgando a cada valor un peso
+Y podemos tomar una **media aritmética ponderada** otorgando a cada valor un peso
 específico `$\{w_i\}$`:
 
 `$$ \frac{\sum_{i=1}^n x_iw_i}{\sum_{i=1}^n w_i}  $$`
 
-Aquí la media aritmética surge como caso particular tomando pesos: `$\{w_i\} = \frac{1}{n}$`.
+Aquí la media aritmética surge como caso particular tomando pesos: `$w_i = \frac{1}{n}$`.
+
+##### La media geométrica
+
+
+
+#### Medias de Hölder
+
+
+
 
 ## La desigualdad
 
