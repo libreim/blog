@@ -100,16 +100,19 @@ La media de Hölder de exponente `$p \in \mathbb{R} \cup \{+\infty, -\infty\}$`,
 
 Tomando límites para definirla cuando sea necesario:
 
-`$$ M_0 ({x}) = \lim_{p \to 0} M_p $$`
-`$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p $$`
-`$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p $$`
+`$$ M_0 ({x}) = \lim_{p \to 0} M_p(x) $$`
+`$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p(x) $$`
+`$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p(x) $$`
 
 Nótese como las medias pitagóricas son casos particulares de las medias de Hölder.
 
-Media |  Exponente
-----------|:---------:
+Media     |  Exponente
+----------|:-----------:
 Armónica  | `$p=-1$`
 Geométrica| `$p=0$`
+Aritmética| `$p=1$`
+Cuadrática| `$p=2$`
+
 
 
 
