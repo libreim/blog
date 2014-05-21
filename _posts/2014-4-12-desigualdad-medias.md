@@ -93,13 +93,16 @@ desviaciones respecto a la media.
 
 Las medias de Hölder generalizan las medias pitagóricas. [^holdermean]
 La media de Hölder de exponente `$p \in \mathbb{R} \cup \{+\infty, -\infty\}$`, para `$x \in (\mathbb{R}^+)^n$` es de la forma:
+
 [^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
 `$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right) $$`
 
 Tomando límites para definirla cuando sea necesario:
 
-`$$ M_0 ({x}) = lim_{p \to 0} M_p $$`
+`$$ M_0 ({x}) = \lim_{p \to 0} M_p $$`
+`$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p $$`
+`$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p $$`
 
 Nótese como las medias pitagóricas son casos particulares de las medias de Hölder.
 
