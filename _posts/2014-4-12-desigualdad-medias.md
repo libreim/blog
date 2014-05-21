@@ -69,7 +69,7 @@ Además, en un acorde mayor, la frecuencia de nota intermedia es la media armón
 otras dos notas que componen el acorde. Por ejemplo, el en el acorde de La Mayor
 `$\mathtt{La-Do\#-Mi}$`:
 
-Nota | Frecuencia
+Nota |  Frecuencia
 -----|:---------:
 La   | 440Hz
 Do#  | 528Hz
@@ -92,8 +92,21 @@ desviaciones respecto a la media.
 ### Medias de Hölder
 
 Las medias de Hölder generalizan las medias pitagóricas. [^holdermean]
-
+La media de Hölder de exponente `$p \in \mathbb{R} \cup \{+\infty, -\infty\}$`, para `$x \in (\mathbb{R}^+)^n$` es de la forma:
 [^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
+
+`$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right) $$`
+
+Tomando límites para definirla cuando sea necesario:
+
+`$$ M_0 ({x}) = lim_{p \to 0} M_p $$`
+
+Nótese como las medias pitagóricas son casos particulares de las medias de Hölder.
+
+Media |  Exponente
+----------|:---------:
+Armónica  | `$p=-1$`
+Geométrica| `$p=0$`
 
 
 
