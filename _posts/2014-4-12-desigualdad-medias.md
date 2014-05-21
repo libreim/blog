@@ -80,7 +80,7 @@ Mi   | 660Hz
 La **media cuadrtica** es la raíz cuadrada de la media aritmética de los cuadrados
 de los elementos. Queda definida por:
 
-`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2}{n} = \frac{x_1^2 + x_2^2 + \dots + x_n^2}{n} $$`
+`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}} = \sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}} $$`
 
 Y en su versión ponderada como:
 
