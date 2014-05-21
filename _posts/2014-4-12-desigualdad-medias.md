@@ -91,9 +91,9 @@ desviaciones respecto a la media.
 
 ### Medias de Hölder
 
-Las medias de Hölder generalizan las medias pitagóricas. [^1]
+Las medias de Hölder generalizan las medias pitagóricas. [^holdermean]
 
-[^1]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
+[^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
 
 

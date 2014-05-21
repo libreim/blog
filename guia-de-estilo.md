@@ -81,15 +81,20 @@ Teorema
 
 #### Referencias
 Para añadir referencias lo podemos hacer mediante notas a pie de página.
-Kramdown incluye una sintaxis específica para esta tarea[^3]:
+Kramdown incluye una sintaxis específica para esta tarea[^kram]:
 
-[^3]: [Kramdown Syntax](http://kramdown.gettalong.org/syntax.html#footnotes)
+[^kram]: [Kramdown Syntax](http://kramdown.gettalong.org/syntax.html#footnotes)
 
 ~~~markdown
-Kramdown incluye una sintaxis específica para esta tarea[^3]
+Kramdown incluye una sintaxis específica para esta tarea[^kram]
 
-[^3]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
+[^kram]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
 ~~~
+
+> **Nota**: ¡Usad un identificador suficientemente descriptivo para la referencia!
+> Jekyll no distingue entre referencias de posts distintos por lo que
+> si dos referencias tienen el mismo identificador se generarán enlaces que
+> llevarán a una de ellas nada más. 
 
 En general trataremos de seguir el siguiente formato para las referencias
 de libros:
@@ -107,10 +112,10 @@ y este para las referencias a sitios web:
 Si no tenéis un sitio concreto para ubicar la marca de referencia, añadid
 una frase al final al estilo de:
 
-Más información [^1], [^2]
+Más información [^camino], [^mathandp]
 
-[^1]: Constant Mean Curvature Surfaces with Boundary, Rafael López Camino -  The Dirichlet Problem in Hyperbolic Space
-[^2]: [Math and Programming](http://jeremykun.com/)
+[^camino]: Constant Mean Curvature Surfaces with Boundary, Rafael López Camino -  The Dirichlet Problem in Hyperbolic Space
+[^mathandp]: [Math and Programming](http://jeremykun.com/)
 
 ### Títulos y secciones
 Tenéis disponibles los títulos desde el nivel 2 (`##`) hasta nivel 6
