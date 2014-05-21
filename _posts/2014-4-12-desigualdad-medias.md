@@ -104,15 +104,17 @@ Tomando límites para definirla cuando sea necesario:
 `$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p(x) $$`
 `$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p(x) $$`
 
-Nótese como las medias pitagóricas son casos particulares de las medias de Hölder.
+Notamos que las medias pitagóricas, el máximo y el mínimo son casos particulares
+de las medias de Hölder.
 
 Media     |  Exponente
 ----------|:-----------:
+Mínimo    | `$p=-\infty$`
 Armónica  | `$p=-1$`
 Geométrica| `$p=0$`
 Aritmética| `$p=1$`
 Cuadrática| `$p=2$`
-
+Máximo    | `$p=\infty$`
 
 
 
