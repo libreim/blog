@@ -53,7 +53,7 @@ En su versión ponderada:
 
 #### La media armónica
 La **media armónica**, (o *harmónica*, dependiendo de la pedantería del autor)
- es inversa de la media aritmética de las inversas de los
+es inversa de la media aritmética de las inversas de los
 elementos. Generaliza el punto en el que la razón de las diferencias a él
 es igual a la razón entre los números: `$\frac{x_1-h}{h-x_2} = \frac{x_1}{x_2}$`.
 
@@ -77,7 +77,17 @@ Mi   | 660Hz
 
 
 #### La media cuadrática
+La **media cuadrtica** es la raíz cuadrada de la media aritmética de los cuadrados
+de los elementos. Queda definida por:
 
+`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2}{n} = \frac{x_1^2 + x_2^2 + \dots + x_n^2}{n} $$`
+
+Y en su versión ponderada como:
+
+`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2w_i}{\sum_{i=1}^n w_i}} = \frac{x_1^2w_1 + x_2^2w_2 + \dots + x_n^2w_n}{w_1+w_2+\dots+w_n} $$`
+
+La desviación típica, por ejemplo, se define como la media cuadrática de las
+desviaciones respecto a la media.
 
 ### Medias de Hölder
 
