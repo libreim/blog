@@ -4,6 +4,7 @@ title: Introducción a JavaScript. Programación con prototipos
 authors:
  - fdavidcl
 category: programación
+permalink: /drafts/js
 ---
 
 ~~~javascript
