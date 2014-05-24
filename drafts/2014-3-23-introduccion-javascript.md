@@ -16,17 +16,22 @@ Se trata de un lenguaje de script, generalmente interpretado por el navegador de
 se ejecuta en el *cliente*. Hablamos del cliente refiriéndonos a la máquina del usuario
 final que visitará el sitio web, y del servidor para referirnos a la máquina o el
 conjunto de ellas que lo almacenan y proporcionan. Sin embargo, también se
-puede utilizar JJavaScriptncomo lenguaje de servidor gracias a [Node.js](http://nodejs.org/).
+puede utilizar JavaScript como lenguaje de servidor gracias a [Node.js](http://nodejs.org/).
 
 JavaScript tiene una sintaxis similar a la de C++ o Java, y puede funcionar como
 un lenguaje procedimental o como uno orientado a objetos. Además, es capaz de
 responder a eventos generados mediante la interacción del usuario, lo que
-es generalmente su función principal.
+es generalmente una de sus principales funciones.
 
 Nota
  : Pese al nombre, JavaScript no deriva de Java, los dos lenguajes apenas
- se parecen, exceptuando el aspecto de la sintaxis.
+ se parecen, exceptuando el aspecto de la sintaxis. De hecho, JavaScript se
+ llamó *Mocha* y *LiveScript* antes de obtener su nombre definitivo.
 
+
+Para ejecutar tu propio código JavaScript, pulsa F12 o Ctrl-Mayus-C.
+En las herramientas de desarrollador de tu
+navegador tendrás una consola JS interactiva disponible para experimentar.
 Es importante notar que cada navegador implementa JavaScript de una manera
 ligeramente distinta, luego puede haber peculiaridades en la forma de
 aprovechar algunos recursos del navegador. El estándar del lenguaje se
@@ -38,21 +43,25 @@ denomina [ECMAScript](http://www.ecma-international.org/publications/files/ECMA-
 
 JavaScript no es fuertemente tipado, por lo que declaramos las variables
 simplemente con la palabra reservada `var`. Declaramos una constante con
-`const` y una función con `function`. También podemos declarar variables
-simplemente con una asignación, pero entonces serán variables globales,
-lo que es equivalente a declarar variables fuera de cualquier función
-(las variables globales se convierten en atributos del objeto `window`).
+`const` y una función con `var ... = function()`. También podemos declarar variables
+simplemente con una asignación y funciones con `function`, pero entonces serán globales,
+lo que es equivalente a declararlas fuera de cualquier función
+(las variables y funciones globales se convierten en atributos del objeto `window`).
 
 ~~~javascript
 var una = 1;
 const PI = 3.141592;
 
-function perimetro_circulo(radio) {
-    return 2 * PI * radio;
-}
+var perimetro_circulo = function(radio) {
+    // Esta variable no estaba declarada antes,
+    // así que es global
+    tau = 2 * PI;
 
-// Otra forma de declarar funciones
-var area_circulo = function(radio) {
+    return tau * radio;
+};
+
+// Función de ámbito global
+function area_circulo(radio) {
     return PI * radio^2;
 }
 ~~~
