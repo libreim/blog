@@ -234,8 +234,6 @@ document.querySelector("#mi_boton").addEventHandler("click", function() {
 });
 ~~~
 
-<input id="mi_boton" type="button" value="Púlsame" onclick="console.log(\"Has pulsado!\");">
-
 ## Orientación a objetos: Los prototipos
 
 
