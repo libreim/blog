@@ -196,20 +196,45 @@ var texto = nodo.innerText || nodo.textContent;
 ~~~
 
 ## El Document Object Model
-Desde luego, todo este lenguaje está muy bien, pero es necesario algo más
-para poder actuar dinámicamente en una página web, modificar elementos e
-interaccionar con el usuario. Para esto está el *Document Object Model* o
-DOM, que básicamente se encarga de proveer la información de la página web
-de una forma que sea consistente con el lenguaje.
 
-Por tanto, tendremos disponibles una serie de objetos, partiendo de `window`,
-que nos proporcionarán acceso a lo siguiente:
+### Acceso a los nodos
+Desde luego, si nuestro objetivo es modificar contenido en un sitio web e
+interactuar con el usuario, es necesario algo más que todo esto. Para esta tarea
+disponemos del *Document Object Model* o DOM, que básicamente se encarga de
+proveer la información de la página web de una forma que sea consistente con el
+lenguaje.
+
+Así, tendremos disponibles una serie de objetos, partiendo de `window`,
+que nos proporcionarán acceso, entre otros, a lo siguiente:
 
 * `window.title`: Título de la página
 * `window.location`
-* * `location.href`: URL de la página
-* * `location.hash`: *hash* (la parte del URL que viene después del símbolo `#`)
-* `window.document`:
+    * `location.href`: URL de la página
+    * `location.hash`: *hash* (la parte del URL que viene después del símbolo `#`)
+* `window.document`: Acceso a los nodos HTML del documento
+    * `document.getElementByID(identificador)`: Obtiene un nodo mediante el
+    identificador HTML (atributo `id`)
+    * `document.querySelector(selector)`: Obtiene un nodo mediante un selector
+    estilo CSS
+    * `document.createElement(tipo)`: Crea un nuevo nodo HTML del tipo
+    especificado
+
+### Eventos
+Además, para responder a interacciones del usuario disponemos de eventos, es decir, podemos asociar
+funciones a acciones de tipo *click*, *key press*, *drag*, etc. de forma que la página web
+responda ante ellas. Por ejemplo:
+
+~~~html
+<!-- Nodo HTML: -->
+<input id="mi_boton" type="button" value="Púlsame">
+~~~
+~~~javascript
+document.querySelector("#mi_boton").addEventHandler("click", function() {
+    console.log("Has pulsado!");
+});
+~~~
+
+<input id="mi_boton" type="button" value="Púlsame" onclick="console.log(\"Has pulsado!\");">
 
 ## Orientación a objetos: Los prototipos
 
