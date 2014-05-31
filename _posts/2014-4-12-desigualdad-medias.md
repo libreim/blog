@@ -123,7 +123,7 @@ Máximo    | `$p=\infty$` |`$\max_i{(x_i)}$`
 Además, podemos notar que las medias de Hölder para `$p \geq 1$` son normas en 
 `$\mathbb{R}^n$` para el vector de valores absolutos asociado a cada vector de `$\mathbb{R}^n$`.
 Las normas asociadas a `$p=1$`, `$p=2$`, `$p=+\infty$` son
-proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. Y, en general:
+proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. En general:
 
 `$$ ||x||_p =  M_p(|x|) \sqrt[p]{n} $$`
 
