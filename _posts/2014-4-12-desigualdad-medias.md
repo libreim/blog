@@ -120,6 +120,12 @@ Aritmética| `$p=1$`      |`$\frac{x_1 + x_2 + \dots + x_n}{n}$`
 Cuadrática| `$p=2$`      |`$\sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$`
 Máximo    | `$p=\infty$` |`$\max_i{(x_i)}$`
 
+Además, podemos notar que las medias de Hölder para `$p \geq 1$` son normas en 
+`$\mathbb{R}^n$` para el vector de valores absolutos asociado a cada vector de `$\mathbb{R}^n$`.
+Las normas asociadas a `$p=1$`, `$p=2$`, `$p=+\infty$` son
+proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. Y, en general:
+
+`$$ ||x||_p =  M_p(|x|) \sqrt[p]{n} $$`
 
 ## La desigualdad
 
@@ -143,9 +149,17 @@ de igualdad cuando todos los términos son iguales.*
 
 ### La desigualdad de las medias
 
-La desigualdad de las medias completa incluye a las medias pitagóricas, de esta forma:
+La desigualdad de las medias usual incluye a las medias armónica y geométrica.
+Como ejercicio, puede demostrarse la desigualdad armónica-geométrica desde la 
+geométrica-aritmética y la desigualdad aritmética-cuadrática desde la desigualdad
+de [Cauchy-Schwarz](http://es.wikipedia.org/wiki/Desigualdad_de_Cauchy-Schwarz).
+
+La desigualdad completa queda como:
 `$$ \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}} \leq \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} \leq \sqrt{\frac{x_1^2+x_2^2+\dots+x_n^2}{n}} $$`
-Todavía puede generalizarse más, notando que, fijado un vector `$ x \in (\mathbb{R^+})^n $`, la siguiente función `$ f: \mathbb{R} \to \mathbb{R} $` es creciente:
+
+Todavía puede generalizarse más, notando que, fijado un vector 
+`$ x \in (\mathbb{R^+})^n $`, la siguiente función 
+`$ f: \mathbb{R} \to \mathbb{R} $` es creciente:
 `$$ f(a) = \left\{ \begin{matrix} \left(\frac{x_1^a+x_2^a+\dots+x_n^a}{n}\right)^{1/a} & si & a \neq 0 \\ \displaystyle \sqrt[n]{x_1x_2 \dots x_n} & si & a = 0\end{matrix} \right.$$`
 
 
@@ -154,10 +168,13 @@ Todavía puede generalizarse más, notando que, fijado un vector `$ x \in (\math
 
 ### Maximizar área
 
-La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, que permite hallar el extremo absoluto de la suma dado el producto o viceversa. Puede verse en el siguiente problema:
+La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, 
+que permite hallar el extremo absoluto de la suma dado el producto o viceversa. 
+Puede verse en el siguiente problema:
 
 **Hallar, entre todos los rectángulos de perímetro 4, aquel con área máxima.**
 
 Llamando `$a,b$` a los lados y `$p$` al perímetro, tenemos:
 `$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \frac{a+b}{2} = \frac{1}{4}p = 1$$`
-Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad entre términos, tenemos `$a=b=1$`.
+Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad 
+entre términos, tenemos `$a=b=1$`.
