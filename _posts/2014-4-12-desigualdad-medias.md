@@ -105,7 +105,11 @@ Tomando límites para definirla cuando sea necesario:
 `$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p(x) $$`
 
 Las medias pitagóricas, el máximo y el mínimo son casos particulares
-de las medias de Hölder. Como ejercicio, pueden estudiarse los casos 0,+\infty,-\infty:
+de las medias de Hölder. Además de los casos triviales, puede demostrarse
+como ejercicio que los casos `$0,+\infty,-\infty$` efectivamente se corresponden
+con la media geométrica, el máximo y el mínimo.  [^gmeanproof]
+
+[^gmeanproof]: [Derivación de la media geométrica como media de Hölder](http://planetmath.org/sites/default/files/texpdf/35741.pdf)
 
 Media     |  Exponente   | Expresión
 ----------|:------------:|:----------:
