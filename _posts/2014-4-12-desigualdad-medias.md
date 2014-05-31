@@ -113,7 +113,7 @@ Mínimo    | `$p=-\infty$`|`$\min_i{(x_i)}$`
 Armónica  | `$p=-1$`     |`$\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$`
 Geométrica| `$p=0$`      |`$\sqrt[n]{x_1x_2 \dots x_n}$`
 Aritmética| `$p=1$`      |`$\frac{x_1 + x_2 + \dots + x_n}{n}$`
-Cuadrática| `$p=2$`      |`\sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$`
+Cuadrática| `$p=2$`      |`$\sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$`
 Máximo    | `$p=\infty$` |`$\max_i{(x_i)}$`
 
 
