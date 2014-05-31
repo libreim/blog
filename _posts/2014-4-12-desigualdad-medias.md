@@ -77,14 +77,14 @@ Mi   | 660Hz
 
 
 #### La media cuadrática
-La **media cuadrtica** es la raíz cuadrada de la media aritmética de los cuadrados
+La **media cuadrática** es la raíz cuadrada de la media aritmética de los cuadrados
 de los elementos. Queda definida por:
 
 `$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}} = \sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}} $$`
 
 Y en su versión ponderada como:
 
-`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2w_i}{\sum_{i=1}^n w_i}} = \frac{x_1^2w_1 + x_2^2w_2 + \dots + x_n^2w_n}{w_1+w_2+\dots+w_n} $$`
+`$$ \displaystyle \sqrt{\frac{\sum_{i=1}^n x_i^2w_i}{\sum_{i=1}^n w_i}} = \sqrt{\frac{x_1^2w_1 + x_2^2w_2 + \dots + x_n^2w_n}{w_1+w_2+\dots+w_n}} $$`
 
 La desviación típica, por ejemplo, se define como la media cuadrática de las
 desviaciones respecto a la media.
@@ -104,13 +104,13 @@ Tomando límites para definirla cuando sea necesario:
 `$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p(x) $$`
 `$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p(x) $$`
 
-Notamos que las medias pitagóricas, el máximo y el mínimo son casos particulares
-de las medias de Hölder.
+Las medias pitagóricas, el máximo y el mínimo son casos particulares
+de las medias de Hölder. Como ejercicio, pueden estudiarse los casos 0,+\infty,-\infty:
 
-Media     |  Exponente
-----------|:-----------:
-Mínimo    | `$p=-\infty$`
-Armónica  | `$p=-1$`
+Media     |  Exponente   | Expresión
+----------|:------------:|
+Mínimo    | `$p=-\infty$`|
+Armónica  | `$p=-1$`     |
 Geométrica| `$p=0$`
 Aritmética| `$p=1$`
 Cuadrática| `$p=2$`
