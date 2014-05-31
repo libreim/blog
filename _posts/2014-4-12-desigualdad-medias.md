@@ -109,12 +109,12 @@ de las medias de Hölder. Como ejercicio, pueden estudiarse los casos 0,+\infty,
 
 Media     |  Exponente   | Expresión
 ----------|:------------:|:----------:
-Mínimo    | `$p=-\infty$`|\min_i{x_i}
-Armónica  | `$p=-1$`     |\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}
-Geométrica| `$p=0$`      |\sqrt[n]{x_1x_2 \dots x_n}
-Aritmética| `$p=1$`      |\frac{x_1w_1 + x_2w_2 + \dots + x_nw_n}{w_1+w_2+\dots+w_n}
-Cuadrática| `$p=2$`      |\sqrt{\frac{x_1^2w_1 + x_2^2w_2 + \dots + x_n^2w_n}{w_1+w_2+\dots+w_n}}
-Máximo    | `$p=\infty$` |\max_i{x_i}
+Mínimo    | `$p=-\infty$`|`$\min_i{x_i}`$
+Armónica  | `$p=-1$`     |`$\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}`$
+Geométrica| `$p=0$`      |`$\sqrt[n]{x_1x_2 \dots x_n}`$
+Aritmética| `$p=1$`      |`$\frac{x_1w_1 + x_2w_2 + \dots + x_nw_n}{w_1+w_2+\dots+w_n}`$
+Cuadrática| `$p=2$`      |`$\sqrt{\frac{x_1^2w_1 + x_2^2w_2 + \dots + x_n^2w_n}{w_1+w_2+\dots+w_n}}`$
+Máximo    | `$p=\infty$` |`$\max_i{x_i}`$
 
 
 
