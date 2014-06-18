@@ -12,9 +12,9 @@ console.log("Hello World!!");
 ~~~
 
 JavaScript (JS) es el lenguaje de programación desarrollado por Netscape para
-la web[^jsannouncement][^mdnjs]. Se trata de un lenguaje de script,
+la web[^jsannouncement]. Se trata de un lenguaje de script,
 generalmente interpretado por el navegador del usuario, esto es, se ejecuta en
-el *cliente*. Hablamos del cliente refiriéndonos a la máquina del usuario final
+el *cliente*[^mdnjs]. Hablamos del cliente refiriéndonos a la máquina del usuario final
 que visitará el sitio web, y del servidor para referirnos a la máquina o el
 conjunto de ellas que lo almacenan y proporcionan. Sin embargo, también se
 puede utilizar JavaScript como lenguaje de servidor gracias a
@@ -25,8 +25,9 @@ un lenguaje procedimental o como uno orientado a objetos. Además, es capaz de
 responder a eventos generados mediante la interacción del usuario, lo que es
 generalmente una de sus principales funciones.
 
-Nota  : Pese al nombre, JavaScript no deriva de Java, los dos lenguajes apenas
-se parecen, exceptuando el aspecto de la sintaxis. De hecho, se  llamó *Mocha* y
+Nota
+: Pese al nombre, JavaScript no deriva de Java, los dos lenguajes apenas
+se parecen, exceptuando el aspecto de la sintaxis. De hecho, se llamó *Mocha* y
 *LiveScript* antes de obtener su nombre definitivo.
 
 
@@ -197,7 +198,7 @@ var texto = nodo.innerText || nodo.textContent;
 
 ## El Document Object Model
 
-### Acceso a los nodos
+### Acceso a los nodos HTML
 Desde luego, si nuestro objetivo es modificar contenido en un sitio web e
 interactuar con el usuario, es necesario algo más que todo esto. Para esta tarea
 disponemos del *Document Object Model* o DOM, que básicamente se encarga de
@@ -207,17 +208,24 @@ lenguaje.
 Así, tendremos disponibles una serie de objetos, partiendo de `window`,
 que nos proporcionarán acceso, entre otros, a lo siguiente:
 
-* `window.title`: Título de la página
-* `window.location`
-    * `location.href`: URL de la página
+* `window`: Es el padre de todos los objetos del documento. Es indistinto acceder
+  a `window.objeto` y a `objeto`. Si declaramos una variable fuera de una función
+  queda como objeto hijo de `window`.
+* `title`: Título de la página.
+* `location`
+    * `location.href`: URL de la página.
     * `location.hash`: *hash* (la parte del URL que viene después del símbolo `#`)
-* `window.document`: Acceso a los nodos HTML del documento
+* `document`: Acceso a los nodos HTML del documento.
     * `document.getElementByID(identificador)`: Obtiene un nodo mediante el
-    identificador HTML (atributo `id`)
+    identificador HTML (atributo `id`).
     * `document.querySelector(selector)`: Obtiene un nodo mediante un selector
-    estilo CSS
+    estilo CSS.
     * `document.createElement(tipo)`: Crea un nuevo nodo HTML del tipo
-    especificado
+    especificado.
+
+Nota
+ : El DOM sólo está disponible cuando se ejecuta JavaScript en una página HTML en
+ el cliente. No existe en otros intérpretes de JS como [Rhino](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) ni en la parte de servidor como en [node.js](http://nodejs.org/).
 
 ### Eventos
 Además, para responder a interacciones del usuario disponemos de eventos, es decir, podemos asociar
@@ -229,12 +237,42 @@ responda ante ellas. Por ejemplo:
 <input id="mi_boton" type="button" value="Púlsame">
 ~~~
 ~~~javascript
-document.querySelector("#mi_boton").addEventHandler("click", function() {
-    console.log("Has pulsado!");
-});
+var alerta_click = function() {
+    // this referencia al nodo que responde al evento
+    console.log("Has pulsado el botón " + this.id);
+};
+
+document.querySelector("#mi_boton").onclick = alerta_click
+
+// Otra forma:
+document.querySelector("#mi_boton").addEventListener("click", alerta_click);
 ~~~
 
+Mucho más sobre eventos en [^quirksevents]
+
 ## Orientación a objetos: Los prototipos
+
+JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
+sino que podemos crear objetos a partir de otros que llamamos *prototipos*. Estos
+prototipos están asociados a funciones constructoras. Veamos un ejemplo:
+
+~~~javascript
+// El constructor
+var Cancion = function(nombre, artista) {
+    this.nombre = nombre;
+    this.artista = artista;
+}
+
+// Definimos un método en el prototipo
+Cancion.prototype.reproducir = function() {
+    console.log("Reproduciendo " + this.nombre + " de " + this.artista);
+}
+
+// Creamos un objeto con el constructor
+var una_cancion = new Cancion("Clocks", "Coldplay");
+una_cancion.reproducir(); // --> "Reproduciendo Clocks de Coldplay"
+~~~
+
 
 
 [^jsannouncement]: [Netscape and Sun announce JavaScript. Press Release](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)
@@ -242,3 +280,5 @@ document.querySelector("#mi_boton").addEventHandler("click", function() {
 [^mdnjs]: [About JavaScript - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript)
 
 [^jsidentifiers]: [Valid JavaScript variable names - Mathias Bynens](http://mathiasbynens.be/notes/javascript-identifiers)
+
+[^quirksevents]: [Introduction to Events - Quirks Mode](http://www.quirksmode.org/js/introevents.html)
