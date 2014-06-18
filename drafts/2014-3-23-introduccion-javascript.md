@@ -45,8 +45,8 @@ denomina [ECMAScript](http://www.ecma-international.org/publications/files/ECMA-
 
 JavaScript no es fuertemente tipado, por lo que declaramos las variables
 simplemente con la palabra reservada `var`.  Declaramos una constante con
-`const` y una función con `var ... = function()`.  También podemos declarar
-variables simplemente con una asignación y funciones  con `function`, pero
+`const` y una función con `var ... = function()` o `function ...()`.  También podemos declarar
+variables simplemente con una asignación, pero
 entonces serán globales, lo que es equivalente a  declararlas fuera de
 cualquier función (las variables y funciones globales se convierten en
 atributos del objeto `window`).
@@ -63,7 +63,7 @@ var perimetro_circulo = function(radio) {
     return tau * radio;
 };
 
-// Función de ámbito global
+// Otra forma de declarar funciones
 function area_circulo(radio) {
     return PI * radio * radio;
 }
@@ -248,9 +248,11 @@ document.querySelector("#mi_boton").onclick = alerta_click
 document.querySelector("#mi_boton").addEventListener("click", alerta_click);
 ~~~
 
-Mucho más sobre eventos en [^quirksevents]
+Mucho más sobre eventos en [^quirksevents].
 
 ## Orientación a objetos: Los prototipos
+
+### Construyendo objetos
 
 JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
 sino que podemos crear objetos a partir de otros que llamamos *prototipos*. Estos
@@ -273,7 +275,63 @@ var una_cancion = new Cancion("Clocks", "Coldplay");
 una_cancion.reproducir(); // --> "Reproduciendo Clocks de Coldplay"
 ~~~
 
+Mediante la función constructora `Cancion` hemos creado un prototipo vacío, al que
+después hemos añadido el método `reproducir`. Al utilizar el prototipo como plantilla,
+cada objeto que se cree mediante `new Cancion(...)` dispondrá del método. Aun así,
+también podemos añadir otros métodos y atributos a cualquier objeto independientemente
+del prototipo con que se haya creado.
 
+### Visibildad de datos
+
+Otra peculiaridad de la orientación a objetos de JS es la falta de encapsulación. Un
+dato miembro de un objeto, declarado con `this.dato` es visible en cualquier ámbito:
+
+~~~javascript
+var inception = new Cancion("Time", "Hans Zimmer");
+
+// Podemos modificar los datos miembro, e incluso los métodos
+inception.nombre = "Mombasa";
+inception.reproducir = function() {
+    console.log("Banda sonora épica");
+};
+~~~
+
+Una alternativa para ocultar información es utilizar variables en el constructor, de
+forma que solo están visibles en el ámbito de la función constructora. El problema es
+que entonces no estarán visibles para los métodos que declaremos en el prototipo.
+Podemos sin embargo definir *getters* dentro del constructor, y utilizarlos en los métodos:
+
+~~~javascript
+var Cancion = function(nombre, artista) {
+    var name = nombre;
+    var artist = artista;
+
+    this.nombre = function() {
+        return name;
+    }
+
+    this.artista = function() {
+        return artist;
+    }
+}
+
+Cancion.prototype.reproducir = function() {
+    console.log("Reproduciendo " + this.nombre() + " de " + this.artista());
+}
+~~~
+
+Ahora las variables `name` y `artist` no son visibles ni modificables, pero se pueden
+consultar mediante los métodos `nombre()` y `artista()` respectivamente. Esto funciona
+porque aunque la función constructora se termine de ejecutar, las variables declaradas
+no desaparecen, permanecen alcanzables en los métodos *getters*.
+
+Nota
+: La diferencia entre declarar métodos en el prototipo y declararlos en el constructor
+  (con `this.metodo`) es que los del prototipo se definen una vez y se aplican a todos los
+  objetos, mientras que los del constructor se definen para cada objeto creado, lo cual
+  es menos eficiente. Por eso es preferible declarar los métodos en el prototipo.
+
+### Herencia
 
 [^jsannouncement]: [Netscape and Sun announce JavaScript. Press Release](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)
 
