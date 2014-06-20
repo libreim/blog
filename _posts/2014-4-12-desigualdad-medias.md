@@ -193,7 +193,8 @@ Puede verse en el siguiente problema:
 
 **Hallar, entre todos los rectángulos de perímetro 4, aquel con área máxima.**
 
-Llamando `$a,b$` a los lados y `$p$` al perímetro, tenemos:
-`$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \frac{a+b}{2} = \frac{1}{4}p = 1$$`
+Llamando `$a,b$` a los lados y `$p$` al perímetro, aplicamos la desigualdad
+entre las medias geométrica y aritmética:
+`$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \left(\frac{a+b}{2}\right)^2 = \left(\frac{1}{4}p\right)^2 = 1$$`
 Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad 
 entre términos, tenemos `$a=b=1$`.
