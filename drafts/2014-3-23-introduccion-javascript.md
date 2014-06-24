@@ -356,7 +356,6 @@ var Child = function() {
 
 // Usamos el prototipo de la clase padre
 Child.prototype = new Parent();
-
 // ...pero asociándolo al constructor de la clase hija
 Child.prototype.constructor = Child;
 
@@ -381,6 +380,15 @@ como se esperaba, un objeto creado mediante `Child` es instancia de este
 constructor y del padre, `Parent`, y dispone de los métodos de ambos en
 su prototipo.
 
+## Conclusión
+
+En este artículo hemos visto cómo funciona JavaScript y cómo interactúa
+con un sitio web, y hemos estudiado sus posibilidades desde el punto de vista
+de la orientación a objetos. Si queréis saber más sobre el lenguaje y 
+aprender a programar en él, serán muy útiles las referencias a páginas web, y
+os puedo recomendar el libro [^jslibroalarcon], algo anticuado ya pero
+muy completo y conciso.
+
 [^jsannouncement]: [Netscape and Sun announce JavaScript. Press Release](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)
 
 [^mdnjs]: [About JavaScript - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript)
@@ -392,3 +400,7 @@ su prototipo.
 [^jsencapsulation]: [Efficient encapsulation of JavaScript objects](http://aboutcode.net/2011/10/04/efficient-encapsulation-of-javascript-objects.html)
 
 [^jsinheritance]: [Javascript Constructors and Prototypes - Toby Ho](http://tobyho.com/2010/11/22/javascript-constructors-and/)
+
+[^jslibroalarcon]: [JavaScript -
+Revisado y actualizado 2004](http://books.google.es/books?id=IJBXNQAACAAJ), 
+[José Manuel Alarcón](https://twitter.com/jm_alarcon)
