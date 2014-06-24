@@ -255,8 +255,8 @@ Mucho más sobre eventos en [^quirksevents].
 ### Construyendo objetos
 
 JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
-sino que podemos crear objetos a partir de otros que llamamos *prototipos*. Estos
-prototipos están asociados a funciones constructoras. Estas funciones son idénticas a
+sino que podemos crear objetos a partir de otros que llamamos *prototipos*, que están 
+asociados a funciones constructoras. Estas funciones son idénticas a
 cualquier otra, salvo por que no devuelven un valor, y en su lugar obtenemos un objeto
 al utilizarlas con `new`. Veamos un ejemplo:
 
@@ -277,7 +277,7 @@ var una_cancion = new Cancion("Clocks", "Coldplay");
 una_cancion.reproducir(); // --> "Reproduciendo Clocks de Coldplay"
 ~~~
 
-Mediante la función constructora `Cancion` hemos creado un prototipo vacío, al que
+Mediante la función constructora `Cancion` hemos creado un prototipo vacío (en `Cancion.prototype`), al que
 después hemos añadido el método `reproducir`. Al utilizar el prototipo como plantilla,
 cada objeto que se cree mediante `new Cancion(...)` dispondrá del método. Aun así,
 también podemos añadir otros métodos y atributos a cualquier objeto independientemente
