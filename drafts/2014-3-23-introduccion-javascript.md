@@ -401,5 +401,4 @@ muy completo y conciso.
 
 [^jsinheritance]: [Javascript Constructors and Prototypes - Toby Ho](http://tobyho.com/2010/11/22/javascript-constructors-and/)
 
-[^jslibroalarcon]: [JavaScript - Revisado y actualizado 2004](http://books.google.es/books?id=IJBXNQAACAAJ), 
-[José Manuel Alarcón](https://twitter.com/jm_alarcon)
+[^jslibroalarcon]: [JavaScript - Revisado y actualizado 2004](http://books.google.es/books?id=IJBXNQAACAAJ), [José Manuel Alarcón](https://twitter.com/jm_alarcon)
