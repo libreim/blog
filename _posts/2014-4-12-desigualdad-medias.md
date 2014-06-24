@@ -8,22 +8,35 @@ category: matematicas
 
 En varios problemas de optimización se pide
 estudiar el mínimo o máximo de una función de varias variables
-fijando su suma o su producto. El procedimiento estándar es calcular la
-derivada de una función sobre la que se ha aplicado ya la restricción y buscar
-extremos absolutos entre sus puntos críticos o aplicar el método de los
-[multiplicadores de Lagrange](http://es.wikipedia.org/wiki/Multiplicadores_de_Lagrange).
+de las que se conoce su suma o su producto. Un procedimiento habitual es calcular la
+derivada de una función sobre la que se ha aplicado ya la restricción que impone
+la suma o el producto y buscar extremos absolutos entre los puntos críticos. 
+Otro procedimiento común es usar los [multiplicadores de Lagrange](http://es.wikipedia.org/wiki/Multiplicadores_de_Lagrange).
 
-Pero existe otra forma de proceder, en ocasiones más simple. La función puede
-quedar acotada superior o inferiormente por la suma que tenemos condicionada,
-quedando acotada por una constante.
-Al comprobar que la acotación da un caso de igualdad, obtenemos el extremo
+Pero en ocasiones, es más simple usar desigualdades. La función puede
+quedar acotada superior o inferiormente por alguna constante conocida,
+como la suma de variables o el producto.
+Entonces, si existe un caso de igualdad con la acotación, este debe ser el extremo
 absoluto.
 
+En este artículo se expone una de las desigualdades más útiles para acotación
+de funciones de varias variables: la desigualdad de las medias.
 
 
 ## Generalizando la media
 
-### Las medias pitagóricas
+La desigualdad se basa en comparar las distintas formas de calcular una media
+sobre un conjunto de números reales positivos. Cuando se habla de la *media* de un
+conjunto de números, suele referirse a la media aritmética, pero hay varias formas de
+generalizar este concepto de *media*.
+
+Por un lado, hay varias *medias básicas* que funcionan en contextos específicos, como la
+media geométrica en el cálculo de volúmenes o la media armónica en el cálculo de
+velocidades. Por otro lado, las *medias de Hölder* son una generalización que
+contiene a las medias básicas como caso particular.
+
+
+### Generalizaciones básicas
 
 #### La media aritmética
 La **media aritmética**  ( `$\overline{x}$` ) de una serie de valores positivos
@@ -91,7 +104,7 @@ desviaciones respecto a la media.
 
 ### Medias de Hölder
 
-Las medias de Hölder generalizan las medias pitagóricas. [^holdermean]
+Las medias de Hölder generalizan estas medias básicas. [^holdermean]
 La media de Hölder de exponente `$p \in \mathbb{R} \cup \{+\infty, -\infty\}$`, para `$x \in (\mathbb{R}^+)^n$` es de la forma:
 
 [^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
@@ -104,7 +117,7 @@ Tomando límites para definirla cuando sea necesario:
 `$$ M_{+\infty} ({x}) = \lim_{p \to +\infty} M_p(x) $$`
 `$$ M_{-\infty} ({x}) = \lim_{p \to -\infty} M_p(x) $$`
 
-Las medias pitagóricas, el máximo y el mínimo son casos particulares
+Las medias anteriores, así como el máximo y el mínimo son casos particulares
 de las medias de Hölder. Además de los casos triviales, puede demostrarse
 como ejercicio que los casos `$0,+\infty,-\infty$` efectivamente se corresponden
 con la media geométrica, el máximo y el mínimo.  [^gmeanproof]
@@ -120,10 +133,11 @@ Aritmética| `$p=1$`      |`$\frac{x_1 + x_2 + \dots + x_n}{n}$`
 Cuadrática| `$p=2$`      |`$\sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$`
 Máximo    | `$p=\infty$` |`$\max_i{(x_i)}$`
 
-Además, podemos notar que las medias de Hölder para `$p \geq 1$` son normas en 
-`$\mathbb{R}^n$` para el vector de valores absolutos asociado a cada vector de `$\mathbb{R}^n$`.
+Podemos notar que las medias de Hölder para `$p \geq 1$` son normas en 
+`$\mathbb{R}^n$` si se aplican sobre el vector de valores absolutos.
 Las normas asociadas a `$p=1$`, `$p=2$`, `$p=+\infty$` son
-proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. En general:
+proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. 
+En general se puede definir la media de exponente `$p$` como:
 
 `$$ ||x||_p =  M_p(|x|) \sqrt[p]{n} $$`
 
@@ -157,12 +171,17 @@ de [Cauchy-Schwarz](http://es.wikipedia.org/wiki/Desigualdad_de_Cauchy-Schwarz).
 La desigualdad completa queda como:
 `$$ \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}} \leq \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} \leq \sqrt{\frac{x_1^2+x_2^2+\dots+x_n^2}{n}} $$`
 
+### Desigualdad con medias de Hölder
+
 Todavía puede generalizarse más, notando que, fijado un vector 
-`$ x \in (\mathbb{R^+})^n $`, la siguiente función 
-`$ f: \mathbb{R} \to \mathbb{R} $` es creciente:
+`$ x \in (\mathbb{R^+})^n $`, la siguiente función `$ f: \mathbb{R} \to \mathbb{R} $` es creciente:
 `$$ f(a) = \left\{ \begin{matrix} \left(\frac{x_1^a+x_2^a+\dots+x_n^a}{n}\right)^{1/a} & si & a \neq 0 \\ \displaystyle \sqrt[n]{x_1x_2 \dots x_n} & si & a = 0\end{matrix} \right.$$`
 
+Pueden hallarse varias demostraciones de la desigualdad. En particular, puede
+probarse fácilmente desde la desigualdad de Jensen, la misma que hemos usado para
+probar la desigualdad entre medias geométrica y aritmética. [^generalproof]
 
+[^generalproof]: [Demostración de la desigualdad de las medias generalizada](http://planetmath.org/sites/default/files/texpdf/33619.pdf)
 
 ## Cálculo de extremos
 
@@ -174,7 +193,8 @@ Puede verse en el siguiente problema:
 
 **Hallar, entre todos los rectángulos de perímetro 4, aquel con área máxima.**
 
-Llamando `$a,b$` a los lados y `$p$` al perímetro, tenemos:
-`$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \frac{a+b}{2} = \frac{1}{4}p = 1$$`
+Llamando `$a,b$` a los lados y `$p$` al perímetro, aplicamos la desigualdad
+entre las medias geométrica y aritmética:
+`$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \left(\frac{a+b}{2}\right)^2 = \left(\frac{1}{4}p\right)^2 = 1$$`
 Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad 
 entre términos, tenemos `$a=b=1$`.
