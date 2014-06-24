@@ -94,7 +94,7 @@ var un_objeto = {
     una_funcion: function() {
         return Math.random();
     }
-}
+};
 
 // Acceso a datos:
 un_objeto.otro;     // --> 3
@@ -242,7 +242,7 @@ var alerta_click = function() {
     console.log("Has pulsado el botón " + this.id);
 };
 
-document.querySelector("#mi_boton").onclick = alerta_click
+document.querySelector("#mi_boton").onclick = alerta_click;
 
 // Otra forma:
 document.querySelector("#mi_boton").addEventListener("click", alerta_click);
@@ -265,12 +265,12 @@ al utilizarlas con `new`. Veamos un ejemplo:
 var Cancion = function(nombre, artista) {
     this.nombre = nombre;
     this.artista = artista;
-}
+};
 
 // Definimos un método en el prototipo
 Cancion.prototype.reproducir = function() {
     console.log("Reproduciendo " + this.nombre + " de " + this.artista);
-}
+};
 
 // Creamos un objeto con el constructor
 var una_cancion = new Cancion("Clocks", "Coldplay");
@@ -315,11 +315,11 @@ var Cancion = function(nombre, artista) {
     this.artista = function() {
         return artist;
     }
-}
+};
 
 Cancion.prototype.reproducir = function() {
     console.log("Reproduciendo " + this.nombre() + " de " + this.artista());
-}
+};
 ~~~
 
 Ahora las variables `name` y `artist` no son visibles ni modificables fuera del constructor, pero se pueden
@@ -343,16 +343,16 @@ cuyo prototipo asociado sea una instancia de uno ya existente[^jsinheritance]:
 ~~~javascript
 var Parent = function() {
     console.log("Creando objeto de la clase padre");
-}
+};
 Parent.prototype.metodo = function() {
     return "Este método se heredará";
-}
+};
 
 
 // Constructor nuevo
 var Child = function() {
     console.log("Este es el constructor de la clase hija");
-}
+};
 
 // Usamos el prototipo de la clase padre
 Child.prototype = new Parent();
@@ -362,7 +362,7 @@ Child.prototype.constructor = Child;
 // Podemos añadir métodos
 Child.prototype.nuevo_metodo = function() {
     return "Solo en la clase hija";
-}
+};
 
 var partest = new Parent();
 partest instanceof Parent; // --> true
