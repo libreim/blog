@@ -256,7 +256,9 @@ Mucho más sobre eventos en [^quirksevents].
 
 JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
 sino que podemos crear objetos a partir de otros que llamamos *prototipos*. Estos
-prototipos están asociados a funciones constructoras. Veamos un ejemplo:
+prototipos están asociados a funciones constructoras. Estas funciones son idénticas a
+cualquier otra, salvo por que no devuelven un valor, y en su lugar obtenemos un objeto
+al utilizarlas con `new`. Veamos un ejemplo:
 
 ~~~javascript
 // El constructor
@@ -320,18 +322,64 @@ Cancion.prototype.reproducir = function() {
 }
 ~~~
 
-Ahora las variables `name` y `artist` no son visibles ni modificables, pero se pueden
+Ahora las variables `name` y `artist` no son visibles ni modificables fuera del constructor, pero se pueden
 consultar mediante los métodos `nombre()` y `artista()` respectivamente. Esto funciona
 porque aunque la función constructora se termine de ejecutar, las variables declaradas
-no desaparecen, permanecen alcanzables en los métodos *getters*.
+no desaparecen, y permanecen disponibles en los métodos *getters*.
 
 Nota
 : La diferencia entre declarar métodos en el prototipo y declararlos en el constructor
   (con `this.metodo`) es que los del prototipo se definen una vez y se aplican a todos los
   objetos, mientras que los del constructor se definen para cada objeto creado, lo cual
-  es menos eficiente. Por eso es preferible declarar los métodos en el prototipo.
+  es menos eficiente. Por eso es preferible declarar los métodos en el prototipo[^jsencapsulation].
 
 ### Herencia
+
+Como era de esperar, la herencia en JavaScript también es bastante particular. No existe
+una forma directa de hacer que una función "herede" de otra, por lo que no podemos crear
+constructores a partir de constructores anteriores. Sin embargo, podemos escribir constructores
+cuyo prototipo asociado sea una instancia de uno ya existente[^jsinheritance]:
+
+~~~javascript
+var Parent = function() {
+    console.log("Creando objeto de la clase padre");
+}
+Parent.prototype.metodo = function() {
+    return "Este método se heredará";
+}
+
+
+// Constructor nuevo
+var Child = function() {
+    console.log("Este es el constructor de la clase hija");
+}
+
+// Usamos el prototipo de la clase padre
+Child.prototype = new Parent();
+
+// ...pero asociándolo al constructor de la clase hija
+Child.prototype.constructor = Child;
+
+// Podemos añadir métodos
+Child.prototype.nuevo_metodo = function() {
+    return "Solo en la clase hija";
+}
+
+var partest = new Parent();
+partest instanceof Parent; // --> true
+partest instanceof Child; // --> false
+
+var chitest = new Child();
+chitest instanceof Parent; // --> true
+chitest instanceof Child; // --> true
+~~~
+
+En este ejemplo hemos creado dos constructores, uno con prototipo
+propio, y otro al que asociamos un objeto creado a partir del primer
+prototipo. Comprobamos mediante `instanceof` que la herencia funciona
+como se esperaba, un objeto creado mediante `Child` es instancia de este
+constructor y del padre, `Parent`, y dispone de los métodos de ambos en
+su prototipo.
 
 [^jsannouncement]: [Netscape and Sun announce JavaScript. Press Release](https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html)
 
@@ -340,3 +388,7 @@ Nota
 [^jsidentifiers]: [Valid JavaScript variable names - Mathias Bynens](http://mathiasbynens.be/notes/javascript-identifiers)
 
 [^quirksevents]: [Introduction to Events - Quirks Mode](http://www.quirksmode.org/js/introevents.html)
+
+[^jsencapsulation]: [Efficient encapsulation of JavaScript objects](http://aboutcode.net/2011/10/04/efficient-encapsulation-of-javascript-objects.html)
+
+[^jsinheritance]: [Javascript Constructors and Prototypes - Toby Ho](http://tobyho.com/2010/11/22/javascript-constructors-and/)
