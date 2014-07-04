@@ -25,7 +25,7 @@ header {
     color: #EEE;
 }
 
-header a {
+header a:first-child {
 	display: block;
     margin: 0 auto;
     font-size: .85rem;
@@ -35,7 +35,7 @@ header a {
 
 
 /**** Navigation ****/
-nav.links {
+nav.navi {
 	background: #EBEBEB;
 }
 nav.links div {
