@@ -1,8 +1,10 @@
 <header>
 	<a href="{{ site.baseurl }}">{{ site.name }}</a>
 	<nav class="sites links">
-		<a href="{{ site.baseurl }}" class="l-blog">Blog</a>
-		<a href="/foro" class="l-foro">Foro</a>
+		<div>
+			<a href="{{ site.baseurl }}" class="l-blog">Blog</a>
+			<a href="/foro" class="l-foro">Foro</a>
+		</div>
 	</nav>
 </header>
 

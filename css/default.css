@@ -38,6 +38,9 @@ header a:first-child {
 nav.navi {
 	background: #EBEBEB;
 }
+nav.navi a {
+	color: #333;
+}
 nav.links div {
 	margin: 0 auto;
 	padding: 0;
@@ -48,7 +51,6 @@ nav.links a {
 	padding: 1.2% 1rem;
 	display: inline-block;
 	text-decoration: none;
-	color: #333;
 }
 
 /**** Posts ****/
