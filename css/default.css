@@ -167,6 +167,9 @@ ul.post-list li {
 ul.post-list li .author {
 	font-size: 66%;
 }
+ul.post-list li .author:after {
+	content:"";
+}
 
 /**** Pagination ****/
 nav.pagination .page-number {
