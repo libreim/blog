@@ -12,7 +12,7 @@ article, nav.pagination, footer>div {
 }
 
 @media screen and (min-width: 800px) {
-	header a, article, nav.pagination, nav.links div, footer>div {
+	header>a, article, nav.pagination, nav.links div, footer>div {
 		max-width: 55rem;
 		min-width: 20rem;
 	}
@@ -25,7 +25,7 @@ header {
     color: #EEE;
 }
 
-header a:first-child {
+header>a {
 	display: block;
     margin: 0 auto;
     font-size: .85rem;
