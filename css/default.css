@@ -21,16 +21,16 @@ article, nav.pagination, footer>div {
 /**** Header ****/
 header {
     background: #333;
-    padding: 0.3rem 1rem;
+    padding-top: 0.3rem;
     color: #EEE;
 }
 
 header>a {
 	display: block;
-    margin: 0 auto;
-    font-size: .85rem;
-    font-weight: normal;
-    text-decoration: none;
+	margin: 0 auto 0.5rem;
+	font-size: .85rem;
+	font-weight: normal;
+	text-decoration: none;
 }
 
 
@@ -51,6 +51,10 @@ nav.links a {
 	padding: 1.2% 1rem;
 	display: inline-block;
 	text-decoration: none;
+}
+nav.sites a.l-blog {
+	background: #ebebeb;
+	color: #333;
 }
 
 /**** Posts ****/
