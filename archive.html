@@ -7,7 +7,9 @@ permalink: /archive/
 <style type="text/css">.l-arc { background: #fff; }</style>
 <article>
 	<h2>Archivo</h2>
-	{% for post in site.posts %}
-		<a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
-	{% endfor %}
+	<ul class="post-list">
+		{% for post in site.posts %}
+			<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
 </article>
