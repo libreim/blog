@@ -17,28 +17,32 @@ permalink: /categories/
     <article>
         <h3 id="{{ category | first }}">{{ category | first }}</h3>
         {% assign posts = category | last %}
-        {% for post in posts %}
-            <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-            <span class="author">por 
-                {% assign authorCount = post.authors | size %}
-                {% if authorCount == 0 %}
-                    Sin autor
-                {% else %}
-                    {% for author in post.authors %}
-                        {% if forloop.first %}
-                            {% assign authdata = site.authors[author] %}
-                            <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-                        {% elsif forloop.last %}
-                            {% assign authdata = site.authors[author] %}
-                            y <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+        <ul class="post-list">
+            {% for post in posts %}
+                <li>
+                    <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+                    <span class="author">
+                        {% assign authorCount = post.authors | size %}
+                        {% if authorCount == 0 %}
+                            Sin autor
                         {% else %}
-                            {% assign authdata = site.authors[author] %}
-                            , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                            por
+                            {% for author in post.authors %}
+                                {% if forloop.first %}
+                                    {% assign authdata = site.authors[author] %}
+                                    <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                                {% elsif forloop.last %}
+                                    {% assign authdata = site.authors[author] %}
+                                    y <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                                {% else %}
+                                    {% assign authdata = site.authors[author] %}
+                                    , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
-                    {% endfor %}
-                {% endif %}
-            </span>
-            <span class="date">{{ post.date | date: "%e-%m-%Y" }}</span><br />
-        {% endfor %}
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
     </article>
 {% endfor %}

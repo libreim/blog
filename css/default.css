@@ -160,6 +160,14 @@ article .share a img {
 	vertical-align: middle;
 }
 
+/**** Categories page ****/
+ul.post-list li {
+	font-size: 150%;
+}
+ul.post-list li .author {
+	font-size: 100%;
+}
+
 /**** Pagination ****/
 nav.pagination .page-number {
 	color: #666;
