@@ -28,6 +28,7 @@ header {
 header>a {
 	display: block;
 	margin: 0 auto 0.5rem;
+	width: 92%;
 	font-size: .85rem;
 	font-weight: normal;
 	text-decoration: none;
