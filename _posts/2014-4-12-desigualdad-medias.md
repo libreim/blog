@@ -185,7 +185,14 @@ probar la desigualdad entre medias geométrica y aritmética. [^generalproof]
 
 ## Cálculo de extremos
 
-### Maximizar área
+Como ejemplos, tomamos dos ejercicios de los apuntes de [Cálculo diferencial en
+una y varias variables](http://www.ugr.es/~fjperez/textos/Calculo_Diferencial_Varias_Variables.pdf), 
+de Francisco Javier Pérez. Ambos se refieren a hallar extremos en el volumen de
+figuras geométricas. Como la desigualdad de las medias llega a la igualdad cuando
+todos los términos son iguales, las soluciones suelen ser aquellas que igualan lados
+o dotan de algún tipo de simetría a la figura.
+
+### Maximizando el área
 
 La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, 
 que permite hallar el extremo absoluto de la suma dado el producto o viceversa. 
@@ -198,3 +205,21 @@ entre las medias geométrica y aritmética:
 `$$ A = ab = \left(\sqrt{ab}\right)^2 \leq \left(\frac{a+b}{2}\right)^2 = \left(\frac{1}{4}p\right)^2 = 1$$`
 Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad 
 entre términos, tenemos `$a=b=1$`.
+
+### Minimizando el volumen
+**Trazar un plano que pase por el punto `$(1,2,3)$` y que forme con los ejes
+coordenados un tetraedro de volumen mínimo.**
+
+El plano podrá ser escrito como:
+`$$ \frac{x}{a} + \frac{y}{b} + \frac{z}{c} - 1 = 0$$`
+Y para que contenga al punto pedido, deberá cumplirse que:
+`$$ \frac{1}{a} + \frac{2}{b} + \frac{3}{c} - 1 = 0 $$`
+
+Como el plano cortará a los ejes en los puntos `$(a,0,0)$`, `$(0,b,0)$` y `$(0,0,c)$`,
+el área del tetraedro formado será `$V=\frac{1}{3}\left(\frac{1}{2}ab\right)c$`.
+La acotaremos usando desigualdad entre las medias geométrica y armónica:
+`$$ V = a\frac{b}{2}\frac{c}{3} = \left( \sqrt[3]{a\frac{b}{2}\frac{c}{3}} \right)^3 \geq \left( \frac{3}{a + \frac{b}{2} + \frac{c}{3}} \right)^3 = 27 $$`
+
+Dándose el caso de igualdad con la igualdad entre elementos, es decir:
+`$$ a = \frac{b}{2} = \frac{c}{3} $$`
+Luego `$a=3, b=6, c=9$`.
