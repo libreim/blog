@@ -1,6 +1,6 @@
 <article>
-    <a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
-    <p><span class="author">por 
+    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <p><span class="author">por
         {% assign authorCount = post.authors | size %}
         {% if authorCount == 0 %}
             Sin autor

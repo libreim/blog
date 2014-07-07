@@ -6,7 +6,7 @@ permalink: /categories/
 
 <style type="text/css">.l-cat { background: #fff; }</style>
 <article>
-    <h3>Lista de categorías</h3>
+    <h2>Lista de categorías</h2>
     <ul class="categories">
         {% for category in site.categories %}
             <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
@@ -15,7 +15,7 @@ permalink: /categories/
 </article>
 {% for category in site.categories %}
     <article>
-        <h3 id="{{ category | first }}">{{ category | first }}</h3>
+        <h2 id="{{ category | first }}">{{ category | first }}</h2>
         {% assign posts = category | last %}
         <ul class="post-list">
             {% for post in posts %}

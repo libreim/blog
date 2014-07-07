@@ -60,8 +60,15 @@ nav.sites a.l-blog {
 
 /**** Posts ****/
 h1 {
-	font-size: 240%;
+	margin: 1em 0 0.5em;
+	font-size: 280%;
+	font-weight: 200;
 	letter-spacing: -0.1rem;
+}
+
+h1 a {
+	display: block;
+	text-decoration: none;
 }
 
 h1, h2 {
@@ -88,14 +95,6 @@ h4 {
 	font-size: 110%;
 }
 
-a {
-	color: inherit;
-}
-
-dl dt {
-	font-weight: bold;
-}
-
 .author, .date {
 	color: #666;
 	font-style: italic;
@@ -104,10 +103,20 @@ dl dt {
 	content: " — ";
 }
 
-code.hljs {
+a {
+	color: inherit;
+}
+
+dl dt {
+	font-weight: bold;
+}
+
+dl, code.hljs {
 	background: #f6f6f6;
 	border: 1px solid #d0d0d0;
 	overflow-x: auto;
+	margin: 0 1.5%;
+	padding: 0.4em 1.5%;
 }
 code.has-jax {
 	font: inherit;
