@@ -111,6 +111,10 @@ dl dt {
 	font-weight: bold;
 }
 
+dl dd {
+	margin: 0.4em 0;
+}
+
 dl, code.hljs {
 	background: #f6f6f6;
 	border: 1px solid #d0d0d0;
