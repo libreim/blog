@@ -35,7 +35,8 @@ Algunas aclaraciones:
      punto, aunque si tiene varias frases se pueden separar por
      puntos. Por ejemplo, "*Introducción a Javascript. Programación
      con prototipos*".
- * El autor es el identificador que hayáis añadido a `config.yml`.
+ * El autor es el identificador que hayáis añadido a 
+ [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml).
  Si aún no tenéis un identificador, añadidlo.
  * En `category` solo puede haber una categoría. Debe ser más genérica
  que el tema que trate el post, pero no tanto como *informática*. Se
@@ -48,8 +49,9 @@ permanente del post, así que no lo hagais largo (en general debe
     guiones y no por mayúsculas. No introduzcáis símbolos ni acentos
     (números sí son válidos).
 
-> **Nota**: Es importante que la codificación del archivo sea *UTF-8
-> sin BOM*. Si escribís en Linux la codificación *UTF-8* bastará.
+Nota
+: Es importante que la codificación del archivo sea *UTF-8
+  sin BOM*. Si escribís en Linux la codificación *UTF-8* bastará.
 
 ## Contenido del post
 
@@ -61,10 +63,11 @@ o [StackEdit](https://stackedit.io/)) mejor que mejor, así no hay
 problemas de formato tampoco. Pero no os paséis con el formato. Reservad
 la negrita para cosas muy importantes, nunca destaquéis párrafos enteros.
 
-> **Nota**: Hay algunas diferencias entre el intérprete de Markdown del
-> blog y el de Atom/Github. En general, el del blog es más estricto con las
-> líneas en blanco. Añadid siempre líneas en blanco para separar elementos
-> y párrafos de cualquier otra cosa (listas, código, etc.).
+Nota
+: Hay algunas diferencias entre el intérprete de Markdown del
+  blog y el de Atom/Github. En general, el del blog es más estricto con las
+  líneas en blanco. Añadid siempre líneas en blanco para separar elementos
+  y párrafos de cualquier otra cosa (listas, código, etc.).
 
 #### Teoremas, definiciones
 Usad la siguiente notación para denotar teoremas, lemas, definiciones y
@@ -91,10 +94,11 @@ Kramdown incluye una sintaxis específica para esta tarea[^kram]
 [^kram]: [Kramdown Syntax - Footnotes](http://kramdown.gettalong.org/syntax.html#footnotes)
 ~~~
 
-> **Nota**: ¡Usad un identificador suficientemente descriptivo para la referencia!
-> Jekyll no distingue entre referencias de posts distintos por lo que
-> si dos referencias tienen el mismo identificador se generarán enlaces que
-> llevarán a una de ellas nada más. 
+Nota
+: ¡Usad un identificador suficientemente descriptivo para la referencia!
+  Jekyll no distingue entre referencias de posts distintos por lo que
+  si dos referencias tienen el mismo identificador se generarán enlaces que
+  llevarán a una de ellas nada más. 
 
 En general trataremos de seguir el siguiente formato para las referencias
 de libros:
@@ -127,8 +131,9 @@ líneas horizontales (`* * *`) ni otro tipo de marcas. Si véis que la
 estructura de los posts no es suficientemente visible, mandadme un
 mensaje y mejoro el estilo de los títulos de sección.
 
-> **Nota**: El procesador de Markdown del blog requiere una línea en
-> blanco antes de cada título.
+Nota
+: El procesador de Markdown del blog requiere una línea en
+  blanco antes de cada título.
 
 Ejemplos:
 
