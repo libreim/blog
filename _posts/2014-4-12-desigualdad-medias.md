@@ -104,7 +104,7 @@ La media de Hölder de exponente `$p \in \mathbb{R} \cup \{+\infty, -\infty\}$`,
 
 [^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
-`$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right) $$`
+`$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right)^{\frac{1}{p}} $$`
 
 Tomando límites para definirla cuando sea necesario:
 
