@@ -82,12 +82,7 @@ Además, en un acorde mayor, la frecuencia de nota intermedia es la media armón
 otras dos notas que componen el acorde. Por ejemplo, el en el acorde de La Mayor
 $$\mathtt{La-Do\#-Mi}$$:
 
-Nota |  Frecuencia
------|:---------:
-La   | 440Hz
-Do#  | 528Hz
-Mi   | 660Hz
-
+`$$ \begin{array}{l|c} \text{Nota} & \text{Frecuencia} \\ \hline \text{La} & \mathtt{440Hz} \\ \text{Do#} & \mathtt{528Hz} \\ \text{Mi} & \mathtt{660Hz} \\ \end{array} $$`
 
 #### La media cuadrática
 La **media cuadrática** es la raíz cuadrada de la media aritmética de los cuadrados
@@ -109,7 +104,7 @@ La media de Hölder de exponente $$p \in \mathbb{R} \cup \{+\infty, -\infty\}$$,
 
 [^holdermean]: [Medias de Hölder](http://en.wikipedia.org/wiki/Generalized_mean)
 
-$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right) $$
+$$ M_p ({x}) = \left(\frac{1}{n}\sum_{i=1}^n x_i^p \right)^{\frac{1}{p}} $$
 
 Tomando límites para definirla cuando sea necesario:
 
@@ -126,14 +121,18 @@ con la media geométrica, el máximo y el mínimo.  [^gmeanproof]
 
 [^gmeanproof]: [Derivación de la media geométrica como media de Hölder](http://planetmath.org/sites/default/files/texpdf/35741.pdf)
 
-Media     |  Exponente   | Expresión
-----------|:------------:|:----------:
-Mínimo    | $$p=-\infty$$|$$\min_i{(x_i)}$$
-Armónica  | $$p=-1$$     |$$\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}}$$
-Geométrica| $$p=0$$      |$$\sqrt[n]{x_1x_2 \dots x_n}$$
-Aritmética| $$p=1$$      |$$\frac{x_1 + x_2 + \dots + x_n}{n}$$
-Cuadrática| $$p=2$$      |$$\sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$$
-Máximo    | $$p=\infty$$ |$$\max_i{(x_i)}$$
+$$
+\begin{array}{l|c|c}
+\mathbf{Media} & \mathbf{Exponente} & \mathbf{Expresión} \\[1.5em]
+\hline
+\text{Mínimo} & p=-\infty & \min_i{(x_i)} \\[1em]
+\text{Armónica} & p=-1 & \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}} \\[1em]
+\text{Geométrica} & p=0 &  \sqrt[n]{x_1x_2 \dots x_n} \\[1.5em]
+\text{Aritmética} & p=1 & \frac{x_1 + x_2 + \dots + x_n}{n} \\[1em]
+\text{Cuadrática} & p=2 & \sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}\\[1em]
+\text{Máximo} & p=\infty &  \max_i{(x_i)} \\[1em]
+\end{array}
+$$
 
 Podemos notar que las medias de Hölder para $$p \geq 1$$ son normas en 
 $$\mathbb{R}^n$$ si se aplican sobre el vector de valores absolutos.
