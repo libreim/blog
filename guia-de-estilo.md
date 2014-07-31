@@ -203,3 +203,6 @@ $$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$
 Nota
 : Es importante que haya una línea en blanco encima y debajo de las ecuaciones
   centradas, de forma que se construya un párrafo nuevo único para la ecuación.
+
+  Además, al parecer kramdown tiene problemas con el carácter `|` y debemos 
+  sustituirlo por `\vert`.

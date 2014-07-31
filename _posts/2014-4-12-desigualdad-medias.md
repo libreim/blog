@@ -140,7 +140,7 @@ Las normas asociadas a $$p=1$$, $$p=2$$, $$p=+\infty$$ son
 proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. 
 En general se puede definir la media de exponente $$p$$ como:
 
-$$ ||x||_p =  M_p(|x|) \sqrt[p]{n} $$
+$$ \vert\vert x\vert\vert_p =  M_p(\vert x\vert) \sqrt[p]{n} $$
 
 ## La desigualdad
 
