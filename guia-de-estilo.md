@@ -182,21 +182,27 @@ end
 ~~~
 
 ### Las matemáticas
-Para incrustar ecuaciones en `$\LaTeX$`, hay que hacerlo entre tildes
-invertidas y dólares, dos dólares para las ecuaciones
-en modo *display*. Ejemplos:
+Para incrustar ecuaciones en $$\LaTeX$$, hay que hacerlo entre dobles dólares 
+tanto para las ecuaciones en línea como centradas (se diferencian según vayan 
+en un párrafo de texto o no). Ejemplos:
 
 ~~~markdown
-`$E = mc^2$`
+...genera $$E = mc^2$$, ...
 ~~~
 
-genera `$E = mc^2$`, y
+genera $$E = mc^2$$, y
 
 ~~~markdown
-`$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$`
+
+$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$
+
 ~~~
 
-`$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$`
+$$ \sqrt[n]{x_1x_2 \dots x_n} \leq \frac{x_1+x_2+\dots+x_n}{n} $$
 
-Las tildes invertidas nos evitan problemas con los caracteres de
-formato de Markdown (como `_`, `*`, etc.).
+Nota
+: Es importante que haya una línea en blanco encima y debajo de las ecuaciones
+  centradas, de forma que se construya un párrafo nuevo único para la ecuación.
+
+  Además, al parecer kramdown tiene problemas con el carácter `|` y debemos 
+  sustituirlo por `\vert`.
