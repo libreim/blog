@@ -82,7 +82,15 @@ Además, en un acorde mayor, la frecuencia de nota intermedia es la media armón
 otras dos notas que componen el acorde. Por ejemplo, el en el acorde de La Mayor
 $$\mathtt{La-Do\#-Mi}$$:
 
-$$\begin{array}{l|c} \text{Nota} & \text{Frecuencia} \\ \hline \text{La} & \mathtt{440Hz} \\ \text{Do#} & \mathtt{528Hz} \\ \text{Mi} & \mathtt{660Hz} \\ \end{array}$$
+$$
+\begin{array}{l|c}
+\text{Nota} & \text{Frecuencia} \\
+\hline
+\text{La} & \mathtt{440Hz} \\
+\text{Do#} & \mathtt{528Hz} \\
+\text{Mi} & \mathtt{660Hz} \\
+\end{array}
+$$
 
 #### La media cuadrática
 La **media cuadrática** es la raíz cuadrada de la media aritmética de los cuadrados
