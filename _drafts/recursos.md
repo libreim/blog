@@ -21,6 +21,9 @@
 #### Ecuaciones diferenciales
 [Ecuaciones diferenciales. Transformadas de Fourier y de Laplace - Francisco Javier Pérez](http://www.ugr.es/~fjperez/textos/eedd_laplace_fourier.pdf)
 
+#### Teoría de la medida
+[An introduction to measure theory - Terence Tao](http://terrytao.files.wordpress.com/2011/01/measure-book1.pdf) - *Libro de introducción a la teoría de la medida*
+
 ## Geometría
 #### Guías docentes
 [Guía docente de Geometría I - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/1semestre/geometriai/!)  
@@ -35,6 +38,9 @@
 #### Guías docentes
 [Guía docente de Topología I - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/segundo/1semestre/topologiai/!)  
 [Guía docente de Topología II - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/cuarto/1semestre/topologiaii/!)  
+
+#### Topología
+**Topology** - James Munkres - *Libro de introducción a la topología conjuntista y algebraica*
 
 ## Álgebra y lógica
 #### Guías docentes
@@ -76,6 +82,8 @@
 [Guía docente de Modelos avanzados de computación - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/cuarto/2semestre/modelosavanzadosdecomputaciongim1415/!)  
 
 ## Programación
+[Free programming books - Victor Felder](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - *Recopilación de enlaces a libros sobre programación*  
+
 #### Guías docentes
 [Guía docente de Fundamentos de programación - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/1semestre/fundamentosdeprogramaciongim1415/!)  
 [Guía docente de Metodología de la programación - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/2semestre/metodologiadelaprogramacion/!)  
@@ -110,9 +118,15 @@
 [Guía docente de Bases de datos distribuidas - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/cuarto/2semestre/basesdedatosdistribuidasgim1415/!)  
 [Guía docente de Informática gráfica - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/cuarto/1semestre/informaticagraficagim1415/!)  
 
+#### Algorítmica teórica
+**Fundamentals of algorithmics** - G. Brassard, P. Bratley - *Libro de introducción a la algorítmica*
+
 ## Arquitectura
 #### Guías docentes
 [Guía docente de Fundamentos físicos y tecnológicos - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/1semestre/fundamentosfisicosytecnologicosgim1415/!)  
 [Guía docente de Estructura de computadores - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/segundo/1semestre/estructuradecomputadores/!)  
 [Guía docente de Arquitectura de computadores - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/segundo/2semestre/arquitecturadecomputadores/!)  
 [Guía docente de Sistemas concurrentes y distribuidos - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/tercero/2semestre/sistemasconcurrentesydistribuidosgim1415/!)  
+
+#### Arquitectura
+**Arquitectura de computadores** - J. Ortega, M. Anguita, A. Prieto
