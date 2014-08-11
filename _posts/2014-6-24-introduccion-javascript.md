@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: Introducción a JavaScript. Programación con prototipos
 authors:
  - fdavidcl
@@ -254,7 +254,7 @@ Mucho más sobre eventos en [^quirksevents].
 ### Construyendo objetos
 
 JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
-sino que podemos crear objetos a partir de otros que llamamos *prototipos*, que están 
+sino que podemos crear objetos a partir de otros que llamamos *prototipos*, que están
 asociados a funciones constructoras. Estas funciones son idénticas a
 cualquier otra, salvo por que no devuelven un valor, y en su lugar obtenemos un objeto
 al utilizarlas con `new`. Veamos un ejemplo:
@@ -383,7 +383,7 @@ su prototipo.
 
 En este artículo hemos visto cómo funciona JavaScript y cómo interactúa
 con un sitio web, y hemos estudiado sus posibilidades desde el punto de vista
-de la orientación a objetos. Si queréis saber más sobre el lenguaje y 
+de la orientación a objetos. Si queréis saber más sobre el lenguaje y
 aprender a programar en él, serán muy útiles las referencias a páginas web, y
 os puedo recomendar el libro [^jslibroalarcon], algo anticuado ya pero
 muy completo y conciso.

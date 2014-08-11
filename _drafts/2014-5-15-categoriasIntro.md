@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: Introducción a la teoría de categorías
 authors:
   - mario
@@ -25,11 +25,11 @@ Y debe cumplir las siguientes propiedades:
         $$ Fig. 3 $$
 
 
-    
+
 Diagramas conmutativos
 ---
 En teoría de cateforías usaremos diagramas conmutativos para expresar relaciones entre morfismos y objetos. Un morfismo entre dos conjuntos $f \in Hom(A,B)$ lo notaremos por:
-$$ \require{AMScd} \begin{CD} A @>{f}>> B \end{CD}$$   
+$$ \require{AMScd} \begin{CD} A @>{f}>> B \end{CD}$$
 
 Y un diagrama de morfismos será conmutativo cuando todas las formas de recorrerlo componiendo los morfismos den lugar al mismo morfismo composición. Entre las propiedades se pueden ver ejemplos.
 

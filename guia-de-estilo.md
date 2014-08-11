@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: Guía de estilo
 authors:
  - fdavidcl
@@ -17,7 +17,7 @@ Markdown sino por Jekyll, para poder incrustar el post en la página
 web correcta y añadir los datos necesarios:
 
     ---
-    layout: chapter
+    layout: post
     title: Guía de estilo
     authors:
      - fdavidcl
@@ -26,7 +26,7 @@ web correcta y añadir los datos necesarios:
 
 Algunas aclaraciones:
 
- * El `layout` debe ser siempre `chapter`. Existen otros layouts
+ * El `layout` debe ser siempre `post`. Existen otros layouts
  para otras páginas, pero no para los posts.
  * El título debe ser conciso y son preferibles los sustantivos a
  los verbos (por ejemplo, mejor "*Introducción a Javascript*" que
@@ -35,7 +35,7 @@ Algunas aclaraciones:
      punto, aunque si tiene varias frases se pueden separar por
      puntos. Por ejemplo, "*Introducción a Javascript. Programación
      con prototipos*".
- * El autor es el identificador que hayáis añadido a 
+ * El autor es el identificador que hayáis añadido a
  [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml).
  Si aún no tenéis un identificador, añadidlo.
  * En `category` solo puede haber una categoría. Debe ser más genérica
@@ -98,7 +98,7 @@ Nota
 : ¡Usad un identificador suficientemente descriptivo para la referencia!
   Jekyll no distingue entre referencias de posts distintos por lo que
   si dos referencias tienen el mismo identificador se generarán enlaces que
-  llevarán a una de ellas nada más. 
+  llevarán a una de ellas nada más.
 
 En general trataremos de seguir el siguiente formato para las referencias
 de libros:
@@ -182,8 +182,8 @@ end
 ~~~
 
 ### Las matemáticas
-Para incrustar ecuaciones en $$\LaTeX$$, hay que hacerlo entre dobles dólares 
-tanto para las ecuaciones en línea como centradas (se diferencian según vayan 
+Para incrustar ecuaciones en $$\LaTeX$$, hay que hacerlo entre dobles dólares
+tanto para las ecuaciones en línea como centradas (se diferencian según vayan
 en un párrafo de texto o no). Ejemplos:
 
 ~~~markdown
@@ -204,5 +204,5 @@ Nota
 : Es importante que haya una línea en blanco encima y debajo de las ecuaciones
   centradas, de forma que se construya un párrafo nuevo único para la ecuación.
 
-  Además, al parecer kramdown tiene problemas con el carácter `|` y debemos 
+  Además, al parecer kramdown tiene problemas con el carácter `|` y debemos
   sustituirlo por `\vert`.

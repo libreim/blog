@@ -1,15 +1,13 @@
 ---
 title: Archivo
-layout: default
+layout: resource
 permalink: /archive/
 ---
 
 <style type="text/css">.l-arc { background: #fff; }</style>
-<article>
-	<h2>Archivo</h2>
-	<ul class="post-list">
-		{% for post in site.posts %}
-			<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-	</ul>
-</article>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>

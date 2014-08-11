@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: Dimensión de fractales
 authors:
   - 

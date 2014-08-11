@@ -17,8 +17,13 @@ permalink: /:year/:month/:day/:title
 paginate: 4
 paginate_path: /p/:num
 
-gems:
-  - jekyll-mentions
+collections:
+  math_resources:
+    output: true
+    permalink: /resources/m/:path/
+  cs_resources:
+    output: true
+    permalink: /resources/cs/:path/
 
 
 # Autores

@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: La conjetura de Goldbach
 authors:
   - oxcar
