@@ -16,7 +16,7 @@ layout: resource
 [The GNU C reference manual - www.gnu.org](http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html) - *Referencia del lenguaje C*
 
 ## Ruby
-[Programming Ruby - ruby-doc.com](http://ruby-doc.com/docs/ProgrammingRuby/) - *Tutorial y referencia del leguaje Ruby*
+[Programming Ruby - ruby-doc.com](http://ruby-doc.com/docs/ProgrammingRuby/) - *Tutorial y referencia del lenguaje Ruby*
 
 ## Haskell
 [Learn you a Haskell for great good - learnyouahaskell.com](http://learnyouahaskell.com/chapters) - *Tutorial de introducción a Haskell*

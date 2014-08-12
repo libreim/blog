@@ -6,18 +6,17 @@ permalink: /resources/
 
 <style type="text/css">.l-res { background: #fff; }</style>
 
+En esta sección encontrarás listas de enlaces y bibliografías útiles para estudiar
+y conocer cada una de las ramas de estudio del Doble Grado.
+
 ## Matemáticas
 
-<ul>
 {% for resource in site.math_resources %}
-    <li><a href="{{ site.baseurl }}{{ resource.url }}">{{ resource.title }}</a></li>
+  [{{ resource.title }}]({{ site.baseurl }}{{ resource.url }})
 {% endfor %}
-</ul>
 
 ## Informática
 
-<ul>
 {% for resource in site.cs_resources %}
-    <li><a href="{{ site.baseurl }}{{ resource.url }}">{{ resource.title }}</a></li>
+  [{{ resource.title }}]({{ site.baseurl }}{{ resource.url }})
 {% endfor %}
-</ul>

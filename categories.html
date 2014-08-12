@@ -5,44 +5,23 @@ permalink: /categories/
 ---
 
 <style type="text/css">.l-cat { background: #fff; }</style>
+
 <article>
     <h1>Categorías</h1>
-    <ul class="categories">
+    <h4>Lista de categorías</h4>
+    <ul>
         {% for category in site.categories %}
             <li><a href="#{{ category | first }}">{{ category | first }}</a></li>
         {% endfor %}
     </ul>
 </article>
+
 {% for category in site.categories %}
     <article>
         <h2 id="{{ category | first }}">{{ category | first }}</h2>
         {% assign posts = category | last %}
-        <ul class="post-list">
-            {% for post in posts %}
-                <li>
-                    <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
-                    <span class="author">
-                        {% assign authorCount = post.authors | size %}
-                        {% if authorCount == 0 %}
-                            Sin autor
-                        {% else %}
-                            por
-                            {% for author in post.authors %}
-                                {% if forloop.first %}
-                                    {% assign authdata = site.authors[author] %}
-                                    <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-                                {% elsif forloop.last %}
-                                    {% assign authdata = site.authors[author] %}
-                                    y <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-                                {% else %}
-                                    {% assign authdata = site.authors[author] %}
-                                    , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    </span>
-                </li>
-            {% endfor %}
-        </ul>
+        {% for post in posts %}
+            {% include list_post.ext %}
+        {% endfor %}
     </article>
 {% endfor %}

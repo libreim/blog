@@ -5,11 +5,4 @@ layout: default
 <article>
     <h1>{{ page.title }}</h1>
     {{ content }}
-    <div class="share">
-        <a class="dsq-comment-count" href="{{ site.baseurl }}{{ page.url }}/#disqus_thread"></a>
-        <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="{{ site.baseurl }}/assets/sq_twitter.png" /></a>
-        <a href="http://facebook.com/share?url={{ site.url }}{{ page.url }}&title={{ page.title }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="{{ site.baseurl }}/assets/sq_facebook.png" /></a>
-        <a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ page.url }}&title={{ page.title }}" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="{{ site.baseurl }}/assets/sq_diaspora.png" /></a>
-        <a href="http://www.feedly.com/home#subscription/feed/{{ site.url | url_escape }}feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="{{ site.baseurl }}/assets/sq_feedly.png" /></a>
-    </div>
 </article>

@@ -1,0 +1,23 @@
+<p class="post-list">
+  <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+  <span class="author">
+    {% assign authorCount = post.authors | size %}
+    {% if authorCount == 0 %}
+      Sin autor
+    {% else %}
+      por
+      {% for author in post.authors %}
+        {% if forloop.first %}
+          {% assign authdata = site.authors[author] %}
+          <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+        {% elsif forloop.last %}
+          {% assign authdata = site.authors[author] %}
+          y <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+        {% else %}
+          {% assign authdata = site.authors[author] %}
+          , <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </span>
+</p>
