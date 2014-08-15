@@ -1,21 +1,21 @@
 body {
-	font-family: PT Sans, 'PT Sans', Arial, sans-serif;
-	background: #fff;
-	margin: 0;
+  font-family: PT Sans, 'PT Sans', Arial, sans-serif;
+  background: #fff;
+  margin: 0;
 }
 
 /**** Structure ****/
 article, nav.pagination, footer>div {
-	margin: 0 auto 2%;
-	padding: 1.2% 2%;
-	width: 92%;
+  margin: 0 auto 2%;
+  padding: 1.2% 2%;
+  width: 92%;
 }
 
 @media screen and (min-width: 800px) {
-	header>a, article, nav.pagination, nav.links div, footer>div {
-		max-width: 55rem;
-		min-width: 20rem;
-	}
+  header>a, article, nav.pagination, nav.links div, footer>div {
+    max-width: 55rem;
+    min-width: 20rem;
+  }
 }
 
 /**** Header ****/
@@ -26,136 +26,150 @@ header {
 }
 
 header>a {
-	display: block;
-	margin: 0 auto 0.5rem;
-	width: 92%;
-	font-size: .85rem;
-	font-weight: normal;
-	text-decoration: none;
+  display: block;
+  margin: 0 auto 0.5rem;
+  width: 92%;
+  font-size: .85rem;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 
 /**** Navigation ****/
 nav.navi {
-	background: #EBEBEB;
+  background: #EBEBEB;
 }
 nav.navi a {
-	color: #333;
+  color: #333;
 }
 nav.links div {
-	margin: 0 auto;
-	padding: 0;
-	width: 92%;
-	background: inherit;
+  margin: 0 auto;
+  padding: 0;
+  width: 92%;
+  background: inherit;
 }
 nav.links a {
-	padding: 0.8% 1rem 1.2%;
-	margin-top: 0.4%;
-	display: inline-block;
-	text-decoration: none;
+  padding: 0.8% 1rem 1.2%;
+  margin-top: 0.4%;
+  display: inline-block;
+  text-decoration: none;
 }
 nav.sites a.l-blog {
-	background: #ebebeb;
-	color: #333;
+  background: #ebebeb;
+  color: #333;
 }
 
 /**** Posts ****/
+h1, h2, dl, code.hljs {
+  margin-left: -2%;
+  margin-right: -2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
 h1 {
-	margin: 1em 0 0.5em;
-	font-size: 280%;
-	font-weight: 200;
-	letter-spacing: -0.1rem;
+  font-size: 280%;
+  font-weight: 200;
+  letter-spacing: -0.1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  background: #ebebeb;
 }
 
 h1 a {
-	display: block;
-	text-decoration: none;
-}
-
-h1, h2 {
-	margin: 0;
+  display: block;
+  text-decoration: none;
 }
 
 h2 {
-    padding: 1% 0px;
-    border-bottom: 2px solid #F0F0F0;
-    font-size: 160%;
+  border-bottom: 2px solid #F0F0F0;
+  font-size: 160%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 ul h2 {
-	display: inline;
+  display: inline;
 }
 
 h3 {
-	text-transform: uppercase;
-	font-size: 120%;
-	color: #444;
+  text-transform: uppercase;
+  font-size: 120%;
+  color: #444;
 }
 
 h4 {
-	font-size: 110%;
+  font-size: 110%;
 }
 
-.author, .date {
-	color: #666;
-	font-style: italic;
+:not(.post-list) > .author, .date {
+  display: inline-block;
+  padding: .2em 1em;
 }
-.date:before {
-	content: " — ";
+
+.date {
+  background: #ebebeb;
+  color: #333;
+}
+
+:not(.post-list) > .author {
+  background: #888;
+  color: #f0f0f0;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 dl dt {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dl dd {
-	margin: 0.4em 0;
+  margin: 0.4em 0;
 }
 
 dl, code.hljs {
-	background: #f6f6f6;
-	border: 1px solid #d0d0d0;
-	overflow-x: auto;
-	margin: 0 -1.5%;
-	padding: 0.4em 1.5%;
+  background: #f6f6f6;
+  border: 1px solid #d0d0d0;
+  overflow-x: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
 }
 code.has-jax {
-	font: inherit;
-	font-size: 85%;
-	background: inherit;
-	border: inherit;
+  font: inherit;
+  font-size: 85%;
+  background: inherit;
+  border: inherit;
 }
 div.MathJax_Display {
-	max-width: 100%;
-	overflow-x: auto;
-	overflow-y: hidden;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 div.footnotes {
-	margin: 0.6rem 0 0;
-	border-top: 1px solid #c0c0c0;
+  margin: 0.6rem 0 0;
+  border-top: 1px solid #c0c0c0;
 }
 
 blockquote {
-	margin-left: 2%;
-	padding-left: 2%;
-	border-left: 0.4em solid rgb(224, 224, 224);
+  margin-left: 2%;
+  padding-left: 2%;
+  border-left: 0.4em solid rgb(224, 224, 224);
 }
 
 /**** Sharing/comments bar ****/
 article .share {
-	opacity: .8;
-	padding: 1.6% 3%;
-	background: #F0F0F0;
-	margin: 0px -3%;
-}
-
-article:hover .share {
-	opacity: 1;
+  padding: 1.6% 2%;
+  background: #ebebeb;
+  margin: 0px -2%;
 }
 
 article .share .dsq-comment-count {
@@ -169,37 +183,37 @@ article .share .dsq-comment-count {
 }
 
 article .share a img {
-	width: 1.75rem;
-	display: inline-block;
-	vertical-align: middle;
+  width: 1.75rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /**** Categories page ****/
 .post-list {
-	font-size: 150%;
+  font-size: 150%;
 }
 .post-list .author {
-	font-size: 66%;
+  font-size: 66%;
 }
 
 /**** Pagination ****/
 nav.pagination .page-number {
-	color: #666;
+  color: #666;
 }
 
 /**** Footer ****/
 footer {
-	background: #EBEBEB;
+  background: #EBEBEB;
 }
 footer>div {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 800px) {
-	/** Si cabe en la pantalla, ponemos los 3 div en paralelo **/
-	footer>div>div {
-		display: inline-block;
-		width: 30%;
-		padding-right: 3%;
-		vertical-align: top;
-	}
+  /** Si cabe en la pantalla, ponemos los 3 div en paralelo **/
+  footer>div>div {
+    display: inline-block;
+    width: 30%;
+    padding-right: 3%;
+    vertical-align: top;
+  }
 }
