@@ -71,7 +71,7 @@ function area_circulo(radio) {
 Nota
  : JavaScript acepta ciertos símbolos a la hora de nombrar variables. Un
  nombre de variable no puede empezar por un número, pero sí que puede
- comenzar y contener símbolos como `$`, `_` o incluso `$\pi$`[^jsidentifiers].
+ comenzar y contener símbolos como `$`, `_` o incluso $$\pi$$ [^jsidentifiers].
 
 ### Colecciones y objetos
 En JS utilizamos los corchetes para representar arrays. Estos pueden
