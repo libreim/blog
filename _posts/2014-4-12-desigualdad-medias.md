@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: La desigualdad de las medias
 authors:
   - mario
@@ -10,7 +10,7 @@ En varios problemas de optimización se pide
 estudiar el mínimo o máximo de una función de varias variables
 de las que se conoce su suma o su producto. Un procedimiento habitual es calcular la
 derivada de una función sobre la que se ha aplicado ya la restricción que impone
-la suma o el producto y buscar extremos absolutos entre los puntos críticos. 
+la suma o el producto y buscar extremos absolutos entre los puntos críticos.
 Otro procedimiento común es usar los [multiplicadores de Lagrange](http://es.wikipedia.org/wiki/Multiplicadores_de_Lagrange).
 
 Pero en ocasiones, es más simple usar desigualdades. La función puede
@@ -142,10 +142,10 @@ $$
 \end{array}
 $$
 
-Podemos notar que las medias de Hölder para $$p \geq 1$$ son normas en 
+Podemos notar que las medias de Hölder para $$p \geq 1$$ son normas en
 $$\mathbb{R}^n$$ si se aplican sobre el vector de valores absolutos.
 Las normas asociadas a $$p=1$$, $$p=2$$, $$p=+\infty$$ son
-proporcionales a las normas de la suma, euclídea y del máximo, respectivamente. 
+proporcionales a las normas de la suma, euclídea y del máximo, respectivamente.
 En general se puede definir la media de exponente $$p$$ como:
 
 $$ \vert\vert x\vert\vert_p =  M_p(\vert x\vert) \sqrt[p]{n} $$
@@ -176,7 +176,7 @@ de igualdad cuando todos los términos son iguales.*
 ### La desigualdad de las medias
 
 La desigualdad de las medias usual incluye a las medias armónica y geométrica.
-Como ejercicio, puede demostrarse la desigualdad armónica-geométrica desde la 
+Como ejercicio, puede demostrarse la desigualdad armónica-geométrica desde la
 geométrica-aritmética y la desigualdad aritmética-cuadrática desde la desigualdad
 de [Cauchy-Schwarz](http://es.wikipedia.org/wiki/Desigualdad_de_Cauchy-Schwarz).
 
@@ -186,7 +186,7 @@ $$ \frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \dots + \frac{1}{x_n}} \leq \sqrt[n]
 
 ### Desigualdad con medias de Hölder
 
-Todavía puede generalizarse más, notando que, fijado un vector 
+Todavía puede generalizarse más, notando que, fijado un vector
 $$ x \in (\mathbb{R^+})^n $$, la siguiente función $$ f: \mathbb{R} \to \mathbb{R} $$ es creciente:
 
 $$ f(a) = \left\{ \begin{matrix} \left(\frac{x_1^a+x_2^a+\dots+x_n^a}{n}\right)^{1/a} & si & a \neq 0 \\ \displaystyle \sqrt[n]{x_1x_2 \dots x_n} & si & a = 0\end{matrix} \right.$$
@@ -200,7 +200,7 @@ probar la desigualdad entre medias geométrica y aritmética. [^generalproof]
 ## Cálculo de extremos
 
 Como ejemplos, tomamos dos ejercicios de los apuntes de [Cálculo diferencial en
-una y varias variables](http://www.ugr.es/~fjperez/textos/Calculo_Diferencial_Varias_Variables.pdf), 
+una y varias variables](http://www.ugr.es/~fjperez/textos/Calculo_Diferencial_Varias_Variables.pdf),
 de Francisco Javier Pérez. Ambos se refieren a hallar extremos en el volumen de
 figuras geométricas. Como la desigualdad de las medias llega a la igualdad cuando
 todos los términos son iguales, las soluciones suelen ser aquellas que igualan lados
@@ -208,8 +208,8 @@ o dotan de algún tipo de simetría a la figura.
 
 ### Maximizando el área
 
-La utilidad de la desigualdad viene dada precisamente por el caso de igualdad, 
-que permite hallar el extremo absoluto de la suma dado el producto o viceversa. 
+La utilidad de la desigualdad viene dada precisamente por el caso de igualdad,
+que permite hallar el extremo absoluto de la suma dado el producto o viceversa.
 Puede verse en el siguiente problema:
 
 **Hallar, entre todos los rectángulos de perímetro 4, aquel con área máxima.**
@@ -219,7 +219,7 @@ entre las medias geométrica y aritmética:
 
 $$ A = ab = \left(\sqrt{ab}\right)^2 \leq \left(\frac{a+b}{2}\right)^2 = \left(\frac{1}{4}p\right)^2 = 1$$
 
-Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad 
+Hemos acotado el área posible. Y como el caso de igualdad se da con la igualdad
 entre términos, tenemos $$a=b=1$$.
 
 ### Minimizando el volumen

@@ -5,6 +5,7 @@
       <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/default.css">
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.baseurl }}/feed.xml" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
       <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
       <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       <script type="text/javascript" src="{{ site.baseurl }}/js/highlight.pack.js"></script>
@@ -17,21 +18,14 @@
          });
       </script>
       <script>hljs.initHighlightingOnLoad();</script>
-      <!--script type="text/javascript">
+      <script type="text/javascript">
             MathJax.Hub.Config({
                tex2jax: {
-                  inlineMath: [['$', '$']],
-                  displayMath: [['$$', '$$']],
-                  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                  inlineMath: [],
+                  displayMath: [],
                }
             });
-            MathJax.Hub.Queue(function() {
-               var all = MathJax.Hub.getAllJax(), i;
-               for (i=0; i < all.length; i += 1) {
-                  all[i].SourceElement().parentNode.classList.add('has-jax');
-               }
-            });
-      </script-->
+      </script>
       <title>{{ page.title }}</title>
    </head>
    <body>

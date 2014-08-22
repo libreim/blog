@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: Post de prueba
 authors:
   - fdavidcl

@@ -1,5 +1,5 @@
 ---
-layout: chapter
+layout: post
 title: La paradoja de Banach-Tarski
 authors:
   - 

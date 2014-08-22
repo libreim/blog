@@ -5,7 +5,8 @@ permalink: /
 ---
 <style type="text/css">.l-home { background: #fff; }</style>
 {% for post in paginator.posts %}
-    {% include post.ext %}
+  {% assign content = post.content %}
+  <article>{% include post.ext %}</article>
 {% endfor %}
 
 <nav class="pagination">
