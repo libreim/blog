@@ -10,4 +10,5 @@ layout: resource
 [Guía docente de Sistemas concurrentes y distribuidos - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/tercero/2semestre/sistemasconcurrentesydistribuidosgim1415/!)  
 
 ## Arquitectura
-**Arquitectura de computadores** - J. Ortega, M. Anguita, A. Prieto
+**Arquitectura de computadores** - J. Ortega, M. Anguita, A. Prieto  
+[Seminarios prácticos sobre OpenMP y el uso de atcgrid - Gustavo Romero López](http://pccito.ugr.es/~gustavo/ac/)
