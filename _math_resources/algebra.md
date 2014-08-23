@@ -10,7 +10,7 @@ layout: resource
 [Guía docente de Álgebra III - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/cuarto/1semestre/algebraiii/!)
 
 ## Álgebra básica
-[Las fórmulas de Cardano-Ferrari - Carlos Ivorra](http://www.uv.es/ivorra/Libros/Ecuaciones.pdf)
+[Las fórmulas de Cardano-Ferrari - Carlos Ivorra](http://www.uv.es/ivorra/Libros/Ecuaciones.pdf)  
 [Preliminares de álgebra y geometría - José Miguel Manzano Prego](http://www.ugr.es/~jmmanzano/material/ALyG-Tema0.pdf)
 
 ## Álgebra abstracta
