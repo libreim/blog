@@ -7,7 +7,8 @@ permalink: /resources/
 <style type="text/css">.l-res { background: #fff; }</style>
 
 En esta sección encontrarás listas de enlaces y bibliografías útiles para estudiar
-y conocer cada una de las ramas de estudio del Doble Grado.
+y conocer cada una de las ramas de estudio del Doble Grado. Puedes añadir tus recursos
+siguiendo la [guía de recursos](http://dgiim.github.io/blog/resourcesguide)
 
 ## Matemáticas
 
