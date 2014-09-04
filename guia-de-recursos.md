@@ -18,19 +18,16 @@ opciones disponibles.
 Antes de hacer una aportación, comprueba que:
 
  - Has utilizado el recurso y  cumple alguna de estas condiciones:
-	 - Trata contenidos no cubiertos y con relación con el doble grado.
-	 - Trata algún aspecto mejor que los recursos ya disponibles.
- - Cumple los criterios de licencia (ver *Licencia*) .
- - Está disponible en castellano o en inglés.
+     - Trata algún aspecto notablemente mejor que los recursos ya disponibles.
+	 - Trata contenidos no cubiertos por otros recursos y con relación con el doble grado.
+ - Cumple los criterios de licencia (ver *Licencia*).
+ - Enlazas preferentemente a la versión en castellano o en inglés.
+ - Cumple un mínimo de calidad en la redacción, contenido y presentación.
 
 Algunas de las listas en las categorías generales de Informática  y Matemáticas contienen 
 muchos recursos. Si has utilizado alguno que cumple los criterios indicados en esta sección 
 puedes incluirlos en una categoría más específica para destacarlo.
 
->  **A concretar:**
->   ¿Restricción de idiomas a castellano e inglés? 
->   ¿Debería especificarse el idioma de cada recurso? 
->   ¿Son suficientes estos criterios o deben ser más específicos?
 
 ##¿Dónde debería poner mi recurso?
 
@@ -48,26 +45,26 @@ Los recursos se organizan en categorías.  Las categorías que existen actualmen
 
 Las categorías *General* incluyen recopilaciones de recursos, cursos y libros que no pueden 
 clasificarse de forma más específica. Cada categoría tiene subcategorías que permiten clasificar 
-los recursos con más precisión. Incluye tu recurso en una ya existente o crea una nueva si 
-consideras que se ajusta más al tema del recurso.
+los recursos con más precisión. Incluye tu recurso en una ya existente o crea una nueva
+subcategoría si consideras que se ajusta más al tema del recurso.
 
 Las categorías se encuentran en las carpetas `_cs_resources` (Informática) y `_math_resources` (Matemáticas).
 
 > **A concretar:**
-> ¿Criterios de relevancia para nuevas categorías?
-> ¿Estilo de nuevas categorías?
+> ¿Criterios de relevancia para nuevas categorías y subcategorías?
 
 ##Formato y otros
 
 Si el recurso tiene enlace, este debe abarcar tanto el título como el autor.
 Las descripciones deben ser concisas y claras, sin superar una línea y estar 
-escritas en cursiva. El estilo que debe seguir es:
+escritas en cursiva. Deben indicar el idioma en caso de que no sea castellano o
+inglés. El estilo que se debe seguir es:
 
 >Título - Autor o web - *Descripción*
 
 Si es un libro sin enlace el título debe de estar en negrita. Puedes añadir un 
-enlace a [Goodreads](https://www.goodreads.com) para aportar más información, 
-manteniendo la negrita. El estilo debe ser:
+enlace a [Goodreads](https://www.goodreads.com) o a una página similar para aportar
+más información, manteniendo la negrita. El estilo debe ser:
 
 >**Título** - Autor - *Descripción*
 
