@@ -61,7 +61,7 @@ Las descripciones deben ser concisas y claras, sin superar una línea y estar
 escritas en cursiva. Deben indicar el idioma en caso de que no sea castellano o
 inglés. El estilo que se debe seguir es:
 
->Título - Autor o web - *Descripción*
+>[Título - Autor o web](javascript:;) - *Descripción*
 
 Si es un libro sin enlace el título debe de estar en negrita. Puedes añadir un 
 enlace a [Goodreads](https://www.goodreads.com) o a una página similar para aportar
@@ -71,9 +71,10 @@ más información, manteniendo la negrita. El estilo debe ser:
 
 ###Licencia
 
-Puedes aportar cualquier tipo de contenido, sin importar su licencia. Sin embargo, 
-**sólo** puedes enlazar a contenidos con licencias que permitan su difusión o que 
-estén disponibles en la web de un centro universitario o del autor original.
+Puedes referenciar cualquier tipo de contenido, sin importar su licencia. Sin embargo, 
+**sólo** puedes enlazar a contenidos con licencias que permitan su difusión. Por ejemplo,
+trabajos de dominio público, obras con licencias [GPL](https://www.gnu.org/licenses/quick-guide-gplv3.html)
+o [Creative Commons](https://creativecommons.org/licenses/#licenses), etc.
 
 > **A concretar:**
-> ¿Es suficiente y apropiado ese criterio?
+> ¿Es permisible enlazar a contenidos alojados en universidades aunque la licencia no sea apropiada?
