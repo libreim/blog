@@ -72,9 +72,7 @@ más información, manteniendo la negrita. El estilo debe ser:
 ###Licencia
 
 Puedes referenciar cualquier tipo de contenido, sin importar su licencia. Sin embargo, 
-**sólo** puedes enlazar a contenidos con licencias que permitan su difusión. Por ejemplo,
-trabajos de dominio público, obras con licencias [GPL](https://www.gnu.org/licenses/quick-guide-gplv3.html)
+**sólo** puedes enlazar a contenidos que no estén distribuidos en contra de su copyright
+(por ejemplo, enlaza a contenidos en su página oficial, página del autor...), o que tengan
+licencias que permitan su difusión: trabajos de dominio público, obras con licencias [GPL](https://www.gnu.org/licenses/quick-guide-gplv3.html)
 o [Creative Commons](https://creativecommons.org/licenses/#licenses), etc.
-
-> **A concretar:**
-> ¿Es permisible enlazar a contenidos alojados en universidades aunque la licencia no sea apropiada?
