@@ -3,8 +3,6 @@ title: Programación
 layout: resource
 ---
 
-[Free programming books - Victor Felder](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - *Recopilación de enlaces a libros sobre programación*  
-
 ## Guías docentes
 [Guía docente de Fundamentos de programación - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/1semestre/fundamentosdeprogramaciongim1415/!)  
 [Guía docente de Metodología de la programación - UGR](http://grados.ugr.es/informaticaymatematicas/pages/infoacademica/guiasdocentes/201415/primero/2semestre/metodologiadelaprogramacion/!)  
@@ -19,7 +17,7 @@ layout: resource
 [Programming Ruby - ruby-doc.com](http://ruby-doc.com/docs/ProgrammingRuby/) - *Tutorial y referencia del lenguaje Ruby*
 
 ## Haskell
-[Learn you a Haskell for great good - learnyouahaskell.com](http://learnyouahaskell.com/chapters) - *Tutorial de introducción a Haskell*
+[Learn you a Haskell for great good - learnyouahaskell.com](http://learnyouahaskell.com/chapters) - *Tutorial de introducción a Haskell. Versión en castellano [¡Aprende Haskell por el bien de todos!](http://aprendehaskell.es/main.html)*
 
 ## Control de versiones
 [Manual rápido de Github/Git - DGIIM](https://github.com/dgiim/dgiim.github.io/blob/master/manualgit.md) - *Tutorial rápido de introducción a Git*
