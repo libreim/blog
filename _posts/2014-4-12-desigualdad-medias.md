@@ -2,7 +2,7 @@
 layout: post
 title: La desigualdad de las medias
 authors:
-  - mario
+  - M42
 category: Análisis
 ---
 

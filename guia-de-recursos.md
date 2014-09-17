@@ -1,8 +1,11 @@
 ---
 layout: post
 title: Guía de recursos
-editors:
+authors:
  - pbaeyens
+editors:
+ - fdavidcl
+ - M42
 category: meta
 permalink: /resourcesguide/
 ---
