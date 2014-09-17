@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Guía de recursos
-authors:
+editors:
  - pbaeyens
- - mario
 category: meta
 permalink: /resourcesguide/
 ---
