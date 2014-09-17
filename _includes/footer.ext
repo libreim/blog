@@ -18,7 +18,9 @@
 	        </ul>
 		</div>
 		<div>
-			
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
 		</div>
 	</div>
 </footer>

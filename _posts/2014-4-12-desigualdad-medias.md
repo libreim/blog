@@ -3,7 +3,7 @@ layout: post
 title: La desigualdad de las medias
 authors:
   - mario
-category: matematicas
+category: Análisis
 ---
 
 En varios problemas de optimización se pide

@@ -16,6 +16,19 @@
 
 {{ content }}
 
+{% if post.editors != nil %}
+  <p class="post-editors">
+    {% assign plural = false %}
+    {% for editor in post.editors %}
+      {% assign authdata = site.authors[editor] %}
+      {% if forloop.first %} {% elsif forloop.last %}{% assign plural = true %} y {% else %}, {% endif %}
+      <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+    {% endfor %}
+    
+    {% if plural %}han{% else %}ha{% endif %} colaborado en este artículo.
+  </p>
+{% endif %}
+
 <div class="share">
     <a class="dsq-comment-count" href="{{ site.baseurl }}{{ post.url }}/#disqus_thread"></a>
     <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="{{ site.baseurl }}/assets/sq_twitter.png" /></a>
