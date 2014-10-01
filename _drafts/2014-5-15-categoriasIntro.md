@@ -28,10 +28,14 @@ Y debe cumplir las siguientes propiedades:
 
 Diagramas conmutativos
 ---
-En teoría de cateforías usaremos diagramas conmutativos para expresar relaciones entre morfismos y objetos. Un morfismo entre dos conjuntos $f \in Hom(A,B)$ lo notaremos por:
+En teoría de cateforías usaremos diagramas conmutativos para expresar 
+relaciones entre morfismos y objetos. Un morfismo entre dos conjuntos 
+$f \in Hom(A,B)$ lo notaremos por:
 $$ \require{AMScd} \begin{CD} A @>{f}>> B \end{CD}$$
 
-Y un diagrama de morfismos será conmutativo cuando todas las formas de recorrerlo componiendo los morfismos den lugar al mismo morfismo composición. Entre las propiedades se pueden ver ejemplos.
+Y un diagrama de morfismos será conmutativo cuando todas las formas de 
+recorrerlo componiendo los morfismos den lugar al mismo morfismo 
+composición. Entre las propiedades se pueden ver ejemplos.
 
 *Explicar diagramas conmutativos, su uso y sus propiedades. Lo que representan formalmente.*
 
