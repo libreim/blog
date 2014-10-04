@@ -14,7 +14,7 @@ las características comunes de diversas estructuras algebraicas. [^categoriaswi
 En los repositorios del doble grado hay unos apuntes de introducción 
 a la Teoría de Categorías con su código fuente bajo licencia CC BY-NC-SA 3.0. En
 ellos se explican tipos de morfismos y propiedades universales. Se
-hace especial incapié en productos y coproductos y se pasan a explicar
+hace especial hincapié en productos y coproductos y se pasan a explicar
 los functores y las transformaciones naturales. El objetivo no es aportar
 otra explicación formal de la teoría de categorias, sino dar una idea
 general de los conceptos básicos:  
