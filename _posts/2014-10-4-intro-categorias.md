@@ -17,7 +17,7 @@ ellos se explican tipos de morfismos y propiedades universales. Se
 hace especial incapié en productos y coproductos y se pasan a explicar
 los functores y las transformaciones naturales. El objetivo no es aportar
 otra explicación formal de la teoría de categorias, sino dar una idea
-general de los conceptos básicos.
+general de los conceptos básicos:  
 [Introducción a la Teoría de Categorías](https://github.com/dgiim/introCategorias)
 
 
