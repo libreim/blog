@@ -147,6 +147,11 @@ dl, code.hljs {
   padding-top: 0.4em;
   padding-bottom: 0.4em;
 }
+
+dl code.hljs, dl dl {
+  border-width: 1px 0;
+}
+
 code.has-jax {
   font: inherit;
   font-size: 85%;
