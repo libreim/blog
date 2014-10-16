@@ -10,15 +10,15 @@ permalink: /
 {% endfor %}
 
 <nav class="pagination">
-	{% if paginator.previous_page %}
-		{% if paginator.previous_page == 1 %}
+	{% if paginator.next_page %}
+		{% if paginator.next_page == 1 %}
 			<a href="{{ site.baseurl }}">&larr; Más nuevo</a>
 		{% else %}
-			<a href="{{ site.baseurl }}/p/{{paginator.previous_page}}">&larr; Más nuevo</a>
+			<a href="{{ site.baseurl }}/p/{{paginator.next_page}}">&larr; Más nuevo</a>
 		{% endif %}
 	{% endif %}
 	<span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
-	{% if paginator.next_page %}
-		<a href="{{ site.baseurl }}/p/{{paginator.next_page}}" class="next ">Más antiguo &rarr;</a>
+	{% if paginator.previous_page %}
+		<a href="{{ site.baseurl }}/p/{{paginator.previous_page}}" class="next ">Más antiguo &rarr;</a>
 	{% endif %}
 </nav>
