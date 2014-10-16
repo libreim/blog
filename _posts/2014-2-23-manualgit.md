@@ -30,7 +30,8 @@ Existen más sistemas de control de versiones aparte de Git, pero son en su mayo
  - *fork* - Copiar el código de un repositorio (en el que no tenemos permiso de edición) a otro propio para poder editar (y mejorar o arreglar fallos).
 
 ### Estado de los archivos  
-Puede consultarse el estado del repositorio usando `git status`. Simplificando, podemos tener los archivos en los siguientes estados:   
+Puede consultarse el estado del repositorio usando `git status`. Simplificando, podemos tener los archivos en los siguientes estados:  
+ 
  - *No registrados (untracked)* - Archivos y modificaciones no añadidas al repositorio. No se enviarán con el próximo commit.  No se tienen en cuenta en el repositorio. Pueden añadirse con `git add`, y pasarán a estar registrados.
  - *Registrados (tracked)* - Archivos y modificaciones añadidos, que serán parte del próximo commit.
  - *Formando parte del commit (committed)* - Tras realizar un `git commit`, archivos y modificaciones que ya forman parte de un commit, aunque todavía no se haya enviado el commit al repositorio.
