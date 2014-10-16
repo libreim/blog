@@ -31,12 +31,12 @@ Existen más sistemas de control de versiones aparte de Git, pero son en su mayo
 
 ### Estado de los archivos
 Puede consultarse el estado del repositorio usando `git status`. Simplificando, podemos tener los archivos en los siguientes estados:
- - No registrados (*untracked*) - Archivos y modificaciones no añadidas al repositorio. No se enviarán con el próximo commit.
+ - *No registrados (untracked)* - Archivos y modificaciones no añadidas al repositorio. No se enviarán con el próximo commit.
 No se tienen en cuenta en el repositorio. Pueden añadirse con `git add`, y pasarán a estar registrados.  
- - Registrados (*tracked*) - Archivos y modificaciones añadidos, que serán parte del próximo commit.  
- - Formando parte del commit (*committed*) - Tras realizar un `git commit`, archivos y modificaciones que ya forman parte de un commit, 
+ - *Registrados (tracked)* - Archivos y modificaciones añadidos, que serán parte del próximo commit.  
+ - *Formando parte del commit (committed)* - Tras realizar un `git commit`, archivos y modificaciones que ya forman parte de un commit, 
 aunque todavía no se haya enviado el commit al repositorio.  
- - Enviados (*pushed*) - Tras enviar el commit con `git push`, los archivos ya forman parte del repositorio de GitHub.  
+ - *Enviados (pushed)* - Tras enviar el commit con `git push`, los archivos ya forman parte del repositorio de GitHub.  
 
 Además, se pueden especificar archivos a ignorar completamente por git en el archivo `.gitignore`. En este archivo 
 podemos añadir nombres de archivo y directorios (separados por saltos de línea) de forma que el registro de cambios 
