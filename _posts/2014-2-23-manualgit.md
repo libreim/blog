@@ -31,7 +31,7 @@ Existen más sistemas de control de versiones aparte de Git, pero son en su mayo
 
 ### Estado de los archivos  
 Puede consultarse el estado del repositorio usando `git status`. Simplificando, podemos tener los archivos en los siguientes estados:  
- 
+
  - *No registrados (untracked)* - Archivos y modificaciones no añadidas al repositorio. No se enviarán con el próximo commit.  No se tienen en cuenta en el repositorio. Pueden añadirse con `git add`, y pasarán a estar registrados.
  - *Registrados (tracked)* - Archivos y modificaciones añadidos, que serán parte del próximo commit.
  - *Formando parte del commit (committed)* - Tras realizar un `git commit`, archivos y modificaciones que ya forman parte de un commit, aunque todavía no se haya enviado el commit al repositorio.
@@ -69,11 +69,14 @@ En resumen, el orden de comandos necesarios es:
 
  `git pull` -> (modificaciones) -> `git commit -a` -> `git pull` -> `git push origin master`
 
-*Consejo:* Es cómodo añadir un alias a nuestro *.bashrc* para ejecutar las últimas tres órdenes de seguido. Para ello ejecutad
+Consejo
+: Es cómodo añadir un alias a nuestro *.bashrc* para ejecutar las últimas tres órdenes de seguido. Para ello ejecutad
+: 
+~~~sh
+echo "alias gitsync='git commit -a && git pull && git push origin master'" >> ~/.bashrc
+~~~
 
-	echo "alias gitsync='git commit -a && git pull && git push origin master'" >> ~/.bashrc
-
-*Nota:* `git push origin master` envía los cambios locales (*origin*) a la rama *master* (la principal) del repositorio en Github. Al trabajar con varias ramas podríamos ejecutar variaciones del tipo `git push origin rama_pruebas`.
+El comando `git push origin master` envía los cambios locales (*origin*) a la rama *master* (la principal) del repositorio en Github. Al trabajar con varias ramas podríamos ejecutar variaciones del tipo `git push origin rama_pruebas`.
 
 ### Conflictos
 Si dos colaboradores trabajan simultáneamente sobre el mismo archivo es posible que se produzcan conflictos, es decir, que uno de ellos no tuviera actualizados los cambios del otro y envíe unos cambios que los sobreescribirían. En ese caso el merge automático falla y git deja que el usuario termine de mezclar los cambios manualmente (para ello separará en los archivos los cambios propios de los otros mediante marcas como `HEAD>>>>`). Tras terminar de mezclarlos, es suficiente con ejecutar de nuevo `git commit -a`, `git pull` y `git push`.
