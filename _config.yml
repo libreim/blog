@@ -15,7 +15,7 @@ kramdown:
 
 permalink: /:year/:month/:day/:title
 paginate: 4
-paginate_path: /p/:num
+paginate_path: /blog/p/:num
 
 collections:
   math_resources:
