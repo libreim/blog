@@ -4,8 +4,8 @@ title: Manual rápido de Github/Git
 authors:
   - fdavidcl
 editors:
-  - M42
   - ncordon
+  - M42
 category: utilidades
 ---
 
