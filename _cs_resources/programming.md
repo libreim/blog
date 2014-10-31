@@ -19,5 +19,8 @@ layout: resource
 ## Haskell
 [Learn you a Haskell for great good - learnyouahaskell.com](http://learnyouahaskell.com/chapters) - *Tutorial de introducción a Haskell. Versión en castellano [¡Aprende Haskell por el bien de todos!](http://aprendehaskell.es/main.html)*
 
+##Vim
+[Interactive Vim Tutorial](http://www.openvim.com/tutorial.html) - *Tutorial sobre vim y sus comandos.
+
 ## Control de versiones
 [Manual rápido de Github/Git - DGIIM](https://github.com/dgiim/dgiim.github.io/blob/master/manualgit.md) - *Tutorial rápido de introducción a Git*
