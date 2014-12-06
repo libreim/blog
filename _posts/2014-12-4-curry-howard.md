@@ -11,7 +11,7 @@ proposicional. Los tipos son teoremas, y las instancias de un tipo son
 demostraciones del teorema que representa.
 
 A los repositorios del doble grado hemos subido unos apuntes que explican 
-el isomorfismo con su código fuente bajo licencia CC BY-NC-SA 3.0:
+el isomorfismo con su código fuente bajo licencia CC BY-SA 3.0:
 [Isomorfismo de Curry Howard](https://github.com/dgiim/curryHoward)
 
 Los apuntes constan de una presentación general, unos apuntes más detallados,
