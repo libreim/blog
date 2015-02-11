@@ -7,7 +7,9 @@ layout: resource
 
 [Foundations of Computer Science - Al Aho y Jeff Ullman](http://i.stanford.edu/~ullman/focs.html) - *Introducción a las estructuras de datos, patrones y autómatas*
 
-[Free programming books - Victor Felder](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - *Recopilación de enlaces a libros sobre programación e Informática*  
+[Free programming books - Victor Felder](https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md) - *Recopilación de enlaces a libros sobre programación e Informática*
+
+[Free Computer Science Books](http://www.e-booksdirectory.com/listing.php?category=24) - *Recopilación de libros gratuitos sobre programación e Informática.*
 
 ## Cursos
 
