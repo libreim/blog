@@ -9,6 +9,8 @@ layout: resource
 
 [WikiBooks Mathematics](http://en.wikibooks.org/wiki/Category:University_level_mathematics_books) - *Libros colaborativos online. Ver Libros destacados*
 
+[Free Mathematics Books](http://www.e-booksdirectory.com/mathematics.php) - *Libros de matemáticas gratuitos online.*
+
 ## Cursos
 
 [MITOpenCourseWare - MIT](http://ocw.mit.edu/courses/mathematics/) - *Material de cursos del MIT sobre Matemáticas*
