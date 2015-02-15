@@ -29,7 +29,6 @@ Tenemos un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos. Se pretende
 El formato de entrada es:
 
 -   La primera línea contiene el tamaño del array, $$n$$.
-
 -   En las siguientes $$n$$ líneas hay un número, la i-ésima línea
     contiene $$a_i$$.
 
@@ -38,7 +37,6 @@ El formato de salida consiste en imprimir una sólo número entero. Este es el r
 Las restricciones son las siguientes:
 
 -   $$1 \leq n \leq 2 \times 10^5$$
-
 -   $$1 \leq a_i \leq 10^{12}$$
 
 ## Solución
@@ -60,9 +58,9 @@ donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y p
 $$\blacksquare$$
 
 **Proposición 2**
-: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$$.
+: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)$$.
 
-***Demostración:***
+**Demostración**  
 En primer lugar:
 
 $$ \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) $$
