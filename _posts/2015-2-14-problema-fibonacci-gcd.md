@@ -48,64 +48,64 @@ La primera observación a realizar es que, dado el tamaño que pueden tomar los 
 **Proposición 1**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
 
-***Demostración:***
-La prueba se realiza por inducción sobre $$k$$ para un $$n$$ arbitrario en
+: ***Demostración:***
+: La prueba se realiza por inducción sobre $$k$$ para un $$n$$ arbitrario en
 cada paso. Para $$k=1$$ es trivial denotando $$F_0 = 0$$. Supongamos el
 resultado cierto para $$k \in \mathbb{N}$$.
 
-$$F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+1}) = F_{k}F_n + F_{k+1} F_{n+1}$$
+: $$F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+1}) = F_{k}F_n + F_{k+1} F_{n+1}$$
 
-donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y posteriormente la definición de la sucesión dos veces.
+: donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y posteriormente la definición de la sucesión dos veces.
 
-$$\blacksquare$$
+: $$\blacksquare$$
 
 **Proposición 2**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$$.
 
-***Demostración:***
-En primer lugar:
+: ***Demostración:***
+: En primer lugar:
 
-$$ \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) $$
+: $$ \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) $$
 
-donde se ha utilizado que $$\gcd(a,b) = \gcd(a,b-qb)$$ para cualquier $$q$$.
+: donde se ha utilizado que $$\gcd(a,b) = \gcd(a,b-qb)$$ para cualquier $$q$$.
 
-Por inducción se llega a que
+: Por inducción se llega a que
 
-$$\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1$$ 
+: $$\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1$$ 
 
-Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.
+: Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.
 
-Ahora, para $$k > 1$$ usamos la proposición anterior:
-$$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_{k-1}F_n + F_k F_{n+1}) = \gcd(F_n, F_k F_{n+1})$$
+: Ahora, para $$k > 1$$ usamos la proposición anterior:
+: $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_{k-1}F_n + F_k F_{n+1}) = \gcd(F_n, F_k F_{n+1})$$
 
-Como $$F_n$$ y $$F_{n+1}$$ son primos relativos:
+: Como $$F_n$$ y $$F_{n+1}$$ son primos relativos:
 
-$$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
+: $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
 
-$$\blacksquare$$
+: $$\blacksquare$$
 
 **Proposición 3**
 : Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
 
-***Demostración:***
-Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
+: ***Demostración:***
+: Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
 
-$$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
+: $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
 
-$$\blacksquare$$
+: $$\blacksquare$$
 
 **Proposición 4**
 : Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{gcd(a_1, \dots, a_n)}$$.
 
-***Demostración:***
-Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
+: ***Demostración:***
+: Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
 
-$$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})$$
+: $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})$$
 
-Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$ obtenemos el resultado.
+: Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$ obtenemos el resultado.
 
-$$\blacksquare$$
+: $$\blacksquare$$
 
 De la proposición anterior se tiene automáticamente el **Algoritmo 1** que resuelve el problema.
 
