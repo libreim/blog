@@ -34,9 +34,10 @@ El formato de entrada es:
 
 El formato de salida consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
 
-Las restricciones son las siguientes:  
--   $$1 \leq n \leq 2 \times 10^5$$
--   $$1 \leq a_i \leq 10^{12}$$
+Las restricciones son las siguientes:
+
+-   \$$1 \leq n \leq 2 \times 10^5$$
+-   \$$1 \leq a_i \leq 10^{12}$$
 
 ## Solución
 
@@ -82,10 +83,10 @@ $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
 $$\tag*{$\blacksquare$}$$
 
 **Proposición 3**
-: Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
+: Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{\gcd(a, b)}$$.
 
 **Demostración**  
-Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
+Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = \gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
 
 $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
 
@@ -93,7 +94,7 @@ $$\tag*{$\blacksquare$}$$
 
 **Proposición 4**
 : Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
-$$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{gcd(a_1, \dots, a_n)}$$.
+$$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{\gcd(a_1, \dots, a_n)}$$.
 
 **Demostración**  
 Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
