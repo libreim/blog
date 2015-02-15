@@ -34,8 +34,7 @@ El formato de entrada es:
 
 El formato de salida consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
 
-Las restricciones son las siguientes:
-
+Las restricciones son las siguientes:  
 -   $$1 \leq n \leq 2 \times 10^5$$
 -   $$1 \leq a_i \leq 10^{12}$$
 
