@@ -1,3 +1,11 @@
+---
+layout: post
+title: Problemas: Fibonacci GCD
+authors:
+  - andreshp
+category: problemas
+---
+
 Enunciado del Problema
 ======================
 
