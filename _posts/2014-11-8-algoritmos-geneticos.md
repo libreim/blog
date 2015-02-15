@@ -8,7 +8,7 @@ category: heurísticas
 
 El objetivo de un buen Matemático e Informático consiste en resolver problemas. Existen algunos (como el *Problema del Viajante de Comercio*) donde el conjunto de soluciones posibles es muy grande. En estos problemas la aplicación de algoritmos exactos que recorran de forma óptima todo el conjunto de soluciones no es viable por el tiempo necesario. Tenemos que recurrir a otras herramientas: las **heurísticas**.
 
-Dado determinado problema de optimización, una **heurística** es un proceso que calcula una solución que satisface determinados criterios de calidad con una eficiencia aceptable. Puede no calcular la mejor solución posible pero ser esta suficiente para nuestros objetivos.
+Dado determinado problema de optimización, una **heurística** es un proceso que calcula una solución que satisface determinados criterios de calidad. Puede no calcular la mejor solución posible. Sin embargo, sí intenta que esta sea suficiente para nuestros objetivos manteniendo una eficiencia aceptable.
 
 Los **algoritmos genéticos** son heurísticas basadas en poblaciones y en los conceptos de evolución y genética. En la naturaleza, las poblaciones de individuos evolucionan con el tiempo gracias a tres factores: la **selección natural**, la **reproducción** y la **mutación**. Los algoritmos genéticos imitan estos procesos para conseguir evolucionar una población de soluciones iniciales. 
 
