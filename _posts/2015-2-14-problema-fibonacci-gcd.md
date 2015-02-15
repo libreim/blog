@@ -45,8 +45,8 @@ Las restricciones son las siguientes:
 
 La primera observación a realizar es que, dado el tamaño que pueden tomar los subíndices $$a_i$$, no se puede pretender calcular tal cual los números de Fibonacci. Debemos obtener propiedades sobre el máximo común divisor de estos que nos permitan calcularlo de forma indirecta. La siguiente serie de proposiciones busca este objetivo.
 
-#### Proposición 1
-Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
+**Proposición 1**
+: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
 
 ***Demostración:***
 La prueba se realiza por inducción sobre $$k$$ para un $$n$$ arbitrario en
@@ -59,8 +59,8 @@ donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y p
 
 $$\blacksquare$$
 
-#### Proposición 2
-Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$$.
+**Proposición 2**
+: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$$.
 
 ***Demostración:***
 En primer lugar:
@@ -84,8 +84,8 @@ $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
 
 $$\blacksquare$$
 
-#### Proposición 3
-Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
+**Proposición 3**
+: Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
 
 ***Demostración:***
 Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
@@ -94,8 +94,8 @@ $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a
 
 $$\blacksquare$$
 
-#### Proposición 4
-Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
+**Proposición 4**
+: Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{gcd(a_1, \dots, a_n)}$$.
 
 ***Demostración:***
