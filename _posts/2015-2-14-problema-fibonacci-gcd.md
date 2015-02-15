@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Problemas - Fibonacci GCD
+title: Problemas Fibonacci GCD
 authors:
   - andreshp
 category: problemas
@@ -49,8 +49,9 @@ cada paso. Para $k=1$ es trivial denotando $F_0 = 0$. Supongamos el
 resultado cierto para $k \in \mathbb{N}$.
 
 $$F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+1}) = F_{k}F_n + F_{k+1} F_{n+1}$$
-donde se ha utilizado en primer lugar la hipótesis de inducción para $k$ y posteriormente la definición de la sucesión dos veces.
-$\blacksquare$
+
+donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y posteriormente la definición de la sucesión dos veces.
+$$\blacksquare$$
 
 #### Proposición 2
 Sean $n, k \in \mathbb{N}$. Se tiene que $\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$.
