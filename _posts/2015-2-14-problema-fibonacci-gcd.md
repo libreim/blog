@@ -8,7 +8,7 @@ category: problemas
 
 ## Enunciado del Problema
 
-El problema a resolver se encuentra en el enlace: <https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd>. Se muestra continuación una versión traducida del mismo.
+El problema a resolver se encuentra en [Hackerrank](https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd). Se muestra continuación una versión traducida del mismo.
 
 Los números de Fibbonacci tienen la siguiente forma:
 
@@ -29,7 +29,6 @@ Tenemos un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos. Se pretende
 El formato de entrada es:
 
 -   La primera línea contiene el tamaño del array, $$n$$.
-
 -   En las siguientes $$n$$ líneas hay un número, la i-ésima línea
     contiene $$a_i$$.
 
@@ -38,7 +37,6 @@ El formato de salida consiste en imprimir una sólo número entero. Este es el r
 Las restricciones son las siguientes:
 
 -   $$1 \leq n \leq 2 \times 10^5$$
-
 -   $$1 \leq a_i \leq 10^{12}$$
 
 ## Solución
@@ -48,7 +46,7 @@ La primera observación a realizar es que, dado el tamaño que pueden tomar los 
 **Proposición 1**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
 
-***Demostración:***
+**Demostración**  
 La prueba se realiza por inducción sobre $$k$$ para un $$n$$ arbitrario en
 cada paso. Para $$k=1$$ es trivial denotando $$F_0 = 0$$. Supongamos el
 resultado cierto para $$k \in \mathbb{N}$$.
@@ -58,11 +56,12 @@ $$F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+
 donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y posteriormente la definición de la sucesión dos veces.
 
 $$\blacksquare$$
+{: .align-right}
 
 **Proposición 2**
-: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = gcd(F_n, F_k)$$.
+: Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)$$.
 
-***Demostración:***
+**Demostración**  
 En primer lugar:
 
 $$ \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) $$
@@ -83,22 +82,24 @@ Como $$F_n$$ y $$F_{n+1}$$ son primos relativos:
 $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
 
 $$\blacksquare$$
+{: .align-right}
 
 **Proposición 3**
 : Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
 
-***Demostración:***
+**Demostración**  
 Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
 
 $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
 
 $$\blacksquare$$
+{: .align-right}
 
 **Proposición 4**
 : Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{gcd(a_1, \dots, a_n)}$$.
 
-***Demostración:***
+**Demostración**  
 Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
 
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})$$
@@ -106,6 +107,7 @@ $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_
 Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$ obtenemos el resultado.
 
 $$\blacksquare$$
+{: .align-right}
 
 De la proposición anterior se tiene automáticamente el **Algoritmo 1** que resuelve el problema.
 
@@ -180,19 +182,19 @@ El problema se ha reducido a la exponenciación de la matriz $$A = \begin{pmatri
 **Algoritmo 2**
 : Función que devuelve el resultado de elevar la matriz $$A$$ a $$n$$.
 
-~~~python
-def Potencia(A,n):
-    if n == 1:
-        return A
-    elif n % 2 == 0:
-        B = Potencia(A,n/2)
-        return B*B
-    else:
-        B = Potencia(A,n/2)
-        return A*B*B
-~~~
+: ~~~python
+  def Potencia(A,n):
+      if n == 1:
+          return A
+      elif n % 2 == 0:
+          B = Potencia(A,n/2)
+          return B*B
+      else:
+          B = Potencia(A,n/2)
+          return A*B*B
+  ~~~
 
 
 Puesto que $$m$$ puede ser $$10^{12}$$, el valor obtenido por el **Algoritmo 2** en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo $$10^9+7$$. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que $$10^9+7$$, por lo que puede ejecutarse sin ningún problema.
 
-Más material sobre el problema puede encontrarse en el siguiente repositorio del doble grado: <https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD>
+Más material sobre el problema puede encontrarse en el [repositorio correspondiente del doble grado](https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD).
