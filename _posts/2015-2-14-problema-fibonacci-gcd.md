@@ -193,4 +193,6 @@ def Potencia(A,n):
 ~~~
 
 
-Puesto que $$m$$ puede ser $$10^{12}$$, el resultado obtenido por el algoritmo previo puede incluso no caber en memoria. De todas formas, debemos imprimir el resultado módulo $$10^9+7$$. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el mismo resultado. Los números con los que trabajará el algoritmo serán menores que $$10^9+7$$, pudiendo obtener el resultado sin problema.
+Puesto que $$m$$ puede ser $$10^{12}$$, el valor obtenido por el **Algoritmo 2** en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo $$10^9+7$$. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que $$10^9+7$$, por lo que puede ejecutarse sin ningún problema.
+
+Más material sobre el problema puede encontrarse en el siguiente repositorio del doble grado: https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD
