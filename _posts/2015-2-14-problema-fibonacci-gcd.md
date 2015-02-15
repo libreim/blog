@@ -112,9 +112,9 @@ De la proposición anterior se tiene automáticamente el Algoritmo 1 que resuelv
 **Algoritmo 1**
 : Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
 
-1.  Calculamos $$m = \gcd(a_1, \dots, a_n)$$.
+: 1.  Calculamos $$m = \gcd(a_1, \dots, a_n)$$.
 
-2.  Calculamos $$F_m \mod 10^9+7$$
+: 2.  Calculamos $$F_m \mod 10^9+7$$
 
 
 La única cuestión restante consiste en la implementación del algoritmo anterior. Para calcular el máximo común divisor de la lista utilizamos el Algoritmo de Euclides para los dos primeros elementos, que quedan sustituidos por el resultado obtenido. Repetimos el proceso hasta obtener un único número final que es el máximo común divisor buscado. Este algoritmo tiene eficiencia $$n$$ veces la del propio Algoritmo de Euclides.
@@ -177,8 +177,8 @@ $$\begin{pmatrix}
 
 El problema se ha reducido a la exponenciación de la matriz $$A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$$. La exponenciación de matrices se puede conseguir logarítmica de forma análoga a la exponenciación (con exponente natural) de un número. El Algoritmo 2 muestra un pseudo-código recursivo para este propósito.
 
-#### Algoritmo 2
-Función que devuelve el resultado de elevar la matriz $$A$$ a $$n$$.
+**Algoritmo 2**
+: Función que devuelve el resultado de elevar la matriz $$A$$ a $$n$$.
 
 ~~~python
 def Potencia(A,n):
