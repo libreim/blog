@@ -3,6 +3,7 @@ layout: post
 title: Problemas - Fibonacci GCD
 authors:
   - andreshp
+  - M42
 category: problemas
 ---
 
