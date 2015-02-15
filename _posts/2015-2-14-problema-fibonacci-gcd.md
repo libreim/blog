@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Problemas: Fibonacci GCD
+title: Problemas - Fibonacci GCD
 authors:
   - andreshp
 category: problemas
@@ -12,14 +12,14 @@ El problema a resolver se encuentra en el enlace: <https://www.hackerrank.com/co
 
 Los números de Fibbonacci tienen la siguiente forma:
 
-$F_0 = 0$
-$F_1 = 1$
-$F_2 = 1$
-$F_3 = 2$
-$\vdots$
-$F_n = F_{n-2} + F_{n-1}$
+$$F_0 = 0$$
+$$F_1 = 1$$
+$$F_2 = 1$$
+$$F_3 = 2$$
+$$\vdots$$
+$$F_n = F_{n-2} + F_{n-1}$$
 
-Tenemos un array $a_1,a_2,\dots,a_n$ que contiene $n$ elementos. Se pretende calcular $\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$.
+Tenemos un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos. Se pretende calcular $$\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$$.
 
 El formato de entrada es:
 
