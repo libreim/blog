@@ -204,8 +204,8 @@ Para la implementación en Haskell de la solución, usamos la función `gcd` de 
 biblioteca estándar y la convertimos en una función sobre listas usando `foldr`.
 
 El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices para calcular
-el par $$(F_{n+1},F_{n})$$ en función del par $$(F_{\frac{n}{2}},F_{\frac{n+1}{2}})$$.
-En concreto, si llamamos $$a=F_{\frac{n+1}{2}}, b=F_{\frac{n}{2}}, c=a+b$$:
+el par $$(F_{2n+1},F_{2n})$$ en función del par $$(F_{n+1},F_{n})$$.
+En concreto, si llamamos $$a=F_{n+1}, b=F_{n}, c=a+b$$:
 
 $$\begin{pmatrix}
         F_{2n+2} & F_{2n+1} \\
@@ -215,12 +215,12 @@ $$\begin{pmatrix}
     \begin{pmatrix}
         c & b \\
         b & a \\
-    \end{pmatrix}^{2}$$
+    \end{pmatrix}^{2}
     =
     \begin{pmatrix}
         c^2+b^2 & c^2-a^2 \\
         c^2-a^2 & b^2+a^2 \\
-    \end{pmatrix}^{2}$$
+    \end{pmatrix}$$
 
 El código queda como sigue:
 
