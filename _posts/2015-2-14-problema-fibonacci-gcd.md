@@ -198,4 +198,40 @@ El problema se ha reducido a la exponenciación de la matriz $$A = \begin{pmatri
 
 Puesto que $$m$$ puede ser $$10^{12}$$, el valor obtenido por el **Algoritmo 2** en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo $$10^9+7$$. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que $$10^9+7$$, por lo que puede ejecutarse sin ningún problema.
 
+## Implementación en Haskell
+
+Para la implementación en Haskell de la solución, usamos la función `gcd` de la
+biblioteca estándar y la convertimos en una función sobre listas usando `foldr`.
+
+El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices.
+
+~~~haskell
+import Control.Monad
+
+gcdList :: [Int] -> Int
+gcdList = foldr gcd 0
+
+main :: IO ()
+main = do n <- readLn :: IO Int
+          list <- replicateM n (readLn :: IO Int)
+          putStrLn $ show $ fib ((gcdList list)-1)
+
+-- Fibonacci mod 10**9+7
+fib = fst . fib2
+
+-- | Return (fib n, fib (n + 1))
+fib2 0 = (1, 1)
+fib2 1 = (1, 2)
+fib2 n
+ | even n    = ((a.*a) .+ (b.*b), (c.*c) .- (a.*a))
+ | otherwise = ((c.*c) .- (a.*a), (b.*b) .+ (c.*c))
+ where (a,b) = fib2 (n `div` 2 - 1)
+       hkr   = 1000000000+7
+       (.+)  = \x y -> mod ((+) x y) hkr
+       (.-)  = \x y -> mod ((-) x y) hkr
+       (.*)  = \x y -> mod ((*) x y) hkr
+       c     = a + b
+~~~
+
+
 Más material sobre el problema puede encontrarse en el [repositorio correspondiente del doble grado](https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD).
