@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Problemas Fibonacci GCD
+title: Problemas - Fibonacci GCD
 authors:
   - andreshp
 category: problemas
@@ -13,28 +13,33 @@ El problema a resolver se encuentra en el enlace: <https://www.hackerrank.com/co
 Los números de Fibbonacci tienen la siguiente forma:
 
 $$F_0 = 0$$
+
 $$F_1 = 1$$
+
 $$F_2 = 1$$
+
 $$F_3 = 2$$
+
 $$\vdots$$
+
 $$F_n = F_{n-2} + F_{n-1}$$
 
 Tenemos un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos. Se pretende calcular $$\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$$.
 
 El formato de entrada es:
 
--   La primera línea contiene el tamaño del array, $n$.
+-   La primera línea contiene el tamaño del array, $$n$$.
 
--   En las siguientes $n$ líneas hay un número, la i-ésima línea
-    contiene $a_i$.
+-   En las siguientes $$n$$ líneas hay un número, la i-ésima línea
+    contiene $$a_i$$.
 
 El formato de salida consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $10^9+7$.
 
 Las restricciones son las siguientes:
 
--   $1 \leq n \leq 2 \times 10^5$
+-   $$1 \leq n \leq 2 \times 10^5$$
 
--   $1 \leq a_i \leq 10^{12}$
+-   $$1 \leq a_i \leq 10^{12}$$
 
 ## Solución
 
