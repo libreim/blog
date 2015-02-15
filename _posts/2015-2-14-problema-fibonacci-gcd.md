@@ -54,8 +54,7 @@ $$F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+
 
 donde se ha utilizado en primer lugar la hipótesis de inducción para $$k$$ y posteriormente la definición de la sucesión dos veces.
 
-$$\blacksquare$$
-{: .align-right}
+$$\tag*{$\blacksquare$}$$
 
 **Proposición 2**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)$$.
@@ -80,8 +79,7 @@ Como $$F_n$$ y $$F_{n+1}$$ son primos relativos:
 
 $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)$$
 
-$$\blacksquare$$
-{: .align-right}
+$$\tag*{$\blacksquare$}$$
 
 **Proposición 3**
 : Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{gcd(a, b)}$$.
@@ -91,8 +89,7 @@ Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Ten
 
 $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
 
-$$\blacksquare$$
-{: .align-right}
+$$\tag*{$\blacksquare$}$$
 
 **Proposición 4**
 : Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
@@ -105,8 +102,7 @@ $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_
 
 Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$ obtenemos el resultado.
 
-$$\blacksquare$$
-{: .align-right}
+$$\tag*{$\blacksquare$}$$
 
 De la proposición anterior se tiene automáticamente el **Algoritmo 1** que resuelve el problema.
 
