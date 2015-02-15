@@ -6,8 +6,7 @@ authors:
 category: problemas
 ---
 
-Enunciado del Problema
-======================
+## Enunciado del Problema
 
 El problema a resolver se encuentra en el enlace: <https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd>. Se muestra continuación una versión traducida del mismo.
 
@@ -37,8 +36,7 @@ Las restricciones son las siguientes:
 
 -   $1 \leq a_i \leq 10^{12}$
 
-Solución
-========
+## Solución
 
 La primera observación a realizar es que, dado el tamaño que pueden tomar los subíndices $a_i$, no se puede pretender calcular tal cual los números de Fibonacci. Debemos obtener propiedades sobre el máximo común divisor de estos que nos permitan calcularlo de forma indirecta. La siguiente serie de proposiciones busca este objetivo.
 
