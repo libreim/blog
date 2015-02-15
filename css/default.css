@@ -163,6 +163,9 @@ div.MathJax_Display {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.align-right {
+  text-align: right;
+}
 
 div.footnotes {
   margin: 0.6rem 0 0;
