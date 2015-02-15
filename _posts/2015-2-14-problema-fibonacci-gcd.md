@@ -109,8 +109,8 @@ $$\blacksquare$$
 
 De la proposición anterior se tiene automáticamente el Algoritmo 1 que resuelve el problema.
 
-#### Algoritmo 1
-Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
+**Algoritmo 1**
+: Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
 
 1.  Calculamos $$m = \gcd(a_1, \dots, a_n)$$.
 
@@ -195,4 +195,4 @@ def Potencia(A,n):
 
 Puesto que $$m$$ puede ser $$10^{12}$$, el valor obtenido por el **Algoritmo 2** en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo $$10^9+7$$. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que $$10^9+7$$, por lo que puede ejecutarse sin ningún problema.
 
-Más material sobre el problema puede encontrarse en el siguiente repositorio del doble grado: https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD
+Más material sobre el problema puede encontrarse en el siguiente repositorio del doble grado: <https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD>
