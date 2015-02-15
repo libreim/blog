@@ -203,7 +203,26 @@ Puesto que $$m$$ puede ser $$10^{12}$$, el valor obtenido por el **Algoritmo 2**
 Para la implementación en Haskell de la solución, usamos la función `gcd` de la
 biblioteca estándar y la convertimos en una función sobre listas usando `foldr`.
 
-El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices.
+El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices para calcular
+el par $(F_{n+1},F_{n})$ en función del par $(F_{\frac{n}{2}},F_{\frac{n+1}{2}})$.
+En concreto, si llamamos $a=F_{\frac{n+1}{2}}, b=F_{\frac{n}{2}}, c=a+b$:
+
+$$\begin{pmatrix}
+        F_{2n+2} & F_{2n+1} \\
+        F_{2n+1} & F_{2n} \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        c & b \\
+        b & a \\
+    \end{pmatrix}^{2}$$
+    =
+    \begin{pmatrix}
+        c^2+b^2 & c^2-a^2 \\
+        c^2-a^2 & b^2+a^2 \\
+    \end{pmatrix}^{2}$$
+
+El código queda como sigue:
 
 ~~~haskell
 import Control.Monad
@@ -220,10 +239,13 @@ main = do n <- readLn :: IO Int
           putStrLn $ show $ fib ((gcdList list)-1)
 
 -- Calcula fibonacci mod 10**9+7
+fib :: (Integral a) => a -> a
 fib = fst . fib2
 
 -- Calcula el par (fib n, fib (n + 1)) mod 10**9+7
--- El caso de inducción usa la exponenciación de matrices implícitamente
+-- El caso de inducción usa la exponenciación de matrices implícitamente.
+-- Reescribimos la suma y el producto para usarlos a módulo 10**9+7.
+fib2 :: (Integral a) => a -> (a,a)
 fib2 0 = (1, 1)
 fib2 1 = (1, 2)
 fib2 n
