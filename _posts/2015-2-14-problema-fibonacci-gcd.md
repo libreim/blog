@@ -75,7 +75,7 @@ $$\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1$$
 
 Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.
 
-Ahora, para $k > 1$ usamos la proposición anterior:
+Ahora, para $$k > 1$$ usamos la proposición anterior:
 $$\gcd(F_n, F_{n+k}) = \gcd(F_n, F_{k-1}F_n + F_k F_{n+1}) = \gcd(F_n, F_k F_{n+1})$$
 
 Como $$F_n$$ y $$F_{n+1}$$ son primos relativos:
