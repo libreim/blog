@@ -41,7 +41,12 @@ Las restricciones son las siguientes:
 
 ## Solución
 
-La primera observación a realizar es que, dado el tamaño que pueden tomar los subíndices $$a_i$$, no se puede pretender calcular tal cual los números de Fibonacci. Debemos obtener propiedades sobre el máximo común divisor de estos que nos permitan calcularlo de forma indirecta. La siguiente serie de proposiciones busca este objetivo.
+La primera observación a realizar es que, dado el tamaño que pueden tomar los
+subíndices $$a_i$$, no se pueden pretender calcular directamente los números de
+Fibonacci.
+Debemos obtener propiedades sobre el máximo común divisor de estos que nos
+permitan calcularlo de forma indirecta. La siguiente serie de proposiciones
+persigue este objetivo.
 
 **Proposición 1**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
@@ -101,11 +106,11 @@ Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
 
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})$$
 
-Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$ obtenemos el resultado.
+Repetimos el proceso $$n-1$$ veces y, usando la definición del máximo común divisor de $$n$$ elementos sobre los $$a_i$$, obtenemos el resultado.
 
 $$\tag*{$\blacksquare$}$$
 
-De la proposición anterior se tiene automáticamente el **Algoritmo 1** que resuelve el problema.
+De la proposición anterior se tiene automáticamente el **Algoritmo 1**, que resuelve el problema.
 
 **Algoritmo 1**
 : Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
