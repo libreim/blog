@@ -208,18 +208,22 @@ El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices.
 ~~~haskell
 import Control.Monad
 
+-- GCD sobre listas de enteros
 gcdList :: [Int] -> Int
 gcdList = foldr gcd 0
 
+-- Entrada y salida según el formato
+-- Acaba imprimiendo: fib ((gcdList list) - 1)
 main :: IO ()
 main = do n <- readLn :: IO Int
           list <- replicateM n (readLn :: IO Int)
           putStrLn $ show $ fib ((gcdList list)-1)
 
--- Fibonacci mod 10**9+7
+-- Calcula fibonacci mod 10**9+7
 fib = fst . fib2
 
--- | Return (fib n, fib (n + 1))
+-- Calcula el par (fib n, fib (n + 1)) mod 10**9+7
+-- El caso de inducción usa la exponenciación de matrices implícitamente
 fib2 0 = (1, 1)
 fib2 1 = (1, 2)
 fib2 n
