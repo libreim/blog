@@ -107,7 +107,7 @@ Repetimos el proceso $$n-1$$ veces y usando la definición del máximo común di
 
 $$\blacksquare$$
 
-De la proposición anterior se tiene automáticamente el Algoritmo 1 que resuelve el problema.
+De la proposición anterior se tiene automáticamente el **Algoritmo 1** que resuelve el problema.
 
 **Algoritmo 1**
 : Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
@@ -117,7 +117,7 @@ De la proposición anterior se tiene automáticamente el Algoritmo 1 que resuelv
 : 2.  Calculamos $$F_m \mod 10^9+7$$
 
 
-La única cuestión restante consiste en la implementación del algoritmo anterior. Para calcular el máximo común divisor de la lista utilizamos el Algoritmo de Euclides para los dos primeros elementos, que quedan sustituidos por el resultado obtenido. Repetimos el proceso hasta obtener un único número final que es el máximo común divisor buscado. Este algoritmo tiene eficiencia $$n$$ veces la del propio Algoritmo de Euclides.
+La única cuestión restante consiste en la implementación del algoritmo anterior. Para calcular el máximo común divisor de la lista utilizamos el **Algoritmo de Euclides** para los dos primeros elementos, que quedan sustituidos por el resultado obtenido. Repetimos el proceso hasta obtener un único número final que es el máximo común divisor buscado. Este algoritmo tiene eficiencia $$n$$ veces la del propio **Algoritmo de Euclides**.
 
 Para calcular $$F_m \mod 10^9+7$$ tenemos que tener en cuenta que $$m$$ puede ser hasta $$10^{12}$$. Es fácil realizar un algoritmo lineal para este propósito calculando todos los términos progresivamente y guardando solo los dos últimos en cada iteración. Sin embargo, esto no alcanza los objetivos en el peor caso. Se propone la siguiente idea para obtener una solución logarítmica sobre $$m$$:
 
@@ -175,7 +175,7 @@ $$\begin{pmatrix}
             F_{k+1} & F_{k} \\
         \end{pmatrix}$$
 
-El problema se ha reducido a la exponenciación de la matriz $$A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$$. La exponenciación de matrices se puede conseguir logarítmica de forma análoga a la exponenciación (con exponente natural) de un número. El Algoritmo 2 muestra un pseudo-código recursivo para este propósito.
+El problema se ha reducido a la exponenciación de la matriz $$A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$$. La exponenciación de matrices se puede conseguir logarítmica de forma análoga a la exponenciación (con exponente natural) de un número. El **Algoritmo 2** muestra un pseudo-código recursivo para este propósito.
 
 **Algoritmo 2**
 : Función que devuelve el resultado de elevar la matriz $$A$$ a $$n$$.
