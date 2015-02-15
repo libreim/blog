@@ -8,7 +8,7 @@ category: problemas
 
 ## Enunciado del Problema
 
-El problema a resolver se encuentra en [Hackerrank](https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd). Se muestra continuación una versión traducida del mismo.
+El problema original a resolver se encuentra en [Hackerrank](https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd). Se muestra a continuación una versión traducida del mismo.
 
 Los números de Fibbonacci tienen la siguiente forma:
 
@@ -24,15 +24,15 @@ $$\vdots$$
 
 $$F_n = F_{n-2} + F_{n-1}$$
 
-Tenemos un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos. Se pretende calcular $$\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$$.
+Dado un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos, calcular $$\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$$.
 
-El formato de entrada es:
+El **formato de entrada** es:
 
 -   La primera línea contiene el tamaño del array, $$n$$.
 -   En las siguientes $$n$$ líneas hay un número, la i-ésima línea
     contiene $$a_i$$.
 
-El formato de salida consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
+El **formato de salida** consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
 
 Las restricciones son las siguientes:
 
@@ -46,7 +46,7 @@ La primera observación a realizar es que, dado el tamaño que pueden tomar los 
 **Proposición 1**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$F_{n+k} = F_{k-1}F_n + F_k F_{n+1}$$.
 
-**Demostración**  
+**Demostración**
 La prueba se realiza por inducción sobre $$k$$ para un $$n$$ arbitrario en
 cada paso. Para $$k=1$$ es trivial denotando $$F_0 = 0$$. Supongamos el
 resultado cierto para $$k \in \mathbb{N}$$.
@@ -60,7 +60,7 @@ $$\tag*{$\blacksquare$}$$
 **Proposición 2**
 : Sean $$n, k \in \mathbb{N}$$. Se tiene que $$\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)$$.
 
-**Demostración**  
+**Demostración**
 En primer lugar:
 
 $$ \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) $$
@@ -69,7 +69,7 @@ donde se ha utilizado que $$\gcd(a,b) = \gcd(a,b-qb)$$ para cualquier $$q$$.
 
 Por inducción se llega a que
 
-$$\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1$$ 
+$$\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1$$
 
 Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.
 
@@ -85,7 +85,7 @@ $$\tag*{$\blacksquare$}$$
 **Proposición 3**
 : Sean $$a, b \in \mathbb{N}$$. Se tiene que $$\gcd(F_a, F_b) = F_{\gcd(a, b)}$$.
 
-**Demostración**  
+**Demostración**
 Si $$a=b$$ es trivial. Supongamos que $$a < b$$ sin pérdida de generalidad. Tenemos que $$\gcd(F_a, F_b) = \gcd(F_a, F_{b-a})$$. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:
 
 $$\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}$$
@@ -96,7 +96,7 @@ $$\tag*{$\blacksquare$}$$
 : Sean $$n \in \mathbb{N}$$ y $$a_1, \dots a_n \in \mathbb{N}$$. Se tiene que
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = F_{\gcd(a_1, \dots, a_n)}$$.
 
-**Demostración**  
+**Demostración**
 Usaremos que $$\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)$$:
 
 $$\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})$$
