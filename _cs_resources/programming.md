@@ -14,6 +14,9 @@ layout: resource
 [The GNU C reference manual - www.gnu.org](http://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html) - *Referencia del lenguaje C*  
 [An Idiot's Guide to C++ Templates - Part 1](http://www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part) - *Práctica guía sobre plantillas en C++. Viene bien para saber como el compilador trabaja con ellas*  
 
+## Erlang
+[Learn you Some Erlang for great good - learnyousomeerlang.com](http://learnyousomeerlang.com/content) - *Tutorial de introducción a Erlang.*
+
 ## Ruby
 [Programming Ruby - ruby-doc.com](http://ruby-doc.com/docs/ProgrammingRuby/) - *Tutorial y referencia del lenguaje Ruby*
 
