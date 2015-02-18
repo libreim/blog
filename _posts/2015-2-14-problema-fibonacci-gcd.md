@@ -33,7 +33,7 @@ El **formato de entrada** es:
 -   En las siguientes $$n$$ líneas hay un número, la i-ésima línea
     contiene $$a_i$$.
 
-El **formato de salida** consiste en imprimir una sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
+El **formato de salida** consiste en imprimir un sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre $$10^9+7$$.
 
 Las restricciones son las siguientes:
 
@@ -114,7 +114,7 @@ $$\tag*{$\blacksquare$}$$
 De la proposición anterior se tiene automáticamente el **Algoritmo 1**, que resuelve el problema.
 
 **Algoritmo 1**
-: Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2\times10^5\}$$. Realizamos el siguiente algoritmo:
+: Dados $$a_1, \dots, a_n \in \{1, \dots, 10^{12}\}$$ con $$n \in \{1, \dots, 2 \times 10^5\}$$. Realizamos el siguiente algoritmo:
 
 : 1.  Calculamos $$m = \gcd(a_1, \dots, a_n)$$.
 
@@ -206,7 +206,7 @@ biblioteca estándar y la convertimos en una función sobre listas usando `foldr
 
 El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices para calcular
 el par $$(F_{2n+1},F_{2n})$$ en función del par $$(F_{n+1},F_{n})$$.
-En concreto, si llamamos $$a=F_{n+1}, b=F_{n}, c=a+b$$:
+En concreto, si llamamos $$a=F_{n}, b=F_{n+1}, c=a+b$$:
 
 $$\begin{pmatrix}
         F_{2n+2} & F_{2n+1} \\
