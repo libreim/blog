@@ -40,3 +40,24 @@ jekyll serve
 ~~~
 
 Ahora el blog estará disponible en `localhost:4000/blog/`.
+
+### Directorios
+
+Un blog de Jekyll se estructura en varios directorios, todos ellos empezando con
+un guion bajo `_`:
+
+* `_layouts` Aquí se guardan las plantillas que se utilizan para generar cada
+  página del blog. Este blog tiene una plantilla `post` y otra `resource`, 
+  ambas heredando de la plantilla `default`. La plantilla de un archivo se
+  especifica con la opción `layout` de la caja YAML al inicio del mismo. Si 
+  queremos que no se aplique ninguna plantilla a un archivo utilizaremos 
+  `layout: none`.
+* `_includes` Contiene archivos `.ext` que son fragmentos de código HTML que se
+  pueden incluir en cualquier parte de una página mediante 
+  `{% include ejemplo.ext %}`. Este blog cuenta con *includes* para la cabecera
+  y el pie de la página, para renderizar un post, una lista de posts y para
+  incluir el script de Disqus.
+* `_posts` Incluye todos los posts que se han de mostrar en la página principal,
+  en general escritos en Markdown. El nombre de cada archivo debe indicar la
+  fecha del post y el camino del URL en el que se encontrará. Por ejemplo, el
+  archivo `2015-3-14-pi-day.md` se mostraría en `/2015/03/14/pi-day`.
