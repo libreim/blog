@@ -1,2 +1,3 @@
 _site/
 .fuse*
+.bundle/
