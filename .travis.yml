@@ -3,4 +3,8 @@ language: ruby
 rvm:
  - 2.2.0
 
-script: rake
+script: "bundle exec jekyll build"
+
+branches:
+  only:
+    - gh-pages
