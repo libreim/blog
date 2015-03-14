@@ -13,7 +13,7 @@ kramdown:
   parse_span_html: false
 
 #permalink: /:year/:month/:day/:title
-paginate: 3
+paginate: 5
 paginate_path: "/page/:num/"
 
 gems:
