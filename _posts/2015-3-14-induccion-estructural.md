@@ -39,7 +39,7 @@ fundada.
 
 [^stackexchangeblog-induction]: Sobre generalizaciones de la inducción <http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/>
 
-
+<!--more-->
 ## Inducción sobre tipos
 
 Ahora vamos a aplicar esto a teoría de tipos. Sea un tipo con sus constructores.
