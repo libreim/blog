@@ -12,6 +12,8 @@ category: Utilidades
 ## TL;DR
 Instala git. Crea un repositorio desde la página de Github. Descárgalo con `git clone`. Actualiza tu versión local con `git pull`. Empaqueta cambios con `git commit -a`. Envía cambios con `git pull && git push`.
 
+<!--more-->
+
 ## La versión larga
 
 Github es un servicio de almacenamiento de código con control de versiones Git. Git permite a los desarrolladores llevar un registro de todos los cambios realizados a lo largo del tiempo. Con una cuenta en Github puedes crear tantos repositorios (públicos) como quieras, y 5 privados si registras tu correo de la Universidad en [Github Edu](http://edu.github.com). Cada repositorio puede estar compartido por el creador para varios colaboradores, de forma que todos pueden editarlo.
