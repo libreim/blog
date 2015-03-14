@@ -19,6 +19,8 @@ conjunto de ellas que lo almacenan y proporcionan. Sin embargo, también se
 puede utilizar JavaScript como lenguaje de servidor gracias a
 [Node.js](http://nodejs.org/).
 
+<!--more-->
+
 JavaScript tiene una sintaxis similar a la de C++ o Java, y puede funcionar como
 un lenguaje procedimental o como uno orientado a objetos. Además, es capaz de
 responder a eventos generados mediante la interacción del usuario, lo que es

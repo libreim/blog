@@ -3,7 +3,7 @@ layout: post
 title: Introducción a la teoría de categorías
 authors:
   - M42
-category: álgebra
+category: Álgebra
 ---
 
 Los primeros desarrollos de la teoría de categorías vinieron impulsados en los

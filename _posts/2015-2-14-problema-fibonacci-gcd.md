@@ -4,7 +4,7 @@ title: Problemas - Fibonacci GCD
 authors:
   - andreshp
   - M42
-category: problemas
+category: Problemas
 ---
 
 ## Enunciado del Problema
@@ -26,6 +26,8 @@ $$\vdots$$
 $$F_n = F_{n-2} + F_{n-1}$$
 
 Dado un array $$a_1,a_2,\dots,a_n$$ que contiene $$n$$ elementos, calcular $$\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})$$.
+
+<!--more-->
 
 El **formato de entrada** es:
 

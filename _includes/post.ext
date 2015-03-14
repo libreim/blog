@@ -12,9 +12,16 @@
     </span><!--
 -->{% endif %}<!--
 
---><span class="date">{{ post.date | date: "%e-%m-%Y" }}</span>
+--><span class="date">{{ post.date | date: "%e-%m-%Y" }}</span><!--
+
+--><a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/{{ post.path }}"><i class="fa fa-pencil"></i>
+Editar</a>
 
 {{ content }}
+
+{% if excerpt == true %}
+  <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo...</a></p>
+{% endif %}
 
 {% if post.editors != nil %}
   <p class="post-editors">

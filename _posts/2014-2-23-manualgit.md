@@ -6,11 +6,13 @@ authors:
 editors:
   - ncordon
   - M42
-category: utilidades
+category: Utilidades
 ---
 
 ## TL;DR
 Instala git. Crea un repositorio desde la página de Github. Descárgalo con `git clone`. Actualiza tu versión local con `git pull`. Empaqueta cambios con `git commit -a`. Envía cambios con `git pull && git push`.
+
+<!--more-->
 
 ## La versión larga
 
