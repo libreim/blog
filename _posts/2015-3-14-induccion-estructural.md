@@ -19,15 +19,48 @@ todas esas demostraciones.
 ## Conjuntos bien fundados
 
 Vamos a definir las relaciones bien fundadas, que nos permitirán definir una
-inducción generalizada.
+inducción generalizada. [^stackexchangeblog-induction]
 
 **Relación bien fundada**
 : Una relación en un conjunto de elementos es bien fundada si todo subconjunto
-no vacío tiene un elemento minimal.
+no vacío tiene un elemento minimal. Dado un orden parcial, es bien fundado si
+todo subconjunto no vacío tiene un elemento tal que ninguno es menor que él.
+
+Y podemos realizar inducción sobre cualquier conjunto con una relación bien
+fundada.
 
 **Inducción noetheriana**
-: Sea $X$ un conjunto bien fundado. Sea $A \subset X$, si se cumple:
-$$ (y<x \longrigtharrow y \in A) \longrigtharrow x \in A $$
-Entonces $A = X$.
+: Sea $$X$$ un conjunto bien fundado con $$A \subset X$$. Si se cumple:
 
-[^stackexchangeblog-induction]: http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/
+  $$ (y<x \Rightarrow y \in A) \Rightarrow x \in A $$
+
+  Entonces $$A = X$$.
+
+
+[^stackexchangeblog-induction]: Sobre generalizaciones de la inducción <http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/>
+
+
+## Inducción sobre tipos
+
+Ahora vamos a aplicar esto a teoría de tipos. Sea un tipo con sus constructores.
+Para todas las instancias constructibles del tipo (pueden generarse en un número
+finito de pasos desde sus constructores), definimos un orden parcial:
+
+**Orden constructivo**
+: Para dos instancias del tipo: $$a,b::A$$, $$a$$ se construye con $$b$$ si el
+  constructor de $$a$$ toma a $$b$$ como argumento. La clausura transitiva de
+  esta relación forma un orden parcial:
+
+    $$ a \leq b \Rightarrow a \mbox{ se usa en la construcción de } b$$
+
+Y ahora tenemos una inducción sobre los constructores de los tipos, que
+describimos ahora.
+
+**Inducción sobre tipos**
+: Sea un tipo $$A$$ con constructores y sea $$P :: A \rightarrow Bool $$ una propiedad.
+  Siendo $$a_1, a_2 \dots a_i :: A$$ argumentos del constructor, si se
+  cumple la condición de inducción:
+
+    $$P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C0(a_1,a_2,\dots,b_0,b_1\dots))$$
+
+  Entonces $$a::A \Rightarrow P(a)$$
