@@ -3,6 +3,8 @@ layout: post
 title: Guía de estilo
 authors:
  - fdavidcl
+editors:
+ - pbaeyens
 category: meta
 permalink: /styleguide/
 ---
@@ -206,3 +208,15 @@ Nota
 
   Además, al parecer kramdown tiene problemas con el carácter `|` y debemos
   sustituirlo por `\vert`.
+
+### Emoticonos y menciones
+Jekyll permite incluir [algunos](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/)
+plugins. En el blog, tenemos habilitados dos de ellos:
+
+- [**Jemoji**](https://help.github.com/articles/emoji-on-github-pages/): Permite incluir emoticonos :exclamation: :exclamation:. Puedes ver
+la lista completa de emoticonos junto con sus códigos [aquí](http://www.emoji-cheat-sheet.com/).
+
+- [**Menciones**](https://help.github.com/articles/mentions-on-github-pages/) Puedes mencionar a
+otros usuarios de Github añadiendo una @ al principio del nombre: @pbaeyens. Esto añadirá un enlace
+a su página de Github.
+
