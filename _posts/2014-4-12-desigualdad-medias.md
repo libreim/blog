@@ -22,6 +22,7 @@ absoluto.
 En este artículo se expone una de las desigualdades más útiles para acotación
 de funciones de varias variables: la desigualdad de las medias.
 
+<!--more-->
 
 ## Generalizando la media
 
