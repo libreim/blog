@@ -69,8 +69,15 @@ describimos ahora.
 ## Ejemplo 1: Naturales
 
 Nuestro primer ejemplo va a ser obtener la inducción sobre los naturales como
-caso particular. Damos una definición de los naturales en lenguaje `Coq`, con
+caso particular. Damos una definición de los naturales en lenguaje Haskell, con
 los axiomas de Peano, un natural es 0 o el siguiente de un natural:
+
+~~~ Haskell
+data Nat = O
+         | S Nat
+~~~
+
+Que equivale a la definición en Coq:
 
 ~~~ Coq
 Inductive nat : Type :=
@@ -80,3 +87,32 @@ Inductive nat : Type :=
 
 Es decir, si lo demostramos para `0` y para `S n` sabiéndolo para `n`, lo
 hemos demostrado para todos los naturales.
+
+
+## Ejemplo 2: Árboles binarios
+
+Ahora vamos a intentar el ejemplo que motivó esta búsqueda. Definimos un árbol
+binario como un árbol vacío o como un nodo del que surgen dos árboles binarios,
+en Haskell:
+
+~~~ Haskell
+data Tree a = Empty
+            | Node a (Tree a) (Tree a)
+~~~
+
+Que equivale a la definición en Coq:
+
+~~~ Coq
+Inductive tree (X:Type) : Type :=
+  | nilt : tree X
+  | node : X -> tree X -> tree X -> tree X.
+~~~
+
+Es decir, si demostramos una propiedad para el árbol vacío y para un árbol
+sabiendo que la cumplen sus subárboles derecho e izquierdo, la hemos demostrado
+para todos los árboles binarios.
+
+En el repositorio
+[M42/recorridosArboles](https://github.com/M42/recorridosArboles) hay varias
+demostraciones por inducción sobre árboles binarios, explicados en
+lenguaje natural y demostrados luego sobre el asistente de demostraciones Coq.
