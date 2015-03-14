@@ -10,7 +10,7 @@
 
 <nav class="navi links">
 	<div>
-		<a href="{{ site.baseurl }}" class="l-home">Inicio</a>
+		<a href="{{ site.baseurl }}/" class="l-home">Inicio</a>
 		<a href="{{ site.baseurl }}/categories" class="l-cat">Categorías</a>
 		<a href="{{ site.baseurl }}/resources" class="l-res">Recursos</a>
 		<a href="{{ site.baseurl }}/archive" class="l-arc">Archivo</a>
