@@ -12,7 +12,9 @@
     </span><!--
 -->{% endif %}<!--
 
---><span class="date">{{ post.date | date: "%e-%m-%Y" }}</span>
+--><span class="date">{{ post.date | date: "%e-%m-%Y" }}</span><!--
+
+--><a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/{{ post.path }}">Editar</a>
 
 {{ content }}
 

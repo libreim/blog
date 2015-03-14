@@ -106,7 +106,7 @@ h4 {
   font-size: 110%;
 }
 
-:not(.post-list) > .author, .date {
+:not(.post-list) > .author, .date, .edit {
   display: inline-block;
   padding: .2em 1em;
 }
@@ -114,6 +114,12 @@ h4 {
 .date {
   background: #ebebeb;
   color: #333;
+}
+
+.edit {
+  background: #f6f6f6;
+  color: #779ca0;
+  text-decoration: none;
 }
 
 :not(.post-list) > .author {
