@@ -4,12 +4,14 @@ layout: default
 
 ---
 <style type="text/css">.l-home { background: #fff; }</style>
-<!-- Uso de filtros para los posts -->
-{% assign misposts = paginator.posts | sort: 'name' | reverse %}
 
-{% for post in misposts %}
+{% for post in paginator.posts %}
   {% assign content = post.content %}
- 	 	<article>{% include post.ext %}</article>
+  {% if post.content contains '<!--more-->' %}
+		{% assign content = content | split:'<!--more-->' | first %}
+		{% assign content = content | append: '<p><a href="' | append: site.baseurl | append: post.url | append: '">Seguir leyendo...</a></p>'%}
+	{% endif %}
+  <article>{% include post.ext %}</article>	
 {% endfor %}
 
 
@@ -19,12 +21,12 @@ layout: default
     {% if paginator.previous_page == 1 %}
       <a href="{{ site.baseurl }}/">&larr; Más nuevo </a>
     {% else %}
-      <a href="{{ paginator.previous_page_path }}" class="next " >&larr; Más nuevo</a>
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="next " >&larr; Más nuevo</a>
     {% endif %}
   {% endif %}
   <span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
   {% if paginator.next_page <= paginator.total_pages %}
-    <a href="{{ paginator.previous_page_path }}" class="next ">Más nuevo &rarr;</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next ">Más antiguo &rarr;</a>
   {% endif %}
 </nav>
 
@@ -55,4 +57,3 @@ layout: default
 </nav>
 {% endif %}
 -->
-
