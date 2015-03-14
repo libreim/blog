@@ -4,28 +4,31 @@ layout: default
 permalink: /
 ---
 <style type="text/css">.l-home { background: #fff; }</style>
+<!-- Uso de filtros para los posts -->
+{% assign misposts = paginator.posts | sort: 'name' | reverse %}
 
-{% for post in site.posts %}
+
+{% for post in misposts %}
   {% assign content = post.content %}
   <article>{% include post.ext %}</article>
 {% endfor %}
 
-<!--
+<!-- Inicia en la página 4 -->
 <nav class="pagination">
-  {% if paginator.next_page %}
-    {% if paginator.next_page == 1 %}
-      <a href="{{ site.baseurl }}">&larr; Más nuevo</a>
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a href="{{ site.baseurl }}/">&larr; Más nuevo </a>
     {% else %}
-      <a href="{{ site.baseurl }}/p/{{paginator.next_page}}">&larr; Más nuevo</a>
+      <a href="{{ paginator.previous_page_path }}" class="next " >&larr; Más nuevo</a>
     {% endif %}
   {% endif %}
   <span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
-  {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}/p/{{paginator.previous_page}}" class="next ">Más antiguo &rarr;</a>
+  {% if paginator.next_page <= paginator.total_pages %}
+    <a href="{{ paginator.previous_page_path }}" class="next ">Más nuevo &rarr;</a>
   {% endif %}
 </nav>
 
-
+<!--
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">
   {% if paginator.previous_page %}
@@ -52,3 +55,4 @@ permalink: /
 </nav>
 {% endif %}
 -->
+
