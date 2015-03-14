@@ -30,6 +30,7 @@ Para más información sobre el método, visita
 para su demostración, [Proofwiki](https://proofwiki.org/wiki/Leibniz%27s_Formula_for_Pi).
 
 
+<!--more-->
 ## Fórmula de Madhava
 Otra forma de aproximarlo sería la dada por Madhava:
 
