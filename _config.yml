@@ -16,6 +16,10 @@ permalink: /:year/:month/:day/:title
 #paginate: 1
 #paginate_path: /p/:num
 
+gems:
+  - jemoji
+  - jekyll-mentions
+
 collections:
   math_resources:
     output: true
