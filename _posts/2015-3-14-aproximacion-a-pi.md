@@ -2,7 +2,7 @@
 layout: post
 title: Aproximación a Pi
 authors:
-  - oxcar103
+  - oxcar
 category: Problemas
 ---
 
