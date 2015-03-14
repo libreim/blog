@@ -4,6 +4,7 @@
 		<div>
 			<a href="{{ site.baseurl }}" class="l-blog">Blog</a>
 			<a href="/foro" class="l-foro">Foro</a>
+			<a href="https://github.com/dgiim/blog">GitHub</a>
 		</div>
 	</nav>
 </header>
