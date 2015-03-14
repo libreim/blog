@@ -31,6 +31,7 @@ para su demostración, [Proofwiki](https://proofwiki.org/wiki/Leibniz%27s_Formul
 
 
 <!--more-->
+
 ## Fórmula de Madhava
 Otra forma de aproximarlo sería la dada por Madhava:
 
