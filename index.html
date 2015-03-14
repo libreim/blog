@@ -6,7 +6,8 @@ permalink: /
 <style type="text/css">.l-home { background: #fff; }</style>
 
 {% for post in site.posts %}
-  {% assign content = post.content %}
+  {% assign content = post.excerpt %}
+  {% assign excerpt = true %}
   <article>{% include post.ext %}</article>
 {% endfor %}
 
