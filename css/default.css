@@ -217,8 +217,51 @@ article .share a img {
 }
 
 /**** Pagination ****/
+nav.pagination {
+  text-align: center;
+}
+
 nav.pagination .page-number {
-  color: #666;
+  color: #888;
+}
+
+.paginator {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 .4rem;
+  border: solid #bbb;
+  border-width: 0;
+}
+
+.paginator:not(:first-child):not(:last-child) {
+  padding: 0 .8rem;
+  border-width: 0 1px;
+}
+
+.paginator:first-child, .paginator:last-child {
+  width: 15%;
+}
+
+.paginator:first-child {
+  text-align: right;
+}
+
+.paginator:last-child {
+  text-align: left;
+}
+
+.paginator a {
+  display: block;
+}
+
+.archive-link {
+  color: #444;
+  display: block;
+}
+
+.disabled-link {
+  visibility: hidden;
 }
 
 /**** Footer ****/
