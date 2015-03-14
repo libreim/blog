@@ -12,13 +12,15 @@ markdown: kramdown
 kramdown:
   parse_span_html: false
 
-permalink: /:year/:month/:day/:title
+#permalink: /:year/:month/:day/:title
 paginate: 3
 paginate_path: "/page/:num/"
 
 gems:
   - jemoji
   - jekyll-mentions
+
+excerpt_separator: "<!--more-->"
 
 collections:
   math_resources:

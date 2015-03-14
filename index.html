@@ -1,17 +1,17 @@
 ---
 title: Blog - DGIIM
 layout: default
-permalink: /
+
 ---
 <style type="text/css">.l-home { background: #fff; }</style>
 <!-- Uso de filtros para los posts -->
 {% assign misposts = paginator.posts | sort: 'name' | reverse %}
 
-
 {% for post in misposts %}
   {% assign content = post.content %}
-  <article>{% include post.ext %}</article>
+ 	 	<article>{% include post.ext %}</article>
 {% endfor %}
+
 
 <!-- Inicia en la página 4 -->
 <nav class="pagination">
