@@ -57,6 +57,9 @@ Nota
 
 ## Contenido del post
 
+### Introducción al tema
+Si el post va a ser muy largo, queremos que aparezca sólo el comienzo en la página principal, para que no se haga demasiado larga. En ese caso, después de una breve introducción al post, se escribe `<!--more-->` para que se corte el post en ese lugar en la página principal.
+
 ### Texto y formato
 No hace falta decir que cuidéis la ortografía y
 la gramática :). Si usáis un editor con vista previa de Markdown
