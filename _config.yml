@@ -13,8 +13,8 @@ kramdown:
   parse_span_html: false
 
 permalink: /:year/:month/:day/:title
-#paginate: 1
-#paginate_path: /p/:num
+paginate: 8
+paginate_path: "/page/:num/"
 
 collections:
   math_resources:
