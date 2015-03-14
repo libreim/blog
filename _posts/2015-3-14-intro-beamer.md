@@ -8,7 +8,7 @@ category: programación
 
 `beamer` es una clase de documento de LaTeX que nos permite crear diapositivas en pdf
 y otros formatos. Permite el uso de transiciones, mostrar elementos selectivamente en la 
-pantalla y aprovechar las capacidades de `tikz`, `pgf` y la mayoría de paquetes de $\LaTeX$
+pantalla y aprovechar las capacidades de `tikz`, `pgf` y la mayoría de paquetes de LaTeX
 para personalizar el aspecto de la presentación al detalle. 
 
 Puedes encontrar una guía básica escrita en `beamer` [aquí](https://github.com/dgiim/beamer).
