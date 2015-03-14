@@ -3,7 +3,7 @@ layout: post
 title: Introducción a Beamer
 authors:
   - pbaeyens
-category: programación
+category: Programación
 ---
 
 `beamer` es una clase de documento de LaTeX que nos permite crear diapositivas en pdf

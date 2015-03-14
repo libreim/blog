@@ -16,6 +16,10 @@ permalink: /:year/:month/:day/:title
 paginate: 8
 paginate_path: "/page/:num/"
 
+gems:
+  - jemoji
+  - jekyll-mentions
+
 collections:
   math_resources:
     output: true

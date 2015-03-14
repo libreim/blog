@@ -6,7 +6,7 @@ authors:
 editors:
   - ncordon
   - M42
-category: utilidades
+category: Utilidades
 ---
 
 ## TL;DR

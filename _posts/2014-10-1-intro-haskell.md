@@ -4,7 +4,7 @@ title: Introducción a Haskell
 authors:
   - M42
   - pbaeyens
-category: programación
+category: Programación
 ---
 
 El lenguaje de programación Haskell es uno de los lenguajes puramente 

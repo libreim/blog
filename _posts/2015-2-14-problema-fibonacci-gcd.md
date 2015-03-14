@@ -4,7 +4,7 @@ title: Problemas - Fibonacci GCD
 authors:
   - andreshp
   - M42
-category: problemas
+category: Problemas
 ---
 
 ## Enunciado del Problema

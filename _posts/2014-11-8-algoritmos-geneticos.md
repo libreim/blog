@@ -3,7 +3,7 @@ layout: post
 title: Algoritmos Genéticos
 authors:
   - andreshp
-category: heurísticas
+category: Heurísticas
 ---
 
 El objetivo de un buen Matemático e Informático consiste en resolver problemas. Existen algunos (como el *Problema del Viajante de Comercio*) donde el conjunto de soluciones posibles es muy grande. En estos problemas la aplicación de algoritmos exactos que recorran de forma óptima todo el conjunto de soluciones no es viable por el tiempo necesario. Tenemos que recurrir a otras herramientas: las **heurísticas**.

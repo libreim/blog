@@ -3,7 +3,7 @@ layout: post
 title: Algoritmos de clasificación en Minería de datos
 authors:
   - fdavidcl
-category: ciencia de datos
+category: Ciencia de datos
 ---
 
 La Minería de datos es el análisis de datos para tratar de encontrar
