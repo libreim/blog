@@ -64,3 +64,19 @@ describimos ahora.
     $$P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C0(a_1,a_2,\dots,b_0,b_1\dots))$$
 
   Entonces $$a::A \Rightarrow P(a)$$
+
+
+## Ejemplo 1: Naturales
+
+Nuestro primer ejemplo va a ser obtener la inducción sobre los naturales como
+caso particular. Damos una definición de los naturales en lenguaje `Coq`, con
+los axiomas de Peano, un natural es 0 o el siguiente de un natural:
+
+~~~ Coq
+Inductive nat : Type :=
+  | O : nat
+  | S : nat -> nat
+~~~
+
+Es decir, si lo demostramos para `0` y para `S n` sabiéndolo para `n`, lo
+hemos demostrado para todos los naturales.
