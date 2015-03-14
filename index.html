@@ -1,11 +1,11 @@
 ---
 title: Blog - DGIIM
 layout: default
-permalink: /
+
 ---
 <style type="text/css">.l-home { background: #fff; }</style>
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
   {% assign content = post.content %}
   {% if post.content contains '<!--more-->' %}
 		{% assign content = content | split:'<!--more-->' | first %}
@@ -14,45 +14,29 @@ permalink: /
   <article>{% include post.ext %}</article>	
 {% endfor %}
 
-<!--
+
+<!-- Inicia en la página 4 -->
 <nav class="pagination">
-  {% if paginator.next_page %}
-    {% if paginator.next_page == 1 %}
-      <a href="{{ site.baseurl }}">&larr; Más nuevo</a>
+  <span class="paginator">
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="{{ site.baseurl }}/"><i class="fa fa-arrow-left"></i></a>
+      {% else %}
+        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="next " ><i class="fa fa-arrow-left"></i></a>
+      {% endif %}
     {% else %}
-      <a href="{{ site.baseurl }}/p/{{paginator.next_page}}">&larr; Más nuevo</a>
+      <span class="disabled-link"><i class="fa fa-arrow-left"></i></span>
     {% endif %}
-  {% endif %}
-  <span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
-  {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}/p/{{paginator.previous_page}}" class="next ">Más antiguo &rarr;</a>
-  {% endif %}
-</nav>
-
-
-{% if paginator.total_pages > 1 %}
-<nav class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <em>{{ page }}</em>
-    {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+  </span>
+  <span class="paginator">
+    <span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
+    <span class="archive-link"><a href="{{ site.baseurl }}/archive">Todos los posts</a></span>
+  </span>
+  <span class="paginator">
+    {% if paginator.next_page <= paginator.total_pages %}
+      <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next "><i class="fa fa-arrow-right"></i></a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <span class="disabled-link"><i class="fa fa-arrow-right"></i></span>
     {% endif %}
-  {% endfor %}
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
-  {% endif %}
+  </span>
 </nav>
-{% endif %}
--->
