@@ -213,7 +213,7 @@ Nota
 Jekyll permite incluir [algunos](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/)
 plugins. En el blog, tenemos habilitados dos de ellos:
 
-- [**Jemoji**](https://help.github.com/articles/emoji-on-github-pages/): Permite incluir emoticonos :exclamation: :exclamation:. Puedes ver
+- [**Jemoji**](https://help.github.com/articles/emoji-on-github-pages/): Permite incluir emoticonos:exclamation::exclamation:. Puedes ver
 la lista completa de emoticonos junto con sus códigos [aquí](http://www.emoji-cheat-sheet.com/).
 
 - [**Menciones**](https://help.github.com/articles/mentions-on-github-pages/) Puedes mencionar a
