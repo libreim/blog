@@ -217,6 +217,6 @@ plugins. En el blog, tenemos habilitados dos de ellos:
 la lista completa de emoticonos junto con sus códigos [aquí](http://www.emoji-cheat-sheet.com/).
 
 - [**Menciones**](https://help.github.com/articles/mentions-on-github-pages/) Puedes mencionar a
-otros usuarios de Github añadiendo una @ al principio del nombre: @pbaeyens. Esto añadirá un enlace
+otros usuarios de Github añadiendo una @ al principio del *username*: @pbaeyens. Esto añadirá un enlace
 a su página de Github.
 
