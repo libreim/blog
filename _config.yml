@@ -20,6 +20,8 @@ gems:
   - jemoji
   - jekyll-mentions
 
+excerpt_separator: "<!--more-->"
+
 collections:
   math_resources:
     output: true
