@@ -1,12 +1,14 @@
 <header>
-	<a href="{{ site.baseurl }}">{{ site.name }}</a>
-	<nav class="sites links">
-		<div>
-			<a href="{{ site.baseurl }}" class="l-blog" title="Inicio"><i class="fa fa-home"></i></a>
-			<a href="/foro" class="l-foro" title="Foro"><i class="fa fa-comments"></i></a>
-			<a href="{{ site.baseurl }}/resources" class="l-res" title="Recursos"><i class="fa fa-bookmark"></i></a>
-			<a href="https://github.com/dgiim/blog" title="GitHub"><i class="fa fa-github"></i></a>
-			<a href="https://twitter.com/dgiimBlog" title="Twitter"><i class="fa fa-twitter"></i></a>
-		</div>
+  <div class="container">
+	<a href="{{ site.baseurl }}" class="site-title"></a>
+	<nav class="sites">
+      <div>
+        <a href="{{ site.baseurl }}" class="l-blog" title="Inicio"><i class="fa fa-home"></i></a>
+        <a href="/foro" class="l-foro" title="Foro"><i class="fa fa-comments"></i></a>
+        <a href="{{ site.baseurl }}/resources" class="l-res" title="Recursos"><i class="fa fa-bookmark"></i></a>
+        <a href="https://github.com/dgiim/blog" title="GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://twitter.com/dgiimBlog" title="Twitter"><i class="fa fa-twitter"></i></a>
+      </div>
 	</nav>
+  </div>
 </header>

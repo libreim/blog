@@ -5,6 +5,13 @@ body {
 }
 
 /**** Structure ****/
+
+.container {
+  margin: 0 auto 2%;
+  padding: 1.2% 2%;
+  width: 92%;
+}
+
 article, nav.pagination, footer>div {
   margin: 0 auto 2%;
   padding: 1.2% 2%;
@@ -12,50 +19,47 @@ article, nav.pagination, footer>div {
 }
 
 @media screen and (min-width: 800px) {
-  header>a, article, nav.pagination, nav.links div, footer>div {
+  article, nav.pagination, footer>div, .container {
     max-width: 55rem;
     min-width: 20rem;
+  }
+  
+  a.site-title:after {
+    content: "dgiim";
   }
 }
 
 /**** Header ****/
 header {
-    background: #333;
+    background: #3498db;
     padding-top: 0.3rem;
     color: #EEE;
 }
 
-header>a {
-  display: block;
-  margin: 0 auto 0.5rem;
-  width: 92%;
-  font-size: .85rem;
+a.site-title {
+  display: inline-block;
+  padding: .2rem 0 .2rem 2rem;
   font-weight: normal;
   text-decoration: none;
+  background: url("../assets/logo.png") no-repeat;
+  background-size: auto 100%;
 }
-
 
 /**** Navigation ****/
-nav.navi {
-  background: #EBEBEB;
+nav.sites {
+  display: inline-block;
+  float: right;
 }
-nav.navi a {
-  color: #333;
+nav.sites div {
+  position: static;
 }
-nav.links div {
-  margin: 0 auto;
-  padding: 0;
-  width: 92%;
-  background: inherit;
-}
-nav.links a {
+nav.sites a {
   padding: 0.8% 1rem 1.2%;
   margin-top: 0.4%;
   display: inline-block;
   text-decoration: none;
 }
 nav.sites a.l-blog {
-  background: #ebebeb;
   color: #333;
 }
 
