@@ -5,6 +5,7 @@
 			<a href="{{ site.baseurl }}" class="l-blog">Blog</a>
 			<a href="/foro" class="l-foro">Foro</a>
 			<a href="https://github.com/dgiim/blog">GitHub</a>
+			<a href="https://twitter.com/dgiimBlog">Twitter</a>
 		</div>
 	</nav>
 </header>
