@@ -7,7 +7,11 @@ permalink: /
 
 {% for post in site.posts %}
   {% assign content = post.content %}
-  <article>{% include post.ext %}</article>
+  {% if post.content contains '<!--more-->' %}
+		{% assign content = content | split:'<!--more-->' | first %}
+		{% assign content = content | append: '<p><a href="' | append: site.baseurl | append: post.url | append: '">Seguir leyendo...</a></p>'%}
+	{% endif %}
+  <article>{% include post.ext %}</article>	
 {% endfor %}
 
 <!--

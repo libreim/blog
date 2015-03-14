@@ -19,6 +19,10 @@ Editar</a>
 
 {{ content }}
 
+{% if excerpt == true %}
+  <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo...</a></p>
+{% endif %}
+
 {% if post.editors != nil %}
   <p class="post-editors">
     {% assign plural = false %}
