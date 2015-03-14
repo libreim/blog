@@ -3,7 +3,7 @@ layout: post
 title: El Isomorfismo de Curry-Howard
 authors:
   - M42
-category: programación
+category: Programación
 ---
 
 El isomorfismo de Curry-Howard[^curryhowardwiki] relaciona los sistemas de tipos con la lógica
