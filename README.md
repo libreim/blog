@@ -61,3 +61,47 @@ un guion bajo `_`:
   en general escritos en Markdown. El nombre de cada archivo debe indicar la
   fecha del post y el camino del URL en el que se encontrará. Por ejemplo, el
   archivo `2015-3-14-pi-day.md` se mostraría en `/2015/03/14/pi-day`.
+* `_drafts` Esta carpeta guarda los posts que aún son borradores. Se pueden 
+  incluir en el blog localmente ejecutando `jekyll serve --drafts`.
+* `_plugins` Normalmente este directorio almacenaría plugins para Jekyll 
+  escritos en Ruby, pero Github Pages no permite añadir plugins por seguridad.
+* `_site` Este directorio se crea automáticamente al ejecutar `jekyll serve`, y
+  contiene el sitio estático generado por Jekyll.
+
+Además de estos directorios, Jekyll permite añadir más para almacenamiento de
+otros datos y páginas. Por ejemplo, en este blog usamos `_cs_resources` y 
+`_math_resources` para los listados de recursos de informática y de matemáticas
+respectivamente. Estos directorios son escaneados por el archivo `resources.md`
+gracias a que Jekyll los representa en las variables `site.cs_resources` y 
+`site.math_resources`.
+
+### Sintaxis de Jekyll
+
+Jekyll utiliza una sintaxis de marcado llamada 
+[Liquid](http://liquidmarkup.org/) simple pero potente y segura para la 
+generación de código HTML a partir de plantillas. Básicamente hay dos tipos de 
+mensajes que acepta. El primero es la sustitución:
+
+~~~
+{{ nombre_variable }}
+~~~
+
+Esto sustituye el contenido de la variable especificada en el lugar donde se
+encuentre. Si es necesario, se interpretará como Markdown mediante el parser
+especificado en `_config.yml` ([kramdown](http://kramdown.gettalong.org/) en
+nuestro caso).
+
+El otro mensaje es la evaluación de órdenes, para estructuras *if*, *for* y 
+similares:
+
+~~~
+{% for post in site.posts %}
+  {% if post.mola %}
+    {{ post.content }}
+  {% endif %}
+{% endfor %}
+~~~
+
+El ejemplo es muy simple. Jekyll almacena todos los posts bajo `site.posts`, por
+el que podemos iterar y renderizar cada uno si tienen asignada la variable 
+`mola` a *true*.
