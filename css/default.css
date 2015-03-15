@@ -50,15 +50,61 @@ header .pure-menu-link {
 h1 {
   background: #BBE694;
   margin: 0;
-  padding-top: 2rem;
   font-size: 250%;
 }
 h1 a {
+  padding-top: 2rem;
   color: #202020;
 }
 .post-data {
   background: #D3F5B4;
   padding: 0.6rem 0;
+}
+  .date {
+    display: inline-block;
+    margin-left: 1.2rem;
+    color: #888;
+  }
+  .edit-button {
+    text-align: right;
+    display: none;
+  }
+
+.post-content {
+  margin-bottom: 1.8rem;
+}
+  .share {
+    filter: gray;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+  }
+    .share:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+    }
+    .share img {
+      width: 1.6rem;
+    }
+
+/*** Pagination ***/
+nav.pagination {
+  margin: 1.2rem 0;
+}
+nav.pagination .paginator {
+  color: #888;
+  text-align: center;
+  vertical-align: middle;
+}
+nav.pagination .paginator a {
+  display: block;
+}
+nav.pagination .paginator:first-child {
+}
+
+
+/*** Footer ***/
+footer {
+  background: #D3F5B4;
 }
 
 /**********
@@ -71,5 +117,8 @@ h1 a {
   }
   h1 {
     font-size: 300%;
+  }
+  .edit-button {
+    display: inline-block;
   }
 }
