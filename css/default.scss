@@ -1,3 +1,9 @@
+---
+---
+
+$theme: #c0392b;
+$foreground: #eee;
+
 body, .pure-g [class*="pure-u"] {
   font-family: Lato, 'Lato', sans-serif;
 }
@@ -6,14 +12,15 @@ body, .pure-g [class*="pure-u"] {
 
 h1, h1 .pure-g [class*="pure-u"] {
   font-weight: 300;
-}
-h1 a {
-  display: block;
-  text-decoration: none;
-}
+  
+  a {
+    display: block;
+    text-decoration: none;
+  }
+} 
 
 a {
-  color: #657556;
+  color: darken($theme, 20%);
   text-decoration: none;
 }
 
@@ -24,12 +31,12 @@ a:hover {
 
 /*** Header ***/
 header {
-  background: #BBE694;
+  background: lighten($theme, 10%);
 }
 header .pure-menu-link {
   padding-top: 1.1em;
   padding-bottom: 1.1em;
-  color: #202020;
+  color: $foreground;
 }
 
 .site-title.pure-menu-heading {
@@ -53,18 +60,18 @@ header .pure-menu-link {
 
 /*** Posts ***/
 h1 {
-  background: #BBE694;
+  background: lighten($theme, 10%);
   margin: 0;
   font-size: 250%;
-}
-h1 a {
-  padding-top: 2rem;
-  color: #202020;
+  
+  a {
+    padding-top: 2rem;
+    color: $foreground;
+  }
 }
 .post-data {
-  background: #D3F5B4;
+  background: lighten($theme, 30%);
   padding: 0.6rem 0;
-}
   .date {
     display: inline-block;
     margin-left: 1.2rem;
@@ -74,24 +81,20 @@ h1 a {
     text-align: right;
     display: none;
   }
+}
 
 .post-content {
   margin-bottom: 1.8rem;
   line-height: 1.3em;
-}
   .share {
     filter: gray;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
-  }
-    .share:hover {
-      filter: none;
-      -webkit-filter: grayscale(0);
-    }
-    .share img {
+    
+    img {
       width: 1.6rem;
     }
-    .share .dsq-comment-count {
+    .dsq-comment-count {
       background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% #303030;
       color: #fff;
       display: inline-block;
@@ -100,7 +103,12 @@ h1 a {
       text-decoration: none;
       vertical-align: top;
     }
-
+  }
+    .share:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+    }
+}
 
 dl dt {
   font-weight: bold;
@@ -144,26 +152,28 @@ div.MathJax_Display {
 /*** Pagination ***/
 nav.pagination {
   margin: 1.2rem 0;
-}
-  nav.pagination .paginator {
+  
+  .paginator {
     color: #888;
     text-align: center;
     vertical-align: middle;
-  }
-    nav.pagination .paginator a {
+    
+    a {
       display: block;
     }
-    nav.pagination .paginator:first-child a, nav.pagination .paginator:last-child a {
+    :first-child > *, :last-child > * {
       padding: 0.6rem 0;
     }
-    nav.pagination .paginator:first-child a:hover, nav.pagination .paginator:last-child a:hover {
-      background: #D3F5B4;
+    :first-child a:hover, :last-child a:hover {
+      background: lighten($theme, 40%);
     }
+  }  
+}
 
 
 /*** Footer ***/
 footer {
-  background: #D3F5B4;
+  background: lighten($theme, 20%);
   padding-bottom: 1.2rem;
 }
 
@@ -174,6 +184,7 @@ footer {
 @media (min-width: 48em) {
   .site-title.pure-menu-heading:before {
     content: "dgiim";
+    color: darken($foreground, 10%);
   }
   h1 {
     font-size: 300%;
