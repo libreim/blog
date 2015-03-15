@@ -66,7 +66,7 @@
       </p>
     {% endif %}
 
-    <div class="share pure-u-1 pure-u-md-1 pure-u-lg-1-4">
+    <div class="share">
       <a class="dsq-comment-count" href="{{ site.baseurl }}{{ post.url }}/#disqus_thread"></a>
       <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="{{ site.baseurl }}/assets/sq_twitter.png" /></a>
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="{{ site.baseurl }}/assets/sq_facebook.png" /></a>
