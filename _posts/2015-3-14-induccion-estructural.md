@@ -7,10 +7,10 @@ category: Lógica
 ---
 
 Normalmente aplicamos inducción sobre los números naturales, y cuando
-necesitamos aplicar inducción en otro contexto, lo llevamos a los números
+necesitamos aplicar inducción en otro contexto lo llevamos a los números
 naturales. Por ejemplo, si queremos demostrar una propiedad sobre los árboles
 binarios, la demostraríamos por inducción sobre la altura del árbol. Pero el
-proceso de llevar todo a los naturales puede ser incómodo, tedioso y complicar
+proceso de llevar todo a los naturales puede ser incómodo, tedioso y puede complicar
 la demostración innecesariamente. En este post vamos a desarrollar una forma de
 ampliar la inducción a la estructura de los tipos de datos para simplificar
 todas esas demostraciones.
@@ -40,6 +40,7 @@ fundada.
 [^stackexchangeblog-induction]: Sobre generalizaciones de la inducción <http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/>
 
 <!--more-->
+
 ## Inducción sobre tipos
 
 Ahora vamos a aplicar esto a teoría de tipos. Sea un tipo con sus constructores.
@@ -47,8 +48,8 @@ Para todas las instancias constructibles del tipo (pueden generarse en un númer
 finito de pasos desde sus constructores), definimos un orden parcial:
 
 **Orden constructivo**
-: Para dos instancias del tipo: $$a,b::A$$, $$a$$ se construye con $$b$$ si el
-  constructor de $$a$$ toma a $$b$$ como argumento. La clausura transitiva de
+: Para dos instancias del tipo: $$a,b::A$$, $$b$$ se construye con $$a$$ si el
+  constructor de $$b$$ toma a $$a$$ como argumento. La clausura transitiva de
   esta relación forma un orden parcial:
 
     $$ a \leq b \Rightarrow a \mbox{ se usa en la construcción de } b$$
@@ -59,9 +60,9 @@ describimos ahora.
 **Inducción sobre tipos**
 : Sea un tipo $$A$$ con constructores y sea $$P :: A \rightarrow Bool $$ una propiedad.
   Siendo $$a_1, a_2 \dots a_i :: A$$ argumentos del constructor, si se
-  cumple la condición de inducción:
+  cumple la condición de inducción para cada constructor $$C_i$$:
 
-    $$P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C0(a_1,a_2,\dots,b_0,b_1\dots))$$
+    $$P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C_i(a_1,a_2,\dots,b_0,b_1\dots))$$
 
   Entonces $$a::A \Rightarrow P(a)$$
 
