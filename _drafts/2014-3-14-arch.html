@@ -130,8 +130,34 @@ chroot . /bin/bash</code></pre>
 </div>
 <div id="setting-up-things" class="section level3">
 <h3>Setting up things</h3>
+<div id="users" class="section level4">
+<h4>Users</h4>
 <p>It’s highly advised to change <code>root</code> password:</p>
 <pre class="bash"><code>passwd</code></pre>
+<p>If we desire to create a new admin account we can do it by typing:</p>
+<pre class="bash"><code>useradd -m -G wheel -s /bin/bash username</code></pre>
+<p>The group <code>wheel</code> is normally used to give access to <code>sudo</code> and <code>su</code>. We gotta add it to the <code>sudoers</code> file too, uncommenting the line:</p>
+<pre class="bash"><code>%wheel ALL=(ALL) ALL</code></pre>
+</div>
+<div id="keymap-and-locale" class="section level4">
+<h4>Keymap and locale</h4>
+<p>We have to change the keymap in order not to have problems typing the passwords when we restart the system. This’ll do it:</p>
+<pre class="bash"><code>echo &quot;KEYMAP=es\\nFONT=lat9w-16&quot; &gt;&gt; /etc/vconsole.conf</code></pre>
+<p>To change the locale, we have to uncomment the line corresponding to our locale in <code>/etc/locale.gen</code>, and we need to compile the locale file selected by typing <code>locale-gen</code>. The last step concerning to locales is choosing the language: <code>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</code> and exporting the variable of that language: <code>echo LANG=en_US.UTF-8</code></p>
+</div>
+</div>
+<div id="time-and-cpu-clock" class="section level3">
+<h3>Time and CPU clock</h3>
+<p>To set the timezone and the clock:</p>
+<pre class="bash"><code>ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+hwclock --systohc --utc</code></pre>
+<p>Again, there’s a <a href="https://github.com/analca3/Install-Archlinux-Script/blob/master/After-chroot.sh">script</a> made by <a href="https://github.com/analca3">@analca3</a>, but I insist in the fact that there’s no point in deciding to install Arch if you don’t realize how things gotta be set up before being able to use the system in a normal way.</p>
+<div id="hostname" class="section level4">
+<h4>Hostname</h4>
+<p>To select a hostname name:</p>
+<pre class="bash"><code>echo myhostname &gt; /etc/hostname</code></pre>
+<p>And we modify both lines in <code>/etc/hosts</code> to change the hostname.</p>
+</div>
 </div>
 </div>
 </div>
