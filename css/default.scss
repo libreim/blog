@@ -1,7 +1,7 @@
 ---
 ---
 
-$theme: #34495e;
+$theme: lighten(#34495e, 15%);
 $foreground: #eee;
 
 body, .pure-g [class*="pure-u"] {
@@ -173,7 +173,7 @@ nav.pagination {
 
 /*** Footer ***/
 footer {
-  background: lighten($theme, 20%);
+  background: lighten($theme, 40%);
   padding-bottom: 1.2rem;
 }
 
