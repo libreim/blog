@@ -1,140 +1,97 @@
-body {
-  font-family: PT Sans, 'PT Sans', Arial, sans-serif;
-  background: #fff;
-  margin: 0;
+body, .pure-g [class*="pure-u"] {
+  font-family: Lato, 'Lato', sans-serif;
 }
 
-/**** Structure ****/
-article, nav.pagination, footer>div {
-  margin: 0 auto 2%;
-  padding: 1.2% 2%;
-  width: 92%;
-}
+/*** Generic styles ***/
 
-@media screen and (min-width: 800px) {
-  header>a, article, nav.pagination, nav.links div, footer>div {
-    max-width: 55rem;
-    min-width: 20rem;
-  }
+h1, h1 .pure-g [class*="pure-u"] {
+  font-weight: 300;
 }
-
-/**** Header ****/
-header {
-    background: #333;
-    padding-top: 0.3rem;
-    color: #EEE;
-}
-
-header>a {
-  display: block;
-  margin: 0 auto 0.5rem;
-  width: 92%;
-  font-size: .85rem;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-
-/**** Navigation ****/
-nav.navi {
-  background: #EBEBEB;
-}
-nav.navi a {
-  color: #333;
-}
-nav.links div {
-  margin: 0 auto;
-  padding: 0;
-  width: 92%;
-  background: inherit;
-}
-nav.links a {
-  padding: 0.8% 1rem 1.2%;
-  margin-top: 0.4%;
-  display: inline-block;
-  text-decoration: none;
-}
-nav.sites a.l-blog {
-  background: #ebebeb;
-  color: #333;
-}
-
-/**** Posts ****/
-h1, h2, dl, code.hljs {
-  margin-left: -2%;
-  margin-right: -2%;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-h1 {
-  font-size: 280%;
-  font-weight: 200;
-  letter-spacing: -0.1rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  background: #ebebeb;
-}
-
 h1 a {
   display: block;
   text-decoration: none;
 }
 
-h2 {
-  border-bottom: 2px solid #F0F0F0;
-  font-size: 160%;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-ul h2 {
-  display: inline;
-}
-
-h3 {
-  text-transform: uppercase;
-  font-size: 120%;
-  color: #444;
-}
-
-h4 {
-  font-size: 110%;
-}
-
-:not(.post-list) > .author, .date, .edit {
-  display: inline-block;
-  padding: .2em 1em;
-}
-
-.date {
-  background: #ebebeb;
-  color: #333;
-}
-
-.edit {
-  background: #f6f6f6;
-  color: #779ca0;
+a {
+  color: #657556;
   text-decoration: none;
 }
 
-:not(.post-list) > .author {
-  background: #888;
-  color: #f0f0f0;
+a:hover {
+  text-decoration: underline;
 }
 
-.post-editors {
-  font-style: italic;
+
+/*** Header ***/
+header {
+  background: #BBE694;
+}
+header .pure-menu-link {
+  padding-top: 1.1em;
+  padding-bottom: 1.1em;
+  color: #202020;
+}
+
+.site-title.pure-menu-heading {
+  text-transform: none;
+  padding-left: 2.4em;
+  background-image: url("../assets/logo.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  margin: 0.6em 0;
+  text-decoration: none;
+}
+.sites {
   text-align: right;
 }
+  .sites a, .sites a:hover {
+    background: transparent;
+  }
+  .sites a:hover {
+    color: #657556;
+  }
 
-a {
-  color: inherit;
+/*** Posts ***/
+h1 {
+  background: #BBE694;
+  margin: 0;
+  font-size: 250%;
 }
+h1 a {
+  padding-top: 2rem;
+  color: #202020;
+}
+.post-data {
+  background: #D3F5B4;
+  padding: 0.6rem 0;
+}
+  .date {
+    display: inline-block;
+    margin-left: 1.2rem;
+    color: #888;
+  }
+  .edit-button {
+    text-align: right;
+    display: none;
+  }
+
+.post-content {
+  margin-bottom: 1.8rem;
+  line-height: 1.3em;
+}
+  .share {
+    filter: gray;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+  }
+    .share:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+    }
+    .share img {
+      width: 1.6rem;
+    }
+
 
 dl dt {
   font-weight: bold;
@@ -150,13 +107,17 @@ dl, code.hljs {
   overflow-x: auto;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
+  padding: 0.6rem;
   display: block;
 }
 
 dl code.hljs, dl dl {
   border-width: 1px 0;
+}
+
+code.hljs {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.8rem;
 }
 
 code.has-jax {
@@ -170,113 +131,45 @@ div.MathJax_Display {
   overflow-x: auto;
   overflow-y: hidden;
 }
-.align-right {
-  text-align: right;
-}
 
-div.footnotes {
-  margin: 0.6rem 0 0;
-  border-top: 1px solid #c0c0c0;
-}
-
-blockquote {
-  margin-left: 2%;
-  padding-left: 2%;
-  border-left: 0.4em solid rgb(224, 224, 224);
-}
-
-/**** Sharing/comments bar ****/
-article .share {
-  padding: 1.6% 2%;
-  background: #ebebeb;
-  margin: 0px -2%;
-}
-
-article .share .dsq-comment-count {
-    background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% #303030;
-    color: #fff;
-    display: inline-block;
-    height: 1.65rem;
-    padding: 0.1rem 0.35rem 0 1.9rem;
-    text-decoration: none;
-    vertical-align: middle;
-}
-
-article .share a img {
-  width: 1.75rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/**** Categories page ****/
-.post-list {
-  font-size: 150%;
-}
-.post-list .author {
-  font-size: 66%;
-}
-
-/**** Pagination ****/
+/*** Pagination ***/
 nav.pagination {
-  text-align: center;
+  margin: 1.2rem 0;
 }
+  nav.pagination .paginator {
+    color: #888;
+    text-align: center;
+    vertical-align: middle;
+  }
+    nav.pagination .paginator a {
+      display: block;
+    }
+    nav.pagination .paginator:first-child a, nav.pagination .paginator:last-child a {
+      padding: 0.6rem 0;
+    }
+    nav.pagination .paginator:first-child a:hover, nav.pagination .paginator:last-child a:hover {
+      background: #D3F5B4;
+    }
 
-nav.pagination .page-number {
-  color: #888;
-}
 
-.paginator {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  margin: 0 .4rem;
-  border: solid #bbb;
-  border-width: 0;
-}
-
-.paginator:not(:first-child):not(:last-child) {
-  padding: 0 .8rem;
-  border-width: 0 1px;
-}
-
-.paginator:first-child, .paginator:last-child {
-  width: 15%;
-}
-
-.paginator:first-child {
-  text-align: right;
-}
-
-.paginator:last-child {
-  text-align: left;
-}
-
-.paginator a {
-  display: block;
-}
-
-.archive-link {
-  color: #444;
-  display: block;
-}
-
-.disabled-link {
-  visibility: hidden;
-}
-
-/**** Footer ****/
+/*** Footer ***/
 footer {
-  background: #EBEBEB;
+  background: #D3F5B4;
+  padding-bottom: 1.2rem;
 }
-footer>div {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 800px) {
-  /** Si cabe en la pantalla, ponemos los 3 div en paralelo **/
-  footer>div>div {
+
+/**********
+ Tablet (and up) styles
+**********/
+
+@media (min-width: 48em) {
+  .site-title.pure-menu-heading:before {
+    content: "dgiim";
+  }
+  h1 {
+    font-size: 300%;
+  }
+  .edit-button {
     display: inline-block;
-    width: 30%;
-    padding-right: 3%;
-    vertical-align: top;
   }
 }

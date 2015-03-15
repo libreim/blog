@@ -3,7 +3,7 @@ title: Blog - DGIIM
 layout: default
 
 ---
-<style type="text/css">.l-home { background: #fff; }</style>
+<style type="text/css">header .l-blog { color: #888; }</style>
 
 {% for post in paginator.posts %}
   {% assign content = post.content %}
@@ -15,28 +15,4 @@ layout: default
 {% endfor %}
 
 
-<!-- Inicia en la página 4 -->
-<nav class="pagination">
-  <span class="paginator">
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a href="{{ site.baseurl }}/"><i class="fa fa-arrow-left"></i></a>
-      {% else %}
-        <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="next " ><i class="fa fa-arrow-left"></i></a>
-      {% endif %}
-    {% else %}
-      <span class="disabled-link"><i class="fa fa-arrow-left"></i></span>
-    {% endif %}
-  </span>
-  <span class="paginator">
-    <span class="page-number">Página {{paginator.page}} de {{paginator.total_pages}}</span>
-    <span class="archive-link"><a href="{{ site.baseurl }}/archive">Todos los posts</a></span>
-  </span>
-  <span class="paginator">
-    {% if paginator.next_page <= paginator.total_pages %}
-      <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next "><i class="fa fa-arrow-right"></i></a>
-    {% else %}
-      <span class="disabled-link"><i class="fa fa-arrow-right"></i></span>
-    {% endif %}
-  </span>
-</nav>
+{% include pagination.ext %}

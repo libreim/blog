@@ -4,7 +4,7 @@ lsi: false
 
 # Settings
 baseurl: /blog
-name: Doble Grado en Ingeniería Informática y Matemáticas
+name: dgiim
 description: Blog de los alumnos del Doble Grado en Ingeniería Informática y Matemáticas de la Universidad de Granada
 url: http://dgiim.github.io/blog/
 
@@ -12,7 +12,7 @@ markdown: kramdown
 kramdown:
   parse_span_html: false
 
-#permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title
 paginate: 5
 paginate_path: "/page/:num/"
 
