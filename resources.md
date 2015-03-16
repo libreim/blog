@@ -4,7 +4,7 @@ title: Recursos
 permalink: /resources/
 ---
 
-<style type="text/css">header .l-res { color: #888; }</style>
+<style type="text/css">header .l-res { color: #c0c0c0; }</style>
 
 En esta sección encontrarás listas de enlaces y bibliografías útiles para estudiar
 y conocer cada una de las ramas de estudio del Doble Grado. Puedes añadir tus recursos

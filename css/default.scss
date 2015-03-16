@@ -55,7 +55,7 @@ header .pure-menu-link {
     background: transparent;
   }
   .sites a:hover {
-    color: #657556;
+    color: darken($foreground, 5%);
   }
 
 /*** Posts ***/
@@ -75,7 +75,7 @@ h1 {
   .date {
     display: inline-block;
     margin-left: 1.2rem;
-    color: #888;
+    color: #666;
   }
   .edit-button {
     text-align: right;
