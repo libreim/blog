@@ -55,7 +55,7 @@ header .pure-menu-link {
     background: transparent;
   }
   .sites a:hover {
-    color: #657556;
+    color: darken($foreground, 5%);
   }
 
 /*** Posts ***/
