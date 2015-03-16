@@ -86,6 +86,19 @@ h1 {
 .post-content {
   margin-bottom: 1.8rem;
   line-height: 1.3em;
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .fig {
+    text-align: center;
+  }
+  
+  .med img {
+    max-width: 30em;
+  }
+  
   .share {
     filter: gray;
     filter: grayscale(1);
@@ -132,7 +145,7 @@ dl code.hljs, dl dl {
   border-width: 1px 0;
 }
 
-code.hljs {
+code.hljs, code {
   font-family: "Source Code Pro", monospace;
   font-size: 0.8rem;
 }
