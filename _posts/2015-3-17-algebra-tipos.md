@@ -156,7 +156,7 @@ sumcomm (Right y) = (Left  y)
 
 La asociatividad se comprueba de igual manera, son isomorfismos:
 
-~~~Haskell
+~~~
 prdasoc :: (a,(b,c)) -> ((a,b),c)
 prdasoc (x,(y,z)) = ((x,y),z)
 
@@ -165,6 +165,17 @@ sumasoc (Left x)          = (Left (Left x))
 sumasoc (Right (Left y))  = (Left (Right y))
 sumasoc (Right (Right y)) = (Right y)
 ~~~
+{: .haskell}
+
+Y la distributividad del producto sobre la suma, que se obtiene también por
+isomorfismos. Veamos que $$(a+b)c = ac+bc$$:
+
+~~~
+distrib :: ((Either a b),c) -> Either (a,c) (b,c)
+distrib (Left  x, z) = Left  (x,z)
+distrib (Right y, z) = Right (y,z)
+~~~
+{: .haskell}
 
 ## Más información
 
