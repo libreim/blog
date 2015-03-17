@@ -1,6 +1,7 @@
 ---
 ---
 CACHE MANIFEST
+
 # Last post: {% assign lastpost = site.posts | first %}{{ lastpost.title }}
 
 CACHE:
