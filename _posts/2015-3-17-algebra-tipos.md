@@ -16,8 +16,8 @@ tipos de Haskell sugiero leer antes la [Introducción a Haskell](http://dgiim.gi
 
 ## Notando tipos en Haskell
 
-En Haskell, los tipos se escriben como un conjunto de constructores, que actúan
-como funciones teniendo como codominio el tipo definido. Por ejemplo,
+En Haskell, los **tipos** se escriben como un conjunto de constructores, que
+actúan como funciones teniendo como codominio el tipo definido. Por ejemplo,
 
 ~~~Haskell
 data Colour = RGB Int Int Int
@@ -29,8 +29,8 @@ como `HSV`. Ambos constructores usan como argumento tres enteros. Con tres
 enteros podremos construir un color de dos formas distintas.
 
 Pero además, no sólo existen tipos simples, sino que pueden definirse
-constructores de tipos, que toman tipos como argumento para generar otros. Por
-ejemplo,
+**constructores de tipos**, que toman tipos como argumento para generar
+otros. Por ejemplo,
 
 ~~~Haskell
 data Tree a = Empty
@@ -47,14 +47,28 @@ subárbol derecho.
 
 ## Tipos básicos
 
-Las unidades de nuestro álgebra de tipos serán los tipos unidad y el tipo
-vacío. El tipo unidad consiste en un sólo constructor, de la forma:
+Los tipos fundamentales de nuestro álgebra de tipos serán los tipos unidad y el
+tipo vacío. El **tipo unidad** consiste en un sólo constructor, de la forma:
 
 ~~~Haskell
 data Unit = Unit
 ~~~
 
-En Haskell existe implementado el tipo `()`, con
+Sólo se puede construir una instancia distinta del tipo, la propia `Unit`. En
+Haskell existe implementado el tipo `()`, isomorfo al que acabamos de definir.
+
+
+El **tipo vacío**, por otro lado, es un tipo sin constructores. No se puede
+generar ninguna instancia de este tipo, simbólicamente podría notarse como:
+
+~~~Haskell
+data Void
+~~~
+
+Aunque para seguir el estándar **Haskell 98** requeriría de una definición
+ligeramente diferente. [^haskell-void-98]
+
+
 
 ## Más información
 
@@ -65,3 +79,4 @@ categorías para programadores de Bartosz Milewski[^milewski-functiontypes].
 
 [^taylor-algebratypes]: The Algebra of algebraic data types. Chris Taylor. <http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/>
 [^milewski-functiontypes]: Function types. Bartosz Milewski. <http://bartoszmilewski.com/2015/03/13/function-types/>
+[^haskell-void-98]: Data.Void source code. <https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void>
