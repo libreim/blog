@@ -28,7 +28,21 @@ este código define un tipo `Colour` con dos formas de construirlo, como `RGB` y
 como `HSV`. Ambos constructores usan como argumento tres enteros. Con tres
 enteros podremos construir un color de dos formas distintas.
 
+Pero además, no sólo existen tipos simples, sino que pueden definirse
+constructores de tipos, que toman tipos como argumento para generar otros. Por
+ejemplo,
 
+~~~Haskell
+data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+~~~
+
+este código define un árbol binario con nodos de tipo `a` arbitrario. Así, para
+crear un árbol de enteros podríamos escribir `Tree Int`, y para usar un árbol de
+booleanos, `Tree Bool`. Observamos que hay dos formas de construir un árbol:
+bien como el árbol vacío, que no toma argumentos, o bien como un nodo de árbol,
+que toma como argumentos un subárbol izquierdo, un nodo de tipo `a` y un
+subárbol derecho.
 
 
 ## Tipos básicos
