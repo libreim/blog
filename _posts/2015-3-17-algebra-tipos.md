@@ -59,15 +59,40 @@ Haskell existe implementado el tipo `()`, isomorfo al que acabamos de definir.
 
 
 El **tipo vacío**, por otro lado, es un tipo sin constructores. No se puede
-generar ninguna instancia de este tipo, simbólicamente podría notarse como:
+generar ninguna instancia de este tipo, simbólicamente podría notarse
+como [^haskell-void-98]:
 
 ~~~Haskell
 data Void
 ~~~
 
-Aunque para seguir el estándar **Haskell 98** requeriría de una definición
-ligeramente diferente. [^haskell-void-98]
+Como detalle, nótese que se puede definir una función desde este tipo a
+cualquier otro por *pattern matching*.
+El tipo no puede tomar ningún valor, así que una función que lo trate no tiene
+que definirse para ningún valor. En la `Data.Void` está definida la función:
 
+~~~Haskell
+absurd :: Void -> a
+~~~
+
+Que va del tipo `Void` a un tipo arbitrario cualquiera `a`.
+
+## Los tipos como categoría
+
+Vamos a trabajar ahora con la categoría `Hask` de los tipos en Haskell. Una
+lectura previa de la
+[Introducción a teoría de categorías](http://dgiim.github.io/blog/2014/10/04/intro-categorias/)
+sería interesante antes de tratar este punto, que aporta una visión muy clara a
+lo que vamos a explicar luego. Si no te apetece leer categorías, puedes
+saltar este punto y seguir leyendo, no debería afectar a la comprensión de lo
+demás.
+
+Veremos de esta categoría que tiene objeto inicial y final (¿puede el lector
+adivinarlos de lo anterior?), que tiene productos
+y coproductos para cualesquiera dos objetos (esto lo podrá ver más adelante), y
+que es **cartesianamente cerrada** (los morfismos `a->b` son otro tipo). No
+volveremos a hablar de categorías en este post, pero es útil que el lector
+mantenga en mente la concepción de los tipos como categoría.
 
 
 ## Más información
@@ -77,6 +102,12 @@ amena y puede seguirse con unos conocimientos mínimos de Haskell. Para
 profundizar más en la relación con teoría de categorías están los posts sobre
 categorías para programadores de Bartosz Milewski[^milewski-functiontypes].
 
+El lector que empiece a imaginar la teoría de categorías detrás de esto debería
+seguir leyendo sobre categorías cartesianamente cerradas y el isomorfismo de
+Curry-Howard-Lambert, que extiende al ya explicado por aquí isomorfismo de
+[Curry-Howard](http://dgiim.github.io/blog/2014/12/04/curry-howard/).
+
 [^taylor-algebratypes]: The Algebra of algebraic data types. Chris Taylor. <http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/>
 [^milewski-functiontypes]: Function types. Bartosz Milewski. <http://bartoszmilewski.com/2015/03/13/function-types/>
-[^haskell-void-98]: Data.Void source code. <https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void>
+[^haskell-void-98]: Aunque para seguir el estándar **Haskell 98** requeriría de
+una definición ligeramente diferente. Puede consultarse el [código fuente](https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void).
