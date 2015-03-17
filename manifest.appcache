@@ -1,6 +1,7 @@
 ---
 ---
 CACHE MANIFEST
+# Last post: {% assign lastpost = site.posts | first %}{{ lastpost.title }}
 
 CACHE:
 css/default.css
@@ -17,6 +18,8 @@ js/highlight.pack.js
 //cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css
 //ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js
 https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+//fonts.googleapis.com/css?family=Lato:400,300,700,400italic%7CSource+Code+Pro:400,700&subset=latin,latin
+https://licensebuttons.net/l/by-sa/4.0/80x15.png
 
 NETWORK:
 *
