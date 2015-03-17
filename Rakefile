@@ -4,6 +4,7 @@ end
 
 task :post do
   require 'date'
+  require 'etc'
   
   # Read and create filename
   print "Post name: "
@@ -29,8 +30,9 @@ task :post do
   filepath = "_posts/" + filename
   
   # Read data
-  print "Author: "
+  print "Author (#{Etc.getlogin}): "
   author = STDIN.readline.chomp
+  author = Etc.getlogin if author.empty?
   
   # Read category
   print "Category: "
