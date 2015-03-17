@@ -167,16 +167,18 @@ que genera
       "Una prueba"
     end
 
-o bien utilizar las marcas `~~~`, que además permiten especificar el
-lenguaje:
+o bien utilizar las marcas `~~~`, y además podemos especificar el
+lenguaje mediante una clase:
 
-~~~~markdown
-~~~ruby
+~~~~
+~~~
 def codigo_en_ruby
   "Una prueba"
 end
 ~~~
+{: .ruby}
 ~~~~
+{: .markdown}
 
 que genera
 
