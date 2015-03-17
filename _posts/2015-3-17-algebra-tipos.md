@@ -144,7 +144,7 @@ propiedades usuales del álgebra. La conmutatividad de ambas se conserva por
 isomorfismo. Veamos que $$a+b=b+a$$ y que $$ab=ba$$. Las siguientes funciones
 son isomorfismos:
 
-~~~Haskell
+~~~
 prdcomm :: (a,b) -> (b,a)
 prdcomm (x,y) = (y,x)
 
@@ -152,6 +152,7 @@ sumcomm :: Either a b -> Either b a
 sumcomm (Left  x) = (Right x)
 sumcomm (Right y) = (Left  y)
 ~~~
+{: .haskell}
 
 ## Más información
 
