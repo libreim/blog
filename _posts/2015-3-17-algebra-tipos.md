@@ -154,6 +154,18 @@ sumcomm (Right y) = (Left  y)
 ~~~
 {: .haskell}
 
+La asociatividad se comprueba de igual manera, son isomorfismos:
+
+~~~Haskell
+prdasoc :: (a,(b,c)) -> ((a,b),c)
+prdasoc (x,(y,z)) = ((x,y),z)
+
+sumasoc :: (Either a (Either b c)) -> ((Either a b) c)
+sumasoc (Left x)          = (Left (Left x))
+sumasoc (Right (Left y))  = (Left (Right y))
+sumasoc (Right (Right y)) = (Right y)
+~~~
+
 ## Más información
 
 La charla de Chris Taylor sobre este tema [^taylor-algebratypes] es bastante
