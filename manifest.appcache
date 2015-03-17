@@ -1,0 +1,22 @@
+---
+---
+CACHE MANIFEST
+
+CACHE:
+css/default.css
+assets/logo.png
+assets/sq_comment.png
+assets/sq_diaspora.png
+assets/sq_facebook.png
+assets/sq_feedly.png
+assets/sq_twitter.png
+js/highlight.pack.js
+//yandex.st/highlightjs/8.0/styles/github.min.css
+//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css
+//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css
+//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css
+//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js
+https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+NETWORK:
+*
