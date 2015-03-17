@@ -121,6 +121,11 @@ h1 {
       filter: none;
       -webkit-filter: grayscale(0);
     }
+  
+  .post-editors {
+    font-style: italic;
+    text-align: right;
+  }
 }
 
 dl dt {
