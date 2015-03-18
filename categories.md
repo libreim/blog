@@ -9,11 +9,11 @@ permalink: /categories/
 #### Lista de categorías
 
 {% for category in site.categories %}
-  * [{{ category | first }}](#{{ category | first }})
+  * [{{ category | first | capitalize }}](#{{ category | first }})
 {% endfor %}
 
 {% for category in site.categories %}
-  <h2 id="{{ category | first }}">{{ category | first }}</h2>
+  <h2 id="{{ category | first }}">{{ category | first | capitalize }}</h2>
   {% assign posts = category | last %}
   {% for post in posts %} {% include list_post.ext %} {% endfor %}
 {% endfor %}
