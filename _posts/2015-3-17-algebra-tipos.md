@@ -111,7 +111,7 @@ f . g == id == g . f
 
 Así, el lector podrá observar la unicidad salvo isomorfismos de los universales
 que irán surgiendo. Por ejemplo, todos los tipos con un sólo constructor son
-isomorfmos por:
+isomorfos por:
 
 ~~~Haskell
 data UnitA = UnitA
@@ -140,9 +140,14 @@ construye usando una instancia de cualquiera de los dos tipos. La podríamos
 notar a partir de ahora como $$a+b$$.
 
 Para llamarlas con propiedad *suma* y *producto* queremos que cumplan las
-propiedades usuales del álgebra. La conmutatividad de ambas se conserva por
-isomorfismo. Veamos que $$a+b=b+a$$ y que $$ab=ba$$. Las siguientes funciones
-son isomorfismos:
+propiedades usuales del álgebra. La **conmutatividad** de ambas se conserva por
+isomorfismo. Veamos que
+
+$$a+b=b+a$$
+
+$$ab=ba$$
+
+Las siguientes funciones son isomorfismos:
 
 ~~~
 prdcomm :: (a,b) -> (b,a)
@@ -154,7 +159,13 @@ sumcomm (Right y) = (Left  y)
 ~~~
 {: .haskell}
 
-La asociatividad se comprueba de igual manera, son isomorfismos:
+La **asociatividad**,
+
+$$(ab)c \cong a(bc)$$
+
+$$(a+b)+c \cong a+(b+c)$$
+
+se comprueba de igual manera. Son isomorfismos:
 
 ~~~
 prdasoc :: (a,(b,c)) -> ((a,b),c)
@@ -167,13 +178,78 @@ sumasoc (Right (Right y)) = (Right y)
 ~~~
 {: .haskell}
 
-Y la distributividad del producto sobre la suma, que se obtiene también por
-isomorfismos. Veamos que $$(a+b)c = ac+bc$$:
+Y la **distributividad** del producto sobre la suma, que se obtiene también por
+isomorfismos. Veamos que
+
+$$(a+b)c \cong ac+bc$$
 
 ~~~
 distrib :: ((Either a b),c) -> Either (a,c) (b,c)
 distrib (Left  x, z) = Left  (x,z)
 distrib (Right y, z) = Right (y,z)
+
+commonf :: Either (a,c) (b,c) -> ((Either a b), c)
+commonf Left  (x,z) = (Left  x, z)
+commonf Right (y,z) = (Right y, z)
+~~~
+{: .haskell}
+
+
+## Contando
+
+Con la suma y producto definidas, podemos ver que `Void` y `()` son el $$1$$ y
+el $$0$$ de nuestro álgebra, y que cumplen el ser neutros para la suma y el
+producto y el resto de propiedades que se esperan de ellos. Notándolos como
+$$0$$ y $$1$$, se puede demostrar:
+
+$$0a \cong 0$$
+
+$$0+a \cong a \cong 1a$$
+
+Y desde aquí, definir naturalmente los naturales. Sumando unidades:
+
+$$ 2 \cong 1 + 1 $$
+
+$$ 3 \cong 2 + 3 $$
+
+$$ \dots $$
+
+Nótese que, por ejemplo, $$2 \cong \mathtt{Bool}$$.
+
+Pero además ocurre que, para tipos con un número finito de instancias, tenemos
+que el número de instancias de la suma de dos tipos es la suma del número de
+instancias de cada tipo, y análogamente ocurre con el producto. Realmente,
+tenemos un homomorfismo del álgebra de tipos al álgebra de los naturales, que, de
+paso, respeta nuestros *tipos naturales* recién definidos. Compruébese que con
+$$\phi(\mathtt{A}) = \#\mathtt{A}$$, se cumple:
+
+$$\begin{matrix}
+\phi(\mathtt{A}\mathtt{B}) = \phi(\mathtt{A}) \phi(\mathtt{B}) \\
+\phi(\mathtt{A}+\mathtt{B}) = \phi(\mathtt{A}) + \phi(\mathtt{B}) \\
+\phi(\mathtt{n}) = n
+\end{matrix}$$
+
+Para cualquier *tipo natural* $$\mathtt{n}$$.
+
+## Constructores de tipos
+
+Los **tipos función**, `->` van a hacer el papel de la exponencial.
+Una función `a->b` la notamos por $$b^a$$ y se puede comprobar que:
+
+$$(bc)^a \cong b^ac^a $$
+
+Y además, conservan el homomorfismo anterior:
+
+$$\phi(\mathtt{A}\rightarrow\mathtt{B}) = \phi(\mathtt{B}) ^{\phi(\mathtt{A})}$$
+
+~~~
+distrib :: ((Either a b),c) -> Either (a,c) (b,c)
+distrib (Left  x, z) = Left  (x,z)
+distrib (Right y, z) = Right (y,z)
+
+commonf :: Either (a,c) (b,c) -> ((Either a b), c)
+commonf Left  (x,z) = (Left  x, z)
+commonf Right (y,z) = (Right y, z)
 ~~~
 {: .haskell}
 
