@@ -85,7 +85,7 @@ Vamos a trabajar ahora con la categoría `Hask` de los tipos en Haskell. Una
 lectura previa de la
 [Introducción a teoría de categorías](http://dgiim.github.io/blog/2014/10/04/intro-categorias/)
 sería interesante antes de tratar este punto, que aporta una visión muy clara a
-lo que vamos a explicar luego. Si no te apetece leer categorías, puedes
+lo que vamos a explicar luego. El lector al que no le apetezca leer sobre categorías, puede
 saltar este punto y seguir leyendo: no debería afectar a la comprensión de lo
 demás. Un isomorfismo puede entenderse en el sentido conjuntista.
 
