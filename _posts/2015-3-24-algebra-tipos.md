@@ -30,7 +30,7 @@ enteros podremos construir un color de dos formas distintas.
 
 <!--more-->
 
-Pero además, no sólo existen tipos simples, sino que pueden definirse
+No sólo existen tipos simples, sino que pueden definirse
 **constructores de tipos**, que toman tipos como argumento para generar
 otros. Por ejemplo,
 
@@ -86,13 +86,14 @@ lectura previa de la
 [Introducción a teoría de categorías](http://dgiim.github.io/blog/2014/10/04/intro-categorias/)
 sería interesante antes de tratar este punto, que aporta una visión muy clara a
 lo que vamos a explicar luego. Si no te apetece leer categorías, puedes
-saltar este punto y seguir leyendo, no debería afectar a la comprensión de lo
-demás. Un isomorfismo puede entenderlo en el sentido conjuntista.
+saltar este punto y seguir leyendo: no debería afectar a la comprensión de lo
+demás. Un isomorfismo puede entenderse en el sentido conjuntista.
 
 Veremos de esta categoría que tiene objeto inicial y final (¿puede el lector
 adivinarlos de lo anterior?), que tiene productos
 y coproductos para cualesquiera dos objetos (esto lo podrá ver más adelante), y
-que es **cartesianamente cerrada** (los morfismos `a->b` son otro tipo). No
+que es **cartesianamente cerrada** (a lo anterior se une que los morfismos
+`a->b` son también un tipo, un objeto de la categoría en sí mismos). No
 volveremos a hablar de categorías en este post, pero es útil que el lector
 mantenga en mente la concepción de los tipos como categoría y que vaya
 descubriendo como ejercicio las propiedades universales que se presentan.
