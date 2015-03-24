@@ -211,7 +211,7 @@ Y desde aquí, definir naturalmente los naturales. Sumando unidades:
 
 $$ 2 \cong 1 + 1 $$
 
-$$ 3 \cong 2 + 3 $$
+$$ 3 \cong 2 + 1 $$
 
 $$ \dots $$
 
