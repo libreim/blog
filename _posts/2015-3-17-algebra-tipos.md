@@ -270,9 +270,10 @@ Vamos a ver los constructores de tipos como funciones de nuestro álgebra. Así,
 para cada constructor de tipos, tendremos una ecuación que lo defina. Veremos
 que estas ecuaciones de constructores de tipos pueden servir para aportarnos qué
 es esencialmente el constructor de tipos. Las manipularemos con las reglas del
-álgebra antes definidas.
+álgebra antes definidas. Como ejemplos, hablaremos de listas y de
+árboles.
 
-El tipo **lista** podemos definirlo como:[^haskell-list-def]
+Por ejemplo, el tipo **lista** podemos definirlo como:[^haskell-list-def]
 
 ~~~
 data [a] = []
@@ -292,9 +293,34 @@ $$[a] \cong 1 + a + a^2 + a^3 + \dots \cong \sum_{i=0}^\infty a^i$$
 Lo que tiene perfecto sentido. Una lista puede ser un número cualquiera de
 elementos de $$a$$.
 
+Por otro lado, el tipo **árbol** lo definimos antes como:
+
+~~~Haskell
+data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+~~~
+{: .haskell}
+
+Y esto nos da la ecuación, llamando $$T = \mathtt{Tree\ a}$$:
+
+$$ T = 1 + aT^2 $$
+
+Que cuando se desarrolla nos deja:
+
+$$ T = 1 + a + 2a^2 + 5a^3 + 14a^4 + \dots = \sum_{i=0}^\infty C_i a^i $$
+
+Donde $$C_i$$ es el $$i$$-ésimo
+[número de Catalan](http://en.wikipedia.org/wiki/Catalan_number).
+Que es exactamente el número de árboles binarios de $$i$$ elementos
+
 [^haskell-list-def]: Definición de lista en el preludio de Haskell. <https://www.haskell.org/onlinereport/standard-prelude.html>
 
 ## Más información
+
+El álgebra de tipos puede seguir expandiéndose. En los recursos que se dejan a
+continuación se definen las derivadas (usando *one-hole contexts*), se estudian
+tipos no regulares (como los conjuntos) y se termina de relacionar con teoría de
+categorías.
 
 La charla de Chris Taylor sobre este tema [^taylor-algebratypes] es bastante
 amena y puede seguirse con unos conocimientos mínimos de Haskell. Para
