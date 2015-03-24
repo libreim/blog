@@ -311,7 +311,7 @@ $$ T = 1 + a + 2a^2 + 5a^3 + 14a^4 + \dots = \sum_{i=0}^\infty C_i a^i $$
 
 Donde $$C_i$$ es el $$i$$-ésimo
 [número de Catalan](http://en.wikipedia.org/wiki/Catalan_number).
-Que es exactamente el número de árboles binarios de $$i$$ elementos
+Que es exactamente el número de árboles binarios de $$i$$ elementos.
 
 [^haskell-list-def]: Definición de lista en el preludio de Haskell. <https://www.haskell.org/onlinereport/standard-prelude.html>
 
