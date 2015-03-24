@@ -259,6 +259,7 @@ Gracias a que esta función es isomorfismo:
 expsum :: (Either b c -> a) -> ((b -> a),(c -> a))
 expsum f = Either (f . Left) (f . Right)
 ~~~
+{: .haskell}
 
 Y además, los tipos función conservan el homomorfismo anterior:
 
