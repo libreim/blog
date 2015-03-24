@@ -231,27 +231,68 @@ $$\begin{matrix}
 
 Para cualquier *tipo natural* $$\mathtt{n}$$.
 
-## Constructores de tipos
+## Tipos función
 
 Los **tipos función**, `->` van a hacer el papel de la exponencial.
-Una función `a->b` la notamos por $$b^a$$ y se puede comprobar que:
+Una función `a->b` la notamos por $$b^a$$ y se puede comprobar que la
+exponencial se distribuye correctamente.
 
 $$(bc)^a \cong b^ac^a $$
 
-Y además, conservan el homomorfismo anterior:
+Porque esta función, que realmente lo que hace es enunciar la propiedad
+universal del producto, es isomorfismo.
+
+~~~
+expdist :: (a -> (b,c)) -> (a -> b, a -> c)
+expdist f = (fst . f, snd . f)
+~~~
+{: .haskell}
+
+Esta definición conserva el sentido con la suma de tipos:
+
+$$a^{b+c} \cong a^ba^c$$
+
+Gracias a que esta función es isomorfismo:
+
+~~~
+expsum :: (Either b c -> a) -> ((b -> a),(c -> a))
+expsum f = Either (f . Left) (f . Right)
+~~~
+
+Y además, los tipos función conservan el homomorfismo anterior:
 
 $$\phi(\mathtt{A}\rightarrow\mathtt{B}) = \phi(\mathtt{B}) ^{\phi(\mathtt{A})}$$
 
-~~~
-distrib :: ((Either a b),c) -> Either (a,c) (b,c)
-distrib (Left  x, z) = Left  (x,z)
-distrib (Right y, z) = Right (y,z)
 
-commonf :: Either (a,c) (b,c) -> ((Either a b), c)
-commonf Left  (x,z) = (Left  x, z)
-commonf Right (y,z) = (Right y, z)
+## Ecuaciones. Listas y árboles
+
+Vamos a ver los constructores de tipos como funciones de nuestro álgebra. Así,
+para cada constructor de tipos, tendremos una ecuación que lo defina. Veremos
+que estas ecuaciones de constructores de tipos pueden servir para aportarnos qué
+es esencialmente el constructor de tipos. Las manipularemos con las reglas del
+álgebra antes definidas.
+
+El tipo **lista** podemos definirlo como:[^haskell-list-def]
+
+~~~
+data [a] = []
+         | a : [a]
 ~~~
 {: .haskell}
+
+Pero esto nos da una ecuación en $$a$$ para cualquier tipo. Sabiendo que
+$$1 \cong []$$, tenemos:
+
+$$[a] = 1 + a[a]$$
+
+Y si lo desarrollamos, simplemente sustituyendo, obtendremos:
+
+$$[a] \cong 1 + a + a^2 + a^3 + \dots \cong \sum_{i=0}^\infty a^i$$
+
+Lo que tiene perfecto sentido. Una lista puede ser un número cualquiera de
+elementos de $$a$$.
+
+[^haskell-list-def]: Definición de lista en el preludio de Haskell. <https://www.haskell.org/onlinereport/standard-prelude.html>
 
 ## Más información
 
