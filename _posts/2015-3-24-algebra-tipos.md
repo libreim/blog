@@ -198,8 +198,8 @@ commonf Right (y,z) = (Right y, z)
 
 ## Contando
 
-Con la suma y producto definidas, podemos ver que `Void` y `()` son el $$1$$ y
-el $$0$$ de nuestro álgebra, y que cumplen el ser neutros para la suma y el
+Con la suma y producto definidas, podemos ver que `Void` y `()` son el $$0$$ y
+el $$1$$ de nuestro álgebra, y que cumplen el ser neutros para la suma y el
 producto y el resto de propiedades que se esperan de ellos. Notándolos como
 $$0$$ y $$1$$, se puede demostrar:
 
@@ -241,7 +241,7 @@ exponencial se distribuye correctamente.
 $$(bc)^a \cong b^ac^a $$
 
 Porque esta función, que realmente lo que hace es enunciar la propiedad
-universal del producto, es isomorfismo.
+universal del producto, es isomorfismo:
 
 ~~~
 expdist :: (a -> (b,c)) -> (a -> b, a -> c)
@@ -249,7 +249,7 @@ expdist f = (fst . f, snd . f)
 ~~~
 {: .haskell}
 
-Esta definición conserva el sentido con la suma de tipos:
+Esta definición de exponencial conserva el sentido con la suma de tipos:
 
 $$a^{b+c} \cong a^ba^c$$
 
@@ -271,7 +271,7 @@ $$\phi(\mathtt{A}\rightarrow\mathtt{B}) = \phi(\mathtt{B}) ^{\phi(\mathtt{A})}$$
 Vamos a ver los constructores de tipos como funciones de nuestro álgebra. Así,
 para cada constructor de tipos, tendremos una ecuación que lo defina. Veremos
 que estas ecuaciones de constructores de tipos pueden servir para aportarnos qué
-es esencialmente el constructor de tipos. Las manipularemos con las reglas del
+es, esencialmente, cada constructor de tipos. Las manipularemos con las reglas del
 álgebra antes definidas. Como ejemplos, hablaremos de listas y de
 árboles.
 
