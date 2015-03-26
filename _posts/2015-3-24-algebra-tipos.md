@@ -144,9 +144,9 @@ Para llamarlas con propiedad *suma* y *producto* queremos que cumplan las
 propiedades usuales del álgebra. La **conmutatividad** de ambas se conserva por
 isomorfismo. Veamos que
 
-$$a+b=b+a$$
+$$a+b \cong b+a$$
 
-$$ab=ba$$
+$$ab \cong ba$$
 
 Las siguientes funciones son isomorfismos:
 
