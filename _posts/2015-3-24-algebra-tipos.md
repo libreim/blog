@@ -62,7 +62,7 @@ Haskell existe implementado el tipo `()`, isomorfo al que acabamos de definir.
 
 El **tipo vacío**, por otro lado, es un tipo sin constructores. No se puede
 generar ninguna instancia de este tipo, simbólicamente podría notarse
-como [^haskell-void-98]:
+como: [^haskell-void-98]
 
 ~~~Haskell
 data Void
