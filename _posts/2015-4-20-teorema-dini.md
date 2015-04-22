@@ -3,7 +3,7 @@ layout: post
 title: Teorema de Dini
 authors:
   - andreshp
-category: Análisis Matemático
+category: Análisis
 ---
 
 ## Convergencia Puntual y Convergencia Uniforme
