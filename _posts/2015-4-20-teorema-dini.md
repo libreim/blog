@@ -135,6 +135,8 @@ Nótese que análogamente se podría haber probado este resultado:
 **Teorema de Dini (en espacios topológicos)**
 : Sean $$(X, T)$$ un espacio topológico de Hausdorff y compacto y sea $$f_n : X \rightarrow \mathbb{R}$$ continua para todo $$n \in \mathbb{N}$$. Se considera la sucesión de funciones $$\{f_n\}$$. Si la sucesión es monótona y converge puntualmente a $$f$$ continua, entonces la convergencia es uniforme.
 
+La exigencia de continuidad a la función límite no supone una condición extra para poder aplicar el teorema. Recordemos que en caso de que haya convergencia uniforme tendremos consecuentemente la continuidad de la función límite ya que las $$f_n$$ son continuas.
+
 Volvemos al Ejemplo 2 cuya resolución será una mera consecuencia del teorema de Dini.
 
 **Ejemplo 2:**
