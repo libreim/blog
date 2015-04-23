@@ -136,14 +136,14 @@ $$\tag*{$\blacksquare$}$$
 Nótese que análogamente se podría haber probado este resultado:
 
 Teorema de Dini (en espacios topológicos)
-: Sean $$(X, \mathcal{T})$$ un espacio topológico compacto y sea $$\ f_n : X \rightarrow \mathbb{R}$$ continua para todo $$n \in \mathbb{N}$$. Se considera la sucesión de funciones $$\{f_n\}$$. Si la sucesión es monótona y converge puntualmente a $$\ f$$ continua, entonces la convergencia es uniforme.
+: Sean $$(X, \mathcal{T})$$ un espacio topológico compacto y sea $$\ f_n : X \rightarrow \mathbb{R}$$ continua para todo $$n \in \mathbb{N}$$. Se considera la sucesión de funciones $$\{f_n\}$$. Si la sucesión es monótona y converge puntualmente a $$f$$ continua, entonces la convergencia es uniforme.
 
 La exigencia de continuidad a la función límite no supone una condición extra para poder aplicar el teorema. Recordemos que en caso de que haya convergencia uniforme se tiene automáticamente la continuidad de la función límite ya que las funciones $$\ f_n$$ son continuas.
 
 Volvemos al Ejemplo 2 cuya resolución será una mera consecuencia del teorema de Dini.
 
 Ejemplo 2
-: Estudia la convergencia puntual y uniforme de la sucesión de funciones $$\{f_n\}$$ donde $$\ f_n : [0,1] \rightarrow \mathbb{R}$$ está definida por:
+: Estudia la convergencia puntual y uniforme de la sucesión de funciones $$\{f_n\}$$ donde $$f_n : [0,1] \rightarrow \mathbb{R}$$ está definida por:
 : $$f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}$$
 
 **Solución.** Se había obtenido que la sucesión convergía puntualmente a $$\exp\left(x^2\right)$$. Además, no había convergencia uniforme en ninguna semirrecta. Veamos que sí hay convergencia uniforme en los intervalos cerrados y acotados.
