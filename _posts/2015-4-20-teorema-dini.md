@@ -8,7 +8,7 @@ category: Análisis
 
 ## Convergencia Puntual y Convergencia Uniforme
 
-En el Análisis Matemático es frecuente que la función solución a determinado problema sea desconocida o no la podamos expresar en términos de las funciones elementales que conocemos. Incluso en las funciones más simples, como la exponencial o el logaritmo, nos encontramos esta situación. Conocemos su existencia y propiedades características pero tenemos ciertas dificultades a la hora de evaluarlas en un punto. Es frecuente para ello utilizar los famosos polinomios de Taylor, en cuyo caso estamos aproximando la función por polinomios. 
+En el Análisis Matemático es frecuente que la función solución a determinado problema sea desconocida o no la podamos expresar en términos de las funciones elementales que conocemos. Incluso en las funciones más simples, como la exponencial o el logaritmo, nos encontramos esta situación. Conocemos su existencia y propiedades características pero tenemos ciertas dificultades a la hora de evaluarlas en un punto. Es frecuente para ello utilizar los famosos polinomios de Taylor, en cuyo caso estamos aproximando la función por polinomios.
 
 En más situaciones es habitual disponer de funciones que se aproximan cada vez más a la solucion del problema. Para formalizar este hecho surge el concepto de convergencia para sucesiones de funciones. Podemos distinguir dos tipos de convergencia: convergencia puntual y convergencia uniforme.
 
@@ -18,7 +18,7 @@ Definición 1
 
 <!--more-->
 
-Nótese que la definición es puramente topológica para espacios con unicidad del límite (como los espacios de Hausdorff). Sin embargo, para que todo lector pueda seguir el texto sin un curso inicial de topología trabajaremos solamente con conjuntos de números reales.  
+Nótese que la definición es puramente topológica para espacios con unicidad del límite (como los espacios de Hausdorff). Sin embargo, para que todo lector pueda seguir el texto sin un curso inicial de topología trabajaremos solamente con conjuntos de números reales.
 
 Podemos exigirle más a la convergencia puntual y obtener la convergencia uniforme:
 
@@ -30,15 +30,15 @@ La convergencia uniforme implica la convergencia puntual, pero el recíproco no 
 
 Ejemplo 1
 : Probar que la siguiente sucesión de funciones converge puntualmente pero no converge uniformemente en $$[0,1]$$:
-: $$f_n : [0,1] \rightarrow \mathbb{R}, \ f_n(x) = x^n \ \forall x \in [0,1]$$ 
+: $$f_n : [0,1] \rightarrow \mathbb{R}, \ f_n(x) = x^n \ \forall x \in [0,1]$$
 
-Cabe preguntarse para qué sirve la convergencia uniforme. Intuitivamente, nos dice que la sucesión de funciones converge con igual rapidez en todo $$B$$. Analíticamente podemos sacarle provecho al relacionarla con conceptos como la continuidad, la derivabilidad y la integral. Por ejemplo, en todo curso de análisis en el que se trate este tema se demuestra que si la convergencia es uniforme y las funciones que conforman la sucesión son continuas, entonces la función límite es continua. En definitiva, la convergencia uniforme nos permite obtener información analítica de la función límite exigiendo ciertas propiedades a las funciones que conforman la sucesión. 
+Cabe preguntarse para qué sirve la convergencia uniforme. Intuitivamente, nos dice que la sucesión de funciones converge con igual rapidez en todo $$B$$. Analíticamente podemos sacarle provecho al relacionarla con conceptos como la continuidad, la derivabilidad y la integral. Por ejemplo, en todo curso de análisis en el que se trate este tema se demuestra que si la convergencia es uniforme y las funciones que conforman la sucesión son continuas, entonces la función límite es continua. En definitiva, la convergencia uniforme nos permite obtener información analítica de la función límite exigiendo ciertas propiedades a las funciones que conforman la sucesión.
 
 Sin embargo, muchos de los ejercicios a realizar en el correspondiente curso simplemente piden estudiar la convergencia uniforme de una sucesión de funciones. A veces esto se vuelve tedioso como es el caso del siguiente ejercicio [^ejercicios]:
 
 Ejemplo 2
 : Estudia la convergencia puntual y uniforme de la sucesión de funciones $$\{f_n\}$$ donde $$\ f_n : \mathbb{R} \rightarrow \mathbb{R}$$ está definida por:
-: $$f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}$$ 
+: $$f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}$$
 
 **Solución.** Usando que
 
@@ -62,11 +62,11 @@ Sin embargo, sí hay convergencia uniforme en los intervalos del tipo $$[-\alpha
 
 Sea $$\alpha > 0$$. Definimos la siguiente función, que resulta ser continua:
 
-$$\phi(t) = \frac{\log(1+t)}{t}, \ \forall -1 < t \neq 0, \phi(0) = 1$$ 
+$$\phi(t) = \frac{\log(1+t)}{t}, \ \forall -1 < t \neq 0, \phi(0) = 1$$
 
 Tenemos que
 
-$$\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| = 
+$$\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| =
 \exp\left(x^2\right) \left| \left(\frac{\left(1+\frac{x^2}{n}\right)^\frac{n}{x^2}}{e}\right)^{x^2} - 1 \right| =$$
 
 $$\exp\left(x^2\right) \left| \exp\left( x^2\left(\phi\left(\frac{x^2}{n}\right) - 1\right)\right) -1 \right| \le
@@ -74,17 +74,17 @@ $$\exp\left(x^2\right) \left| \exp\left( x^2\left(\phi\left(\frac{x^2}{n}\right)
 
 Sea $$\varepsilon > 0$$, utilizaremos la continuidad de $$\phi$$ junto con la continuidad de la función exponencial para obtener el resultado deseado.
 
-Por la continuidad de la exponencial en 0, existe $$\delta_1 > 0$$ tal que si $$\vert u \vert < \delta_1$$ entonces $$\ \vert e^u -1 \vert < \frac{\varepsilon}{\exp\left(\alpha^2\right)}$$. Aplicamos ahora la continuidad de $$\phi$$ en 0 para obtener $$\delta_2 > 0$$ tal que si $$\ \vert t\vert < \delta_2$$ entonces $$\ \vert \phi(t) -1\vert < \frac{\delta_1}{\alpha^2}$$. 
+Por la continuidad de la exponencial en 0, existe $$\delta_1 > 0$$ tal que si $$\vert u \vert < \delta_1$$ entonces $$\ \vert e^u -1 \vert < \frac{\varepsilon}{\exp\left(\alpha^2\right)}$$. Aplicamos ahora la continuidad de $$\phi$$ en 0 para obtener $$\delta_2 > 0$$ tal que si $$\ \vert t\vert < \delta_2$$ entonces $$\ \vert \phi(t) -1\vert < \frac{\delta_1}{\alpha^2}$$.
 
 Tomemos $$n_0 \in \mathbb{N}$$ tal que $$\frac{\alpha^2}{n_0} < \delta_2$$. Entonces, para todo $$x \in [-\alpha, \alpha]$$ y $$n \ge n_0$$ se tiene que:
 
-$$\frac{x^2}{n} < \delta_2 \Rightarrow 
-\left| \phi \left(\frac{x^2}{n}\right) -1\right| < \frac{\delta_1}{\alpha^2} \Rightarrow 
+$$\frac{x^2}{n} < \delta_2 \Rightarrow
+\left| \phi \left(\frac{x^2}{n}\right) -1\right| < \frac{\delta_1}{\alpha^2} \Rightarrow
 \left| x^2 \left( \phi \left(\frac{x^2}{n}\right) -1 \right) \right| < \delta_1 \Rightarrow$$
 
 $$\left| \exp\left(x^2\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) - 1\right| < \frac{\varepsilon}{\exp(\alpha^2)}$$
 
-De donde se deduce que 
+De donde se deduce que
 
 $$\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| \le \exp\left(\alpha^2\right) \left| \exp\left( x\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) -1\right| < \varepsilon $$
 
@@ -107,23 +107,23 @@ En la prueba se utilizará el concepto de entorno de un punto para simplificar l
 
 Supongamos en primer lugar que $$\{f_n\}$$ es creciente. Nótese que en tal caso $$\ f(x) \ge f_n(x)$$ para todo $$x$$ y $$n$$. Sea $$\varepsilon > 0$$:
 
-1. De la convergencia puntual se tiene que para todo $$x \in [a,b]$$ existe un natural $$n_x$$ tal que 
-    
+1. De la convergencia puntual se tiene que para todo $$x \in [a,b]$$ existe un natural $$n_x$$ tal que
+
     $$\forall n \ge n_x : \left| f_n(x) - f(x) \right| < \frac{\varepsilon}{3}$$
 
 2. De la continuidad de $$\ f$$ y $$\ f_n$$ se tiene que para todo $$x \in [a,b]$$ existe un entorno $$V_x$$ de $$x$$ tal que para todo elemento $$y$$ del entorno se verifica:
 
     $$\left| f_n(y) - f_n(x) \right| < \frac{\varepsilon}{3}$$
-    
+
     $$\left| f(y) - f(x) \right| < \frac{\varepsilon}{3}$$
 
 3. Utilizando la desigualdad triangular se obtiene que para todo $$y \in V_x$$ se cumple:
-    
+
     $$\left| f(y) - f_{n_x}(y) \right| \le \left| f(y) - f(x) \right| + \left| f(x) - f_{n_x}(x) \right| + \left| f_{n_x}(x) - f_{n_x}(y) \right| < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} < \varepsilon$$
 
 4. Como $$[a,b] = \cup_{x \in [a,b]} V_x$$, usando la caracterización topológica de la compacidad, existen $$x_1, \ldots, x_m \in [a,b]$$ tales que:
 
-$$ [a,b] = \cup_{i = 1}^m V_{x_i} $$
+$$ [a,b] = \bigcup_{i = 1}^m V_{x_i} $$
 
 5. Tomamos $$n_0 = \max\{n_{x_i}: i = 1, \ldots, m\}$$. Veamos que efectivamente se da la convergencia uniforme. Sean $$n \ge n_0, y \in [a,b]$$. Aplicando la igualdad obtenida en **(4)**, debe existir $$i \in \{1, \ldots, m\}$$ tal que $$y$$ pertenece a $$V_{x_i}$$. Juntando este hecho con **(3)** y la monotonía:
 
@@ -144,7 +144,7 @@ Volvemos al Ejemplo 2 cuya resolución será una mera consecuencia del teorema d
 
 Ejemplo 2
 : Estudia la convergencia puntual y uniforme de la sucesión de funciones $$\{f_n\}$$ donde $$\ f_n : [0,1] \rightarrow \mathbb{R}$$ está definida por:
-: $$f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}$$ 
+: $$f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}$$
 
 **Solución.** Se había obtenido que la sucesión convergía puntualmente a $$\exp\left(x^2\right)$$. Además, no había convergencia uniforme en ninguna semirrecta. Veamos que sí hay convergencia uniforme en los intervalos cerrados y acotados.
 
