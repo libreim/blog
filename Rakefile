@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+#encoding: utf-8
+
 task :default do
   system "jekyll serve --watch"
 end
