@@ -14,7 +14,7 @@ En este caso trataremos los **segment trees** o árboles de segmentos. Introduci
 
 ## Range Minimum Query Problem
 
-Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{1,\ldots,n\}$$ con $$i \le $$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
+Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{1,\ldots,n\}$$ con $$i \le j$$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
 
 Normalmente se denomina subintervalo del vector a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de range minimum query sería problema de las consultas del mínimo de cualquier subintervalo (mantendremos el nombre en inglés por ser el estándar).
 
@@ -25,26 +25,26 @@ La forma habitual de abordar el problema consiste en hacer un preprocesamiento d
 1. Un preprocesamiento de eficiencia $$\theta(n^2)$$ es excesivo cuando se trate con vectores de tamaño mayor o igual que $$10^4$$. Esto nos hace distinguir dos eficiencias a la hora de resolver el problema, la eficiencia del preprocesamiento y la eficiencia de la consulta. La solución trivial minimizaba el preprocesamiento mientras que la nueva solución minimiza el tiempo de consulta, no siendo ninguna de las dos óptimas. 
 2. El problema suele complicarse permitiendo actualizar el valor de una componente del vector entre consultas, lo que no consigue el segundo algoritmo, que requiere un tiempo $$\theta(n)$$ para actualizar también la matriz $$RMQ$$.
 
-Los segment trees o árboles de segmentos surgieron para resolver este problema. Se pueden formular de forma incluso más general, teniendo más aplicaciones en problemas relacionados con subintervalos de un vector. Como veremos a continuacióm, los segment trees tienen un preprocesamiento de eficiencia lineal y proporcionan un tiempo logarímico para las consultas y actualizaciones del vector.
+Los segment trees o árboles de segmentos surgieron para resolver este problema. Se pueden formular de forma incluso más general, teniendo aplicaciones en problemas relacionados con los subintervalos de un vector. Como veremos a continuacióm, los segment trees tienen un preprocesamiento de eficiencia lineal y proporcionan un tiempo logarímico para las consultas y actualizaciones del vector.
 
 ## Segment Trees
 
 Un segment tree es una estructura de datos que permite, a partir de un vector $$V$$, dos operaciones:
 
-1. Realizar consultas del valor de una determinada propiedad para cualquiera de los subinvertalos del vector.
+1. Consultar determinada información para cualquiera de los subinvertalos del vector.
 2. Actualizar una componente del vector.
 
-Como caso particular esta propiedad puede ser el mínimo del subintervalo, en cuyo caso ambas operaciones pueden llevarse a cabo en tiempo logarítmico.
+Como caso particular esta información puede ser el mínimo del subintervalo, en cuyo caso ambas operaciones pueden llevarse a cabo en tiempo logarítmico.
 
 Suponemos que el vector tiene longitud $$n = 2^m$$. En caso contrario, lo extendemos con elementos nulos a la potencia de dos más cercana.
 
-La idea subyacente consiste en almacenar la información necesaria para los subintervalos del tipo $$V[k2^l+1, (k+1)2^l]$$ donde $$l$$ pertenece a $$\{0, 1, \ldots, \log_2 n\}$$ y $$k$$ pertenece a $$\{0, 1, \ldots, \frac{n}{2^l}-1\}$$. Esto es, dividiremos el vector en subintervalos consecutivos cuya longitud sea una potencia de $$2$$ y preprocesaremos estos. La información de estos intervalos se almacenará en un árbol binario. Posteriormente para un subintervalo $$V[i, j]$$ podemos expresarlo como la unión de subintervalos consecutivos como los ya preprocesados. Por ejemplo:
+La idea subyacente consiste en almacenar la información necesaria para los subintervalos del tipo $$V[k2^l+1, (k+1)2^l]$$ donde $$l$$ pertenece a $$\{0, 1, \ldots, \log_2 n\}$$ y $$k$$ pertenece a $$\{0, 1, \ldots, \frac{n}{2^l}-1\}$$. Esto es, dividiremos el vector en subintervalos consecutivos cuya longitud sea una potencia de $$2$$ y preprocesaremos estos. La información de estos intervalos se almacenará en un árbol binario. Posteriormente para un subintervalo $$V[i, j]$$ podemos expresarlo como la unión de subintervalos consecutivos como los ya preprocesados. Por ejemplo, para $$V = [3,2,8,5,6,1,7,4]$$ se tiene:
 
-$$ V = [3,2,8,5,6,1,7,4] , V[2,7] = V[2,2] \cup V[3,4] \cup V[5,6] \cup V[7,7] $$
+$$ V[2,7] = V[2,2] \cup V[3,4] \cup V[5,6] \cup V[7,7] $$
 
 Si la información que deseamos consultar puede obtenerse a partir de la información de una partición de subintervalos entonces habremos resuelto el problema. Este es el caso del range minimum query. El mínimo del subintervalo $$V[i, j]$$ es el mínimo de los mínimos obtenidos para los subintervalos preprocesados que formen una partición de $$V[i, j]$$. En el ejemplo anterior:
 
-$$ V = [3,2,8,5,6,1,7,4] , \min(V[2,7]) = \min\{\min(V[2,2]), \min(V[3,4]), \min(V[5,6]), \min(V[7,7])\} = \min\{2, 5, 1, 7\} = 1 $$
+$$ \min(V[2,7]) = \min\{\min(V[2,2]), \min(V[3,4]), \min(V[5,6]), \min(V[7,7])\} = \min\{2, 5, 1, 7\} = 1 $$
 
 ### Nodos del segment tree
 
