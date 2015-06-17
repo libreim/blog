@@ -1,0 +1,254 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla de Latex para trabajos de informática.
+%
+% Autor: Andrés Herrera Poyatos (https://github.com/andreshp) 
+%         (https://www.researchgate.net/profile/Andres_Poyatos)
+%
+% Esta plantilla utiliza el paquete Minted para resaltar código.
+% Este paquete necesita una instalación previa. Para más información
+% ver:http://www.ctan.org/tex-archive/macros/latex/contrib/minted
+%
+% La plantilla se encuentra adaptada al español.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PAQUETES Y OTRAS CONFIGURACIONES DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\RequirePackage[l2tabu, orthodox]{nag}  % Produce un warnig en caso de usar un comando obsoleto.
+
+\documentclass{article}
+
+% Paquetes para el diseño de página:
+\usepackage{fancyhdr}                   % Utilizado para hacer títulos propios.
+\usepackage{lastpage}                   % Referencia a la última página. Utilizado para el pie de página.
+\usepackage{extramarks}                 % Marcas extras. Utilizado en pie de página y cabecera.
+\usepackage[parfill]{parskip}           % Crea una nueva línea entre párrafos.
+\usepackage[margin=3cm]{geometry}       % Asigna la "geometría" de las páginas.
+\usepackage{lipsum}                     % Texto dummy. Quitar en el documento final.
+
+% Fuente utilizada. Elija uno de ellos:
+\usepackage{courier}                    % Fuente Courier.
+%\usepackage{fourier}                   % Fuente Adobe Utopia.
+\usepackage{microtype}                  % Mejora la letra final de cara al lector.
+
+% Paquetes para imágenes:
+\usepackage[usenames,dvipsnames]{color} % Permite crear colores propios. Utilizado para el bg de Minted.
+\usepackage{graphicx}                   % Utilizado para insertar gráficos.
+\usepackage{caption}                    % Títulos y leyendas para los gráficos.
+\usepackage{subcaption}                 % Subfiguras.
+\usepackage{layout}                     % Introduce una imagen con el diseño de la página. Quitar en el documento.
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Paquetes para la insercción y el resaltado del código:
+\usepackage{minted}                     % Insercción y resaltado de código con Minted.
+
+% Paquetes para matemáticas:
+\usepackage{amsthm}                     % Teoremas y definiciones.
+
+% Paquetes para tablas:
+\usepackage{booktabs}
+
+% Paquetes para adaptar Látex al Español:
+\usepackage[spanish,es-noquoting, es-tabla, es-lcroman]{babel} % Cambia 
+\usepackage[utf8]{inputenc}                                    % Permite los acentos.
+\selectlanguage{spanish}                                       % Selecciono como lenguaje el Español.
+
+% Estilo de página:
+\pagestyle{fancy}                      % fancy
+\fancyhf{}                             % Limpia la cabecera y el pie de página.
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm,headheight=1cm,headsep=0.5cm} % Márgenes y cabecera.
+
+% Espacios en el documento:
+\linespread{1.1}                        % Espacio entre líneas.
+\setlength\parindent{0pt}               % Selecciona la indentación para cada inicio de párrafo.
+
+% Cabecera del documento:
+\renewcommand\headrule{                 % Se ajusta la línea de la cabecera.
+\begin{minipage}{1\textwidth}           % Elija una de las siguientes líneas:
+%    \hrule width \hsize \kern 1mm \hrule width \hsize height 2pt 
+    \hrule width \hsize 
+\end{minipage}
+}
+\lhead{\autor}                          % Parte izquierda.
+\chead{}                                % Centro.
+\rhead{\titulo}                         % Parte derecha.
+
+% Pie de página del documento:
+\renewcommand\footrule{                                 % Se ajusta la línea del pie de página.
+\begin{minipage}{1\textwidth}                           % Elija una de las siguientes líneas:
+%    \hrule width \hsize height 2pt \kern 1mm \hrule width \hsize   
+    \hrule width \hsize   
+\end{minipage}\par
+}
+\lfoot{}                                                 % Parte izquierda.
+\cfoot{}                                                 % Centro.
+\rfoot{Página\ \thepage\ de\ \protect\pageref{LastPage}} % Parte derecha.
+
+%----------------------------------------------------------------------------------------
+%	CONFIGURACIÓN DE LA INCLUSIÓN DE CÓDIGO
+%----------------------------------------------------------------------------------------
+
+\usemintedstyle{autumn}                      % Se elige el estilo para minted.
+\definecolor{bg}{rgb}{0.95,0.95,0.95}        % Se define el color bg usado para bgcolor de Minted.
+\renewcommand\listingscaption{Código}        % Se redefine el nombre dado a un bloque de código.
+\renewcommand\listoflistingscaption{Códigos} % Se redefine el nombre dado a la lista de códigos.
+
+%----------------------------------------------------------------------------------------
+%	ESTRUCTURA DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\newtheorem{definition}{Definición}[section]  % Se crea la subsección "Definición". 
+\setcounter{secnumdepth}{2}                   % Se enumeran las secciones con profundidad 2.
+
+%----------------------------------------------------------------------------------------
+%	NUEVOS COMANDOS
+%----------------------------------------------------------------------------------------
+
+% Portada:
+\newcommand{\titulo}{Título}  % Título del trabajo.
+\newcommand{\fecha}{1 \ de \ Enero \ de \ 2015}                         % Fecha.
+\newcommand{\asignatura}{Latex}                                         % Asignatura.
+\newcommand{\autor}{Andrés Herrera Poyatos}                             % Autor.
+
+%----------------------------------------------------------------------------------------
+%	PORTADA 
+%----------------------------------------------------------------------------------------
+
+\title{                                             % Título
+    \vspace{2in}
+    \textmd{\textbf{\asignatura \\ \titulo}} \\         % - Nombre del trabajo
+    \normalsize\vspace{0.1in}\small{\fecha}  \\         % - Fecha (Arriba) 
+    \vspace{3in}
+}
+
+\author{\textbf{\autor}}                            % Autor
+\date{}                                             % Fecha. Elija entre esta y la del título.
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ÍNDICE
+%----------------------------------------------------------------------------------------
+
+% Profundidad del Índice:
+%\setcounter{tocdepth}{1}
+
+\newpage
+\tableofcontents
+\listoflistings      % Lista con los códigos. Borrar si se desea.
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	Sección 1: Listing y Minted
+%----------------------------------------------------------------------------------------
+
+\begin{section}{Primera Sección}
+
+\begin{subsection}{Árboles}
+
+\begin{figure}[H]
+\caption{Segment tree generado sobre el vector [3,2,8,5,6,1,7,4]}
+\centering
+\begin{tikzpicture}[auto, 
+       every node/.style={fill=blue!10, circle, minimum size=15mm, draw=blue, thick, 
+            text centered,inner sep=0pt}, 
+       level 1/.style={sibling distance=90mm, level distance=2.5cm},
+       level 2/.style={sibling distance=40mm, level distance=2.5cm}]
+       level 3/.style={sibling distance=2mm, level distance=2.5cm}]
+\node[draw](z){V[1,8]}
+    child{ 
+        node {V[1,4]}
+        child{
+            node {V[1,2]} 
+            child{
+                node [right = 3mm] {V[1,1]} }
+            child{
+                node [left = 3mm] {V[2,2]} }            
+        }
+        child{
+            node {V[3,4]} 
+            child{
+                node [right = 3mm] {V[3,3]} }
+            child{
+                node [left = 3mm] {V[4,4]} }        
+        }
+    } 
+    child{ 
+        node {V[5,8]}
+        child{
+            node {V[5,6]} 
+            child{ node [right = 3mm] {V[5,5]} }
+            child{ node [left = 3mm] {V[6,6]} }
+        }
+        child{
+            node {V[7,8]} 
+            child{
+                node [right = 3mm] {V[7,7]} }
+            child{
+                node [left = 3mm] {V[8,8]} }
+        }
+    };
+\end{tikzpicture}
+\end{figure}
+\label{fig:malware}
+
+\begin{figure}[H]
+\caption{Segment tree generado sobre el vector [3,2,8,5,6,1,7,4] representado como heap}
+\centering
+\begin{tikzpicture}
+    \coordinate (s) at (0,0);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,8]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {1};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,4]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {2};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[4,8]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {3};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,2]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {4};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[3,4]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {5};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[5,6]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {6};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[7,8]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {7};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,1]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {8};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {\ldots};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.61mm, minimum width = 15mm, draw, rectangle] at (s) {\ldots};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[8,8]};
+    \coordinate (s) at ($(s) + (0,0.5)$);
+    \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {15};
+    \coordinate (s) at ($(s) + (1.5,-0.5)$);
+\end{tikzpicture}
+\end{figure}
+
+\end{subsection}
+
+\end{section}
+
+\end{document}
