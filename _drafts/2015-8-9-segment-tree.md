@@ -96,11 +96,11 @@ Veremos que para que la eficiencia de las dos operaciones soportadas por el segm
 
 Los subintervalos preprocesados se almacenan en nodos. Estos pueden ver como un árbol binario. Cada nodo que no sea una hoja tiene un hijo izquierda y un hijo derecha que se corresponden con dividir el subintervalo del nodo en dos. La Imagen 1 muestra el árbol resultante para el ejemplo $$V = [3,2,8,5,6,1,7,4]$$.
 
-![](https://raw.githubusercontent.com/dgiim/blog/gh-pages/images/segment_trees/segment_trees_visualiacion.png)
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)
 
 Nótese que el árbol binario es completo. Por tanto, podemos almacenarlo en memoria de forma análoga a un heap [^heap]. Esto es, embebemos el árbol en un vector mediante un recorrido por niveles como sucede en la Imagen 2.
 
-![](https://raw.githubusercontent.com/dgiim/blog/gh-pages/images/segment_trees/segment_trees_heap.png)
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_heap.png)
 
 
 
