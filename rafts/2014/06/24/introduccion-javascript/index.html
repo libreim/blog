@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Introducción a JavaScript. Programación con prototipos</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2014/06/24/introduccion-javascript" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Introducción a JavaScript. Programación con prototipos
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/fdavidcl">David Charte</a>
+              
+            
+            
+            <div class="date">
+              24-06-2014
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2014-6-24-introduccion-javascript.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <pre><code class="language-javascript">console.log("Hello World!!");
+</code></pre>
+
+<p>JavaScript (JS) es el lenguaje de programación desarrollado por Netscape para
+la web<sup id="fnref:jsannouncement"><a href="#fn:jsannouncement" class="footnote">1</a></sup>. Se trata de un lenguaje de script,
+generalmente interpretado por el navegador del usuario, esto es, se ejecuta en
+el <em>cliente</em><sup id="fnref:mdnjs"><a href="#fn:mdnjs" class="footnote">2</a></sup>. Hablamos del cliente refiriéndonos a la máquina del usuario final
+que visitará el sitio web, y del servidor para referirnos a la máquina o el
+conjunto de ellas que lo almacenan y proporcionan. Sin embargo, también se
+puede utilizar JavaScript como lenguaje de servidor gracias a
+<a href="http://nodejs.org/">Node.js</a>.</p>
+
+<!--more-->
+
+<p>JavaScript tiene una sintaxis similar a la de C++ o Java, y puede funcionar como
+un lenguaje procedimental o como uno orientado a objetos. Además, es capaz de
+responder a eventos generados mediante la interacción del usuario, lo que es
+generalmente una de sus principales funciones.</p>
+
+<dl>
+  <dt>Nota</dt>
+  <dd>Pese al nombre, JavaScript no deriva de Java, los dos lenguajes apenas
+se parecen, exceptuando el aspecto de la sintaxis. De hecho, se llamó <em>Mocha</em> y
+<em>LiveScript</em> antes de obtener su nombre definitivo.</dd>
+</dl>
+
+<p>Para ejecutar tu propio código JavaScript, pulsa F12 o Ctrl-Mayus-C en tu
+navegador. En las herramientas de desarrollador tendrás una consola JS
+interactiva disponible para experimentar.
+Es importante notar que cada navegador implementa JavaScript de una manera
+ligeramente distinta, luego puede haber peculiaridades en la forma de
+aprovechar algunos recursos del navegador. El estándar del lenguaje se
+denomina <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript</a>.</p>
+
+<h2 id="sintaxis-y-tipos">Sintaxis y tipos</h2>
+
+<h3 id="declaraciones-variables-y-funciones">Declaraciones, variables y funciones</h3>
+
+<p>JavaScript no es fuertemente tipado, por lo que declaramos las variables
+simplemente con la palabra reservada <code>var</code>.  Declaramos una constante con
+<code>const</code> y una función con <code>var ... = function()</code> o <code>function ...()</code>.  También podemos declarar
+variables simplemente con una asignación, pero
+entonces serán globales, lo que es equivalente a  declararlas fuera de
+cualquier función (las variables y funciones globales se convierten en
+atributos del objeto <code>window</code>).</p>
+
+<pre><code class="language-javascript">var una = 1;
+const PI = 3.141592;
+
+var perimetro_circulo = function(radio) {
+    // Esta variable no estaba declarada antes,
+    // así que es global
+    tau = 2 * PI;
+
+    return tau * radio;
+};
+
+// Otra forma de declarar funciones
+function area_circulo(radio) {
+    return PI * radio * radio;
+}
+</code></pre>
+
+<dl>
+  <dt>Nota</dt>
+  <dd>JavaScript acepta ciertos símbolos a la hora de nombrar variables. Un
+ nombre de variable no puede empezar por un número, pero sí que puede
+ comenzar y contener símbolos como <code>$</code>, <code>_</code> o incluso <script type="math/tex">\pi</script> <sup id="fnref:jsidentifiers"><a href="#fn:jsidentifiers" class="footnote">3</a></sup>.</dd>
+</dl>
+
+<h3 id="colecciones-y-objetos">Colecciones y objetos</h3>
+<p>En JS utilizamos los corchetes para representar arrays. Estos pueden
+contener objetos de distinta naturaleza, por ejemplo, el siguiente array
+es completamente válido:</p>
+
+<pre><code class="language-javascript">var válido = [20, "Hola", /^[a-z]/];
+</code></pre>
+
+<p>Los objetos son uno de los pilares de JS. En este lenguaje, los objetos
+existen, no se crean como instancias de una clase, por lo que podemos declarar
+nuevos con la siguiente sintaxis:</p>
+
+<pre><code class="language-javascript">var un_objeto = {
+    dato: "valor",
+    otro: 3,
+    una_funcion: function() {
+        return Math.random();
+    }
+};
+
+// Acceso a datos:
+un_objeto.otro;     // --&gt; 3
+un_objeto["dato"];  // --&gt; "valor"
+un_objeto.una_funcion();
+</code></pre>
+
+<p>La forma en que se define el objeto es conocida como <em>JavaScript Object
+Notation</em> (JSON). Un objeto puede funcionar como un
+diccionario, de la forma <code>{ clave: "valor", clave2: "otro" }</code>. Solemos llamar
+<em>propiedad</em> a cada una de las parejas <em>clave-valor</em> de un objeto.</p>
+
+<h3 id="tipos">Tipos</h3>
+<p>JavaScript tiene algunos tipos básicos: <code>Number</code>, <code>String</code>, <code>Boolean</code>. 
+El resto de objetos (los de <code>Date</code>, <code>RegExp</code>…) serán de tipo
+<code>Object</code>, y las funciones y constructores son de tipo <code>Function</code>.
+Se puede comprobar el tipo de un objeto mediante <code>typeof</code>:</p>
+
+<pre><code class="language-javascript">typeof 5; // --&gt; Number
+typeof []; // --&gt; Object
+typeof Math.pow; // --&gt; Function
+</code></pre>
+
+<p>Además, se utilizan algunas palabras para identificar variables nulas y
+no inicializadas: <code>null</code> y <code>undefined</code>, respectivamente. Para indicar
+resultados de operaciones matemáticas no válidas se usa <code>NaN</code> (o <code>Infinity</code>,
+en caso de divisiones por 0 o números demasiado grandes):</p>
+
+<pre><code class="language-javascript">var sin_inicializar;
+sin_inicializar; // --&gt; undefined
+
+Math.log(-1); // --&gt; NaN
+Math.pow(2, 10000); // --&gt; Infinity
+</code></pre>
+
+<h3 id="control-de-flujo">Control de flujo</h3>
+<p>Disponemos de las mismas estructuras que en el resto de lenguajes similares:</p>
+
+<ul>
+  <li>if-else</li>
+  <li>for</li>
+  <li>for-in</li>
+  <li>while</li>
+  <li>do-while</li>
+  <li>switch-case</li>
+</ul>
+
+<p>La estructura <em>for-in</em> es algo diferente de sus equivalentes en C++ y Java,
+y además de arrays nos permite recorrer las propiedades de cualquier objeto:</p>
+
+<pre><code class="language-javascript">var recetas = [
+    {
+        nombre: "Paella",
+        ingrediente_principal: "arroz"
+    },
+    {
+        nombre: "Tortilla",
+        ingrediente_principal: "huevo"
+    },
+    {
+        nombre: "Bocata",
+        ingrediente_principal: "pan"
+    }
+];
+
+for (var i in recetas) {
+    // i referencia al índice!
+    console.log("Receta nº " + i);
+
+    for (var dato in recetas[i]) {
+        // dato referencia la clave
+        console.log(dato + ": " + recetas[i][dato]);
+    }
+}
+</code></pre>
+
+<p>Tenemos dos comparaciones de igualdad, una que convierte tipos implícitamente
+para comparar el contenido, y otra que es estricta con los tipos:</p>
+
+<pre><code class="language-javascript">const POLO = 28;
+
+// Comparación de igualdad:
+POLO == "28"; // --&gt; true
+
+// Comparación de igualdad y tipo:
+POLO === "28"; // --&gt; false ("28" es String)
+</code></pre>
+
+<p>Por último, también podemos usar los operadores lógicos <code>||</code> y <code>&amp;&amp;</code> para control
+de flujo, algo muy utilizado para escribir código compatible con todos los
+navegadores:</p>
+
+<pre><code class="language-javascript">var nodo = document.getElementById("identificador");
+
+// Cada navegador aceptará innerText o textContent
+var texto = nodo.innerText || nodo.textContent;
+</code></pre>
+
+<h2 id="el-document-object-model">El Document Object Model</h2>
+
+<h3 id="acceso-a-los-nodos-html">Acceso a los nodos HTML</h3>
+<p>Desde luego, si nuestro objetivo es modificar contenido en un sitio web e
+interactuar con el usuario, es necesario algo más que todo esto. Para esta tarea
+disponemos del <em>Document Object Model</em> o DOM, que básicamente se encarga de
+proveer la información de la página web de una forma que sea consistente con el
+lenguaje.</p>
+
+<p>Así, tendremos disponibles una serie de objetos, partiendo de <code>window</code>,
+que nos proporcionarán acceso, entre otros, a lo siguiente:</p>
+
+<ul>
+  <li><code>window</code>: Es el padre de todos los objetos del documento. Es indistinto acceder
+a <code>window.objeto</code> y a <code>objeto</code>. Si declaramos una variable fuera de una función
+queda como objeto hijo de <code>window</code>.</li>
+  <li><code>title</code>: Título de la página.</li>
+  <li><code>location</code>
+    <ul>
+      <li><code>location.href</code>: URL de la página.</li>
+      <li><code>location.hash</code>: <em>hash</em> (la parte del URL que viene después del símbolo <code>#</code>)</li>
+    </ul>
+  </li>
+  <li><code>document</code>: Acceso a los nodos HTML del documento.
+    <ul>
+      <li><code>document.getElementByID(identificador)</code>: Obtiene un nodo mediante el
+  identificador HTML (atributo <code>id</code>).</li>
+      <li><code>document.querySelector(selector)</code>: Obtiene un nodo mediante un selector
+  estilo CSS.</li>
+      <li><code>document.createElement(tipo)</code>: Crea un nuevo nodo HTML del tipo
+  especificado.</li>
+    </ul>
+  </li>
+</ul>
+
+<dl>
+  <dt>Nota</dt>
+  <dd>El DOM sólo está disponible cuando se ejecuta JavaScript en una página HTML en
+ el cliente. No existe en otros intérpretes de JS como <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino">Rhino</a> ni en la parte de servidor como en <a href="http://nodejs.org/">node.js</a>.</dd>
+</dl>
+
+<h3 id="eventos">Eventos</h3>
+<p>Además, para responder a interacciones del usuario disponemos de eventos, es decir, podemos asociar
+funciones a acciones de tipo <em>click</em>, <em>key press</em>, <em>drag</em>, etc. de forma que la página web
+responda ante ellas. Por ejemplo:</p>
+
+<pre><code class="language-html">&lt;!-- Nodo HTML: --&gt;
+&lt;input id="mi_boton" type="button" value="Púlsame"&gt;
+</code></pre>
+<pre><code class="language-javascript">var alerta_click = function() {
+    // this referencia al nodo que responde al evento
+    console.log("Has pulsado el botón " + this.id);
+};
+
+document.querySelector("#mi_boton").onclick = alerta_click;
+
+// Otra forma:
+document.querySelector("#mi_boton").addEventListener("click", alerta_click);
+</code></pre>
+
+<p>Mucho más sobre eventos en <sup id="fnref:quirksevents"><a href="#fn:quirksevents" class="footnote">4</a></sup>.</p>
+
+<h2 id="orientacin-a-objetos-los-prototipos">Orientación a objetos: Los prototipos</h2>
+
+<h3 id="construyendo-objetos">Construyendo objetos</h3>
+
+<p>JavaScript está orientado a objetos, literalmente. No existen las clases en este lenguaje,
+sino que podemos crear objetos a partir de otros que llamamos <em>prototipos</em>, que están
+asociados a funciones constructoras. Estas funciones son idénticas a
+cualquier otra, salvo por que no devuelven un valor, y en su lugar obtenemos un objeto
+al utilizarlas con <code>new</code>. Veamos un ejemplo:</p>
+
+<pre><code class="language-javascript">// El constructor
+var Cancion = function(nombre, artista) {
+    this.nombre = nombre;
+    this.artista = artista;
+};
+
+// Definimos un método en el prototipo
+Cancion.prototype.reproducir = function() {
+    console.log("Reproduciendo " + this.nombre + " de " + this.artista);
+};
+
+// Creamos un objeto con el constructor
+var una_cancion = new Cancion("Clocks", "Coldplay");
+una_cancion.reproducir(); // --&gt; "Reproduciendo Clocks de Coldplay"
+</code></pre>
+
+<p>Mediante la función constructora <code>Cancion</code> hemos creado un prototipo vacío (en <code>Cancion.prototype</code>), al que
+después hemos añadido el método <code>reproducir</code>. Al utilizar el prototipo como plantilla,
+cada objeto que se cree mediante <code>new Cancion(...)</code> dispondrá del método. Aun así,
+también podemos añadir otros métodos y atributos a cualquier objeto independientemente
+del prototipo con que se haya creado.</p>
+
+<h3 id="visibildad-de-datos">Visibildad de datos</h3>
+
+<p>Otra peculiaridad de la orientación a objetos de JS es la falta de encapsulación. Un
+dato miembro de un objeto, declarado con <code>this.dato</code> es visible en cualquier ámbito:</p>
+
+<pre><code class="language-javascript">var inception = new Cancion("Time", "Hans Zimmer");
+
+// Podemos modificar los datos miembro, e incluso los métodos
+inception.nombre = "Mombasa";
+inception.reproducir = function() {
+    console.log("Banda sonora épica");
+};
+</code></pre>
+
+<p>Una alternativa para ocultar información es utilizar variables en el constructor, de
+forma que solo están visibles en el ámbito de la función constructora. El problema es
+que entonces no estarán visibles para los métodos que declaremos en el prototipo.
+Podemos sin embargo definir <em>getters</em> dentro del constructor, y utilizarlos en los métodos:</p>
+
+<pre><code class="language-javascript">var Cancion = function(nombre, artista) {
+    var name = nombre;
+    var artist = artista;
+
+    this.nombre = function() {
+        return name;
+    }
+
+    this.artista = function() {
+        return artist;
+    }
+};
+
+Cancion.prototype.reproducir = function() {
+    console.log("Reproduciendo " + this.nombre() + " de " + this.artista());
+};
+</code></pre>
+
+<p>Ahora las variables <code>name</code> y <code>artist</code> no son visibles ni modificables fuera del constructor, pero se pueden
+consultar mediante los métodos <code>nombre()</code> y <code>artista()</code> respectivamente. Esto funciona
+porque aunque la función constructora se termine de ejecutar, las variables declaradas
+no desaparecen, y permanecen disponibles en los métodos <em>getters</em>.</p>
+
+<dl>
+  <dt>Nota</dt>
+  <dd>La diferencia entre declarar métodos en el prototipo y declararlos en el constructor
+(con <code>this.metodo</code>) es que los del prototipo se definen una vez y se aplican a todos los
+objetos, mientras que los del constructor se definen para cada objeto creado, lo cual
+es menos eficiente. Por eso es preferible declarar los métodos en el prototipo<sup id="fnref:jsencapsulation"><a href="#fn:jsencapsulation" class="footnote">5</a></sup>.</dd>
+</dl>
+
+<h3 id="herencia">Herencia</h3>
+
+<p>Como era de esperar, la herencia en JavaScript también es bastante particular. No existe
+una forma directa de hacer que una función “herede” de otra, por lo que no podemos crear
+constructores a partir de constructores anteriores. Sin embargo, podemos escribir constructores
+cuyo prototipo asociado sea una instancia de uno ya existente<sup id="fnref:jsinheritance"><a href="#fn:jsinheritance" class="footnote">6</a></sup>:</p>
+
+<pre><code class="language-javascript">var Parent = function() {
+    console.log("Creando objeto de la clase padre");
+};
+Parent.prototype.metodo = function() {
+    return "Este método se heredará";
+};
+
+
+// Constructor nuevo
+var Child = function() {
+    console.log("Este es el constructor de la clase hija");
+};
+
+// Usamos el prototipo de la clase padre
+Child.prototype = new Parent();
+// ...pero asociándolo al constructor de la clase hija
+Child.prototype.constructor = Child;
+
+// Podemos añadir métodos
+Child.prototype.nuevo_metodo = function() {
+    return "Solo en la clase hija";
+};
+
+var partest = new Parent();
+partest instanceof Parent; // --&gt; true
+partest instanceof Child; // --&gt; false
+
+var chitest = new Child();
+chitest instanceof Parent; // --&gt; true
+chitest instanceof Child; // --&gt; true
+</code></pre>
+
+<p>En este ejemplo hemos creado dos constructores, uno con prototipo
+propio, y otro al que asociamos un objeto creado a partir del primer
+prototipo. Comprobamos mediante <code>instanceof</code> que la herencia funciona
+como se esperaba, un objeto creado mediante <code>Child</code> es instancia de este
+constructor y del padre, <code>Parent</code>, y dispone de los métodos de ambos en
+su prototipo.</p>
+
+<h2 id="conclusin">Conclusión</h2>
+
+<p>En este artículo hemos visto cómo funciona JavaScript y cómo interactúa
+con un sitio web, y hemos estudiado sus posibilidades desde el punto de vista
+de la orientación a objetos. Si queréis saber más sobre el lenguaje y
+aprender a programar en él, serán muy útiles las referencias a páginas web, y
+os puedo recomendar el libro <sup id="fnref:jslibroalarcon"><a href="#fn:jslibroalarcon" class="footnote">7</a></sup>, algo anticuado ya pero
+muy completo y conciso.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:jsannouncement">
+      <p><a href="https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html">Netscape and Sun announce JavaScript. Press Release</a> <a href="#fnref:jsannouncement" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:mdnjs">
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript">About JavaScript - Mozilla Developer Network</a> <a href="#fnref:mdnjs" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:jsidentifiers">
+      <p><a href="http://mathiasbynens.be/notes/javascript-identifiers">Valid JavaScript variable names - Mathias Bynens</a> <a href="#fnref:jsidentifiers" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:quirksevents">
+      <p><a href="http://www.quirksmode.org/js/introevents.html">Introduction to Events - Quirks Mode</a> <a href="#fnref:quirksevents" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:jsencapsulation">
+      <p><a href="http://aboutcode.net/2011/10/04/efficient-encapsulation-of-javascript-objects.html">Efficient encapsulation of JavaScript objects</a> <a href="#fnref:jsencapsulation" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:jsinheritance">
+      <p><a href="http://tobyho.com/2010/11/22/javascript-constructors-and/">Javascript Constructors and Prototypes - Toby Ho</a> <a href="#fnref:jsinheritance" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:jslibroalarcon">
+      <p><a href="http://books.google.es/books?id=IJBXNQAACAAJ">JavaScript - Revisado y actualizado 2004</a>, <a href="https://twitter.com/jm_alarcon">José Manuel Alarcón</a> <a href="#fnref:jslibroalarcon" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2014/06/24/introduccion-javascript/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2014/06/24/introduccion-javascript&text=Introducción a JavaScript. Programación con prototipos" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2014/06/24/introduccion-javascript" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2014/06/24/introduccion-javascript&title=Introducción a JavaScript. Programación con prototipos" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

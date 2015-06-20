@@ -321,8 +321,10 @@ Si en determinado momento la información de un nodo a actualizar no cambia con 
 
 Los siguientes problemas sirven como ejemplo de aplicación de los segment trees:
 
+- Dado un vector $$V$$ con $$N$$ elementos, se pide realizar $$Q$$ consultas. Cada consulta consiste en obtener la media del subintervalo $$V[i,j]$$.
+- [Hackerrank - Functional Programming Contest - Range Minimum Query](https://www.hackerrank.com/contests/hindley-milner-feb14/challenges/range-minimum-query)
 - [Hackerrank - Minimum Product Subinterval](https://www.hackerrank.com/contests/indeed-prime-challenge/challenges/minimum-product-sub-interval)
-- [Hackerrank - Almost Equal](https://www.hackerrank.com/challenges/almost-equal-advanced)
+- [90 Segment Trees Problems](http://www.ahmed-aly.com/Category.jsp?ID=25)
 
 ## Código
 

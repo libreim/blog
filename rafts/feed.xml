@@ -1,0 +1,1515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>dgiim</title>
+        <description>Blog de los alumnos del Doble Grado en Ingeniería Informática y Matemáticas de la Universidad de Granada</description>  
+        <link>http://dgiim.github.io/blog/</link>
+        <atom:link href="http://dgiim.github.io/blog//feed.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Teorema de Dini</title>
+            <description>&lt;h2 id=&quot;convergencia-puntual-y-convergencia-uniforme&quot;&gt;Convergencia Puntual y Convergencia Uniforme&lt;/h2&gt;
+
+&lt;p&gt;En el Análisis Matemático es frecuente que la función solución a determinado problema sea desconocida o no la podamos expresar en términos de las funciones elementales que conocemos. Incluso en las funciones más simples, como la exponencial o el logaritmo, nos encontramos esta situación. Conocemos su existencia y propiedades características pero tenemos ciertas dificultades a la hora de evaluarlas en un punto. Es frecuente para ello utilizar los famosos polinomios de Taylor, en cuyo caso estamos aproximando la función por polinomios.&lt;/p&gt;
+
+&lt;p&gt;En más situaciones es habitual disponer de funciones que se aproximan cada vez más a la solucion del problema. Para formalizar este hecho surge el concepto de convergencia para sucesiones de funciones. Podemos distinguir dos tipos de convergencia: convergencia puntual y convergencia uniforme.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Definición 1&lt;/dt&gt;
+  &lt;dd&gt;Sea &lt;script type=&quot;math/tex&quot;&gt;A \subseteq \mathbb{R}&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; una sucesión de funciones con &lt;script type=&quot;math/tex&quot;&gt;\ f_n : A \rightarrow \mathbb{R}&lt;/script&gt;. Se dice que &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; &lt;strong&gt;converge puntualmente&lt;/strong&gt; en &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; si la sucesión &lt;script type=&quot;math/tex&quot;&gt;\{f_n(x)\}&lt;/script&gt; converge. Podemos considerar el conjunto &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; de los elementos &lt;script type=&quot;math/tex&quot;&gt;x \in A&lt;/script&gt; en los que hay convergencia puntual y definir la &lt;strong&gt;función límite&lt;/strong&gt;:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;f : C \rightarrow \mathbb{R}, \ f(x) = \lim f_n(x) \ \forall x \in C&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Nótese que la definición es puramente topológica para espacios con unicidad del límite (como los espacios de Hausdorff). Sin embargo, para que todo lector pueda seguir el texto sin un curso inicial de topología trabajaremos solamente con conjuntos de números reales.&lt;/p&gt;
+
+&lt;p&gt;Podemos exigirle más a la convergencia puntual y obtener la convergencia uniforme:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Definición 2&lt;/dt&gt;
+  &lt;dd&gt;Sea &lt;script type=&quot;math/tex&quot;&gt;A \subseteq \mathbb{R}&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; una sucesión de funciones con &lt;script type=&quot;math/tex&quot;&gt;\ f_n : A \rightarrow \mathbb{R}&lt;/script&gt;. Se dice que &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; &lt;strong&gt;converge uniformemente&lt;/strong&gt; en &lt;script type=&quot;math/tex&quot;&gt;B \subseteq A&lt;/script&gt; si para cada &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt; existe &lt;script type=&quot;math/tex&quot;&gt;n_o \in \mathbb{N}&lt;/script&gt; tal que:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\forall n \ge n_o : \left| f_n(x) - f(x) \right| &lt; \varepsilon \ \forall x \in B %]]&gt;&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;La convergencia uniforme implica la convergencia puntual, pero el recíproco no es cierto. Un ejemplo de este caso es el siguiente, que se deja como ejercicio para el lector.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Ejemplo 1&lt;/dt&gt;
+  &lt;dd&gt;Probar que la siguiente sucesión de funciones converge puntualmente pero no converge uniformemente en &lt;script type=&quot;math/tex&quot;&gt;[0,1]&lt;/script&gt;:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;f_n : [0,1] \rightarrow \mathbb{R}, \ f_n(x) = x^n \ \forall x \in [0,1]&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Cabe preguntarse para qué sirve la convergencia uniforme. Intuitivamente, nos dice que la sucesión de funciones converge con igual rapidez en todo &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;. Analíticamente podemos sacarle provecho al relacionarla con conceptos como la continuidad, la derivabilidad y la integral. Por ejemplo, en todo curso de análisis en el que se trate este tema se demuestra que si la convergencia es uniforme y las funciones que conforman la sucesión son continuas, entonces la función límite es continua. En definitiva, la convergencia uniforme nos permite obtener información analítica de la función límite exigiendo ciertas propiedades a las funciones que conforman la sucesión.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, muchos de los ejercicios a realizar en el correspondiente curso simplemente piden estudiar la convergencia uniforme de una sucesión de funciones. A veces esto se vuelve tedioso como es el caso del siguiente ejercicio &lt;sup id=&quot;fnref:ejercicios&quot;&gt;&lt;a href=&quot;#fn:ejercicios&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Ejemplo 2&lt;/dt&gt;
+  &lt;dd&gt;Estudia la convergencia puntual y uniforme de la sucesión de funciones &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; donde &lt;script type=&quot;math/tex&quot;&gt;\ f_n : \mathbb{R} \rightarrow \mathbb{R}&lt;/script&gt; está definida por:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Solución.&lt;/strong&gt; Usando que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lim_{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^x = e&lt;/script&gt;
+
+&lt;p&gt;Se obtiene&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lim_{n \rightarrow \infty}\left(1+\frac{x^2}{n}\right)^n = \exp\left(x^2\right)&lt;/script&gt;
+
+&lt;p&gt;Luego la función límite es &lt;script type=&quot;math/tex&quot;&gt;\ f(x) = \exp\left(x^2\right)&lt;/script&gt; en todo &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;No hay convergencia uniforme en ninguna semirrecta de &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; pues para &lt;script type=&quot;math/tex&quot;&gt;x_n = \sqrt n&lt;/script&gt; se tiene que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lim_{n \rightarrow \infty} f_n(x_n) - f(x_n) = \lim_{n \rightarrow \infty}\left(1+\frac{n}{n}\right)^n - e^n = \lim_{n \rightarrow \infty} 2^n - e^n = -\infty&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lim_{n \rightarrow \infty} f_n(-x_n) - f(-x_n) = \lim_{n \rightarrow \infty} f_n(x_n) - f(x_n) = -\infty&lt;/script&gt;
+
+&lt;p&gt;y de haber convergencia uniforme para cualquier sucesión de números reales &lt;script type=&quot;math/tex&quot;&gt;\{x_n\}&lt;/script&gt; se verificaría que la sucesión &lt;script type=&quot;math/tex&quot;&gt;\{f_n(x_n) - f(x_n)\}&lt;/script&gt; converge a 0.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, sí hay convergencia uniforme en los intervalos del tipo &lt;script type=&quot;math/tex&quot;&gt;[-\alpha, \alpha]&lt;/script&gt; para &lt;script type=&quot;math/tex&quot;&gt;\alpha &gt; 0&lt;/script&gt; como probaremos a continuación. Puede el lector saltarse este tedioso desarrollo ya que conseguiremos el mismo resultado aplicando el teorema de Dini.&lt;/p&gt;
+
+&lt;p&gt;Sea &lt;script type=&quot;math/tex&quot;&gt;\alpha &gt; 0&lt;/script&gt;. Definimos la siguiente función, que resulta ser continua:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\phi(t) = \frac{\log(1+t)}{t}, \ \forall -1 &lt; t \neq 0, \phi(0) = 1 %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Tenemos que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| =
+\exp\left(x^2\right) \left| \left(\frac{\left(1+\frac{x^2}{n}\right)^\frac{n}{x^2}}{e}\right)^{x^2} - 1 \right| =&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\exp\left(x^2\right) \left| \exp\left( x^2\left(\phi\left(\frac{x^2}{n}\right) - 1\right)\right) -1 \right| \le
+\exp\left(\alpha^2  \right) \left| \exp\left( x^2\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) -1 \right|&lt;/script&gt;
+
+&lt;p&gt;Sea &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt;, utilizaremos la continuidad de &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; junto con la continuidad de la función exponencial para obtener el resultado deseado.&lt;/p&gt;
+
+&lt;p&gt;Por la continuidad de la exponencial en 0, existe &lt;script type=&quot;math/tex&quot;&gt;\delta_1 &gt; 0&lt;/script&gt; tal que si &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\vert u \vert &lt; \delta_1 %]]&gt;&lt;/script&gt; entonces &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\ \vert e^u -1 \vert &lt; \frac{\varepsilon}{\exp\left(\alpha^2\right)} %]]&gt;&lt;/script&gt;. Aplicamos ahora la continuidad de &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; en 0 para obtener &lt;script type=&quot;math/tex&quot;&gt;\delta_2 &gt; 0&lt;/script&gt; tal que si &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\ \vert t\vert &lt; \delta_2 %]]&gt;&lt;/script&gt; entonces &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\ \vert \phi(t) -1\vert &lt; \frac{\delta_1}{\alpha^2} %]]&gt;&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tomemos &lt;script type=&quot;math/tex&quot;&gt;n_0 \in \mathbb{N}&lt;/script&gt; tal que &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\frac{\alpha^2}{n_0} &lt; \delta_2 %]]&gt;&lt;/script&gt;. Entonces, para todo &lt;script type=&quot;math/tex&quot;&gt;x \in [-\alpha, \alpha]&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;n \ge n_0&lt;/script&gt; se tiene que:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\frac{x^2}{n} &lt; \delta_2 \Rightarrow
+\left| \phi \left(\frac{x^2}{n}\right) -1\right| &lt; \frac{\delta_1}{\alpha^2} \Rightarrow
+\left| x^2 \left( \phi \left(\frac{x^2}{n}\right) -1 \right) \right| &lt; \delta_1 \Rightarrow %]]&gt;&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| \exp\left(x^2\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) - 1\right| &lt; \frac{\varepsilon}{\exp(\alpha^2)} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;De donde se deduce que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| \le \exp\left(\alpha^2\right) \left| \exp\left( x\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) -1\right| &lt; \varepsilon  %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Se ha obtenido la definición de convergencia uniforme en &lt;script type=&quot;math/tex&quot;&gt;[-\alpha, \alpha]&lt;/script&gt;. Nótese que esto implica que hay convergencia uniforme en cualquier intervalo cerrado y acotado.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;h2 id=&quot;teorema-de-dini&quot;&gt;Teorema de Dini&lt;/h2&gt;
+
+&lt;p&gt;El teorema de Dini es uno de los pocos resultados que transforman la convergencia puntual en convergencia uniforme. Podremos aplicarlo en intervalos del tipo &lt;script type=&quot;math/tex&quot;&gt;[a, b]&lt;/script&gt; si se verifican ciertas condiciones, como veremos que sucede en el ejemplo anterior.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Enunciado&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;a,b \in \mathbb{R}&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;\ f_n : [a,b] \rightarrow \mathbb{R}&lt;/script&gt; continua para todo &lt;script type=&quot;math/tex&quot;&gt;n \in \mathbb{N}&lt;/script&gt;. Se considera la sucesión de funciones &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt;. Si la sucesión es monótona y converge puntualmente a &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt; continua, entonces la convergencia es uniforme.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Demostración&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;El gran salto de la convergencia puntual a la convergencia uniforme se va a producir gracias a la continuidad de todas las funciones, la monotonía de la sucesión y la compacidad del dominio.&lt;/p&gt;
+
+&lt;p&gt;En la prueba se utilizará el concepto de entorno de un punto para simplificar la redacción al aplicar la continuidad. Un entorno de &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; es un conjunto que contiene a un abierto del espacio que a su vez contiene a &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. En nuestro caso, los abiertos son los intervalos abiertos intersecados con &lt;script type=&quot;math/tex&quot;&gt;[a, b]&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Supongamos en primer lugar que &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; es creciente. Nótese que en tal caso &lt;script type=&quot;math/tex&quot;&gt;\ f(x) \ge f_n(x)&lt;/script&gt; para todo &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;. Sea &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;De la convergencia puntual se tiene que para todo &lt;script type=&quot;math/tex&quot;&gt;x \in [a,b]&lt;/script&gt; existe un natural &lt;script type=&quot;math/tex&quot;&gt;n_x&lt;/script&gt; tal que&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\forall n \ge n_x : \left| f_n(x) - f(x) \right| &lt; \frac{\varepsilon}{3} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;De la continuidad de &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;\ f_n&lt;/script&gt; se tiene que para todo &lt;script type=&quot;math/tex&quot;&gt;x \in [a,b]&lt;/script&gt; existe un entorno &lt;script type=&quot;math/tex&quot;&gt;V_x&lt;/script&gt; de &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; tal que para todo elemento &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; del entorno se verifica:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| f_n(y) - f_n(x) \right| &lt; \frac{\varepsilon}{3} %]]&gt;&lt;/script&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| f(y) - f(x) \right| &lt; \frac{\varepsilon}{3} %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Utilizando la desigualdad triangular se obtiene que para todo &lt;script type=&quot;math/tex&quot;&gt;y \in V_x&lt;/script&gt; se cumple:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| f(y) - f_{n_x}(y) \right| \le \left| f(y) - f(x) \right| + \left| f(x) - f_{n_x}(x) \right| + \left| f_{n_x}(x) - f_{n_x}(y) \right| &lt; \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} &lt; \varepsilon %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Como &lt;script type=&quot;math/tex&quot;&gt;[a,b] = \cup_{x \in [a,b]} V_x&lt;/script&gt;, usando la caracterización topológica de la compacidad, existen &lt;script type=&quot;math/tex&quot;&gt;x_1, \ldots, x_m \in [a,b]&lt;/script&gt; tales que:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; [a,b] = \bigcup_{i = 1}^m V_{x_i} &lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Tomamos &lt;script type=&quot;math/tex&quot;&gt;n_0 = \max\{n_{x_i}: i = 1, \ldots, m\}&lt;/script&gt;. Veamos que efectivamente se da la convergencia uniforme. Sean &lt;script type=&quot;math/tex&quot;&gt;n \ge n_0, y \in [a,b]&lt;/script&gt;. Aplicando la igualdad obtenida en &lt;strong&gt;(4)&lt;/strong&gt;, debe existir &lt;script type=&quot;math/tex&quot;&gt;i \in \{1, \ldots, m\}&lt;/script&gt; tal que &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; pertenece a &lt;script type=&quot;math/tex&quot;&gt;V_{x_i}&lt;/script&gt;. Juntando este hecho con &lt;strong&gt;(3)&lt;/strong&gt; y la monotonía:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\left| f(y) - f_n(y) \right| = f(y) - f_n(y) \le f(y) - f_{n_0}(y) \le f(y) - f_{n_{x_i}}(y) &lt; \varepsilon %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Por otro lado, si &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; es decreciente, basta aplicar lo anterior a  &lt;script type=&quot;math/tex&quot;&gt;\{-f_n\}&lt;/script&gt;, que es creciente y converge a &lt;script type=&quot;math/tex&quot;&gt;\ -f&lt;/script&gt;. Fácilmente se extrapola su convergencia uniforrme a la de &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;p&gt;Nótese que análogamente se podría haber probado este resultado:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Teorema de Dini (en espacios topológicos)&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;(X, \mathcal{T})&lt;/script&gt; un espacio topológico compacto y sea &lt;script type=&quot;math/tex&quot;&gt;\ f_n : X \rightarrow \mathbb{R}&lt;/script&gt; continua para todo &lt;script type=&quot;math/tex&quot;&gt;n \in \mathbb{N}&lt;/script&gt;. Se considera la sucesión de funciones &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt;. Si la sucesión es monótona y converge puntualmente a &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; continua, entonces la convergencia es uniforme.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;La exigencia de continuidad a la función límite no supone una condición extra para poder aplicar el teorema. Recordemos que en caso de que haya convergencia uniforme se tiene automáticamente la continuidad de la función límite ya que las funciones &lt;script type=&quot;math/tex&quot;&gt;\ f_n&lt;/script&gt; son continuas.&lt;/p&gt;
+
+&lt;p&gt;Volvemos al Ejemplo 2 cuya resolución será una mera consecuencia del teorema de Dini.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Ejemplo 2&lt;/dt&gt;
+  &lt;dd&gt;Estudia la convergencia puntual y uniforme de la sucesión de funciones &lt;script type=&quot;math/tex&quot;&gt;\{f_n\}&lt;/script&gt; donde &lt;script type=&quot;math/tex&quot;&gt;f_n : [0,1] \rightarrow \mathbb{R}&lt;/script&gt; está definida por:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Solución.&lt;/strong&gt; Se había obtenido que la sucesión convergía puntualmente a &lt;script type=&quot;math/tex&quot;&gt;\exp\left(x^2\right)&lt;/script&gt;. Además, no había convergencia uniforme en ninguna semirrecta. Veamos que sí hay convergencia uniforme en los intervalos cerrados y acotados.&lt;/p&gt;
+
+&lt;p&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;a, b \in \mathbb{R}&lt;/script&gt; con &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; b %]]&gt;&lt;/script&gt;. En &lt;script type=&quot;math/tex&quot;&gt;[a, b]&lt;/script&gt; la sucesión verifica las condiciones del teorema de Dini:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Las funciones &lt;script type=&quot;math/tex&quot;&gt;\ f_n&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt; son continuas.&lt;/li&gt;
+  &lt;li&gt;Las sucesiones &lt;script type=&quot;math/tex&quot;&gt;\ f_n&lt;/script&gt; son crecientes. En efecto, aplicando la desigualdad de las medias &lt;sup id=&quot;fnref:medias&quot;&gt;&lt;a href=&quot;#fn:medias&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; para &lt;script type=&quot;math/tex&quot;&gt;x_1 = 1, x_i = 1+\frac{x^2}{n} \ \forall i = 2, \ldots, n+1&lt;/script&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\sqrt[n+1]{\left(1+\frac{x^2}{n}\right)^n} &lt; \frac{1 + n \left(1+\frac{x^2}{n}\right)}{n+1} = 1 + \frac{x^2}{n+1} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Por tanto, hay convergencia uniforme en &lt;script type=&quot;math/tex&quot;&gt;[a, b]&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;h2 id=&quot;referencias&quot;&gt;Referencias&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:ejercicios&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.ugr.es/~fjperez/textos/sucesiones_series_funciones.pdf&quot;&gt;Ejercicios de sucesiones y series de funciones. Javier Pérez&lt;/a&gt; &lt;a href=&quot;#fnref:ejercicios&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:medias&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://dgiim.github.io/blog/2014/04/12/desigualdad-medias/&quot;&gt;La desigualdad de las medias. Mario Román&lt;/a&gt; &lt;a href=&quot;#fnref:medias&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Mon, 20 Apr 2015 00:00:00 +0200</pubDate>
+            <link>http://dgiim.github.io/blog//2015/04/20/teorema-dini</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/04/20/teorema-dini</guid>
+        </item>
+        
+        <item>
+            <title>Álgebra de tipos</title>
+            <description>&lt;p&gt;En este post formularemos un álgebra para los tipos de los lenguajes de
+programación. Veremos operaciones que se aplican sobre ellos para obtener nuevos
+tipos y qué leyes siguen estas operaciones. Usaremos como base el sistema de
+tipos de Haskell, pero estos mismos conceptos podrían aplicarse a cualquier
+lenguaje con un sistema algebraico de tipos. Para iniciarse en el sistema de
+tipos de Haskell sugiero leer antes la &lt;a href=&quot;http://dgiim.github.io/blog/2014/10/01/intro-haskell/&quot;&gt;Introducción a Haskell&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;notando-tipos-en-haskell&quot;&gt;Notando tipos en Haskell&lt;/h2&gt;
+
+&lt;p&gt;En Haskell, los &lt;strong&gt;tipos&lt;/strong&gt; se escriben como un conjunto de constructores, que
+actúan como funciones teniendo como codominio el tipo definido. Por ejemplo,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Colour = RGB Int Int Int
+            | HSV Int Int Int
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;este código define un tipo &lt;code&gt;Colour&lt;/code&gt; con dos formas de construirlo, como &lt;code&gt;RGB&lt;/code&gt; y
+como &lt;code&gt;HSV&lt;/code&gt;. Ambos constructores usan como argumento tres enteros. Con tres
+enteros podremos construir un color de dos formas distintas.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;No sólo existen tipos simples, sino que pueden definirse
+&lt;strong&gt;constructores de tipos&lt;/strong&gt;, que toman tipos como argumento para generar
+otros. Por ejemplo,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;este código define un árbol binario con nodos de tipo &lt;code&gt;a&lt;/code&gt; arbitrario. Así, para
+crear un árbol de enteros podríamos escribir &lt;code&gt;Tree Int&lt;/code&gt;, y para usar un árbol de
+booleanos, &lt;code&gt;Tree Bool&lt;/code&gt;. Observamos que hay dos formas de construir un árbol:
+bien como el árbol vacío, que no toma argumentos, o bien como un nodo de árbol,
+que toma como argumentos un subárbol izquierdo, un nodo de tipo &lt;code&gt;a&lt;/code&gt; y un
+subárbol derecho.&lt;/p&gt;
+
+&lt;h2 id=&quot;tipos-bsicos&quot;&gt;Tipos básicos&lt;/h2&gt;
+
+&lt;p&gt;Los tipos fundamentales de nuestro álgebra de tipos serán los tipos unidad y el
+tipo vacío. El &lt;strong&gt;tipo unidad&lt;/strong&gt; consiste en un sólo constructor, de la forma:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Unit = Unit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sólo se puede construir una instancia distinta del tipo, la propia &lt;code&gt;Unit&lt;/code&gt;. En
+Haskell existe implementado el tipo &lt;code&gt;()&lt;/code&gt;, isomorfo al que acabamos de definir.&lt;/p&gt;
+
+&lt;p&gt;El &lt;strong&gt;tipo vacío&lt;/strong&gt;, por otro lado, es un tipo sin constructores. No se puede
+generar ninguna instancia de este tipo, simbólicamente podría notarse
+como: &lt;sup id=&quot;fnref:haskell-void-98&quot;&gt;&lt;a href=&quot;#fn:haskell-void-98&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Void
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Como detalle, nótese que se puede definir una función desde este tipo a
+cualquier otro por &lt;em&gt;pattern matching&lt;/em&gt;.
+El tipo no puede tomar ningún valor, así que una función que lo trate no tiene
+que definirse para ningún valor. En la &lt;code&gt;Data.Void&lt;/code&gt; está definida la función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;absurd :: Void -&amp;gt; a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Que va del tipo &lt;code&gt;Void&lt;/code&gt; a un tipo arbitrario cualquiera &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;los-tipos-como-categora&quot;&gt;Los tipos como categoría&lt;/h2&gt;
+
+&lt;p&gt;Vamos a trabajar ahora con la categoría &lt;code&gt;Hask&lt;/code&gt; de los tipos en Haskell. Una
+lectura previa de la
+&lt;a href=&quot;http://dgiim.github.io/blog/2014/10/04/intro-categorias/&quot;&gt;Introducción a teoría de categorías&lt;/a&gt;
+sería interesante antes de tratar este punto, que aporta una visión muy clara a
+lo que vamos a explicar luego. El lector al que no le apetezca leer sobre categorías, puede
+saltar este punto y seguir leyendo: no debería afectar a la comprensión de lo
+demás. Un isomorfismo puede entenderse en el sentido conjuntista.&lt;/p&gt;
+
+&lt;p&gt;Veremos de esta categoría que tiene objeto inicial y final (¿puede el lector
+adivinarlos de lo anterior?), que tiene productos
+y coproductos para cualesquiera dos objetos (esto lo podrá ver más adelante), y
+que es &lt;strong&gt;cartesianamente cerrada&lt;/strong&gt; (a lo anterior se une que los morfismos
+&lt;code&gt;a-&amp;gt;b&lt;/code&gt; son también un tipo, un objeto de la categoría en sí mismos). No
+volveremos a hablar de categorías en este post, pero es útil que el lector
+mantenga en mente la concepción de los tipos como categoría y que vaya
+descubriendo como ejercicio las propiedades universales que se presentan.&lt;/p&gt;
+
+&lt;p&gt;Lo que vamos a extraer de la teoría de categorías es la noción de &lt;strong&gt;isomorfismo&lt;/strong&gt;
+entre tipos. Dos tipos serán isomorfos si existe un isomorfismo (función con
+inversa a ambos lados) entre ellos. Que los tipos &lt;code&gt;X&lt;/code&gt; e &lt;code&gt;Y&lt;/code&gt; sean isomorfos quiere
+decir que existen:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;f :: X -&amp;gt; Y
+g :: Y -&amp;gt; X
+
+f . g == id == g . f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, el lector podrá observar la unicidad salvo isomorfismos de los universales
+que irán surgiendo. Por ejemplo, todos los tipos con un sólo constructor son
+isomorfos por:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data UnitA = UnitA
+data UnitB = UnitB
+
+f :: UnitA -&amp;gt; UnitB
+f UnitA = UnitB
+
+g :: UnitB -&amp;gt; UnitA
+g UnitB = UnitA
+
+f . g == id == g .f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;suma-y-producto&quot;&gt;Suma y producto&lt;/h2&gt;
+
+&lt;p&gt;Empecemos el álgebra con sus dos operaciones básicas. El &lt;strong&gt;producto&lt;/strong&gt; de dos
+tipos es el tipo tupla &lt;code&gt;(a,b)&lt;/code&gt;, que contiene una instancia de cada uno de ellos.
+Es la tupla de la mayoría de lenguajes de programación y se construye tomando
+como argumentos una instancia de &lt;code&gt;a&lt;/code&gt; y otra de &lt;code&gt;b&lt;/code&gt;. La podríamos escribir a
+partir de ahora como &lt;script type=&quot;math/tex&quot;&gt;a b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;La &lt;strong&gt;suma&lt;/strong&gt; es el tipo &lt;code&gt;Either a b&lt;/code&gt;, que contiene una instancia de un tipo o
+del otro, como una unión disjunta de tipos (similar a la &lt;code&gt;union&lt;/code&gt; de C++). Se
+construye usando una instancia de cualquiera de los dos tipos. La podríamos
+notar a partir de ahora como &lt;script type=&quot;math/tex&quot;&gt;a+b&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para llamarlas con propiedad &lt;em&gt;suma&lt;/em&gt; y &lt;em&gt;producto&lt;/em&gt; queremos que cumplan las
+propiedades usuales del álgebra. La &lt;strong&gt;conmutatividad&lt;/strong&gt; de ambas se conserva por
+isomorfismo. Veamos que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a+b \cong b+a&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;ab \cong ba&lt;/script&gt;
+
+&lt;p&gt;Las siguientes funciones son isomorfismos:&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;prdcomm :: (a,b) -&amp;gt; (b,a)
+prdcomm (x,y) = (y,x)
+
+sumcomm :: Either a b -&amp;gt; Either b a
+sumcomm (Left  x) = (Right x)
+sumcomm (Right y) = (Left  y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La &lt;strong&gt;asociatividad&lt;/strong&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(ab)c \cong a(bc)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(a+b)+c \cong a+(b+c)&lt;/script&gt;
+
+&lt;p&gt;se comprueba de igual manera. Son isomorfismos:&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;prdasoc :: (a,(b,c)) -&amp;gt; ((a,b),c)
+prdasoc (x,(y,z)) = ((x,y),z)
+
+sumasoc :: (Either a (Either b c)) -&amp;gt; ((Either a b) c)
+sumasoc (Left x)          = (Left (Left x))
+sumasoc (Right (Left y))  = (Left (Right y))
+sumasoc (Right (Right y)) = (Right y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y la &lt;strong&gt;distributividad&lt;/strong&gt; del producto sobre la suma, que se obtiene también por
+isomorfismos. Veamos que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(a+b)c \cong ac+bc&lt;/script&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;distrib :: ((Either a b),c) -&amp;gt; Either (a,c) (b,c)
+distrib (Left  x, z) = Left  (x,z)
+distrib (Right y, z) = Right (y,z)
+
+commonf :: Either (a,c) (b,c) -&amp;gt; ((Either a b), c)
+commonf Left  (x,z) = (Left  x, z)
+commonf Right (y,z) = (Right y, z)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;contando&quot;&gt;Contando&lt;/h2&gt;
+
+&lt;p&gt;Con la suma y producto definidas, podemos ver que &lt;code&gt;Void&lt;/code&gt; y &lt;code&gt;()&lt;/code&gt; son el &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt; y
+el &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; de nuestro álgebra, y que cumplen el ser neutros para la suma y el
+producto y el resto de propiedades que se esperan de ellos. Notándolos como
+&lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt;, se puede demostrar:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0a \cong 0&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;0+a \cong a \cong 1a&lt;/script&gt;
+
+&lt;p&gt;Y desde aquí, definir naturalmente los naturales. Sumando unidades:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; 2 \cong 1 + 1 &lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; 3 \cong 2 + 1 &lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; \dots &lt;/script&gt;
+
+&lt;p&gt;Nótese que, por ejemplo, &lt;script type=&quot;math/tex&quot;&gt;2 \cong \mathtt{Bool}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pero además ocurre que, para tipos con un número finito de instancias, tenemos
+que el número de instancias de la suma de dos tipos es la suma del número de
+instancias de cada tipo, y análogamente ocurre con el producto. Realmente,
+tenemos un homomorfismo del álgebra de tipos al álgebra de los naturales, que, de
+paso, respeta nuestros &lt;em&gt;tipos naturales&lt;/em&gt; recién definidos. Compruébese que con
+&lt;script type=&quot;math/tex&quot;&gt;\phi(\mathtt{A}) = \#\mathtt{A}&lt;/script&gt;, se cumple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{matrix}
+\phi(\mathtt{A}\mathtt{B}) = \phi(\mathtt{A}) \phi(\mathtt{B}) \\
+\phi(\mathtt{A}+\mathtt{B}) = \phi(\mathtt{A}) + \phi(\mathtt{B}) \\
+\phi(\mathtt{n}) = n
+\end{matrix}&lt;/script&gt;
+
+&lt;p&gt;Para cualquier &lt;em&gt;tipo natural&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;\mathtt{n}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;tipos-funcin&quot;&gt;Tipos función&lt;/h2&gt;
+
+&lt;p&gt;Los &lt;strong&gt;tipos función&lt;/strong&gt;, &lt;code&gt;-&amp;gt;&lt;/code&gt; van a hacer el papel de la exponencial.
+Una función &lt;code&gt;a-&amp;gt;b&lt;/code&gt; la notamos por &lt;script type=&quot;math/tex&quot;&gt;b^a&lt;/script&gt; y se puede comprobar que la
+exponencial se distribuye correctamente.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(bc)^a \cong b^ac^a &lt;/script&gt;
+
+&lt;p&gt;Porque esta función, que realmente lo que hace es enunciar la propiedad
+universal del producto, es isomorfismo:&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;expdist :: (a -&amp;gt; (b,c)) -&amp;gt; (a -&amp;gt; b, a -&amp;gt; c)
+expdist f = (fst . f, snd . f)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esta definición de exponencial conserva el sentido con la suma de tipos:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a^{b+c} \cong a^ba^c&lt;/script&gt;
+
+&lt;p&gt;Gracias a que esta función es isomorfismo:&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;expsum :: (Either b c -&amp;gt; a) -&amp;gt; ((b -&amp;gt; a),(c -&amp;gt; a))
+expsum f = Either (f . Left) (f . Right)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y además, los tipos función conservan el homomorfismo anterior:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\phi(\mathtt{A}\rightarrow\mathtt{B}) = \phi(\mathtt{B}) ^{\phi(\mathtt{A})}&lt;/script&gt;
+
+&lt;h2 id=&quot;ecuaciones-listas-y-rboles&quot;&gt;Ecuaciones. Listas y árboles&lt;/h2&gt;
+
+&lt;p&gt;Vamos a ver los constructores de tipos como funciones de nuestro álgebra. Así,
+para cada constructor de tipos, tendremos una ecuación que lo defina. Veremos
+que estas ecuaciones de constructores de tipos pueden servir para aportarnos qué
+es, esencialmente, cada constructor de tipos. Las manipularemos con las reglas del
+álgebra antes definidas. Como ejemplos, hablaremos de listas y de
+árboles.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, el tipo &lt;strong&gt;lista&lt;/strong&gt; podemos definirlo como:&lt;sup id=&quot;fnref:haskell-list-def&quot;&gt;&lt;a href=&quot;#fn:haskell-list-def&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code&gt;data [a] = []
+         | a : [a]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pero esto nos da una ecuación en &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; para cualquier tipo. Sabiendo que
+&lt;script type=&quot;math/tex&quot;&gt;1 \cong []&lt;/script&gt;, tenemos:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[a] = 1 + a[a]&lt;/script&gt;
+
+&lt;p&gt;Y si lo desarrollamos, simplemente sustituyendo, obtendremos:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;[a] \cong 1 + a + a^2 + a^3 + \dots \cong \sum_{i=0}^\infty a^i&lt;/script&gt;
+
+&lt;p&gt;Lo que tiene perfecto sentido. Una lista puede ser un número cualquiera de
+elementos de &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, el tipo &lt;strong&gt;árbol&lt;/strong&gt; lo definimos antes como:&lt;/p&gt;
+
+&lt;pre class=&quot;haskell&quot;&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y esto nos da la ecuación, llamando &lt;script type=&quot;math/tex&quot;&gt;T = \mathtt{Tree\ a}&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; T = 1 + aT^2 &lt;/script&gt;
+
+&lt;p&gt;Que cuando se desarrolla nos deja:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; T = 1 + a + 2a^2 + 5a^3 + 14a^4 + \dots = \sum_{i=0}^\infty C_i a^i &lt;/script&gt;
+
+&lt;p&gt;Donde &lt;script type=&quot;math/tex&quot;&gt;C_i&lt;/script&gt; es el &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;-ésimo
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Catalan_number&quot;&gt;número de Catalan&lt;/a&gt;.
+Que es exactamente el número de árboles binarios de &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; elementos.&lt;/p&gt;
+
+&lt;h2 id=&quot;ms-informacin&quot;&gt;Más información&lt;/h2&gt;
+
+&lt;p&gt;El álgebra de tipos puede seguir expandiéndose. En los recursos que se dejan a
+continuación se definen las derivadas (usando &lt;em&gt;one-hole contexts&lt;/em&gt;), se estudian
+tipos no regulares (como los conjuntos) y se termina de relacionar con teoría de
+categorías.&lt;/p&gt;
+
+&lt;p&gt;La charla de Chris Taylor sobre este tema &lt;sup id=&quot;fnref:taylor-algebratypes&quot;&gt;&lt;a href=&quot;#fn:taylor-algebratypes&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; es bastante
+amena y puede seguirse con unos conocimientos mínimos de Haskell. Para
+profundizar más en la relación con teoría de categorías están los posts sobre
+categorías para programadores de Bartosz Milewski&lt;sup id=&quot;fnref:milewski-functiontypes&quot;&gt;&lt;a href=&quot;#fn:milewski-functiontypes&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;El lector que empiece a imaginar la teoría de categorías detrás de esto debería
+seguir leyendo sobre categorías cartesianamente cerradas y el isomorfismo de
+Curry-Howard-Lambert, que extiende al ya explicado por aquí isomorfismo de
+&lt;a href=&quot;http://dgiim.github.io/blog/2014/12/04/curry-howard/&quot;&gt;Curry-Howard&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:haskell-void-98&quot;&gt;
+      &lt;p&gt;Aunque para seguir el estándar &lt;strong&gt;Haskell 98&lt;/strong&gt; requeriría de una definición ligeramente diferente. Puede consultarse el &lt;a href=&quot;https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void&quot;&gt;código fuente&lt;/a&gt;. &lt;a href=&quot;#fnref:haskell-void-98&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:haskell-list-def&quot;&gt;
+      &lt;p&gt;Definición de lista en el preludio de Haskell. &lt;a href=&quot;https://www.haskell.org/onlinereport/standard-prelude.html&quot;&gt;https://www.haskell.org/onlinereport/standard-prelude.html&lt;/a&gt; &lt;a href=&quot;#fnref:haskell-list-def&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:taylor-algebratypes&quot;&gt;
+      &lt;p&gt;The Algebra of algebraic data types. Chris Taylor. &lt;a href=&quot;http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/&quot;&gt;http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/&lt;/a&gt; &lt;a href=&quot;#fnref:taylor-algebratypes&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:milewski-functiontypes&quot;&gt;
+      &lt;p&gt;Function types. Bartosz Milewski. &lt;a href=&quot;http://bartoszmilewski.com/2015/03/13/function-types/&quot;&gt;http://bartoszmilewski.com/2015/03/13/function-types/&lt;/a&gt; &lt;a href=&quot;#fnref:milewski-functiontypes&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Tue, 24 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/24/algebra-tipos</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/24/algebra-tipos</guid>
+        </item>
+        
+        <item>
+            <title>Learning from Arch Linux</title>
+            <description>&lt;p&gt;Arch is an open source, &lt;em&gt;rolling release&lt;/em&gt; distribution. It’s a Linux distribution well-known for its extremely complete wiki. Almost certainly, you should have reached an Arch’s wiki entry searching for troubleshooting about other  distributions.&lt;/p&gt;
+
+&lt;p&gt;If you’re wiling to enlarge your knowledge about Linux, it’s highly recommended trying to install Arch or another terminal-installation based distro at least once, because GUI Linux installers made that task easier. On the contrary, Arch installation is completely based on terminal commands.&lt;/p&gt;
+
+&lt;p&gt;You can download Arch from &lt;a href=&quot;https://www.archlinux.org/download/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Beginners%27_guide&quot;&gt;This&lt;/a&gt; has been the guide followed to install Arch to a partition in my hard drive. You could also try it in a virtual machine!&lt;/p&gt;
+
+&lt;p&gt;Beforehand you must know you’re gonna need an Internet Connection to install Arch. The main goal of installing Arch is learning, so if you follow my steps strictly to the letter, you aren’t gonna learn as much as if you found your own path. This would be handy in case you got stuck in a step.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;booting-from-a-usb-in-uefi&quot;&gt;Booting from a usb in UEFI&lt;/h2&gt;
+
+&lt;p&gt;The image of Arch can be copied to an usb and made booteable by running &lt;code&gt;dd&lt;/code&gt; as it follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx &amp;amp;&amp;amp; sync
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It would be sufficient to boot with Secure Boot disabled (&lt;a href=&quot;http://fdavidcl.me/tagged/uefi&quot;&gt;Here&lt;/a&gt; you’ve got some useful information about it).&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Once in the installer, you’ll get a terminal.&lt;/p&gt;
+
+&lt;h3 id=&quot;pre-downloading&quot;&gt;Pre-downloading&lt;/h3&gt;
+
+&lt;p&gt;As usual, keyboard layout may not be the desired one, so you’ll have to change it by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;loadkeys layout
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where possibles values for layout can be consulted in the wiki. &lt;/p&gt;
+
+&lt;p&gt;In my case, I configured a wifi conection with &lt;code&gt;wifi-menu&lt;/code&gt;, but configuring &lt;code&gt;dhcpcd&lt;/code&gt; and its configuration file in &lt;code&gt;/etc&lt;/code&gt; would be sufficient.&lt;/p&gt;
+
+&lt;p&gt;Now it’s time to prepare partitions. At least a partition &lt;code&gt;/&lt;/code&gt; is needed, but you could also split these partitions from &lt;code&gt;/var&lt;/code&gt;, &lt;code&gt;/home&lt;/code&gt;, &lt;code&gt;swap&lt;/code&gt; partition… In order to do that I used parted, as explained in Arch’s wiki, but &lt;code&gt;fdisk&lt;/code&gt; and &lt;code&gt;gdisk&lt;/code&gt; could also fit that purpose.&lt;/p&gt;
+
+&lt;p&gt;I needed to do a triple boot, because I also have Widnows and Ubuntu installed in the same machine, and I wanted to keep Ubuntu’s bootloader, so once I created &lt;code&gt;/&lt;/code&gt; partition, I mounted both this partition and EFI’s one in a folder in &lt;code&gt;mnt&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;mkdir -p /mnt/boot/efi
+mount /dev/sdxB /mnt/boot/efi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where &lt;code&gt;-p&lt;/code&gt; option creates also parent directories if they don’t exist, and &lt;code&gt;sdxB&lt;/code&gt; was my EFI partition.&lt;/p&gt;
+
+&lt;h3 id=&quot;system-installation&quot;&gt;System installation&lt;/h3&gt;
+
+&lt;p&gt;Can be made typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pacstrap -i /mnt
+pacstrap -i /mnt base base-devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the step that needs internet connection.&lt;/p&gt;
+
+&lt;h3 id=&quot;generation-of-fstab&quot;&gt;Generation of fstab&lt;/h3&gt;
+
+&lt;p&gt;In order to mount the &lt;code&gt;/&lt;/code&gt; and the &lt;code&gt;/boot/efi&lt;/code&gt;, you should either execute:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;genfstab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or manually configure &lt;code&gt;/mnt/etc/fstab&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Up to this point, there is a &lt;code&gt;bash&lt;/code&gt; &lt;a href=&quot;https://github.com/analca3/Install-Archlinux-Script/blob/master/Install-Archlinux-Script.sh&quot;&gt;script&lt;/a&gt; that does all the donkey work, thanks to &lt;a href=&quot;https://github.com/analca3&quot;&gt;@analca3&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;configuring-the-system&quot;&gt;Configuring the system&lt;/h3&gt;
+
+&lt;p&gt;We have to do a &lt;code&gt;chroot&lt;/code&gt; now to configure the system.
+If we want to do it through the current terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;arch-chroot /mnt /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But in case you need to complete the installation through other operative system (Linux preferred) you can mount the created Arch partition inside that system, and do a &lt;code&gt;chroot&lt;/code&gt; (or equivalent), with &lt;code&gt;sdxA&lt;/code&gt; the partition in which Arch
+is stored:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;mkdir arch
+cd arch
+sudo mount /dev/sdxA .
+mount -t proc proc proc/
+mount -t sysfs sys sys/
+mount -o bind /dev dev/
+mount -t devpts pts dev/pts/
+mount --rbind /run run/
+chroot . /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once done the chroot:&lt;/p&gt;
+
+&lt;p&gt;If you want more information, as usual, in the Arch’s wiki there’s plenty of information: &lt;a href=&quot;https://wiki.archlinux.org/index.php/Change_root&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://shafeeqk.wordpress.com/2012/07/02/archlinux-chroot/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Tip!&lt;/dt&gt;
+  &lt;dd&gt;If you want to have internet connection in the chrooted system:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cp -L /etc/resolv.conf ./arch/etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://superuser.com/questions/111152/whats-the-proper-way-to-prepare-chroot-to-recover-a-broken-linux-installation&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We need to install, using &lt;code&gt;pacman -S &amp;lt;packages&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;iw&lt;/code&gt;, that is used to find Wifi’s devices names.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;wpa_supplicant&lt;/code&gt;, that is used to connect to WPA networks&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;dialog&lt;/code&gt;, which is utilized to display dialog boxes in shells.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now with &lt;code&gt;wifi-menu&lt;/code&gt; we can connect to an interface.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-up-things&quot;&gt;Setting up things&lt;/h3&gt;
+
+&lt;h4 id=&quot;users&quot;&gt;Users&lt;/h4&gt;
+
+&lt;p&gt;It’s highly advised to change &lt;code&gt;root&lt;/code&gt; password:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;passwd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we desire to create a new admin account we can do it by typing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;useradd -m -G wheel -s /bin/bash username
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The group &lt;code&gt;wheel&lt;/code&gt; is normally used to give access to &lt;code&gt;sudo&lt;/code&gt; and &lt;code&gt;su&lt;/code&gt;. We gotta add it to the &lt;code&gt;sudoers&lt;/code&gt; file too, uncommenting the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;%wheel ALL=(ALL) ALL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;keymap-and-locale&quot;&gt;Keymap and locale&lt;/h4&gt;
+
+&lt;p&gt;We have to change the keymap in order not to have problems typing the passwords when we restart the system. This’ll do it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;echo &quot;KEYMAP=es\\nFONT=lat9w-16&quot; &amp;gt;&amp;gt; /etc/vconsole.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To change the locale, we have to uncomment the line corresponding to our locale in &lt;code&gt;/etc/locale.gen&lt;/code&gt;, and we need to compile the locale file selected by typing &lt;code&gt;locale-gen&lt;/code&gt;. The last step concerning to locales is choosing the language: &lt;code&gt;echo LANG=en_US.UTF-8 &amp;gt; /etc/locale.conf&lt;/code&gt; and exporting the variable of that language: &lt;code&gt;export LANG=en_US.UTF-8&lt;/code&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;time-and-cpu-clock&quot;&gt;Time and CPU clock&lt;/h3&gt;
+&lt;p&gt;To set the timezone and the clock:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+hwclock --systohc --utc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Again, there’s a &lt;a href=&quot;https://github.com/analca3/Install-Archlinux-Script/blob/master/After-chroot.sh&quot;&gt;script&lt;/a&gt; made by &lt;a href=&quot;https://github.com/analca3&quot;&gt;analca3&lt;/a&gt; that does some of this process, but I insist in the fact that there’s no point in deciding to install Arch if you don’t realize how things gotta be set up before being able to use the system in a normal way.&lt;/p&gt;
+
+&lt;h4 id=&quot;hostname&quot;&gt;Hostname&lt;/h4&gt;
+
+&lt;p&gt;To select a hostname name:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;echo myhostname &amp;gt; /etc/hostname
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And we modify both lines in &lt;code&gt;/etc/hosts&lt;/code&gt; to change the hostname. &lt;/p&gt;
+
+&lt;h3 id=&quot;graphical-interface&quot;&gt;Graphical interface&lt;/h3&gt;
+
+&lt;p&gt;We are gonna install &lt;a href=&quot;http://www.x.org/wiki/&quot;&gt;Xorg&lt;/a&gt;, the usual windows management system in UNIX systems. And a display manager so that we’ll have a running graphical interface in which we could work. In my case I had hybrid graphics with an Intel integrated GPU and a Nvidia discrete GPU:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pacman -S xorg-server xorg-server-utils xorg-init
+pacman -Ss xf86-video-intel nvidia xorg-xrandr
+pacman -S gnome
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# nano /etc/X11/xorg.conf
+
+Section &quot;ServerLayout&quot;
+    Identifier &quot;layout&quot;
+    Screen 0 &quot;nvidia&quot;
+    Inactive &quot;intel&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier &quot;nvidia&quot;
+    Driver &quot;nvidia&quot;
+    BusID &quot;PCI:PCI address determined earlier&quot;
+    # e.g. BusID &quot;PCI:1:0:0&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier &quot;nvidia&quot;
+    Device &quot;nvidia&quot;
+    Option &quot;AllowEmptyInitialConfiguration&quot;
+EndSection
+
+Section &quot;Device&quot;
+    Identifier &quot;intel&quot;
+    Driver &quot;modesetting&quot;
+    Option &quot;AccelMethod&quot;  &quot;none&quot;
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier &quot;intel&quot;
+    Device &quot;intel&quot;
+EndSection
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where PCI address determined earlier can be found in the output of &lt;code&gt;lspci&lt;/code&gt; in format &lt;code&gt;01:00.0&lt;/code&gt; which needs to be converted to &lt;code&gt;1:0:0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This configuration has to be changed permanently in &lt;code&gt;/etc/gdm/Init/Default&lt;/code&gt; by adding, before the line &lt;code&gt;exit 0&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;network-manager&quot;&gt;Network Manager&lt;/h3&gt;
+
+&lt;p&gt;To install classic Gnome Network Manager the steps below are suggested:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo pacman -S networkmanager network-manager-applet gnome-keyring
+sudo systemctl enable NetworkManager.service
+sudo systemctl disable dhcpcd.service
+sudo systemctl disable dhcpcd@.service
+sudo systemctl stop dhcpcd.service
+sudo systemctl stop dhcpcd@.service
+gpasswd -a USERNAME network
+sudo systemctl start wpa_supplicant.service
+sudo systemctl start NetworkManager.service
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The commands above make Network Manager start on boot, stop and disable starting on boot of dhcpd in order for NetworkManager to be the handler of that function.&lt;/p&gt;
+
+&lt;p&gt;That’ll pretty much do it.&lt;/p&gt;
+
+&lt;h2 id=&quot;in-conclusion&quot;&gt;In conclusion…&lt;/h2&gt;
+&lt;p&gt;… useful knowledge I’ve gained installing Arch:&lt;/p&gt;
+
+&lt;p&gt;– Use of &lt;code&gt;chroot&lt;/code&gt;. I hadn’t use that command until I’ve come to install Arch, and it can be very handy in server management and repairing of Linux installations through Live CDs and other already installed systems.&lt;/p&gt;
+
+&lt;p&gt;– NVIDIA GTX 860M can be correctly configured in Arch, whereas in Ubuntu 14.04 LTS can’t be.&lt;/p&gt;
+
+&lt;p&gt;– Arch doesn’t use &lt;code&gt;init&lt;/code&gt; as the initialization daemon. It uses &lt;code&gt;systemd&lt;/code&gt; which has, among others, some benefits over the first one:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It’s &lt;em&gt;hotplug capable&lt;/em&gt;: that means that if a device, like a hard disk, is plugged in the middle or even after the boot, the system will mount as normal, whereas if &lt;code&gt;init&lt;/code&gt; is the handler of initialization that doesn’t work the same way.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;fig med&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/dgiim/blog/gh-pages/images/ubuntu_press_s_to_mount.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s easier to configure, because the old &lt;code&gt;tc.sysinit&lt;/code&gt; has been split up in several files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It handles daemons better.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s a &lt;em&gt;cross-distro-project&lt;/em&gt; which developers of lots of distros have been working on. And the &lt;code&gt;systemd&lt;/code&gt; scripts will be distributed all the same for whatever distro we’re talking about, whereas in the older times, each distro had its own &lt;code&gt;rc scripts&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s supposed to be faster.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+            <pubDate>Sun, 15 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/15/arch</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/15/arch</guid>
+        </item>
+        
+        <item>
+            <title>¿Cómo aprender LaTeX?</title>
+            <description>&lt;p&gt;&lt;a href=&quot;http://www.latex-project.org&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;&lt;/a&gt; es un lenguaje de marcado y composición de textos para crear documentos técnicos, crear gráficos, escribir matemáticas… Actualmente &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; se utiliza junto con otros paquetes que añaden funcionalidades adicionales, por lo que dar una visión completa de sus capacidades es complejo. A continuación tienes una lista de recursos para aprender e utilizar &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; y algunos de sus paquetes.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;instalacin&quot;&gt;Instalación&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;GNU/Linux&lt;/strong&gt;:  Ubuntu y otras distribuciones incluyen por defecto &lt;a href=&quot;&quot;&gt;TexLive&lt;/a&gt;. Si quieres instalarla puedes hacerlo siguiendo &lt;a href=&quot;https://www.tug.org/texlive/pkginstall.html&quot;&gt;estas instrucciones&lt;/a&gt;. TexLive incluye un gestor de paquetes (&lt;a href=&quot;https://www.tug.org/texlive/doc/tlmgr.html&quot;&gt;tlmgr&lt;/a&gt;) para instalarlos manualmente, aunque puedes hacerlo automáticamente utilizando &lt;a href=&quot;http://www.ctan.org/pkg/texliveonfly&quot;&gt;&lt;code&gt;texliveonfly&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: La distribución más utilizada es &lt;a href=&quot;http://miktex.org/&quot;&gt;&lt;em&gt;MikTeX&lt;/em&gt;&lt;/a&gt;. Cuenta con un gestor de paquetes que los instala automáticamente. Aprende a utilizarlo &lt;a href=&quot;http://docs.miktex.org/manual/localguide.html&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mac OS&lt;/strong&gt;: La distribución más utilizada es &lt;a href=&quot;https://tug.org/mactex/&quot;&gt;&lt;em&gt;MacTeX&lt;/em&gt;&lt;/a&gt;. Puedes encontrar &lt;a href=&quot;http://computers.tutsplus.com/tutorials/the-beginners-guide-to-using-tex-in-os-x--mac-45177&quot;&gt;aquí&lt;/a&gt; una guía de uso e instalación.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Online&lt;/strong&gt;: Puedes editar documentos online de forma colaborativa con &lt;a href=&quot;https://www.sharelatex.com&quot;&gt;ShareLaTeX&lt;/a&gt;. Puedes encontrar otras opciones &lt;a href=&quot;http://tex.stackexchange.com/questions/3/compiling-documents-online&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;introducciones-generales&quot;&gt;Introducciones generales&lt;/h3&gt;
+
+&lt;p&gt;Si no conoces &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;, empieza leyendo &lt;a href=&quot;http://tex.stackexchange.com/questions/4420/best-way-to-start-using-latex-tex&quot;&gt;esta respuesta de tex.stackexchange&lt;/a&gt; para tener una idea básica. Una vez hecho esto puedes leer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una introducción muy corta (4 páginas) es &lt;a href=&quot;http://osl.ugr.es/CTAN/info/latex-veryshortguide/veryshortguide.pdf&quot;&gt;&lt;em&gt;The very short guide to typesetting with &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;&lt;/em&gt;&lt;/a&gt;. Después de leer esta introducción podrás utilizar &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; de forma básica y generar documentos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una de las guías más utilizadas (130 páginas) es &lt;a href=&quot;http://osl.ugr.es/CTAN/info/lshort/spanish/lshort-a4.pdf&quot;&gt;&lt;em&gt;La introducción no-tan-corta a LATEX 2ε&lt;/em&gt;&lt;/a&gt;,  disponible &lt;em&gt;online&lt;/em&gt; en español. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;El &lt;a href=&quot;http://en.wikibooks.org/wiki/$$\LaTeX$$&quot;&gt;WikiBook en inglés&lt;/a&gt; y su versión &lt;a href=&quot;http://es.wikibooks.org/wiki/Manual_de_$$\LaTeX$$&quot;&gt;en español&lt;/a&gt; disponen también de guías divididas en secciones independientes, siendo muy útiles para consultar aspectos concretos.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hay otras introducciones y libros en inglés &lt;a href=&quot;http://tex.stackexchange.com/questions/11/what-are-good-learning-resources-for-a-latex-beginner&quot;&gt;aquí&lt;/a&gt;, y encontrarlos en otros idiomas (incluido en español) &lt;a href=&quot;http://tex.stackexchange.com/questions/84384/latex-introductions-in-languages-other-than-english&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;matemticas&quot;&gt;Matemáticas&lt;/h3&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; ofrece la capacidad de escribir expresiones matemáticas utilizando una sintaxis especial. Puedes encontrar una guía rápida &lt;a href=&quot;ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf&quot;&gt;aquí&lt;/a&gt;. Dada la gran cantidad de símbolos, existen distintos recursos para encontrar los símbolos adecuados:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://detexify.kirelabs.org/classify.html&quot;&gt;Detexify&lt;/a&gt; permite dibujar un símbolo y obtener su comando. Es la opción más sencilla y dispone de aplicaciones para &lt;a href=&quot;https://play.google.com/store/apps/details?id=coolcherrytrees.software.detexify&amp;amp;hl=es&quot;&gt;Android&lt;/a&gt; y &lt;a href=&quot;https://itunes.apple.com/us/app/from_topapp.net/id328805329?ign-mpt=uo%3D4&quot;&gt;iOS&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://osl.ugr.es/CTAN/info/symbols/comprehensive/symbols-a4.pdf&quot;&gt;The Comprehensive &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; Symbol List (&lt;strong&gt;4MB!!&lt;/strong&gt;)&lt;/a&gt; incluye una lista que puedes consultar en caso de no encontrar el símbolo adecuado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;referencia-y-documentacin&quot;&gt;Referencia y documentación&lt;/h3&gt;
+&lt;p&gt;La gran cantidad de paquetes existentes hace difícil la existencia de un documentación exhaustiva de &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;. No obstante, algunos recursos que puedes utilizar para encontrar tus respuestas son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tex.stackexchange.com/&quot;&gt;tex.stackexchange&lt;/a&gt;. Esta es la comunidad de preguntas y respuestas sobre TeX y &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; de la red StackExchange. Si no encuentras, ¡siempre puedes preguntar!&lt;/li&gt;
+  &lt;li&gt;La mayor parte de distribuciones incluyen gran cantidad de documentación, a la que puedes acceder utilizando el comando &lt;code&gt;texdoc&lt;/code&gt; . Puedes leer más &lt;a href=&quot;http://tex.stackexchange.com/questions/2124/is-there-a-comprehensive-and-complete-latex-reference&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ctan.org&quot;&gt;CTAN&lt;/a&gt; incluye la documentación de gran cantidad de paquetes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;plantillas&quot;&gt;Plantillas&lt;/h3&gt;
+
+&lt;p&gt;Para empezar un documento complejo, es útil utilizar plantillas o ejemplos. Algunos recursos son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CTAN incluye gran cantidad de &lt;a href=&quot;http://osl.ugr.es/CTAN/info/examples/&quot;&gt;ejemplos&lt;/a&gt; de distintos paquetes y funcionalidades.&lt;/li&gt;
+  &lt;li&gt;Para encontrar plantillas puedes ver &lt;a href=&quot;https://github.com/M42/plantillas&quot;&gt;el repositorio&lt;/a&gt; de @M42 y encontrar otras plantillas &lt;a href=&quot;http://www.latextemplates.com/&quot;&gt;aquí&lt;/a&gt; y &lt;a href=&quot;https://es.sharelatex.com/templates/&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;github-y-otros&quot;&gt;Github y otros&lt;/h3&gt;
+
+&lt;p&gt;Otros recursos que pueden ser útiles son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Macros&lt;/strong&gt;: &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; permite la creación de comandos y entornos. Para una guía básica puedes leer &lt;a href=&quot;http://en.wikibooks.org/wiki/$$\LaTeX$$/Macros&quot;&gt;Wikibooks&lt;/a&gt;. Para macros más avanzadas y clases, consulta &lt;a href=&quot;http://tex.stackexchange.com/questions/12668/where-do-i-start-latex-programming&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Git y &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt;&lt;/strong&gt;: Para integrar git, puedes leer &lt;a href=&quot;http://stackoverflow.com/questions/6188780/git-latex-workflow&quot;&gt;esta guía&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;tikz&lt;/code&gt; permite crear imágenes y todo tipo de gráficos vectoriales. Para empezar a utilizarlo puedes leer &lt;a href=&quot;http://tex.stackexchange.com/questions/9116/what-is-the-minimum-one-needs-to-know-to-use-tikz&quot;&gt;aquí&lt;/a&gt;. Además, puedes ver algunos ejemplos &lt;a href=&quot;http://www.texample.net/tikz/examples/&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Puedes encontrar una guía de beamer &lt;a href=&quot;https://github.com/dgiim/beamer&quot;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+            <pubDate>Sat, 14 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/14/latex</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/14/latex</guid>
+        </item>
+        
+        <item>
+            <title>Introducción a Beamer</title>
+            <description>&lt;p&gt;&lt;code&gt;beamer&lt;/code&gt; es una clase de documento de LaTeX que nos permite crear diapositivas en pdf
+y otros formatos. Permite el uso de transiciones, mostrar elementos selectivamente en la 
+pantalla y aprovechar las capacidades de &lt;code&gt;tikz&lt;/code&gt;, &lt;code&gt;pgf&lt;/code&gt; y la mayoría de paquetes de LaTeX
+para personalizar el aspecto de la presentación al detalle. &lt;/p&gt;
+
+&lt;p&gt;Puedes encontrar una guía básica escrita en &lt;code&gt;beamer&lt;/code&gt; &lt;a href=&quot;https://github.com/dgiim/beamer&quot;&gt;aquí&lt;/a&gt;.
+No he podido cubrir todo, así que otros recursos que puedes utilizar son:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://osl.ugr.es/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf&quot;&gt;La guía oficial de &lt;code&gt;beamer&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikibooks.org/wiki/LaTeX/Presentations&quot;&gt;Presentations Wikibooks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tex.stackexchange.com/questions/tagged/beamer&quot;&gt;TeX Stack Exchange&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Además, puedes utilizar las plantillas disponibles en &lt;a href=&quot;https://github.com/M42/plantillas/tree/master/presentacion&quot;&gt;M42/plantillas&lt;/a&gt; para facilitar tu trabajo.&lt;/p&gt;
+
+</description>
+            <pubDate>Sat, 14 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/14/intro-beamer</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/14/intro-beamer</guid>
+        </item>
+        
+        <item>
+            <title>Inducción Estructural</title>
+            <description>&lt;p&gt;Normalmente aplicamos inducción sobre los números naturales, y cuando
+necesitamos aplicar inducción en otro contexto lo llevamos a los números
+naturales. Por ejemplo, si queremos demostrar una propiedad sobre los árboles
+binarios, la demostraríamos por inducción sobre la altura del árbol. Pero el
+proceso de llevar todo a los naturales puede ser incómodo, tedioso y puede complicar
+la demostración innecesariamente. En este post vamos a desarrollar una forma de
+ampliar la inducción a la estructura de los tipos de datos para simplificar
+todas esas demostraciones.&lt;/p&gt;
+
+&lt;h2 id=&quot;conjuntos-bien-fundados&quot;&gt;Conjuntos bien fundados&lt;/h2&gt;
+
+&lt;p&gt;Vamos a definir las relaciones bien fundadas, que nos permitirán definir una
+inducción generalizada. &lt;sup id=&quot;fnref:stackexchangeblog-induction&quot;&gt;&lt;a href=&quot;#fn:stackexchangeblog-induction&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Relación bien fundada&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Una relación en un conjunto de elementos es bien fundada si todo subconjunto
+no vacío tiene un elemento minimal. Dado un orden parcial, es bien fundado si
+todo subconjunto no vacío tiene un elemento tal que ninguno es menor que él.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Y podemos realizar inducción sobre cualquier conjunto con una relación bien
+fundada.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Inducción noetheriana&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sea &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; un conjunto bien fundado con &lt;script type=&quot;math/tex&quot;&gt;A \subset X&lt;/script&gt;. Si se cumple:
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+ (y&lt;x \Rightarrow y \in A) \Rightarrow x \in A  %]]&gt;&lt;/script&gt;
+
+    &lt;p&gt;Entonces &lt;script type=&quot;math/tex&quot;&gt;A = X&lt;/script&gt;.&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;induccin-sobre-tipos&quot;&gt;Inducción sobre tipos&lt;/h2&gt;
+
+&lt;p&gt;Ahora vamos a aplicar esto a teoría de tipos. Sea un tipo con sus constructores.
+Para todas las instancias constructibles del tipo (pueden generarse en un número
+finito de pasos desde sus constructores), definimos un orden parcial:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Orden constructivo&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Para dos instancias del tipo: &lt;script type=&quot;math/tex&quot;&gt;a,b::A&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; se construye con &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; si el
+constructor de &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; toma a &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; como argumento. La clausura transitiva de
+esta relación forma un orden parcial:
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt; a \leq b \Rightarrow a \mbox{ se usa en la construcción de } b&lt;/script&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Y ahora tenemos una inducción sobre los constructores de los tipos, que
+describimos ahora.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Inducción sobre tipos&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sea un tipo &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; con constructores y sea &lt;script type=&quot;math/tex&quot;&gt;P :: A \rightarrow Bool &lt;/script&gt; una propiedad.
+Siendo &lt;script type=&quot;math/tex&quot;&gt;a_1, a_2 \dots a_i :: A&lt;/script&gt; argumentos del constructor, si se
+cumple la condición de inducción para cada constructor &lt;script type=&quot;math/tex&quot;&gt;C_i&lt;/script&gt;:
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C_i(a_1,a_2,\dots,b_0,b_1\dots))&lt;/script&gt;
+
+    &lt;p&gt;Entonces &lt;script type=&quot;math/tex&quot;&gt;a::A \Rightarrow P(a)&lt;/script&gt;&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&quot;ejemplo-1-naturales&quot;&gt;Ejemplo 1: Naturales&lt;/h2&gt;
+
+&lt;p&gt;Nuestro primer ejemplo va a ser obtener la inducción sobre los naturales como
+caso particular. Damos una definición de los naturales en lenguaje Haskell, con
+los axiomas de Peano, un natural es 0 o el siguiente de un natural:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Nat = O
+         | S Nat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Que equivale a la definición en Coq:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Coq&quot;&gt;Inductive nat : Type :=
+  | O : nat
+  | S : nat -&amp;gt; nat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es decir, si lo demostramos para &lt;code&gt;0&lt;/code&gt; y para &lt;code&gt;S n&lt;/code&gt; sabiéndolo para &lt;code&gt;n&lt;/code&gt;, lo
+hemos demostrado para todos los naturales.&lt;/p&gt;
+
+&lt;h2 id=&quot;ejemplo-2-rboles-binarios&quot;&gt;Ejemplo 2: Árboles binarios&lt;/h2&gt;
+
+&lt;p&gt;Ahora vamos a intentar el ejemplo que motivó esta búsqueda. Definimos un árbol
+binario como un árbol vacío o como un nodo del que surgen dos árboles binarios,
+en Haskell:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Haskell&quot;&gt;data Tree a = Empty
+            | Node a (Tree a) (Tree a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Que equivale a la definición en Coq:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Coq&quot;&gt;Inductive tree (X:Type) : Type :=
+  | nilt : tree X
+  | node : X -&amp;gt; tree X -&amp;gt; tree X -&amp;gt; tree X.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es decir, si demostramos una propiedad para el árbol vacío y para un árbol
+sabiendo que la cumplen sus subárboles derecho e izquierdo, la hemos demostrado
+para todos los árboles binarios.&lt;/p&gt;
+
+&lt;p&gt;En el repositorio
+&lt;a href=&quot;https://github.com/M42/recorridosArboles&quot;&gt;M42/recorridosArboles&lt;/a&gt; hay varias
+demostraciones por inducción sobre árboles binarios, explicados en
+lenguaje natural y demostrados luego sobre el asistente de demostraciones Coq.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:stackexchangeblog-induction&quot;&gt;
+      &lt;p&gt;Sobre generalizaciones de la inducción &lt;a href=&quot;http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/&quot;&gt;http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/&lt;/a&gt; &lt;a href=&quot;#fnref:stackexchangeblog-induction&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Sat, 14 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/14/induccion-estructural</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/14/induccion-estructural</guid>
+        </item>
+        
+        <item>
+            <title>Aproximación a Pi</title>
+            <description>&lt;p&gt;Hoy es el día de &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt; (3/14). En este post vamos a presentar una serie de
+métodos para conseguir aproximaciones numéricas de la constante.&lt;/p&gt;
+
+&lt;h2 id=&quot;serie-de-leibniz&quot;&gt;Serie de Leibniz&lt;/h2&gt;
+&lt;p&gt;Uno de los métodos de aproximación a &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt; viene dado por la serie de Leibniz:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\pi}{4} = \displaystyle{\sum_{n=0}^\infty \frac{(-1)^n}{2n+1}} =
+\displaystyle{\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \right)}&lt;/script&gt;
+
+&lt;p&gt;Se basa en desarrollar la serie de potencias de la arcotangente:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\arctan x = \displaystyle{\sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1}}=
+\displaystyle{\left(x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots \right)}&lt;/script&gt;
+
+&lt;p&gt;Y evaluarla en 1.
+Esta fórmula tiene un pequeño inconveniente: es algo lenta para el cálculo de
+&lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para más información sobre el método, visita
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80&quot;&gt;Wikipedia&lt;/a&gt; y
+para su demostración, &lt;a href=&quot;https://proofwiki.org/wiki/Leibniz%27s_Formula_for_Pi&quot;&gt;Proofwiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;frmula-de-madhava&quot;&gt;Fórmula de Madhava&lt;/h2&gt;
+&lt;p&gt;Otra forma de aproximarlo sería la dada por Madhava:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pi = \displaystyle{\sqrt{12} \sum_{n=0}^{\infty} \frac{\left(-\frac{1}{3}\right)^n}{2n+1}} =
+\displaystyle{\sqrt{12} \left(\frac{1}{1 \cdot 3^0} - \frac{1}{3 \cdot 3^1} + \frac{1}{5 \cdot 3^2} - \frac{1}{7 \cdot 3^3} + \cdots \right)}&lt;/script&gt;
+
+&lt;p&gt;También está basada en el desarrollo de la arcotangente y en evaluarla en un punto, concretamente, en &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{\sqrt{3}}&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\pi}{6} = \arctan \frac{1}{\sqrt{3}} = \displaystyle{\left(\frac{1}{\sqrt{3}} - \frac{\left(\frac{1}{\sqrt{3}}\right)^3}{3} +
+\frac{\left(\frac{1}{\sqrt{3}}\right)^5}{5} - \frac{\left(\frac{1}{\sqrt{3}}\right)^7}{7} + \dots \right)} =
+\displaystyle{\left(\frac{1}{\sqrt{3}} - \frac{\frac{1}{\sqrt{3}}}{3 \cdot 3} + \frac{\frac{1}{\sqrt{3}}}{5 \cdot 3^2} -
+\frac{\frac{1}{\sqrt{3}}}{7 \cdot 3^3} + \dots \right)}&lt;/script&gt;
+
+&lt;p&gt;Y despejar &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt;, la incluyo porque es anterior a la serie de Leibniz, aunque es algo menos conocida.
+Para más información, visita &lt;a href=&quot;https://en.wikipedia.org/wiki/Madhava_series&quot;&gt;Wikipedia&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;producto-de-wallis&quot;&gt;Producto de Wallis&lt;/h2&gt;
+&lt;p&gt;El producto de Wallis:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\pi}{2} = \displaystyle{\prod_{n = 1}^{\infty} \left(\frac{2n}{2n-1} \cdot \frac{2n}{2n+1} \right)} =
+\frac{2}{1} \cdot \frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot \frac{6}{5} \cdot \frac{6}{7} \cdot \frac{8}{7} \cdot \frac{8}{9} \cdots&lt;/script&gt;
+
+&lt;p&gt;Éste producto se basa en que las raíces de &lt;script type=&quot;math/tex&quot;&gt;\frac{\sin x}{x}&lt;/script&gt; son &lt;script type=&quot;math/tex&quot;&gt;\pm n\pi&lt;/script&gt;
+con &lt;script type=&quot;math/tex&quot;&gt;n \in \mathbb{N}&lt;/script&gt; y, por tanto,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\sin x}{x} =
+k \prod_{n=0}^{\infty}(x-n\pi)(x+n\pi) = k \prod_{n=0}^{\infty}\left(1-\frac{x}{n\pi}\right)\left(1+\frac{x}{n\pi}\right) =
+k \prod_{n=0}^{\infty}\left(1-\frac{x^2}{n^2 \pi^2}\right)&lt;/script&gt;
+
+&lt;p&gt;con &lt;script type=&quot;math/tex&quot;&gt;k \in \mathbb{R}&lt;/script&gt; constante. Tomando límite a 0, se obtiene que &lt;script type=&quot;math/tex&quot;&gt;k = 1&lt;/script&gt;.
+Y para obtener el producto de Wallis, basta con evaluar&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\frac{\pi}{2}}{\sin \left(\frac{\pi}{2}\right)} =
+\frac{1}{\displaystyle{\prod_{n=0}^{\infty}\left(1-\frac{1}{4n^2}\right)}} = \displaystyle{\prod_{n = 1}^{\infty} \left(\frac{4n^2}{4n^2-1}\right)} =
+\displaystyle{\prod_{n = 1}^{\infty} \left(\frac{2n}{2n-1} \cdot \frac{2n}{2n+1} \right)}&lt;/script&gt;
+
+&lt;p&gt;Para más información general del método, visita &lt;a href=&quot;https://en.wikipedia.org/wiki/Wallis_product&quot;&gt;Wikipedia&lt;/a&gt;; y para su
+demostración, visita &lt;a href=&quot;https://proofwiki.org/wiki/Wallis%27s_Product&quot;&gt;Proofwiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;algoritmo-de-borwein&quot;&gt;Algoritmo de Borwein&lt;/h2&gt;
+&lt;p&gt;Aunque no he logrado entender cómo funciona, incluyo el algoritmo de Borwein &lt;sup id=&quot;fnref:study-in-analytic-number-theory&quot;&gt;&lt;a href=&quot;#fn:study-in-analytic-number-theory&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+por tener una convergencia nónica (es decir, en cada iteración, se multiplican por 9 el número de dígitos correctos),
+establece como valores iniciales:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a_0 = \frac{1}{3} \mbox{, }r_0 = \frac{\sqrt{3} - 1}{2}\mbox{ y }s_0 = \sqrt[3]{1 - r_0^3}&lt;/script&gt;
+
+&lt;p&gt;Y a partir de ahí, para cada iteración se calcula:&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;t_{n+1} = 1 + 2r_n&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;u_{n+1} = \sqrt[3]{9r_n(1+r_n+r_n^2)}&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;v_{n+1} = t^2_{n+1} + t_{n+1} u_{n+1} + u^2_{n+1} &lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;w_{n+1} = 27 \frac{1 + s_n + s_n^2}{v_{n+1}}&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;a_{n+1} = w_{n+1} a_n + 3^{2n-1}(1-w_{n+1})&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;s_{n+1} = \frac{(1-r_n)^3}{(t_{n+1} + 2 u_{n+1}) v_{n+1}}&lt;/script&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;r_{n+1} = \sqrt[3]{1-s_{n+1}^3}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Y en este algoritmo, se obtiene que la sucesción &lt;script type=&quot;math/tex&quot;&gt;\{a_n\} \rightarrow \frac{1}{\pi}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Más información puede encontrarse &lt;a href=&quot;https://en.wikipedia.org/wiki/Borwein&#39;s_algorithm&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:study-in-analytic-number-theory&quot;&gt;
+      &lt;p&gt;&lt;em&gt;Jonathon M. Borwein, Peter B. Borwein, Pi and the AGM&lt;/em&gt; - A Study in Analytic Number Theory and Computational Complexity, &lt;em&gt;Wiley, New York, 1987 Jorg Arndt, Christoph Haenel, Pi Unleashed, Springer, Berlin, 2001, ISBN 3-540-66572-2&lt;/em&gt;. &lt;a href=&quot;#fnref:study-in-analytic-number-theory&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Sat, 14 Mar 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/03/14/aproximacion-a-pi</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/03/14/aproximacion-a-pi</guid>
+        </item>
+        
+        <item>
+            <title>Problemas - Fibonacci GCD</title>
+            <description>&lt;h2 id=&quot;enunciado-del-problema&quot;&gt;Enunciado del Problema&lt;/h2&gt;
+
+&lt;p&gt;El problema original a resolver se encuentra en &lt;a href=&quot;https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd&quot;&gt;Hackerrank&lt;/a&gt;. Se muestra a continuación una versión traducida del mismo.&lt;/p&gt;
+
+&lt;p&gt;Los números de Fibbonacci tienen la siguiente forma:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_0 = 0&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_1 = 1&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_2 = 1&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_3 = 2&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vdots&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_n = F_{n-2} + F_{n-1}&lt;/script&gt;
+
+&lt;p&gt;Dado un array &lt;script type=&quot;math/tex&quot;&gt;a_1,a_2,\dots,a_n&lt;/script&gt; que contiene &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; elementos, calcular &lt;script type=&quot;math/tex&quot;&gt;\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})&lt;/script&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;El &lt;strong&gt;formato de entrada&lt;/strong&gt; es:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La primera línea contiene el tamaño del array, &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;En las siguientes &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; líneas hay un número, la i-ésima línea
+contiene &lt;script type=&quot;math/tex&quot;&gt;a_i&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El &lt;strong&gt;formato de salida&lt;/strong&gt; consiste en imprimir un sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre &lt;script type=&quot;math/tex&quot;&gt;10^9+7&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Las restricciones son las siguientes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;1 \leq n \leq 2 \times 10^5&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;1 \leq a_i \leq 10^{12}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;solucin&quot;&gt;Solución&lt;/h2&gt;
+
+&lt;p&gt;La primera observación a realizar es que, dado el tamaño que pueden tomar los
+subíndices &lt;script type=&quot;math/tex&quot;&gt;a_i&lt;/script&gt;, no se pueden pretender calcular directamente los números de
+Fibonacci.
+Debemos obtener propiedades sobre el máximo común divisor de estos que nos
+permitan calcularlo de forma indirecta. La siguiente serie de proposiciones
+persigue este objetivo.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Proposición 1&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;n, k \in \mathbb{N}&lt;/script&gt;. Se tiene que &lt;script type=&quot;math/tex&quot;&gt;F_{n+k} = F_{k-1}F_n + F_k F_{n+1}&lt;/script&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Demostración&lt;/strong&gt;
+La prueba se realiza por inducción sobre &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; para un &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; arbitrario en
+cada paso. Para &lt;script type=&quot;math/tex&quot;&gt;k=1&lt;/script&gt; es trivial denotando &lt;script type=&quot;math/tex&quot;&gt;F_0 = 0&lt;/script&gt;. Supongamos el
+resultado cierto para &lt;script type=&quot;math/tex&quot;&gt;k \in \mathbb{N}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+1}) = F_{k}F_n + F_{k+1} F_{n+1}&lt;/script&gt;
+
+&lt;p&gt;donde se ha utilizado en primer lugar la hipótesis de inducción para &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt; y posteriormente la definición de la sucesión dos veces.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Proposición 2&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;n, k \in \mathbb{N}&lt;/script&gt;. Se tiene que &lt;script type=&quot;math/tex&quot;&gt;\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)&lt;/script&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Demostración&lt;/strong&gt;
+En primer lugar:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) &lt;/script&gt;
+
+&lt;p&gt;donde se ha utilizado que &lt;script type=&quot;math/tex&quot;&gt;\gcd(a,b) = \gcd(a,b-qb)&lt;/script&gt; para cualquier &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por inducción se llega a que&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1&lt;/script&gt;
+
+&lt;p&gt;Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.&lt;/p&gt;
+
+&lt;p&gt;Ahora, para &lt;script type=&quot;math/tex&quot;&gt;k &gt; 1&lt;/script&gt; usamos la proposición anterior:
+&lt;script type=&quot;math/tex&quot;&gt;\gcd(F_n, F_{n+k}) = \gcd(F_n, F_{k-1}F_n + F_k F_{n+1}) = \gcd(F_n, F_k F_{n+1})&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Como &lt;script type=&quot;math/tex&quot;&gt;F_n&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;F_{n+1}&lt;/script&gt; son primos relativos:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Proposición 3&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;a, b \in \mathbb{N}&lt;/script&gt;. Se tiene que &lt;script type=&quot;math/tex&quot;&gt;\gcd(F_a, F_b) = F_{\gcd(a, b)}&lt;/script&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Demostración&lt;/strong&gt;
+Si &lt;script type=&quot;math/tex&quot;&gt;a=b&lt;/script&gt; es trivial. Supongamos que &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+a &lt; b %]]&gt;&lt;/script&gt; sin pérdida de generalidad. Tenemos que &lt;script type=&quot;math/tex&quot;&gt;\gcd(F_a, F_b) = \gcd(F_a, F_{b-a})&lt;/script&gt;. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Proposición 4&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Sean &lt;script type=&quot;math/tex&quot;&gt;n \in \mathbb{N}&lt;/script&gt; y &lt;script type=&quot;math/tex&quot;&gt;a_1, \dots a_n \in \mathbb{N}&lt;/script&gt;. Se tiene que
+&lt;script type=&quot;math/tex&quot;&gt;\gcd(F_{a_1}, \dots, F_{a_n}) = F_{\gcd(a_1, \dots, a_n)}&lt;/script&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;strong&gt;Demostración&lt;/strong&gt;
+Usaremos que &lt;script type=&quot;math/tex&quot;&gt;\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})&lt;/script&gt;
+
+&lt;p&gt;Repetimos el proceso &lt;script type=&quot;math/tex&quot;&gt;n-1&lt;/script&gt; veces y, usando la definición del máximo común divisor de &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; elementos sobre los &lt;script type=&quot;math/tex&quot;&gt;a_i&lt;/script&gt;, obtenemos el resultado.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tag*{$\blacksquare$}&lt;/script&gt;
+
+&lt;p&gt;De la proposición anterior se tiene automáticamente el &lt;strong&gt;Algoritmo 1&lt;/strong&gt;, que resuelve el problema.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Algoritmo 1&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Dados &lt;script type=&quot;math/tex&quot;&gt;a_1, \dots, a_n \in \{1, \dots, 10^{12}\}&lt;/script&gt; con &lt;script type=&quot;math/tex&quot;&gt;n \in \{1, \dots, 2 \times 10^5\}&lt;/script&gt;. Realizamos el siguiente algoritmo:&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Calculamos &lt;script type=&quot;math/tex&quot;&gt;m = \gcd(a_1, \dots, a_n)&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Calculamos &lt;script type=&quot;math/tex&quot;&gt;F_m \mod 10^9+7&lt;/script&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;La única cuestión restante consiste en la implementación del algoritmo anterior. Para calcular el máximo común divisor de la lista utilizamos el &lt;strong&gt;Algoritmo de Euclides&lt;/strong&gt; para los dos primeros elementos, que quedan sustituidos por el resultado obtenido. Repetimos el proceso hasta obtener un único número final que es el máximo común divisor buscado. Este algoritmo tiene eficiencia &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; veces la del propio &lt;strong&gt;Algoritmo de Euclides&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para calcular &lt;script type=&quot;math/tex&quot;&gt;F_m \mod 10^9+7&lt;/script&gt; tenemos que tener en cuenta que &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt; puede ser hasta &lt;script type=&quot;math/tex&quot;&gt;10^{12}&lt;/script&gt;. Es fácil realizar un algoritmo lineal para este propósito calculando todos los términos progresivamente y guardando solo los dos últimos en cada iteración. Sin embargo, esto no alcanza los objetivos en el peor caso. Se propone la siguiente idea para obtener una solución logarítmica sobre &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+  \begin{pmatrix}
+            1 &amp; 1 \\
+            1 &amp; 0 \\
+        \end{pmatrix}
+        \begin{pmatrix}
+            F_{k+2} &amp; F_{k+1} \\
+            F_{k+1} &amp; F_{k} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            F_{k+3} &amp; F_{k+2} \\
+            F_{k+2} &amp; F_{k+1} \\
+    \end{pmatrix}   %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Consecuentemente, por inducción:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+            1 &amp; 1 \\
+            1 &amp; 0 \\
+        \end{pmatrix}^k
+        \begin{pmatrix}
+            F_{2} &amp; F_{1} \\
+            F_{1} &amp; F_{0} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            F_{k+3} &amp; F_{k+2} \\
+            F_{k+2} &amp; F_{k+1} \\
+        \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;En nuestro caso:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+            F_{2} &amp; F_{1} \\
+            F_{1} &amp; F_{0} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            1 &amp; 1 \\
+            1 &amp; 0 \\
+        \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Por consiguiente:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+            1 &amp; 1 \\
+            1 &amp; 0 \\
+        \end{pmatrix}^k
+        =
+        \begin{pmatrix}
+            F_{k+2} &amp; F_{k+1} \\
+            F_{k+1} &amp; F_{k} \\
+        \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;El problema se ha reducido a la exponenciación de la matriz &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+A = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} %]]&gt;&lt;/script&gt;. La exponenciación de matrices se puede conseguir logarítmica de forma análoga a la exponenciación (con exponente natural) de un número. El &lt;strong&gt;Algoritmo 2&lt;/strong&gt; muestra un pseudo-código recursivo para este propósito.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Algoritmo 2&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;Función que devuelve el resultado de elevar la matriz &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; a &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;.&lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;def Potencia(A,n):
+    if n == 1:
+        return A
+    elif n % 2 == 0:
+        B = Potencia(A,n/2)
+        return B*B
+    else:
+        B = Potencia(A,n/2)
+        return A*B*B
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Puesto que &lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt; puede ser &lt;script type=&quot;math/tex&quot;&gt;10^{12}&lt;/script&gt;, el valor obtenido por el &lt;strong&gt;Algoritmo 2&lt;/strong&gt; en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo &lt;script type=&quot;math/tex&quot;&gt;10^9+7&lt;/script&gt;. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que &lt;script type=&quot;math/tex&quot;&gt;10^9+7&lt;/script&gt;, por lo que puede ejecutarse sin ningún problema.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementacin-en-haskell&quot;&gt;Implementación en Haskell&lt;/h2&gt;
+
+&lt;p&gt;Para la implementación en Haskell de la solución, usamos la función &lt;code&gt;gcd&lt;/code&gt; de la
+biblioteca estándar y la convertimos en una función sobre listas usando &lt;code&gt;foldr&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices para calcular
+el par &lt;script type=&quot;math/tex&quot;&gt;(F_{2n+1},F_{2n})&lt;/script&gt; en función del par &lt;script type=&quot;math/tex&quot;&gt;(F_{n+1},F_{n})&lt;/script&gt;.
+En concreto, si llamamos &lt;script type=&quot;math/tex&quot;&gt;a=F_{n}, b=F_{n+1}, c=a+b&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+        F_{2n+2} &amp; F_{2n+1} \\
+        F_{2n+1} &amp; F_{2n} \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        c &amp; b \\
+        b &amp; a \\
+    \end{pmatrix}^{2}
+    =
+    \begin{pmatrix}
+        c^2+b^2 &amp; c^2-a^2 \\
+        c^2-a^2 &amp; b^2+a^2 \\
+    \end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;El código queda como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-haskell&quot;&gt;import Control.Monad
+
+-- GCD sobre listas de enteros
+gcdList :: [Int] -&amp;gt; Int
+gcdList = foldr gcd 0
+
+-- Entrada y salida según el formato
+-- Acaba imprimiendo: fib ((gcdList list) - 1)
+main :: IO ()
+main = do n &amp;lt;- readLn :: IO Int
+          list &amp;lt;- replicateM n (readLn :: IO Int)
+          putStrLn $ show $ fib ((gcdList list)-1)
+
+-- Calcula fibonacci mod 10**9+7
+fib :: (Integral a) =&amp;gt; a -&amp;gt; a
+fib = fst . fib2
+
+-- Calcula el par (fib n, fib (n + 1)) mod 10**9+7
+-- El caso de inducción usa la exponenciación de matrices implícitamente.
+-- Reescribimos la suma y el producto para usarlos a módulo 10**9+7.
+fib2 :: (Integral a) =&amp;gt; a -&amp;gt; (a,a)
+fib2 0 = (1, 1)
+fib2 1 = (1, 2)
+fib2 n
+ | even n    = ((a.*a) .+ (b.*b), (c.*c) .- (a.*a))
+ | otherwise = ((c.*c) .- (a.*a), (b.*b) .+ (c.*c))
+ where (a,b) = fib2 (n `div` 2 - 1)
+       hkr   = 1000000000+7
+       (.+)  = \x y -&amp;gt; mod ((+) x y) hkr
+       (.-)  = \x y -&amp;gt; mod ((-) x y) hkr
+       (.*)  = \x y -&amp;gt; mod ((*) x y) hkr
+       c     = a + b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Más material sobre el problema puede encontrarse en el &lt;a href=&quot;https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD&quot;&gt;repositorio correspondiente del doble grado&lt;/a&gt;.&lt;/p&gt;
+</description>
+            <pubDate>Sat, 14 Feb 2015 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd</guid>
+        </item>
+        
+        <item>
+            <title>El Isomorfismo de Curry-Howard</title>
+            <description>&lt;p&gt;El isomorfismo de Curry-Howard&lt;sup id=&quot;fnref:curryhowardwiki&quot;&gt;&lt;a href=&quot;#fn:curryhowardwiki&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; relaciona los sistemas de tipos con la lógica
+proposicional. Los tipos son teoremas, y las instancias de un tipo son
+demostraciones del teorema que representa.&lt;/p&gt;
+
+&lt;p&gt;A los repositorios del doble grado hemos subido unos apuntes que explican 
+el isomorfismo con su código fuente bajo licencia CC BY-SA 3.0:
+&lt;a href=&quot;https://github.com/dgiim/curryHoward&quot;&gt;Isomorfismo de Curry Howard&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Los apuntes constan de una presentación general, unos apuntes más detallados,
+con ejemplos en Haskell y una introducción al asistente de demostraciones Coq.
+Sobre él, se explican los tipos básicos, demostraciones por inducción y demostraciones
+explícitas, donde puede verse en acción la correspondencia entre tipos y proposiciones.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:curryhowardwiki&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence&quot;&gt;Curry-Howard correspondence - Wikipedia, the free encyclopedia&lt;/a&gt; &lt;a href=&quot;#fnref:curryhowardwiki&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+            <pubDate>Thu, 04 Dec 2014 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2014/12/04/curry-howard</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2014/12/04/curry-howard</guid>
+        </item>
+        
+        <item>
+            <title>Algoritmos Genéticos</title>
+            <description>&lt;p&gt;El objetivo de un buen Matemático e Informático consiste en resolver problemas. 
+Existen algunos (como el &lt;em&gt;Problema del Viajante de Comercio&lt;/em&gt;) donde el conjunto 
+de soluciones posibles es muy grande. En estos problemas la aplicación de 
+algoritmos exactos que recorran de forma óptima todo el conjunto de soluciones 
+no es viable por el tiempo necesario. Tenemos que recurrir a otras herramientas:
+ las &lt;strong&gt;heurísticas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Dado determinado problema de optimización, una &lt;strong&gt;heurística&lt;/strong&gt; es un proceso que
+ calcula una solución que satisface determinados criterios de calidad. Puede no 
+calcular la mejor solución posible. Sin embargo, sí intenta que esta sea 
+suficiente para nuestros objetivos manteniendo una eficiencia aceptable.&lt;/p&gt;
+
+&lt;p&gt;Los &lt;strong&gt;algoritmos genéticos&lt;/strong&gt; son heurísticas basadas en poblaciones y en los 
+conceptos de evolución y genética. En la naturaleza, las poblaciones de individuos
+ evolucionan con el tiempo gracias a tres factores: la &lt;strong&gt;selección natural&lt;/strong&gt;, 
+la &lt;strong&gt;reproducción&lt;/strong&gt; y la &lt;strong&gt;mutación&lt;/strong&gt;. Los algoritmos genéticos imitan estos
+ procesos para conseguir evolucionar una población de soluciones iniciales. &lt;/p&gt;
+
+&lt;p&gt;En los repositorios del doble grado se encuentran unos &lt;a href=&quot;https://github.com/dgiim/AlgoritmosGeneticos&quot;&gt;apuntes&lt;/a&gt; 
+que explican el funcionamiento de estos algoritmos de forma más detallada.
+ Se encuentran protegidos bajo licencia 
+&lt;a href=&quot;http://creativecommons.org/licenses/by-nc/4.0/&quot;&gt;CC BY-NC 4.0&lt;/a&gt;.&lt;/p&gt;
+</description>
+            <pubDate>Sat, 08 Nov 2014 00:00:00 +0100</pubDate>
+            <link>http://dgiim.github.io/blog//2014/11/08/algoritmos-geneticos</link>
+            <guid isPermaLink="true">http://dgiim.github.io/blog//2014/11/08/algoritmos-geneticos</guid>
+        </item>
+        
+    </channel>
+</rss>

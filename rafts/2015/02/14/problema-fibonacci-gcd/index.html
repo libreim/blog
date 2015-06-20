@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Problemas - Fibonacci GCD</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/02/14/problema-fibonacci-gcd" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Problemas - Fibonacci GCD
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/andreshp">Andrés Herrera Poyatos</a>
+              
+                
+                 y 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              14-02-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-2-14-problema-fibonacci-gcd.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <h2 id="enunciado-del-problema">Enunciado del Problema</h2>
+
+<p>El problema original a resolver se encuentra en <a href="https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd">Hackerrank</a>. Se muestra a continuación una versión traducida del mismo.</p>
+
+<p>Los números de Fibbonacci tienen la siguiente forma:</p>
+
+<script type="math/tex; mode=display">F_0 = 0</script>
+
+<script type="math/tex; mode=display">F_1 = 1</script>
+
+<script type="math/tex; mode=display">F_2 = 1</script>
+
+<script type="math/tex; mode=display">F_3 = 2</script>
+
+<script type="math/tex; mode=display">\vdots</script>
+
+<script type="math/tex; mode=display">F_n = F_{n-2} + F_{n-1}</script>
+
+<p>Dado un array <script type="math/tex">a_1,a_2,\dots,a_n</script> que contiene <script type="math/tex">n</script> elementos, calcular <script type="math/tex">\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})</script>.</p>
+
+<!--more-->
+
+<p>El <strong>formato de entrada</strong> es:</p>
+
+<ul>
+  <li>La primera línea contiene el tamaño del array, <script type="math/tex">n</script>.</li>
+  <li>En las siguientes <script type="math/tex">n</script> líneas hay un número, la i-ésima línea
+contiene <script type="math/tex">a_i</script>.</li>
+</ul>
+
+<p>El <strong>formato de salida</strong> consiste en imprimir un sólo número entero. Este es el resto de la división entera del máximo común divisor pedido entre <script type="math/tex">10^9+7</script>.</p>
+
+<p>Las restricciones son las siguientes:</p>
+
+<ul>
+  <li><script type="math/tex">1 \leq n \leq 2 \times 10^5</script></li>
+  <li><script type="math/tex">1 \leq a_i \leq 10^{12}</script></li>
+</ul>
+
+<h2 id="solucin">Solución</h2>
+
+<p>La primera observación a realizar es que, dado el tamaño que pueden tomar los
+subíndices <script type="math/tex">a_i</script>, no se pueden pretender calcular directamente los números de
+Fibonacci.
+Debemos obtener propiedades sobre el máximo común divisor de estos que nos
+permitan calcularlo de forma indirecta. La siguiente serie de proposiciones
+persigue este objetivo.</p>
+
+<dl>
+  <dt><strong>Proposición 1</strong></dt>
+  <dd>Sean <script type="math/tex">n, k \in \mathbb{N}</script>. Se tiene que <script type="math/tex">F_{n+k} = F_{k-1}F_n + F_k F_{n+1}</script>.</dd>
+</dl>
+
+<p><strong>Demostración</strong>
+La prueba se realiza por inducción sobre <script type="math/tex">k</script> para un <script type="math/tex">n</script> arbitrario en
+cada paso. Para <script type="math/tex">k=1</script> es trivial denotando <script type="math/tex">F_0 = 0</script>. Supongamos el
+resultado cierto para <script type="math/tex">k \in \mathbb{N}</script>.</p>
+
+<script type="math/tex; mode=display">F_{n+k+1} = F_{k-1}F_{n+1} + F_k F_{n+2} = F_{k-1}F_{n+1} + F_k (F_{n} + F_{n+1}) = F_{k}F_n + F_{k+1} F_{n+1}</script>
+
+<p>donde se ha utilizado en primer lugar la hipótesis de inducción para <script type="math/tex">k</script> y posteriormente la definición de la sucesión dos veces.</p>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<dl>
+  <dt><strong>Proposición 2</strong></dt>
+  <dd>Sean <script type="math/tex">n, k \in \mathbb{N}</script>. Se tiene que <script type="math/tex">\gcd(F_n, F_{k+n}) = \gcd(F_n, F_k)</script>.</dd>
+</dl>
+
+<p><strong>Demostración</strong>
+En primer lugar:</p>
+
+<script type="math/tex; mode=display"> \gcd(F_n, F_{n+1}) = \gcd(F_{n}, F_{n}+F_{n-1}) = \gcd(F_{n}, F_{n-1}) </script>
+
+<p>donde se ha utilizado que <script type="math/tex">\gcd(a,b) = \gcd(a,b-qb)</script> para cualquier <script type="math/tex">q</script>.</p>
+
+<p>Por inducción se llega a que</p>
+
+<script type="math/tex; mode=display">\gcd(F_n, F_{n+1}) = \gcd(F_{1}, F_{2}) = \gcd(1,1) = 1</script>
+
+<p>Luego los términos consecutivos de la sucesión de Fibonacci son primos relativos entre sí.</p>
+
+<p>Ahora, para <script type="math/tex">k > 1</script> usamos la proposición anterior:
+<script type="math/tex">\gcd(F_n, F_{n+k}) = \gcd(F_n, F_{k-1}F_n + F_k F_{n+1}) = \gcd(F_n, F_k F_{n+1})</script></p>
+
+<p>Como <script type="math/tex">F_n</script> y <script type="math/tex">F_{n+1}</script> son primos relativos:</p>
+
+<script type="math/tex; mode=display">\gcd(F_n, F_{n+k}) = \gcd(F_n, F_k F_{n+1}) = \gcd(F_n, F_k)</script>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<dl>
+  <dt><strong>Proposición 3</strong></dt>
+  <dd>Sean <script type="math/tex">a, b \in \mathbb{N}</script>. Se tiene que <script type="math/tex">\gcd(F_a, F_b) = F_{\gcd(a, b)}</script>.</dd>
+</dl>
+
+<p><strong>Demostración</strong>
+Si <script type="math/tex">a=b</script> es trivial. Supongamos que <script type="math/tex">% <![CDATA[
+a < b %]]></script> sin pérdida de generalidad. Tenemos que <script type="math/tex">\gcd(F_a, F_b) = \gcd(F_a, F_{b-a})</script>. Podemos repetir el proceso hasta que aparezca un 0 en los índices. Estamos haciendo en definitiva el Algoritmo de Euclides sobre los índices y por ser el mismo proceso tenemos garantizado que el índice final no nulo es el máximo común divisor. Esto es:</p>
+
+<script type="math/tex; mode=display">\gcd(F_a, F_b) = \gcd(F_0, F_{\gcd(a,b)}) = \gcd(0, F_{\gcd(a,b)}) = F_{\gcd(a,b)}</script>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<dl>
+  <dt><strong>Proposición 4</strong></dt>
+  <dd>Sean <script type="math/tex">n \in \mathbb{N}</script> y <script type="math/tex">a_1, \dots a_n \in \mathbb{N}</script>. Se tiene que
+<script type="math/tex">\gcd(F_{a_1}, \dots, F_{a_n}) = F_{\gcd(a_1, \dots, a_n)}</script>.</dd>
+</dl>
+
+<p><strong>Demostración</strong>
+Usaremos que <script type="math/tex">\gcd(b_1, \dots, b_n) = \gcd( \gcd(b_1, b_2), b_3, \dots, b_n)</script>:</p>
+
+<script type="math/tex; mode=display">\gcd(F_{a_1}, \dots, F_{a_n}) = \gcd(\gcd(F_{a_1},F_{a_2}), F_{a_3}, \dots, F_{a_n}) = \gcd(F_{\gcd(a_1, a_2)}, F_{a_3}, \dots, F_{a_n})</script>
+
+<p>Repetimos el proceso <script type="math/tex">n-1</script> veces y, usando la definición del máximo común divisor de <script type="math/tex">n</script> elementos sobre los <script type="math/tex">a_i</script>, obtenemos el resultado.</p>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<p>De la proposición anterior se tiene automáticamente el <strong>Algoritmo 1</strong>, que resuelve el problema.</p>
+
+<dl>
+  <dt><strong>Algoritmo 1</strong></dt>
+  <dd>Dados <script type="math/tex">a_1, \dots, a_n \in \{1, \dots, 10^{12}\}</script> con <script type="math/tex">n \in \{1, \dots, 2 \times 10^5\}</script>. Realizamos el siguiente algoritmo:</dd>
+  <dd>
+    <ol>
+      <li>Calculamos <script type="math/tex">m = \gcd(a_1, \dots, a_n)</script>.</li>
+    </ol>
+  </dd>
+  <dd>
+    <ol>
+      <li>Calculamos <script type="math/tex">F_m \mod 10^9+7</script></li>
+    </ol>
+  </dd>
+</dl>
+
+<p>La única cuestión restante consiste en la implementación del algoritmo anterior. Para calcular el máximo común divisor de la lista utilizamos el <strong>Algoritmo de Euclides</strong> para los dos primeros elementos, que quedan sustituidos por el resultado obtenido. Repetimos el proceso hasta obtener un único número final que es el máximo común divisor buscado. Este algoritmo tiene eficiencia <script type="math/tex">n</script> veces la del propio <strong>Algoritmo de Euclides</strong>.</p>
+
+<p>Para calcular <script type="math/tex">F_m \mod 10^9+7</script> tenemos que tener en cuenta que <script type="math/tex">m</script> puede ser hasta <script type="math/tex">10^{12}</script>. Es fácil realizar un algoritmo lineal para este propósito calculando todos los términos progresivamente y guardando solo los dos últimos en cada iteración. Sin embargo, esto no alcanza los objetivos en el peor caso. Se propone la siguiente idea para obtener una solución logarítmica sobre <script type="math/tex">m</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+  \begin{pmatrix}
+            1 & 1 \\
+            1 & 0 \\
+        \end{pmatrix}
+        \begin{pmatrix}
+            F_{k+2} & F_{k+1} \\
+            F_{k+1} & F_{k} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            F_{k+3} & F_{k+2} \\
+            F_{k+2} & F_{k+1} \\
+    \end{pmatrix}   %]]></script>
+
+<p>Consecuentemente, por inducción:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+            1 & 1 \\
+            1 & 0 \\
+        \end{pmatrix}^k
+        \begin{pmatrix}
+            F_{2} & F_{1} \\
+            F_{1} & F_{0} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            F_{k+3} & F_{k+2} \\
+            F_{k+2} & F_{k+1} \\
+        \end{pmatrix} %]]></script>
+
+<p>En nuestro caso:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+            F_{2} & F_{1} \\
+            F_{1} & F_{0} \\
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            1 & 1 \\
+            1 & 0 \\
+        \end{pmatrix} %]]></script>
+
+<p>Por consiguiente:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+            1 & 1 \\
+            1 & 0 \\
+        \end{pmatrix}^k
+        =
+        \begin{pmatrix}
+            F_{k+2} & F_{k+1} \\
+            F_{k+1} & F_{k} \\
+        \end{pmatrix} %]]></script>
+
+<p>El problema se ha reducido a la exponenciación de la matriz <script type="math/tex">% <![CDATA[
+A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix} %]]></script>. La exponenciación de matrices se puede conseguir logarítmica de forma análoga a la exponenciación (con exponente natural) de un número. El <strong>Algoritmo 2</strong> muestra un pseudo-código recursivo para este propósito.</p>
+
+<dl>
+  <dt><strong>Algoritmo 2</strong></dt>
+  <dd>Función que devuelve el resultado de elevar la matriz <script type="math/tex">A</script> a <script type="math/tex">n</script>.</dd>
+  <dd>
+    <pre><code class="language-python">def Potencia(A,n):
+    if n == 1:
+        return A
+    elif n % 2 == 0:
+        B = Potencia(A,n/2)
+        return B*B
+    else:
+        B = Potencia(A,n/2)
+        return A*B*B
+</code></pre>
+  </dd>
+</dl>
+
+<p>Puesto que <script type="math/tex">m</script> puede ser <script type="math/tex">10^{12}</script>, el valor obtenido por el <strong>Algoritmo 2</strong> en este caso no cabría en memoria. De todas formas, debemos imprimir el resultado módulo <script type="math/tex">10^9+7</script>. Puesto que el módulo de una suma o producto es el módulo de la suma o productos de los módulos, podemos aplicar el módulo a cada operación realizada manteniendo el funcionamiento. De esta forma los números con los que trabajará el algoritmo serán menores que <script type="math/tex">10^9+7</script>, por lo que puede ejecutarse sin ningún problema.</p>
+
+<h2 id="implementacin-en-haskell">Implementación en Haskell</h2>
+
+<p>Para la implementación en Haskell de la solución, usamos la función <code>gcd</code> de la
+biblioteca estándar y la convertimos en una función sobre listas usando <code>foldr</code>.</p>
+
+<p>El cálculo de Fibonacci lo hacemos usando la exponenciación de matrices para calcular
+el par <script type="math/tex">(F_{2n+1},F_{2n})</script> en función del par <script type="math/tex">(F_{n+1},F_{n})</script>.
+En concreto, si llamamos <script type="math/tex">a=F_{n}, b=F_{n+1}, c=a+b</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{pmatrix}
+        F_{2n+2} & F_{2n+1} \\
+        F_{2n+1} & F_{2n} \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        c & b \\
+        b & a \\
+    \end{pmatrix}^{2}
+    =
+    \begin{pmatrix}
+        c^2+b^2 & c^2-a^2 \\
+        c^2-a^2 & b^2+a^2 \\
+    \end{pmatrix} %]]></script>
+
+<p>El código queda como sigue:</p>
+
+<pre><code class="language-haskell">import Control.Monad
+
+-- GCD sobre listas de enteros
+gcdList :: [Int] -&gt; Int
+gcdList = foldr gcd 0
+
+-- Entrada y salida según el formato
+-- Acaba imprimiendo: fib ((gcdList list) - 1)
+main :: IO ()
+main = do n &lt;- readLn :: IO Int
+          list &lt;- replicateM n (readLn :: IO Int)
+          putStrLn $ show $ fib ((gcdList list)-1)
+
+-- Calcula fibonacci mod 10**9+7
+fib :: (Integral a) =&gt; a -&gt; a
+fib = fst . fib2
+
+-- Calcula el par (fib n, fib (n + 1)) mod 10**9+7
+-- El caso de inducción usa la exponenciación de matrices implícitamente.
+-- Reescribimos la suma y el producto para usarlos a módulo 10**9+7.
+fib2 :: (Integral a) =&gt; a -&gt; (a,a)
+fib2 0 = (1, 1)
+fib2 1 = (1, 2)
+fib2 n
+ | even n    = ((a.*a) .+ (b.*b), (c.*c) .- (a.*a))
+ | otherwise = ((c.*c) .- (a.*a), (b.*b) .+ (c.*c))
+ where (a,b) = fib2 (n `div` 2 - 1)
+       hkr   = 1000000000+7
+       (.+)  = \x y -&gt; mod ((+) x y) hkr
+       (.-)  = \x y -&gt; mod ((-) x y) hkr
+       (.*)  = \x y -&gt; mod ((*) x y) hkr
+       c     = a + b
+</code></pre>
+
+<p>Más material sobre el problema puede encontrarse en el <a href="https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD">repositorio correspondiente del doble grado</a>.</p>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/02/14/problema-fibonacci-gcd/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd&text=Problemas - Fibonacci GCD" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd&title=Problemas - Fibonacci GCD" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

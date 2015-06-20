@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Inducción Estructural</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/14/induccion-estructural" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Inducción Estructural
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              14-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-14-induccion-estructural.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>Normalmente aplicamos inducción sobre los números naturales, y cuando
+necesitamos aplicar inducción en otro contexto lo llevamos a los números
+naturales. Por ejemplo, si queremos demostrar una propiedad sobre los árboles
+binarios, la demostraríamos por inducción sobre la altura del árbol. Pero el
+proceso de llevar todo a los naturales puede ser incómodo, tedioso y puede complicar
+la demostración innecesariamente. En este post vamos a desarrollar una forma de
+ampliar la inducción a la estructura de los tipos de datos para simplificar
+todas esas demostraciones.</p>
+
+<h2 id="conjuntos-bien-fundados">Conjuntos bien fundados</h2>
+
+<p>Vamos a definir las relaciones bien fundadas, que nos permitirán definir una
+inducción generalizada. <sup id="fnref:stackexchangeblog-induction"><a href="#fn:stackexchangeblog-induction" class="footnote">1</a></sup></p>
+
+<dl>
+  <dt><strong>Relación bien fundada</strong></dt>
+  <dd>Una relación en un conjunto de elementos es bien fundada si todo subconjunto
+no vacío tiene un elemento minimal. Dado un orden parcial, es bien fundado si
+todo subconjunto no vacío tiene un elemento tal que ninguno es menor que él.</dd>
+</dl>
+
+<p>Y podemos realizar inducción sobre cualquier conjunto con una relación bien
+fundada.</p>
+
+<dl>
+  <dt><strong>Inducción noetheriana</strong></dt>
+  <dd>Sea <script type="math/tex">X</script> un conjunto bien fundado con <script type="math/tex">A \subset X</script>. Si se cumple:
+
+    <script type="math/tex; mode=display">% <![CDATA[
+ (y<x \Rightarrow y \in A) \Rightarrow x \in A  %]]></script>
+
+    <p>Entonces <script type="math/tex">A = X</script>.</p>
+  </dd>
+</dl>
+
+<!--more-->
+
+<h2 id="induccin-sobre-tipos">Inducción sobre tipos</h2>
+
+<p>Ahora vamos a aplicar esto a teoría de tipos. Sea un tipo con sus constructores.
+Para todas las instancias constructibles del tipo (pueden generarse en un número
+finito de pasos desde sus constructores), definimos un orden parcial:</p>
+
+<dl>
+  <dt><strong>Orden constructivo</strong></dt>
+  <dd>Para dos instancias del tipo: <script type="math/tex">a,b::A</script>, <script type="math/tex">b</script> se construye con <script type="math/tex">a</script> si el
+constructor de <script type="math/tex">b</script> toma a <script type="math/tex">a</script> como argumento. La clausura transitiva de
+esta relación forma un orden parcial:
+
+    <script type="math/tex; mode=display"> a \leq b \Rightarrow a \mbox{ se usa en la construcción de } b</script>
+  </dd>
+</dl>
+
+<p>Y ahora tenemos una inducción sobre los constructores de los tipos, que
+describimos ahora.</p>
+
+<dl>
+  <dt><strong>Inducción sobre tipos</strong></dt>
+  <dd>Sea un tipo <script type="math/tex">A</script> con constructores y sea <script type="math/tex">P :: A \rightarrow Bool </script> una propiedad.
+Siendo <script type="math/tex">a_1, a_2 \dots a_i :: A</script> argumentos del constructor, si se
+cumple la condición de inducción para cada constructor <script type="math/tex">C_i</script>:
+
+    <script type="math/tex; mode=display">P(a_1) \wedge P(a_2) \wedge \dots P(a_i) \Rightarrow P(C_i(a_1,a_2,\dots,b_0,b_1\dots))</script>
+
+    <p>Entonces <script type="math/tex">a::A \Rightarrow P(a)</script></p>
+  </dd>
+</dl>
+
+<h2 id="ejemplo-1-naturales">Ejemplo 1: Naturales</h2>
+
+<p>Nuestro primer ejemplo va a ser obtener la inducción sobre los naturales como
+caso particular. Damos una definición de los naturales en lenguaje Haskell, con
+los axiomas de Peano, un natural es 0 o el siguiente de un natural:</p>
+
+<pre><code class="language-Haskell">data Nat = O
+         | S Nat
+</code></pre>
+
+<p>Que equivale a la definición en Coq:</p>
+
+<pre><code class="language-Coq">Inductive nat : Type :=
+  | O : nat
+  | S : nat -&gt; nat
+</code></pre>
+
+<p>Es decir, si lo demostramos para <code>0</code> y para <code>S n</code> sabiéndolo para <code>n</code>, lo
+hemos demostrado para todos los naturales.</p>
+
+<h2 id="ejemplo-2-rboles-binarios">Ejemplo 2: Árboles binarios</h2>
+
+<p>Ahora vamos a intentar el ejemplo que motivó esta búsqueda. Definimos un árbol
+binario como un árbol vacío o como un nodo del que surgen dos árboles binarios,
+en Haskell:</p>
+
+<pre><code class="language-Haskell">data Tree a = Empty
+            | Node a (Tree a) (Tree a)
+</code></pre>
+
+<p>Que equivale a la definición en Coq:</p>
+
+<pre><code class="language-Coq">Inductive tree (X:Type) : Type :=
+  | nilt : tree X
+  | node : X -&gt; tree X -&gt; tree X -&gt; tree X.
+</code></pre>
+
+<p>Es decir, si demostramos una propiedad para el árbol vacío y para un árbol
+sabiendo que la cumplen sus subárboles derecho e izquierdo, la hemos demostrado
+para todos los árboles binarios.</p>
+
+<p>En el repositorio
+<a href="https://github.com/M42/recorridosArboles">M42/recorridosArboles</a> hay varias
+demostraciones por inducción sobre árboles binarios, explicados en
+lenguaje natural y demostrados luego sobre el asistente de demostraciones Coq.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:stackexchangeblog-induction">
+      <p>Sobre generalizaciones de la inducción <a href="http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/">http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/</a> <a href="#fnref:stackexchangeblog-induction" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/14/induccion-estructural/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/14/induccion-estructural&text=Inducción Estructural" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/14/induccion-estructural" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/14/induccion-estructural&title=Inducción Estructural" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

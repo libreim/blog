@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Teorema de Dini</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/04/20/teorema-dini" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Teorema de Dini
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/andreshp">Andrés Herrera Poyatos</a>
+              
+            
+            
+            <div class="date">
+              20-04-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-4-20-teorema-dini.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <h2 id="convergencia-puntual-y-convergencia-uniforme">Convergencia Puntual y Convergencia Uniforme</h2>
+
+<p>En el Análisis Matemático es frecuente que la función solución a determinado problema sea desconocida o no la podamos expresar en términos de las funciones elementales que conocemos. Incluso en las funciones más simples, como la exponencial o el logaritmo, nos encontramos esta situación. Conocemos su existencia y propiedades características pero tenemos ciertas dificultades a la hora de evaluarlas en un punto. Es frecuente para ello utilizar los famosos polinomios de Taylor, en cuyo caso estamos aproximando la función por polinomios.</p>
+
+<p>En más situaciones es habitual disponer de funciones que se aproximan cada vez más a la solucion del problema. Para formalizar este hecho surge el concepto de convergencia para sucesiones de funciones. Podemos distinguir dos tipos de convergencia: convergencia puntual y convergencia uniforme.</p>
+
+<dl>
+  <dt>Definición 1</dt>
+  <dd>Sea <script type="math/tex">A \subseteq \mathbb{R}</script> y <script type="math/tex">\{f_n\}</script> una sucesión de funciones con <script type="math/tex">\ f_n : A \rightarrow \mathbb{R}</script>. Se dice que <script type="math/tex">\{f_n\}</script> <strong>converge puntualmente</strong> en <script type="math/tex">x \in A</script> si la sucesión <script type="math/tex">\{f_n(x)\}</script> converge. Podemos considerar el conjunto <script type="math/tex">C</script> de los elementos <script type="math/tex">x \in A</script> en los que hay convergencia puntual y definir la <strong>función límite</strong>:</dd>
+  <dd>
+    <script type="math/tex; mode=display">f : C \rightarrow \mathbb{R}, \ f(x) = \lim f_n(x) \ \forall x \in C</script>
+  </dd>
+</dl>
+
+<!--more-->
+
+<p>Nótese que la definición es puramente topológica para espacios con unicidad del límite (como los espacios de Hausdorff). Sin embargo, para que todo lector pueda seguir el texto sin un curso inicial de topología trabajaremos solamente con conjuntos de números reales.</p>
+
+<p>Podemos exigirle más a la convergencia puntual y obtener la convergencia uniforme:</p>
+
+<dl>
+  <dt>Definición 2</dt>
+  <dd>Sea <script type="math/tex">A \subseteq \mathbb{R}</script> y <script type="math/tex">\{f_n\}</script> una sucesión de funciones con <script type="math/tex">\ f_n : A \rightarrow \mathbb{R}</script>. Se dice que <script type="math/tex">\{f_n\}</script> <strong>converge uniformemente</strong> en <script type="math/tex">B \subseteq A</script> si para cada <script type="math/tex">\varepsilon > 0</script> existe <script type="math/tex">n_o \in \mathbb{N}</script> tal que:</dd>
+  <dd>
+    <script type="math/tex; mode=display">% <![CDATA[
+\forall n \ge n_o : \left| f_n(x) - f(x) \right| < \varepsilon \ \forall x \in B %]]></script>
+  </dd>
+</dl>
+
+<p>La convergencia uniforme implica la convergencia puntual, pero el recíproco no es cierto. Un ejemplo de este caso es el siguiente, que se deja como ejercicio para el lector.</p>
+
+<dl>
+  <dt>Ejemplo 1</dt>
+  <dd>Probar que la siguiente sucesión de funciones converge puntualmente pero no converge uniformemente en <script type="math/tex">[0,1]</script>:</dd>
+  <dd>
+    <script type="math/tex; mode=display">f_n : [0,1] \rightarrow \mathbb{R}, \ f_n(x) = x^n \ \forall x \in [0,1]</script>
+  </dd>
+</dl>
+
+<p>Cabe preguntarse para qué sirve la convergencia uniforme. Intuitivamente, nos dice que la sucesión de funciones converge con igual rapidez en todo <script type="math/tex">B</script>. Analíticamente podemos sacarle provecho al relacionarla con conceptos como la continuidad, la derivabilidad y la integral. Por ejemplo, en todo curso de análisis en el que se trate este tema se demuestra que si la convergencia es uniforme y las funciones que conforman la sucesión son continuas, entonces la función límite es continua. En definitiva, la convergencia uniforme nos permite obtener información analítica de la función límite exigiendo ciertas propiedades a las funciones que conforman la sucesión.</p>
+
+<p>Sin embargo, muchos de los ejercicios a realizar en el correspondiente curso simplemente piden estudiar la convergencia uniforme de una sucesión de funciones. A veces esto se vuelve tedioso como es el caso del siguiente ejercicio <sup id="fnref:ejercicios"><a href="#fn:ejercicios" class="footnote">1</a></sup>:</p>
+
+<dl>
+  <dt>Ejemplo 2</dt>
+  <dd>Estudia la convergencia puntual y uniforme de la sucesión de funciones <script type="math/tex">\{f_n\}</script> donde <script type="math/tex">\ f_n : \mathbb{R} \rightarrow \mathbb{R}</script> está definida por:</dd>
+  <dd>
+    <script type="math/tex; mode=display">f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}</script>
+  </dd>
+</dl>
+
+<p><strong>Solución.</strong> Usando que</p>
+
+<script type="math/tex; mode=display">\lim_{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^x = e</script>
+
+<p>Se obtiene</p>
+
+<script type="math/tex; mode=display">\lim_{n \rightarrow \infty}\left(1+\frac{x^2}{n}\right)^n = \exp\left(x^2\right)</script>
+
+<p>Luego la función límite es <script type="math/tex">\ f(x) = \exp\left(x^2\right)</script> en todo <script type="math/tex">\mathbb{R}</script>.</p>
+
+<p>No hay convergencia uniforme en ninguna semirrecta de <script type="math/tex">\mathbb{R}</script> pues para <script type="math/tex">x_n = \sqrt n</script> se tiene que</p>
+
+<script type="math/tex; mode=display">\lim_{n \rightarrow \infty} f_n(x_n) - f(x_n) = \lim_{n \rightarrow \infty}\left(1+\frac{n}{n}\right)^n - e^n = \lim_{n \rightarrow \infty} 2^n - e^n = -\infty</script>
+
+<script type="math/tex; mode=display">\lim_{n \rightarrow \infty} f_n(-x_n) - f(-x_n) = \lim_{n \rightarrow \infty} f_n(x_n) - f(x_n) = -\infty</script>
+
+<p>y de haber convergencia uniforme para cualquier sucesión de números reales <script type="math/tex">\{x_n\}</script> se verificaría que la sucesión <script type="math/tex">\{f_n(x_n) - f(x_n)\}</script> converge a 0.</p>
+
+<p>Sin embargo, sí hay convergencia uniforme en los intervalos del tipo <script type="math/tex">[-\alpha, \alpha]</script> para <script type="math/tex">\alpha > 0</script> como probaremos a continuación. Puede el lector saltarse este tedioso desarrollo ya que conseguiremos el mismo resultado aplicando el teorema de Dini.</p>
+
+<p>Sea <script type="math/tex">\alpha > 0</script>. Definimos la siguiente función, que resulta ser continua:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\phi(t) = \frac{\log(1+t)}{t}, \ \forall -1 < t \neq 0, \phi(0) = 1 %]]></script>
+
+<p>Tenemos que</p>
+
+<script type="math/tex; mode=display">\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| =
+\exp\left(x^2\right) \left| \left(\frac{\left(1+\frac{x^2}{n}\right)^\frac{n}{x^2}}{e}\right)^{x^2} - 1 \right| =</script>
+
+<script type="math/tex; mode=display">\exp\left(x^2\right) \left| \exp\left( x^2\left(\phi\left(\frac{x^2}{n}\right) - 1\right)\right) -1 \right| \le
+\exp\left(\alpha^2  \right) \left| \exp\left( x^2\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) -1 \right|</script>
+
+<p>Sea <script type="math/tex">\varepsilon > 0</script>, utilizaremos la continuidad de <script type="math/tex">\phi</script> junto con la continuidad de la función exponencial para obtener el resultado deseado.</p>
+
+<p>Por la continuidad de la exponencial en 0, existe <script type="math/tex">\delta_1 > 0</script> tal que si <script type="math/tex">% <![CDATA[
+\vert u \vert < \delta_1 %]]></script> entonces <script type="math/tex">% <![CDATA[
+\ \vert e^u -1 \vert < \frac{\varepsilon}{\exp\left(\alpha^2\right)} %]]></script>. Aplicamos ahora la continuidad de <script type="math/tex">\phi</script> en 0 para obtener <script type="math/tex">\delta_2 > 0</script> tal que si <script type="math/tex">% <![CDATA[
+\ \vert t\vert < \delta_2 %]]></script> entonces <script type="math/tex">% <![CDATA[
+\ \vert \phi(t) -1\vert < \frac{\delta_1}{\alpha^2} %]]></script>.</p>
+
+<p>Tomemos <script type="math/tex">n_0 \in \mathbb{N}</script> tal que <script type="math/tex">% <![CDATA[
+\frac{\alpha^2}{n_0} < \delta_2 %]]></script>. Entonces, para todo <script type="math/tex">x \in [-\alpha, \alpha]</script> y <script type="math/tex">n \ge n_0</script> se tiene que:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\frac{x^2}{n} < \delta_2 \Rightarrow
+\left| \phi \left(\frac{x^2}{n}\right) -1\right| < \frac{\delta_1}{\alpha^2} \Rightarrow
+\left| x^2 \left( \phi \left(\frac{x^2}{n}\right) -1 \right) \right| < \delta_1 \Rightarrow %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left| \exp\left(x^2\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) - 1\right| < \frac{\varepsilon}{\exp(\alpha^2)} %]]></script>
+
+<p>De donde se deduce que</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left| \left(1+\frac{x^2}{n}\right)^n - \exp\left(x^2\right) \right| \le \exp\left(\alpha^2\right) \left| \exp\left( x\left(\phi \left(\frac{x^2}{n}\right) - 1\right)\right) -1\right| < \varepsilon  %]]></script>
+
+<p>Se ha obtenido la definición de convergencia uniforme en <script type="math/tex">[-\alpha, \alpha]</script>. Nótese que esto implica que hay convergencia uniforme en cualquier intervalo cerrado y acotado.</p>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<h2 id="teorema-de-dini">Teorema de Dini</h2>
+
+<p>El teorema de Dini es uno de los pocos resultados que transforman la convergencia puntual en convergencia uniforme. Podremos aplicarlo en intervalos del tipo <script type="math/tex">[a, b]</script> si se verifican ciertas condiciones, como veremos que sucede en el ejemplo anterior.</p>
+
+<dl>
+  <dt>Enunciado</dt>
+  <dd>Sean <script type="math/tex">a,b \in \mathbb{R}</script> y <script type="math/tex">\ f_n : [a,b] \rightarrow \mathbb{R}</script> continua para todo <script type="math/tex">n \in \mathbb{N}</script>. Se considera la sucesión de funciones <script type="math/tex">\{f_n\}</script>. Si la sucesión es monótona y converge puntualmente a <script type="math/tex">\ f</script> continua, entonces la convergencia es uniforme.</dd>
+</dl>
+
+<p><strong>Demostración</strong></p>
+
+<p>El gran salto de la convergencia puntual a la convergencia uniforme se va a producir gracias a la continuidad de todas las funciones, la monotonía de la sucesión y la compacidad del dominio.</p>
+
+<p>En la prueba se utilizará el concepto de entorno de un punto para simplificar la redacción al aplicar la continuidad. Un entorno de <script type="math/tex">x</script> es un conjunto que contiene a un abierto del espacio que a su vez contiene a <script type="math/tex">x</script>. En nuestro caso, los abiertos son los intervalos abiertos intersecados con <script type="math/tex">[a, b]</script>.</p>
+
+<p>Supongamos en primer lugar que <script type="math/tex">\{f_n\}</script> es creciente. Nótese que en tal caso <script type="math/tex">\ f(x) \ge f_n(x)</script> para todo <script type="math/tex">x</script> y <script type="math/tex">n</script>. Sea <script type="math/tex">\varepsilon > 0</script>:</p>
+
+<ol>
+  <li>
+    <p>De la convergencia puntual se tiene que para todo <script type="math/tex">x \in [a,b]</script> existe un natural <script type="math/tex">n_x</script> tal que</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\forall n \ge n_x : \left| f_n(x) - f(x) \right| < \frac{\varepsilon}{3} %]]></script>
+  </li>
+  <li>
+    <p>De la continuidad de <script type="math/tex">\ f</script> y <script type="math/tex">\ f_n</script> se tiene que para todo <script type="math/tex">x \in [a,b]</script> existe un entorno <script type="math/tex">V_x</script> de <script type="math/tex">x</script> tal que para todo elemento <script type="math/tex">y</script> del entorno se verifica:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\left| f_n(y) - f_n(x) \right| < \frac{\varepsilon}{3} %]]></script>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\left| f(y) - f(x) \right| < \frac{\varepsilon}{3} %]]></script>
+  </li>
+  <li>
+    <p>Utilizando la desigualdad triangular se obtiene que para todo <script type="math/tex">y \in V_x</script> se cumple:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\left| f(y) - f_{n_x}(y) \right| \le \left| f(y) - f(x) \right| + \left| f(x) - f_{n_x}(x) \right| + \left| f_{n_x}(x) - f_{n_x}(y) \right| < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} < \varepsilon %]]></script>
+  </li>
+  <li>
+    <p>Como <script type="math/tex">[a,b] = \cup_{x \in [a,b]} V_x</script>, usando la caracterización topológica de la compacidad, existen <script type="math/tex">x_1, \ldots, x_m \in [a,b]</script> tales que:</p>
+  </li>
+</ol>
+
+<script type="math/tex; mode=display"> [a,b] = \bigcup_{i = 1}^m V_{x_i} </script>
+
+<ol>
+  <li>Tomamos <script type="math/tex">n_0 = \max\{n_{x_i}: i = 1, \ldots, m\}</script>. Veamos que efectivamente se da la convergencia uniforme. Sean <script type="math/tex">n \ge n_0, y \in [a,b]</script>. Aplicando la igualdad obtenida en <strong>(4)</strong>, debe existir <script type="math/tex">i \in \{1, \ldots, m\}</script> tal que <script type="math/tex">y</script> pertenece a <script type="math/tex">V_{x_i}</script>. Juntando este hecho con <strong>(3)</strong> y la monotonía:</li>
+</ol>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\left| f(y) - f_n(y) \right| = f(y) - f_n(y) \le f(y) - f_{n_0}(y) \le f(y) - f_{n_{x_i}}(y) < \varepsilon %]]></script>
+
+<p>Por otro lado, si <script type="math/tex">\{f_n\}</script> es decreciente, basta aplicar lo anterior a  <script type="math/tex">\{-f_n\}</script>, que es creciente y converge a <script type="math/tex">\ -f</script>. Fácilmente se extrapola su convergencia uniforrme a la de <script type="math/tex">\{f_n\}</script>.</p>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<p>Nótese que análogamente se podría haber probado este resultado:</p>
+
+<dl>
+  <dt>Teorema de Dini (en espacios topológicos)</dt>
+  <dd>Sean <script type="math/tex">(X, \mathcal{T})</script> un espacio topológico compacto y sea <script type="math/tex">\ f_n : X \rightarrow \mathbb{R}</script> continua para todo <script type="math/tex">n \in \mathbb{N}</script>. Se considera la sucesión de funciones <script type="math/tex">\{f_n\}</script>. Si la sucesión es monótona y converge puntualmente a <script type="math/tex">f</script> continua, entonces la convergencia es uniforme.</dd>
+</dl>
+
+<p>La exigencia de continuidad a la función límite no supone una condición extra para poder aplicar el teorema. Recordemos que en caso de que haya convergencia uniforme se tiene automáticamente la continuidad de la función límite ya que las funciones <script type="math/tex">\ f_n</script> son continuas.</p>
+
+<p>Volvemos al Ejemplo 2 cuya resolución será una mera consecuencia del teorema de Dini.</p>
+
+<dl>
+  <dt>Ejemplo 2</dt>
+  <dd>Estudia la convergencia puntual y uniforme de la sucesión de funciones <script type="math/tex">\{f_n\}</script> donde <script type="math/tex">f_n : [0,1] \rightarrow \mathbb{R}</script> está definida por:</dd>
+  <dd>
+    <script type="math/tex; mode=display">f_n(x) = \left(1+\frac{x^2}{n}\right)^n \ \forall x \in \mathbb{R}</script>
+  </dd>
+</dl>
+
+<p><strong>Solución.</strong> Se había obtenido que la sucesión convergía puntualmente a <script type="math/tex">\exp\left(x^2\right)</script>. Además, no había convergencia uniforme en ninguna semirrecta. Veamos que sí hay convergencia uniforme en los intervalos cerrados y acotados.</p>
+
+<p>Sean <script type="math/tex">a, b \in \mathbb{R}</script> con <script type="math/tex">% <![CDATA[
+a < b %]]></script>. En <script type="math/tex">[a, b]</script> la sucesión verifica las condiciones del teorema de Dini:</p>
+
+<ul>
+  <li>Las funciones <script type="math/tex">\ f_n</script> y <script type="math/tex">\ f</script> son continuas.</li>
+  <li>Las sucesiones <script type="math/tex">\ f_n</script> son crecientes. En efecto, aplicando la desigualdad de las medias <sup id="fnref:medias"><a href="#fn:medias" class="footnote">2</a></sup> para <script type="math/tex">x_1 = 1, x_i = 1+\frac{x^2}{n} \ \forall i = 2, \ldots, n+1</script>:</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\sqrt[n+1]{\left(1+\frac{x^2}{n}\right)^n} < \frac{1 + n \left(1+\frac{x^2}{n}\right)}{n+1} = 1 + \frac{x^2}{n+1} %]]></script>
+
+<p>Por tanto, hay convergencia uniforme en <script type="math/tex">[a, b]</script>.</p>
+
+<script type="math/tex; mode=display">\tag*{$\blacksquare$}</script>
+
+<h2 id="referencias">Referencias</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:ejercicios">
+      <p><a href="http://www.ugr.es/~fjperez/textos/sucesiones_series_funciones.pdf">Ejercicios de sucesiones y series de funciones. Javier Pérez</a> <a href="#fnref:ejercicios" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:medias">
+      <p><a href="http://dgiim.github.io/blog/2014/04/12/desigualdad-medias/">La desigualdad de las medias. Mario Román</a> <a href="#fnref:medias" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/04/20/teorema-dini/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/04/20/teorema-dini&text=Teorema de Dini" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/04/20/teorema-dini" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/04/20/teorema-dini&title=Teorema de Dini" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>
