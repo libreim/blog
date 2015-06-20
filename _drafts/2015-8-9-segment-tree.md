@@ -8,13 +8,13 @@ category: Estructuras de Datos
 
 Paradójicamente, en los cursos de estructuras de datos y algoritmos el número de estructuras de datos que se estudian es bastante reducido. Generalmente se introducen heaps, árboles binarios de búsqueda balanceados (AVL), tablas Hash y algunos algoritmos sobre grafos. Sin embargo, el mundo de las estructuras de datos es mucho más [amplio](https://en.wikipedia.org/wiki/List_of_data_structures) y probablemente requeriría  una asignatura de estructuras de datos avanzadas como sucede en muchas universidades. El MIT, por ejemplo, proporciona [vídeos](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/) con el contenido de esta asignatura. Por ello, intentaré escribir entradas en el blog que profundicen en esta temática.
 
-En este caso trataremos los **segment trees** o árboles de segmentos. Introduciremos en primer lugar un problema importante de la teoría de algoritmos, **range minimum query problem**, que servirá como motivación para los segment trees. Posteriormente se explicará el funcionamiento de estos, proporcionando para cada operación su correspondiente código en Python. Por último, se proporcionan algunos problemas resolubles mediante segment trees.
+En este caso trataremos los **segment trees** o árboles de segmentos. Introduciremos en primer lugar un problema importante de la teoría de algoritmos, **range minimum query problem**, que servirá como motivación para los segment trees. Posteriormente se explicará el funcionamiento de estos, proporcionando para cada operación su correspondiente código en Python. Por último, se proporcionan algunos problemas resolubles mediante segment trees que se dejan como ejercicio.
 
 <!--more-->
 
 ## Range Minimum Query Problem
 
-Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{1,\ldots,n\}$$ con $$i \le j$$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
+Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{0,\ldots,n-1\}$$ con $$i \le j$$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
 
 Normalmente se denomina subintervalo del vector a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de range minimum query sería problema de las consultas del mínimo de cualquier subintervalo (mantendremos el nombre en inglés por ser el estándar).
 
@@ -38,7 +38,7 @@ Como caso particular esta información puede ser el mínimo del subintervalo, en
 
 Supongamos por el momento que el vector tiene longitud $$n = 2^m$$.
 
-La idea subyacente consiste en almacenar la información necesaria para los subintervalos del tipo $$V[k2^l+1, (k+1)2^l]$$ donde $$l$$ pertenece a $$\{0, 1, \ldots, \log_2 n\}$$ y $$k$$ pertenece a $$\{0, 1, \ldots, \frac{n}{2^l}-1\}$$. Esto es, dividiremos el vector en subintervalos consecutivos cuya longitud sea una potencia de $$2$$ y preprocesaremos estos. La información de estos intervalos se almacenará en un árbol binario. Posteriormente para un subintervalo $$V[i, j]$$ podemos expresarlo como la unión de subintervalos consecutivos como los ya preprocesados. Por ejemplo, para $$V = [3,2,8,5,6,1,7,4]$$ se tiene:
+La idea subyacente consiste en almacenar la información necesaria para los subintervalos del tipo $$V[k2^l, (k+1)2^l-1]$$ donde $$l$$ pertenece a $$\{0, 1, \ldots, \log_2 n\}$$ y $$k$$ pertenece a $$\{0, 1, \ldots, \frac{n}{2^l}-1\}$$. Esto es, dividiremos el vector en subintervalos consecutivos cuya longitud sea una potencia de $$2$$ y preprocesaremos estos. La información de estos intervalos se almacenará en un árbol binario. Posteriormente para un subintervalo $$V[i, j]$$ podremos expresarlo como la unión de subintervalos consecutivos como los ya preprocesados. Por ejemplo, para $$V = [3,2,8,5,6,1,7,4]$$ se tiene:
 
 $$ V[2,7] = V[2,2] \cup V[3,4] \cup V[5,6] \cup V[7,7] $$
 
@@ -48,7 +48,7 @@ $$ \min(V[2,7]) = \min\{\min(V[2,2]), \min(V[3,4]), \min(V[5,6]), \min(V[7,7])\}
 
 ### Nodos del segment tree
 
-La información relativa a los subintervalos del tipo $$V[k2^l+1, (k+1)2^l]$$ debe almacenarse en un nodo. Los subintervalos $$V[i,i]$$ son los casos base y sus nodos formarán las hojas del segment tree. Los nodos deben mantener 3 operaciones: 
+La información relativa a los subintervalos del tipo $$V[k2^l, (k+1)2^l-1]$$ debe almacenarse en un nodo. Los subintervalos $$V[i,i]$$ son los casos base y sus nodos formarán las hojas del segment tree. Los nodos deben mantener 3 operaciones: 
 
 1. Asignar la información correspondiente al nodo en el caso de que este sea una hoja del árbol.
 2. Generar la información del nodo a partir de dos nodos cuyos subintervalos sean una partición del subintervalo actual. Esta operación se denomina `merge`.
@@ -69,12 +69,12 @@ class SegmentTreeNode(object):
     # Given the value of an array element,
     # build the information for this leaf.
     def assignLeaf(self, value):
-        # Insert the code to build the leaf information
+        pass # Insert the code to build the leaf information
             
     # Merge the information of left and right
     # children to form the parent node information.
     def merge(self, left, right):
-        # Insert the merge code
+        pass # Insert the merge code
 
     # Return the information contained in this node.
     def getInfo(self):
@@ -150,12 +150,12 @@ class SegmentTree(object):
     # array : Array from which the segment tree is built.
     # Node : Class that will be used as a segment tree node. 
     #   It obtains the desired information from the array.
-    def __init__(self, array, SegmentTreeNode):
+    def __init__(self, array, Node):
         self.SegmentTreeNode =  Node
         # Segment tree size (number of nodes)
         self.size = SegmentTree._getSegmentTreeSize(len(array))
         # Heap with the nodes
-        self.nodes = [self.SegmentTreeNode() for i in range(0,self.size+1)]
+        self.nodes = [self.SegmentTreeNode() for i in range(0,self.size)]
         self.array = array
         # The tree is built
         self._buildTree(array, 1, 0, len(array)-1)
@@ -179,34 +179,34 @@ El siguiente código realiza la operación descrita:
 
 ~~~python
     # Get recursively a SegmentTreeNode with the information associated with the range [lo, hi].
-    # stIndex : Current Segment Tree Node. It is responsible of [left, right] range.
-    def _getValue(self, stIndex, left, right, lo, hi):
+    # st_index : Current Segment Tree Node. It is responsible of [left, right] range.
+    def _getInfo(self, st_index, left, right, lo, hi):
         # Check if the range is the current node in the tree.
         # In that case return it.
         if left == lo and right == hi:
-            return self.nodes[stIndex]
+            return self.nodes[st_index]
 
         # Look for the range in the children of the current node
         # if it could be just there.
         mid = (left + right) // 2
         if lo > mid:
-            return self._getValue(2*stIndex+1, mid+1, right, lo, hi)
+            return self._getInfo(2*st_index+1, mid+1, right, lo, hi)
         if hi <= mid:
-            return self._getValue(2*stIndex, left, mid, lo, hi)
+            return self._getInfo(2*st_index, left, mid, lo, hi)
 
         # If we keep executing the method then the range is divided between 
         # the left child and the right child of the current node. Let's get 
         # each part of the range and merge it.           
-        leftResult = self._getValue(2*stIndex, left, mid, lo, mid);
-        rightResult = self._getValue(2*stIndex+1, mid+1, right, mid+1, hi);
+        left_result = self._getInfo(2*st_index, left, mid, lo, mid);
+        right_result = self._getInfo(2*st_index+1, mid+1, right, mid+1, hi);
         result = self.SegmentTreeNode()
-        result.merge(leftResult, rightResult)
+        result.merge(left_result, right_result)
         return result
 
     # Get the value associated with the range [lo, hi]
-    def getValue(self, lo, hi):
-        result = self._getValue(1, 0, len(self.array)-1, lo, hi)
-        return result.getValue() 
+    def getInfo(self, lo, hi):
+        result = self._getInfo(1, 0, len(self.array)-1, lo, hi)
+        return result.getInfo() 
 ~~~
 
 Es claro que si el subintervalo es precisamente uno de los que se tienen almacenados en el árbol entonces el tiempo de la consulta es $$O(\log n)$$. ¿Qué sucede en cualquier otro caso?
@@ -223,51 +223,56 @@ Buscamos la información del subintervalo $$V[i,j]$$. Podemos observar que de un
 En efecto, esto se prueba por inducción sobre el nivel del árbol en el que nos encontremos:
 
 - Para la raíz (nivel 1) esto es evidente pues el algoritmo, en el peor de los casos, prosigue con los dos hijos. 
-- Supongamoslo cierta la afirmación para el nivel $$t < \log_2 n$$ y veamos que se cumple para $$t+1$$. Por la hipótesis de inducción, la búsqueda se mantiene a lo sumo en dos nodos. Si no hubiese nodos activos hemos terminado. Si por el contrario solo hubiese un nodo activo el resultado también es evidente (el nodo activo se divide como mucho en dos). Por último, si hay dos nodos activos verificando la hipótesis de inducción se tiene que $$i < j$$ (los nodos tienen subintervalos disjuntos). Cada uno de los nodos activos puede dividir la búsqueda como mucho sobre sus dos hijos. Para el nodo izquierda (el que contiene la componente $$i$$) se tienen las siguientes opciones:
+- Supongamos cierta la afirmación para el nivel $$t < \log_2 n$$ y veamos que se cumple para $$t+1$$. Por la hipótesis de inducción, la búsqueda se mantiene a lo sumo en dos nodos. Si no hubiese nodos activos hemos terminado. Si por el contrario solo hubiese un nodo activo el resultado también es evidente (el nodo activo se divide como mucho en dos). Por último, si hay dos nodos activos verificando la hipótesis de inducción se tiene que $$i < j$$ (los nodos tienen subintervalos disjuntos). Cada uno de los nodos activos puede dividir la búsqueda como mucho sobre sus dos hijos. Para el nodo izquierda (el que contiene la componente $$i$$) se tienen las siguientes opciones:
     + El subintervalo del nodo está contenido en $$V[i,j]$$ en cuyo caso para la búsqueda en esa rama.
     + El subintervalo que buscamos está contenido en el hijo derecha (tiene intersección vacía con el hijo izquierda). En tal caso se añade ese nodo a la búsqueda.
     + El subintervalo que buscamos tiene intersección no vacía con el hijo izquierda. Entonces, este hijo se añade a la búsqueda. El subintervalo del hijo derecha está contenido en $$V[i,j]$$ (está acotado por $$i$$ y por $$j$$). Por tanto, no hay que continuar la búsqueda con el hijo derecha. Cuando finalice la búsqueda en el hijo izquierda se realizará un `merge` entre la información de ambos hijos.
+
 En cualquier caso, se añade a lo sumo un hijo a la búsqueda. Lo mismo sucede con el nodo que contiene a $$j$$, verificándose, por tanto, la afirmación.
 
-Como consecuencia de esta afirmación el número de nodos que se visitan está acotado por $$4 \log n$$ . A cada nodo visitado le corresponde como mucho una operacón de `merge`. Por tanto, la consulta es $$O(m(n)\log n)$$.
+Como consecuencia de esta afirmación, el número de nodos que se visitan está acotado por $$4 \log n$$ . A cada nodo visitado le corresponde como mucho una operación de `merge`. Por tanto, la consulta es $$O(m(n)\log n)$$.
 
 $$\tag*{$\blacksquare$}$$
 
-Nótese que para $$V[2,n-1]$$ con $$n$$ potencia de $$2$$ se realizan precisamente $$\Omega(m(n)\log n)$$ operaciones, luego la cota dada para la eficiencia del algoritmo es la mejor posible. Como pronosticábamos, si el `merge` es constante entonces la consulta es logarítmica.
+Nótese que para $$V[1,n-2]$$ con $$n$$ potencia de $$2$$ se realizan precisamente $$\Omega(m(n)\log n)$$ operaciones, luego la cota dada para la eficiencia del algoritmo es la mejor posible. Como pronosticábamos, si el `merge` es constante entonces la consulta es logarítmica.
 
 ### Operación 2: Actualización de una componente del vector
 
-Con la operación anterior ya habríamos resuelto la versión básica del range minimum query. Veamos que también podemos actualizar componentes del vector con eficiencia X.
+Con la operación anterior ya habríamos resuelto la versión básica del range minimum query. Veamos que también podemos actualizar componentes del vector eficientemente y de forma sencilla.
+
+En primer lugar, habría que actualizar la hoja correspondiente a la componente del vector. Después hay que arreglar los desperfectos que esto haya podido causar a sus antecesores. Para ello habrá que recorrer el camino que une la hoja con la raíz.
+
+La implementación más sencilla de este proceso es recursiva. Realizamos una búsqueda en profundidad desde la raíz hasta la hoja correspondiente que actualizaremos mediante la operación `assignLeaf`. Posteriormente, se irán actualizando los antecesores en orden mediante operaciones `merge` de sus hijos, que ya están actualizados.
 
 El siguiente código realiza la operación descrita:
 
-~~~Python
+~~~python
     # Update the segment tree. 
-    # The given value is assigned to the array's component at index place. T
-    # he segment tree is updated accordingly in a recursive way. 
-    # stIndex : Current segment tree node's index.
+    # The given value is assigned to the array's component at index place.
+    # The segment tree is updated accordingly in a recursive way. 
+    # st_index : Current segment tree node index.
     # lo and hi : The current range is [lo, hi]
-    # index : Array's componen to be updated.
+    # index : Array's component to be updated.
     # value : New value for the array's component to update.
-    def _update(self, stIndex, lo, hi, index, value):
-        # If current node is a leaf we have ended the search and assign 
-        # the value to the leaf.
+    def _update(self, st_index, lo, hi, index, value):
+        # If current node is a leaf we have ended the search.
+        # The value information is assigned to the leaf.
         if lo == hi:
-            self.nodes[stIndex].assignLeaf(value)
-        # If the current node is not a leaf, the search is continued recursively
-        # and the current node statictics are updated afterwards.
+            self.nodes[st_index].assignLeaf(value)
+
+        # If the current node is not a leaf, the search continues recursively
+        # and the current node information is updated afterwards.
         else:
-            left = 2 * stIndex
+            left = 2 * st_index
             right = left + 1
             mid = (lo + hi) // 2
-
-            # Continue the search by the right path
+            # Continue the search by the correct path
             if index <= mid:
                 self._update(left, lo, mid, index, value)
             else:
                 self._update(right, mid+1, hi, index, value)
-            # Update current node statictics
-            self.nodes[stIndex].merge(self.nodes[left], self.nodes[right])
+            # Update current node information
+            self.nodes[st_index].merge(self.nodes[left], self.nodes[right])
 
     # Update the segment tree. 
     # The given value is assigned to the array's
@@ -279,12 +284,49 @@ El siguiente código realiza la operación descrita:
         self.array[index] = value
 ~~~
 
+La eficiencia es claramente $$\theta(m(n) \log n + a(n)$$. 
+
+Una mejor implementación es una versión iterativa del proceso. Comenzamos en la hoja y recorremos el camino desde esta a la raíz usando el siguiente hecho:
+
+$$ IndicePadre(nodo) = nodo / 2 $$
+
+Si en determinado momento la información de un nodo a actualizar no cambia con el `merge` se finaliza algoritmo. Sin embargo, aunque podamos terminar la ejecución antes, la eficiencia en el peor caso sigue siendo $$\theta(m(n) \log n + a(n)$$. Se necesitaría un nuevo método `isSameInfo` que nos indique si la información que se le pasa por argumento es la misma que la contenida por el nodo. Suponemos, además, que este método es $$O(m(n))$$. El siguiente código contiene esta nueva implementación:
+
+~~~python
+    # Update the segment tree. 
+    # The given value is assigned to the array's
+    # component at index place. The segment tree is updated accordingly. 
+    # index : Array's component to be updated.
+    # value : New value for the array's component to update.
+    def update2(self, index, value):
+        st_index = self.size // 2 + index # Leaf index
+        # Update leaf and array
+        self.array[index] = value
+        self.nodes[st_index].assignLeaf(value) 
+        # Update leaf ancestors
+        st_index = st_index // 2
+        while st_index > 0:
+            # Get current info and update it with a merge from the children
+            current_info = self.nodes[st_index]
+            self.nodes[st_index].merge(self.nodes[2*st_index], self.nodes[2*st_index+1])
+            # If the info has not changed then the algorithm ends
+            if self.nodes[st_index].isSameInfo(current_info):
+                break
+            # Go to node's parent
+            st_index = st_index // 2
+~~~
+
+
 ## Problemas 
 
-Los siguientes problemas sirven como ejemplo de aplicación de los segment tree:
+Los siguientes problemas sirven como ejemplo de aplicación de los segment trees:
 
 - [Hackerrank - Minimum Product Subinterval](https://www.hackerrank.com/contests/indeed-prime-challenge/challenges/minimum-product-sub-interval)
 - [Hackerrank - Almost Equal](https://www.hackerrank.com/challenges/almost-equal-advanced)
+
+## Código
+
+Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree).
 
 ## Referencias
 

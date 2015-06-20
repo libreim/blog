@@ -162,77 +162,76 @@
        level 1/.style={sibling distance=90mm, level distance=2.5cm},
        level 2/.style={sibling distance=40mm, level distance=2.5cm}]
        level 3/.style={sibling distance=2mm, level distance=2.5cm}]
-\node[draw](z){V[1,8]}
+\node[draw](z){V[0,7]}
     child{ 
-        node {V[1,4]}
+        node {V[0,3]}
         child{
-            node {V[1,2]} 
+            node {V[0,1]} 
             child{
-                node [right = 3mm] {V[1,1]} }
+                node [right = 3mm] {V[0,0]} }
             child{
-                node [left = 3mm] {V[2,2]} }            
+                node [left = 3mm] {V[1,1]} }            
         }
         child{
-            node {V[3,4]} 
+            node {V[2,3]} 
             child{
-                node [right = 3mm] {V[3,3]} }
+                node [right = 3mm] {V[2,2]} }
             child{
-                node [left = 3mm] {V[4,4]} }        
+                node [left = 3mm] {V[3,3]} }        
         }
     } 
     child{ 
-        node {V[5,8]}
+        node {V[4,7]}
         child{
-            node {V[5,6]} 
-            child{ node [right = 3mm] {V[5,5]} }
-            child{ node [left = 3mm] {V[6,6]} }
+            node {V[4,5]} 
+            child{ node [right = 3mm] {V[4,4]} }
+            child{ node [left = 3mm] {V[5,5]} }
         }
         child{
-            node {V[7,8]} 
+            node {V[6,7]} 
             child{
-                node [right = 3mm] {V[7,7]} }
+                node [right = 3mm] {V[6,6]} }
             child{
-                node [left = 3mm] {V[8,8]} }
+                node [left = 3mm] {V[7,7]} }
         }
     };
 \end{tikzpicture}
 \end{figure}
-\label{fig:malware}
 
 \begin{figure}[H]
 \caption{Segment tree generado sobre el vector [3,2,8,5,6,1,7,4] representado como heap}
 \centering
 \begin{tikzpicture}
     \coordinate (s) at (0,0);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,8]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[0,7]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {1};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,4]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[0,3]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {2};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[4,8]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[4,7]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {3};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,2]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[0,1]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {4};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[3,4]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[2,3]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {5};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[5,6]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[4,5]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {6};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[7,8]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[6,7]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {7};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[1,1]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[0,0]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {8};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
@@ -240,7 +239,7 @@
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.61mm, minimum width = 15mm, draw, rectangle] at (s) {\ldots};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
-    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[8,8]};
+    \node[minimum size=6mm, minimum width = 15mm, draw, rectangle] at (s) {V[7,7]};
     \coordinate (s) at ($(s) + (0,0.5)$);
     \node[minimum size=4.5mm, minimum width = 15mm, draw, rectangle] at (s) {15};
     \coordinate (s) at ($(s) + (1.5,-0.5)$);
