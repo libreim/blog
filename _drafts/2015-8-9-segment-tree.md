@@ -6,7 +6,7 @@ authors:
 category: Estructuras de Datos
 ---
 
-Paradójicamente, en los cursos de estructuras de datos y algoritmos el número de estructuras de datos que se estudian es bastante reducido. Generalmente se introducen heaps, árboles binarios de búsqueda balanceados (AVL), tablas Hash y algunos algoritmos sobre grafos. Sin embargo, el mundo de las estructuras de datos es mucho más [amplio](https://en.wikipedia.org/wiki/List_of_data_structures) y probablemente requeriría  una asignatura de estructuras de datos avanzadas como sucede en muchas universidades. El MIT, por ejemplo, proporciona [vídeos](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/) con el contenido de esta asignatura. Por ello, intentaré escribir entradas en el blog que profundicen en esta temática.
+Paradójicamente, en los cursos de estructuras de datos y algoritmos el número de estructuras de datos que se estudian es bastante reducido. Generalmente se introducen heaps, árboles binarios de búsqueda balanceados (AVL), tablas Hash y algunos algoritmos sobre grafos. Sin embargo, el mundo de las estructuras de datos es mucho más amplio  [^list] y probablemente requeriría  una asignatura de estructuras de datos avanzadas como sucede en muchas universidades. El MIT, por ejemplo, proporciona [vídeos](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012/lecture-videos/) con el contenido de esta asignatura. Por ello, intentaré escribir entradas en el blog que profundicen en esta temática.
 
 En este caso trataremos los **segment trees** o árboles de segmentos. Introduciremos en primer lugar un problema importante de la teoría de algoritmos, **range minimum query problem**, que servirá como motivación para los segment trees. Posteriormente se explicará el funcionamiento de estos, proporcionando para cada operación su correspondiente código en Python. Por último, se proporcionan algunos problemas resolubles mediante segment trees que se dejan como ejercicio.
 
@@ -284,13 +284,13 @@ El siguiente código realiza la operación descrita:
         self.array[index] = value
 ~~~
 
-La eficiencia es claramente $$\theta(m(n) \log n + a(n)$$. 
+La eficiencia es claramente $$\theta(m(n) \log n + a(n))$$. 
 
 Una mejor implementación es una versión iterativa del proceso. Comenzamos en la hoja y recorremos el camino desde esta a la raíz usando el siguiente hecho:
 
-$$ IndicePadre(nodo) = nodo / 2 $$
+$$ IndicePadre(nodo) = \frac{nodo}{2} $$
 
-Si en determinado momento la información de un nodo a actualizar no cambia con el `merge` se finaliza algoritmo. Sin embargo, aunque podamos terminar la ejecución antes, la eficiencia en el peor caso sigue siendo $$\theta(m(n) \log n + a(n)$$. Se necesitaría un nuevo método `isSameInfo` que nos indique si la información que se le pasa por argumento es la misma que la contenida por el nodo. Suponemos, además, que este método es $$O(m(n))$$. El siguiente código contiene esta nueva implementación:
+Si en determinado momento la información de un nodo a actualizar no cambia con el `merge` se finaliza algoritmo. Sin embargo, aunque podamos terminar la ejecución antes, la eficiencia en el peor caso sigue siendo $$\theta(m(n) \log n + a(n))$$. Se necesitaría, además, un nuevo método `isSameInfo` que nos indique si la información que se le pasa como argumento es la misma que la contenida por el nodo. Este método debe ser $$O(m(n))$$ para que la implementación sea rentable. El siguiente código contiene esta nueva versión del algoritmo:
 
 ~~~python
     # Update the segment tree. 
@@ -326,7 +326,7 @@ Los siguientes problemas sirven como ejemplo de aplicación de los segment trees
 
 ## Código
 
-Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree).
+Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python.
 
 ## Referencias
 
