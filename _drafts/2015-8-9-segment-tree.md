@@ -162,9 +162,9 @@ class SegmentTree(object):
 ~~~
 
 
-Como se construyen menos de $$4n-1$ nodos, el proceso anterior es $$\theta(n \max(a(n), m(n)))$$ donde $$a(n)$$ es la eficiencia del método `assignLeaf` y $$m(n)$$ es la eficiencia del método `merge`.
+Como se construyen menos de $$4n-1$$ nodos, el proceso anterior es $$\theta(n \max(a(n), m(n)))$$ donde $$a(n)$$ es la eficiencia del método `assignLeaf` y $$m(n)$$ es la eficiencia del método `merge`.
 
-En el caso del range minimum query la eficiencia obtenida es lineal.
+En el caso del range minimum query la eficiencia obtenida es lineal como se había pronosticado.
 
 ### Operación 1: Consultas
 
@@ -212,19 +212,72 @@ El siguiente código realiza la operación descrita:
 Es claro que si el subintervalo es precisamente uno de los que se tienen almacenados en el árbol entonces el tiempo de la consulta es $$O(\log n)$$. ¿Qué sucede en cualquier otro caso?
 
 Proposición
-: El tiempo de consulta para cualquier subintervalo es $$O(m(n)\log n)$$.
+: El tiempo de consulta para cualquier subintervalo es $$O(m(n)\log n)$$, donde $$m(n)$$ es la eficiencia del `merge`.
 
 **Demostración**
 
-The claim is that there are at most 2 nodes which are expanded at each level. We will prove this by contradiction.
+La implementación previa consiste en una búsqueda en profundidad pues es más cómoda de programar. Sin embargo, en la prueba es más útil ver el algoritmo como una búsqueda en anchura. Puesto que ambas búsquedas visitarían los mismos nodos, podemos situarnos en esta última. Definimos una iteración del algoritmo como procesar todos los nodos de un nivel $$t$$ del árbol. Tras una iteración los nodos que quedan activos pertenecen al siguiente nivel del árbol. 
 
-Consider the segment tree given below.
+Buscamos la información del subintervalo $$V[i,j]$$. Podemos observar que de una iteración a otra se mantiene la búsqueda sobre a lo sumo dos nuevos nodos. Además, estos nodos son precisamente aquellos cuyos subinvervalos contienen a las componentes i-ésima y j-ésima respectivamente. 
 
-Segment Tree
+En efecto, esto se prueba por inducción sobre el nivel del árbol en el que nos encontremos:
 
-Let's say that there are 3 nodes that are expanded in this tree. This means that the range is from the left most colored node to the right most colored node. But notice that if the range extends to the right most node, then the full range of the middle node is covered. Thus, this node will immediately return the value and won't be expanded. Thus, we prove that at each level, we expand at most 2 nodes and since there are logn levels, the nodes that are expanded are 2⋅logn=Θ(logn)
+- Para la raíz (nivel 1) esto es evidente pues el algoritmo, en el peor de los casos, prosigue con los dos hijos. 
+- Supongamoslo cierta la afirmación para el nivel $$t < \log_2 n$$ y veamos que se cumple para $$t+1$$. Por la hipótesis de inducción, la búsqueda se mantiene a lo sumo en dos nodos. Si no hubiese nodos activos hemos terminado. Si por el contrario solo hubiese un nodo activo el resultado también es evidente (el nodo activo se divide como mucho en dos). Por último, si hay dos nodos activos verificando la hipótesis de inducción se tiene que $$i < j$$ (los nodos tienen subintervalos disjuntos). Cada uno de los nodos activos puede dividir la búsqueda como mucho sobre sus dos hijos. Para el nodo izquierda (el que contiene la componente $$i$$) se tienen las siguientes opciones:
+    + El subintervalo del nodo está contenido en $$V[i,j]$$ en cuyo caso para la búsqueda en esa rama.
+    + El subintervalo que buscamos está contenido en el hijo derecha (tiene intersección vacía con el hijo izquierda). En tal caso se añade ese nodo a la búsqueda.
+    + El subintervalo que buscamos tiene intersección no vacía con el hijo izquierda. Entonces, este hijo se añade a la búsqueda. El subintervalo del hijo derecha está contenido en $$V[i,j]$$ (está acotado por $$i$$ y por $$j$$). Por tanto, no hay que continuar la búsqueda con el hijo derecha. Cuando finalice la búsqueda en el hijo izquierda se realizará un `merge` entre la información de ambos hijos.
+En cualquier caso, se añade a lo sumo un hijo a la búsqueda. Lo mismo sucede con el nodo que contiene a $$j$$, verificándose, por tanto, la afirmación.
+
+Como consecuencia de esta afirmación el número de nodos que se visitan está acotado por $$4 \log n$$ . A cada nodo visitado le corresponde como mucho una operacón de `merge`. Por tanto, la consulta es $$O(m(n)\log n)$$.
 
 $$\tag*{$\blacksquare$}$$
+
+Nótese que para $$V[2,n-1]$$ con $$n$$ potencia de $$2$$ se realizan precisamente $$\Omega(m(n)\log n)$$ operaciones, luego la cota dada para la eficiencia del algoritmo es la mejor posible. Como pronosticábamos, si el `merge` es constante entonces la consulta es logarítmica.
+
+### Operación 2: Actualización de una componente del vector
+
+Con la operación anterior ya habríamos resuelto la versión básica del range minimum query. Veamos que también podemos actualizar componentes del vector con eficiencia X.
+
+El siguiente código realiza la operación descrita:
+
+~~~Python
+    # Update the segment tree. 
+    # The given value is assigned to the array's component at index place. T
+    # he segment tree is updated accordingly in a recursive way. 
+    # stIndex : Current segment tree node's index.
+    # lo and hi : The current range is [lo, hi]
+    # index : Array's componen to be updated.
+    # value : New value for the array's component to update.
+    def _update(self, stIndex, lo, hi, index, value):
+        # If current node is a leaf we have ended the search and assign 
+        # the value to the leaf.
+        if lo == hi:
+            self.nodes[stIndex].assignLeaf(value)
+        # If the current node is not a leaf, the search is continued recursively
+        # and the current node statictics are updated afterwards.
+        else:
+            left = 2 * stIndex
+            right = left + 1
+            mid = (lo + hi) // 2
+
+            # Continue the search by the right path
+            if index <= mid:
+                self._update(left, lo, mid, index, value)
+            else:
+                self._update(right, mid+1, hi, index, value)
+            # Update current node statictics
+            self.nodes[stIndex].merge(self.nodes[left], self.nodes[right])
+
+    # Update the segment tree. 
+    # The given value is assigned to the array's
+    # component at index place. The segment tree is updated accordingly. 
+    # index : Array's component to be updated.
+    # value : New value for the array's component to update.
+    def update(self, index, value):
+        self._update(1, 0, len(self.array)-1, index, value)
+        self.array[index] = value
+~~~
 
 ## Problemas 
 
