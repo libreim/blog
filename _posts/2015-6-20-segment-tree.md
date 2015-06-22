@@ -18,11 +18,11 @@ Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido 
 
 Normalmente se denomina subintervalo del vector a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de range minimum query sería problema de las consultas del mínimo de cualquier subintervalo (mantendremos el nombre en inglés por ser el estándar).
 
-La solución trivial para el problema consiste en calcular para cada consulta el mínimo del subintervalo correspondiente de forma lineal. Esto proporciona una eficiencia media de $$\theta(n)$$ para las consultas. Se pretende reducir esta eficiencia significativamente para poder atender el mayor número de consultas posible. 
+La solución trivial para el problema consiste en calcular para cada consulta el mínimo del subintervalo correspondiente de forma lineal. Esto proporciona una eficiencia media de $$\theta(n)$$ para las consultas. Se pretende reducir esta eficiencia significativamente para poder atender el mayor número de consultas posible.
 
 La forma habitual de abordar el problema consiste en hacer un preprocesamiento de los datos. Un primer preprocesamiento puede ser calcular directamente el mínimo para cada subintervalo del vector, lo que puede conseguirse sin mucha dificultad en $$\theta(n^2)$$. Posteriormente, las consultas pueden ser realizadas en tiempo constante. Esta solución tiene dos grandes problemas:
 
-1. Un preprocesamiento de eficiencia $$\theta(n^2)$$ es excesivo cuando se trate con vectores de tamaño mayor o igual que $$10^4$$. Esto nos hace distinguir dos eficiencias a la hora de resolver el problema, la eficiencia del preprocesamiento y la eficiencia de la consulta. La solución trivial minimizaba el preprocesamiento mientras que la nueva solución minimiza el tiempo de consulta, no siendo ninguna de las dos óptimas. 
+1. Un preprocesamiento de eficiencia $$\theta(n^2)$$ es excesivo cuando se trate con vectores de tamaño mayor o igual que $$10^4$$. Esto nos hace distinguir dos eficiencias a la hora de resolver el problema, la eficiencia del preprocesamiento y la eficiencia de la consulta. La solución trivial minimizaba el preprocesamiento mientras que la nueva solución minimiza el tiempo de consulta, no siendo ninguna de las dos óptimas.
 2. El problema suele complicarse permitiendo actualizar el valor de una componente del vector entre consultas, lo que no consigue el segundo algoritmo, que requiere un tiempo $$\theta(n)$$ para actualizar también la matriz $$RMQ$$.
 
 Los segment trees o árboles de segmentos surgieron para resolver este problema. Se pueden formular de forma incluso más general, teniendo aplicaciones en problemas relacionados con los subintervalos de un vector. Como veremos a continuacióm, los segment trees aplicados a este problema tienen un preprocesamiento con eficiencia lineal y proporcionan un tiempo logarímico para las consultas y actualizaciones del vector.
@@ -31,7 +31,7 @@ Los segment trees o árboles de segmentos surgieron para resolver este problema.
 
 Un segment tree es una estructura de datos que permite, a partir de un vector $$V$$, dos operaciones:
 
-1. Consultar determinada información para cualquiera de los subinvertalos del vector.
+1. Consultar determinada información para cualquiera de los subintervalos del vector.
 2. Actualizar una componente del vector.
 
 Como caso particular esta información puede ser el mínimo del subintervalo, en cuyo caso ambas operaciones pueden llevarse a cabo en tiempo logarítmico.
@@ -48,7 +48,7 @@ $$ \min(V[2,7]) = \min\{\min(V[2,2]), \min(V[3,4]), \min(V[5,6]), \min(V[7,7])\}
 
 ### Nodos del segment tree
 
-La información relativa a los subintervalos del tipo $$V[k2^l, (k+1)2^l-1]$$ debe almacenarse en un nodo. Los subintervalos $$V[i,i]$$ son los casos base y sus nodos formarán las hojas del segment tree. Los nodos deben mantener 3 operaciones: 
+La información relativa a los subintervalos del tipo $$V[k2^l, (k+1)2^l-1]$$ debe almacenarse en un nodo. Los subintervalos $$V[i,i]$$ son los casos base y sus nodos formarán las hojas del segment tree. Los nodos deben mantener 3 operaciones:
 
 1. Asignar la información correspondiente al nodo en el caso de que este sea una hoja del árbol.
 2. Generar la información del nodo a partir de dos nodos cuyos subintervalos sean una partición del subintervalo actual. Esta operación se denomina `merge`.
@@ -60,8 +60,8 @@ Una plantilla para un nodo del segment tree sería la siguiente:
 # Template for a Segment Tree Node.
 # A node contains the information related with a vector subinterval.
 class SegmentTreeNode(object):
-    
-    # Init the node. 
+
+    # Init the node.
     # info = Subinterval information
     def __init__(self):
         self.info = None
@@ -70,7 +70,7 @@ class SegmentTreeNode(object):
     # build the information for this leaf.
     def assignLeaf(self, value):
         pass # Insert the code to build the leaf information
-            
+
     # Merge the information of left and right
     # children to form the parent node information.
     def merge(self, left, right):
@@ -100,7 +100,7 @@ Los subintervalos preprocesados se almacenan en nodos. Estos pueden ver como un 
 
 $$ \textbf{Imagen 1.} \text{ Segment tree asociado al vector } V = [3,2,8,5,6,1,7,4] \text{ representado como un árbol binario.} $$
 
-Nótese que el árbol binario es completo. Por tanto, podemos almacenarlo en memoria mediante un heap [^heap]. Esto es, embebemos el árbol en un vector mediante un recorrido por niveles como sucede en la Imagen 2. Cada nodo le corresponde un índice del vector y para estos índices se verifica: 
+Nótese que el árbol binario es completo. Por tanto, podemos almacenarlo en memoria mediante un heap [^heap]. Esto es, embebemos el árbol en un vector mediante un recorrido por niveles como sucede en la Imagen 2. Cada nodo le corresponde un índice del vector y para estos índices se verifica:
 
 1. $$IndiceHijoIzquierda(nodo) = 2nodo$$
 2. $$IndiceHijoDerecha(nodo) = 2nodo+1$$
@@ -111,7 +111,7 @@ Estas relaciones nos permiten acceder a los hijos de forma constante. Además, l
 
 $$ \textbf{Imagen 2.} \text{ Segment tree asociado al vector } V = [3,2,8,5,6,1,7,4] \text{ representado como un heap.} $$
 
-Nótese que el subintervalo correspondiente a cada nodo se deduce de su índice, por lo que no es necesario almacenar esta información. Se puede construir el árbol recursivamente. Si el nodo actual es una hoja se obtiene su información mediante el método `assignLeaf`. Si no se da este caso, se construyen recursivamente los dos hijos y se obtiene la información para el nodo actual aplicando el método `merge` a ambos hijos. 
+Nótese que el subintervalo correspondiente a cada nodo se deduce de su índice, por lo que no es necesario almacenar esta información. Se puede construir el árbol recursivamente. Si el nodo actual es una hoja se obtiene su información mediante el método `assignLeaf`. Si no se da este caso, se construyen recursivamente los dos hijos y se obtiene la información para el nodo actual aplicando el método `merge` a ambos hijos.
 
 Con el proceso de construcción anterior contruiremos sin problemas el árbol aunque el vector no tenga como tamaño una potencia de dos. En tal caso el árbol resultante puede no ser completo. Por tanto, habrá componentes del heap en memoria sin usar. Esto nos es irrelevante puesto que el tamaño del heap será a lo sumo $$2m-1$$ donde $$m$$ es la menor potencia de 2 mayor que $$n$$ (si extendemos el vector con elementos nulos hasta que tenga longitud $$m$$ y construimos este heap necesitaremos un vector de longitud $$2m-1$$). Por tanto, la memoria utilizada será $$\theta(n)$$ en cualquier caso.
 
@@ -125,10 +125,10 @@ class SegmentTree(object):
     # st_index: current segment tree node index.
     # lo and hi : Range of input array subinterval that this node is responsible of.
     def _buildTree(self, array, st_index, lo, hi):
-        if lo == hi: 
+        if lo == hi:
             # The node is a leaf responsible of V[lo,lo]
             self.nodes[st_index].assignLeaf(array[lo])
-        else: 
+        else:
             # The node is not a leaf.
             # Both children are built and merged afterwards for this node.
             left = 2 * st_index
@@ -148,7 +148,7 @@ class SegmentTree(object):
 
     # Initializes a Segment Tree.
     # array : Array from which the segment tree is built.
-    # Node : Class that will be used as a segment tree node. 
+    # Node : Class that will be used as a segment tree node.
     #   It obtains the desired information from the array.
     def __init__(self, array, Node):
         self.SegmentTreeNode =  Node
@@ -194,9 +194,9 @@ El siguiente código realiza la operación descrita:
         if hi <= mid:
             return self._getInfo(2*st_index, left, mid, lo, hi)
 
-        # If we keep executing the method then the range is divided between 
-        # the left child and the right child of the current node. Let's get 
-        # each part of the range and merge it.           
+        # If we keep executing the method then the range is divided between
+        # the left child and the right child of the current node. Let's get
+        # each part of the range and merge it.
         left_result = self._getInfo(2*st_index, left, mid, lo, mid)
         right_result = self._getInfo(2*st_index+1, mid+1, right, mid+1, hi)
         result = self.SegmentTreeNode()
@@ -206,7 +206,7 @@ El siguiente código realiza la operación descrita:
     # Get the value associated with the range [lo, hi]
     def getInfo(self, lo, hi):
         result = self._getInfo(1, 0, len(self.array)-1, lo, hi)
-        return result.getInfo() 
+        return result.getInfo()
 ~~~
 
 Es claro que si el subintervalo es precisamente uno de los que se tienen almacenados en el árbol entonces el tiempo de la consulta es $$O(\log n)$$. ¿Qué sucede en cualquier otro caso?
@@ -216,13 +216,13 @@ Proposición
 
 **Demostración**
 
-La implementación previa consiste en una búsqueda en profundidad pues es más cómoda de programar. Sin embargo, en la prueba es más útil ver el algoritmo como una búsqueda en anchura. Puesto que ambas búsquedas visitarían los mismos nodos, podemos situarnos en esta última. Definimos una iteración del algoritmo como procesar todos los nodos de un nivel $$t$$ del árbol. Tras una iteración los nodos que quedan activos pertenecen al siguiente nivel del árbol. 
+La implementación previa consiste en una búsqueda en profundidad pues es más cómoda de programar. Sin embargo, en la prueba es más útil ver el algoritmo como una búsqueda en anchura. Puesto que ambas búsquedas visitarían los mismos nodos, podemos situarnos en esta última. Definimos una iteración del algoritmo como procesar todos los nodos de un nivel $$t$$ del árbol. Tras una iteración los nodos que quedan activos pertenecen al siguiente nivel del árbol.
 
-Buscamos la información del subintervalo $$V[i,j]$$. Podemos observar que de una iteración a otra se mantiene la búsqueda sobre a lo sumo dos nuevos nodos. Además, estos nodos son precisamente aquellos cuyos subinvervalos contienen a las componentes i-ésima y j-ésima respectivamente. 
+Buscamos la información del subintervalo $$V[i,j]$$. Podemos observar que de una iteración a otra se mantiene la búsqueda sobre a lo sumo dos nuevos nodos. Además, estos nodos son precisamente aquellos cuyos subinvervalos contienen a las componentes i-ésima y j-ésima respectivamente.
 
 En efecto, esto se prueba por inducción sobre el nivel del árbol en el que nos encontremos:
 
-- Para la raíz (nivel 1) esto es evidente pues el algoritmo, en el peor de los casos, prosigue con los dos hijos. 
+- Para la raíz (nivel 1) esto es evidente pues el algoritmo, en el peor de los casos, prosigue con los dos hijos.
 - Supongamos cierta la afirmación para el nivel $$t < \log_2 n$$ y veamos que se cumple para $$t+1$$. Por la hipótesis de inducción, la búsqueda se mantiene a lo sumo en dos nodos. Si no hubiese nodos activos hemos terminado. Si por el contrario solo hubiese un nodo activo el resultado también es evidente (el nodo activo se divide como mucho en dos). Por último, si hay dos nodos activos verificando la hipótesis de inducción se tiene que $$i < j$$ (los nodos tienen subintervalos disjuntos). Cada uno de los nodos activos puede dividir la búsqueda como mucho sobre sus dos hijos. Para el nodo izquierda (el que contiene la componente $$i$$) se tienen las siguientes opciones:
     + El subintervalo del nodo está contenido en $$V[i,j]$$ en cuyo caso para la búsqueda en esa rama.
     + El subintervalo que buscamos está contenido en el hijo derecha (tiene intersección vacía con el hijo izquierda). En tal caso se añade ese nodo a la búsqueda.
@@ -247,9 +247,9 @@ La implementación más sencilla de este proceso es recursiva. Realizamos una b�
 El siguiente código realiza la operación descrita:
 
 ~~~python
-    # Update the segment tree. 
+    # Update the segment tree.
     # The given value is assigned to the array's component at index place.
-    # The segment tree is updated accordingly in a recursive way. 
+    # The segment tree is updated accordingly in a recursive way.
     # st_index : Current segment tree node index.
     # lo and hi : The current range is [lo, hi]
     # index : Array's component to be updated.
@@ -274,9 +274,9 @@ El siguiente código realiza la operación descrita:
             # Update current node information
             self.nodes[st_index].merge(self.nodes[left], self.nodes[right])
 
-    # Update the segment tree. 
+    # Update the segment tree.
     # The given value is assigned to the array's
-    # component at index place. The segment tree is updated accordingly. 
+    # component at index place. The segment tree is updated accordingly.
     # index : Array's component to be updated.
     # value : New value for the array's component to update.
     def update(self, index, value):
@@ -284,7 +284,7 @@ El siguiente código realiza la operación descrita:
         self.array[index] = value
 ~~~
 
-La eficiencia es claramente $$\theta(m(n) \log n + a(n))$$. 
+La eficiencia es claramente $$\theta(m(n) \log n + a(n))$$.
 
 Una mejor implementación es una versión iterativa del proceso. Comenzamos en la hoja y recorremos el camino desde esta a la raíz usando el siguiente hecho:
 
@@ -293,16 +293,16 @@ $$ IndicePadre(nodo) = \frac{nodo}{2} $$
 Si en determinado momento la información de un nodo a actualizar no cambia con el `merge` se finaliza algoritmo. Sin embargo, aunque podamos terminar la ejecución antes, la eficiencia en el peor caso sigue siendo $$\theta(m(n) \log n + a(n))$$. Se necesitaría, además, un nuevo método `isSameInfo` que nos indique si la información que se le pasa como argumento es la misma que la contenida por el nodo. Este método debe ser $$O(m(n))$$ para que la implementación sea rentable. El siguiente código contiene esta nueva versión del algoritmo:
 
 ~~~python
-    # Update the segment tree. 
+    # Update the segment tree.
     # The given value is assigned to the array's
-    # component at index place. The segment tree is updated accordingly. 
+    # component at index place. The segment tree is updated accordingly.
     # index : Array's component to be updated.
     # value : New value for the array's component to update.
     def update2(self, index, value):
         st_index = self.size // 2 + index # Leaf index
         # Update leaf and array
         self.array[index] = value
-        self.nodes[st_index].assignLeaf(value) 
+        self.nodes[st_index].assignLeaf(value)
         # Update leaf ancestors
         st_index = st_index // 2
         while st_index > 0:
@@ -317,7 +317,7 @@ Si en determinado momento la información de un nodo a actualizar no cambia con 
 ~~~
 
 
-## Problemas 
+## Problemas
 
 Los siguientes problemas son útiles para practicar con la estructura de datos.
 
@@ -330,7 +330,7 @@ Los siguientes problemas son útiles para practicar con la estructura de datos.
 
 ## Código
 
-Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python. Una implementación similar se puede encontrar en c++ [^segment-c].
+Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python. Una implementación similar se puede encontrar en C++ [^segment-c].
 
 ## Para profundizar
 
