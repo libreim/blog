@@ -332,15 +332,15 @@ Los siguientes problemas son útiles para practicar con la estructura de datos.
 
 Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python. Una implementación similar se puede encontrar en c++ [^segment-c].
 
-## Referencias
-
-[^list]: [List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures)
-[^heap]: [Heaps and Heapsort, MIT 6.006 Introduction to Algorithms, Fall 2011](https://www.youtube.com/watch?v=B7hVxCmfPtM)
-[^segment-c]: [A simple approach to segment trees - Kartik Kukreja](https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/)
-
 ## Para profundizar
 
 Los siguientes enlaces profundizan en la temática. Incluyen desde operaciones más avanzadas, como el uso de lazy propagation, hasta la relación del range minimum query con otros problemas, como el lowest common ancestor. Espero tratar estos temas en un futuro próximo.
 
 - [A simple approach to segment trees, part 2 - Kartik Kukreja](https://kartikkukreja.wordpress.com/2015/01/10/a-simple-approach-to-segment-trees-part-2/)
 - [Range Minimum Query and Lowest Common Ancestor - danielp - TopCoder](https://community.topcoder.com/tc?module=Static&d1=tutorials&d2=lowestCommonAncestor#Segment_Trees)
+
+## Referencias
+
+[^list]: [List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures)
+[^heap]: [Heaps and Heapsort, MIT 6.006 Introduction to Algorithms, Fall 2011](https://www.youtube.com/watch?v=B7hVxCmfPtM)
+[^segment-c]: [A simple approach to segment trees - Kartik Kukreja](https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/)
