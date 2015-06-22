@@ -197,8 +197,8 @@ El siguiente código realiza la operación descrita:
         # If we keep executing the method then the range is divided between 
         # the left child and the right child of the current node. Let's get 
         # each part of the range and merge it.           
-        left_result = self._getInfo(2*st_index, left, mid, lo, mid);
-        right_result = self._getInfo(2*st_index+1, mid+1, right, mid+1, hi);
+        left_result = self._getInfo(2*st_index, left, mid, lo, mid)
+        right_result = self._getInfo(2*st_index+1, mid+1, right, mid+1, hi)
         result = self.SegmentTreeNode()
         result.merge(left_result, right_result)
         return result
@@ -319,18 +319,28 @@ Si en determinado momento la información de un nodo a actualizar no cambia con 
 
 ## Problemas 
 
-Los siguientes problemas sirven como ejemplo de aplicación de los segment trees:
+Los siguientes problemas son útiles para practicar con la estructura de datos.
 
-- Dado un vector $$V$$ con $$N$$ elementos, se pide realizar $$Q$$ consultas. Cada consulta consiste en obtener la media del subintervalo $$V[i,j]$$.
+- Dado un vector $$V$$ con $$N$$ elementos, se pide realizar $$Q$$ consultas. Cada consulta consiste en obtener la media del subintervalo $$V[i,j]$$. Desarrollar un algoritmo para este cometido.
+
 - [Hackerrank - Functional Programming Contest - Range Minimum Query](https://www.hackerrank.com/contests/hindley-milner-feb14/challenges/range-minimum-query)
 - [Hackerrank - Minimum Product Subinterval](https://www.hackerrank.com/contests/indeed-prime-challenge/challenges/minimum-product-sub-interval)
+
 - [90 Segment Trees Problems](http://www.ahmed-aly.com/Category.jsp?ID=25)
 
 ## Código
 
-Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python.
+Todo el código proporcionado se encuentra en un único [archivo](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree) en Python. Una implementación similar se puede encontrar en c++ [^segment-c].
 
 ## Referencias
 
 [^list]: [List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures)
 [^heap]: [Heaps and Heapsort, MIT 6.006 Introduction to Algorithms, Fall 2011](https://www.youtube.com/watch?v=B7hVxCmfPtM)
+[^segment-c]: [A simple approach to segment trees - Kartik Kukreja](https://kartikkukreja.wordpress.com/2014/11/09/a-simple-approach-to-segment-trees/)
+
+## Para profundizar
+
+Los siguientes enlaces profundizan en la temática. Incluyen desde operaciones más avanzadas, como el uso de lazy propagation, hasta la relación del range minimum query con otros problemas, como el lowest common ancestor. Espero tratar estos temas en un futuro próximo.
+
+- [A simple approach to segment trees, part 2 - Kartik Kukreja](https://kartikkukreja.wordpress.com/2015/01/10/a-simple-approach-to-segment-trees-part-2/)
+- [Range Minimum Query and Lowest Common Ancestor - danielp - TopCoder](https://community.topcoder.com/tc?module=Static&d1=tutorials&d2=lowestCommonAncestor#Segment_Trees)
