@@ -16,11 +16,14 @@ En este caso trataremos los **segment trees** o árboles de segmentos. Introduci
 
 Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{0,\ldots,n-1\}$$ con $$i \le j$$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
 
-Normalmente se denomina subintervalo del vector a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de range minimum query sería problema de las consultas del mínimo de cualquier subintervalo (mantendremos el nombre en inglés por ser el estándar).
+Normalmente se denomina *subintervalo del vector* a un subvector formado por
+componentes consecutivas, como los que se estudian en este caso. Una posible
+traducción al castellano de **range minimum query** sería problema de las
+consultas del mínimo de cualquier subintervalo (pero mantendremos el nombre en inglés por ser el estándar).
 
 La solución trivial para el problema consiste en calcular para cada consulta el mínimo del subintervalo correspondiente de forma lineal. Esto proporciona una eficiencia media de $$\theta(n)$$ para las consultas. Se pretende reducir esta eficiencia significativamente para poder atender el mayor número de consultas posible.
 
-La forma habitual de abordar el problema consiste en hacer un preprocesamiento de los datos. Un primer preprocesamiento puede ser calcular directamente el mínimo para cada subintervalo del vector, lo que puede conseguirse sin mucha dificultad en $$\theta(n^2)$$. Posteriormente, las consultas pueden ser realizadas en tiempo constante. Esta solución tiene dos grandes problemas:
+La forma habitual de abordar el problema consiste en preprocesar los datos. Un primer preprocesamiento puede ser calcular directamente el mínimo para cada subintervalo del vector, lo que puede conseguirse sin mucha dificultad en $$\theta(n^2)$$. Posteriormente, las consultas pueden ser realizadas en tiempo constante. Esta solución tiene dos grandes problemas:
 
 1. Un preprocesamiento de eficiencia $$\theta(n^2)$$ es excesivo cuando se trate con vectores de tamaño mayor o igual que $$10^4$$. Esto nos hace distinguir dos eficiencias a la hora de resolver el problema, la eficiencia del preprocesamiento y la eficiencia de la consulta. La solución trivial minimizaba el preprocesamiento mientras que la nueva solución minimiza el tiempo de consulta, no siendo ninguna de las dos óptimas.
 2. El problema suele complicarse permitiendo actualizar el valor de una componente del vector entre consultas, lo que no consigue el segundo algoritmo, que requiere un tiempo $$\theta(n)$$ para actualizar también la matriz $$RMQ$$.
