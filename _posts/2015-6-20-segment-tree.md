@@ -28,7 +28,7 @@ La forma habitual de abordar el problema consiste en preprocesar los datos. Un p
 1. Un preprocesamiento de eficiencia $$\theta(n^2)$$ es excesivo cuando se trate con vectores de tamaño mayor o igual que $$10^4$$. Esto nos hace distinguir dos eficiencias a la hora de resolver el problema, la eficiencia del preprocesamiento y la eficiencia de la consulta. La solución trivial minimizaba el preprocesamiento mientras que la nueva solución minimiza el tiempo de consulta, no siendo ninguna de las dos óptimas.
 2. El problema suele complicarse permitiendo actualizar el valor de una componente del vector entre consultas, lo que no consigue el segundo algoritmo, que requiere un tiempo $$\theta(n)$$ para actualizar también la matriz $$RMQ$$.
 
-Los segment trees o árboles de segmentos surgieron para resolver este problema. Se pueden formular de forma incluso más general, teniendo aplicaciones en problemas relacionados con los subintervalos de un vector. Como veremos a continuacióm, los segment trees aplicados a este problema tienen un preprocesamiento con eficiencia lineal y proporcionan un tiempo logarímico para las consultas y actualizaciones del vector.
+Los segment trees o árboles de segmentos surgieron para resolver este problema. Se pueden formular de forma incluso más general, teniendo aplicaciones en problemas relacionados con los subintervalos de un vector. Como veremos a continuación, los segment trees aplicados a este problema tienen un preprocesamiento con eficiencia lineal y proporcionan un tiempo logarímico para las consultas y actualizaciones del vector.
 
 ## Segment Trees
 
