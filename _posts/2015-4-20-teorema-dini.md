@@ -123,11 +123,11 @@ Supongamos en primer lugar que $$\{f_n\}$$ es creciente. Nótese que en tal caso
 
 4. Como $$[a,b] = \cup_{x \in [a,b]} V_x$$, usando la caracterización topológica de la compacidad, existen $$x_1, \ldots, x_m \in [a,b]$$ tales que:
 
-$$ [a,b] = \bigcup_{i = 1}^m V_{x_i} $$
+    $$ [a,b] = \bigcup_{i = 1}^m V_{x_i} $$
 
 5. Tomamos $$n_0 = \max\{n_{x_i}: i = 1, \ldots, m\}$$. Veamos que efectivamente se da la convergencia uniforme. Sean $$n \ge n_0, y \in [a,b]$$. Aplicando la igualdad obtenida en **(4)**, debe existir $$i \in \{1, \ldots, m\}$$ tal que $$y$$ pertenece a $$V_{x_i}$$. Juntando este hecho con **(3)** y la monotonía:
 
-$$\left| f(y) - f_n(y) \right| = f(y) - f_n(y) \le f(y) - f_{n_0}(y) \le f(y) - f_{n_{x_i}}(y) < \varepsilon$$
+    $$\left| f(y) - f_n(y) \right| = f(y) - f_n(y) \le f(y) - f_{n_0}(y) \le f(y) - f_{n_{x_i}}(y) < \varepsilon$$
 
 Por otro lado, si $$\{f_n\}$$ es decreciente, basta aplicar lo anterior a  $$\{-f_n\}$$, que es creciente y converge a $$\ -f$$. Fácilmente se extrapola su convergencia uniforrme a la de $$\{f_n\}$$.
 
