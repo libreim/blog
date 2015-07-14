@@ -172,7 +172,7 @@ se comprueba de igual manera. Son isomorfismos:
 prdasoc :: (a,(b,c)) -> ((a,b),c)
 prdasoc (x,(y,z)) = ((x,y),z)
 
-sumasoc :: (Either a (Either b c)) -> ((Either a b) c)
+sumasoc :: (Either a (Either b c)) -> (Either (Either a b) c)
 sumasoc (Left x)          = (Left (Left x))
 sumasoc (Right (Left y))  = (Left (Right y))
 sumasoc (Right (Right y)) = (Right y)
