@@ -48,11 +48,11 @@ La Imagen 1 muestra el árbol binario a generar si se tuviese $$n = 8$$. Nótese
 ![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)
 $$ \textbf{Imagen 1.} \text{ Segment tree asociado a un vector } V \text{ de longitud 8 representado como un árbol binario.} $$
 
-Tras generar el árbol binario podemos expresar un subintervalo $$V[i, j]$$ como la unión del menor número de subintervalos como los preprocesados previamente. Tiene sentido hablar de esta unión pues siempre existe (basta expresar $$V[i, j]$$ como unión de sus componentes).  Por ejemplo, para $$V = [3,2,8,5,6,1,7,4]$$ se tiene:
+Tras generar el árbol binario podemos expresar un subintervalo $$V[i, j]$$ como la unión del menor número de subintervalos como los preprocesados previamente. Tiene sentido hablar de esta unión pues siempre existe (basta expresar $$V[i, j]$$ como unión de sus componentes).  Por ejemplo, para $$n=8$$ se tiene:
 
-$$ V[2,7] = V[2,2] \cup V[3,4] \cup V[5,6] \cup V[7,7] $$
+$$ V[2,7] = V[2,2] +\mkern-5mu+ V[3,4] +\mkern-5mu+ V[5,6] +\mkern-5mu+ V[7,7] $$
 
-Si la información que deseamos consultar puede obtenerse a partir de la información de una partición de subintervalos entonces habremos resuelto el problema. Este es el caso del range minimum query. El mínimo del subintervalo $$V[i, j]$$ es el mínimo de los mínimos obtenidos para los subintervalos preprocesados que formen una partición de $$V[i, j]$$. En el ejemplo anterior:
+Si la información que deseamos consultar puede obtenerse a partir de la información de una partición de subintervalos entonces habremos resuelto el problema. Este es el caso del range minimum query. El mínimo del subintervalo $$V[i, j]$$ es el mínimo de los mínimos obtenidos para los subintervalos preprocesados que formen una partición de $$V[i, j]$$. Por ejemplo, si $$V = [3,2,8,5,6,1,7,4]$$:
 
 $$ \min(V[2,7]) = \min\{\min(V[2,2]), \min(V[3,4]), \min(V[5,6]), \min(V[7,7])\} = \min\{2, 5, 1, 7\} = 1 $$
 
