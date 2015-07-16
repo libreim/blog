@@ -45,8 +45,9 @@ La idea subyacente consiste en preprocesar la información correspondiente a las
 
 La Imagen 1 muestra el árbol binario a generar si se tuviese $$n = 8$$. Nótese que las hojas del árbol son los subintervalos con una sola componente.
 
-![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)
-$$ \textbf{Imagen 1.} \text{ Segment tree asociado a un vector } V \text{ de longitud 8 representado como un árbol binario.} $$
+{: .fig}
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)  
+**Imagen 1.** Segment tree asociado a un vector $$V$$ de longitud 8 representado como un árbol binario.
 
 Tras generar el árbol binario podemos expresar un subintervalo $$V[i, j]$$ como la unión del menor número de subintervalos como los preprocesados previamente. Tiene sentido hablar de esta unión pues siempre existe (basta expresar $$V[i, j]$$ como unión de sus componentes).  Por ejemplo, para $$n=8$$ se tiene:
 
@@ -113,8 +114,9 @@ La construcción del segment tree consiste en crear un árbol binario como el de
 
 Estas relaciones nos permiten acceder a los hijos de forma constante. Además, la longitud del vector que representa al segment tree es $$2n-1$$ donde $$n$$ es la longitud de $$V$$.
 
-![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_heap.png)
-$$ \textbf{Imagen 2.} \text{ Segment tree asociado a un vector } V \text{ de longitud 8 representado como un heap.} $$
+{: .fig}
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_heap.png)  
+**Imagen 2.** Segment tree asociado a un vector $$V$$ de longitud 8 representado como un heap.
 
 Nótese que el subintervalo correspondiente a cada nodo se deduce de su índice, por lo que no es necesario almacenar esta información. Se puede construir el árbol recursivamente. Si el nodo actual es una hoja se obtiene su información mediante el método `assignLeaf`. Si no se da este caso, se construyen recursivamente los dos hijos y se obtiene la información para el nodo actual aplicando el método `merge` a ambos hijos.
 
