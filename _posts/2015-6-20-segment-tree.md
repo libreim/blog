@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Segment trees y Range mimimum query
+title: Segment trees y Range minimum query
 authors:
   - andreshp
 category: Estructuras de Datos
@@ -108,8 +108,8 @@ Veremos que para que la eficiencia de las dos operaciones soportadas por el segm
 
 La construcción del segment tree consiste en crear un árbol binario como el de la Imagen 1. Sin embargo, se puede conseguir una implementación más eficiente al darse cuenta de que el árbol binario es completo. Por tanto, podemos almacenarlo en memoria mediante un heap [^heap]. Esto es, embebemos el árbol en un vector mediante un recorrido por niveles como sucede en la Imagen 2. A cada nodo le corresponde un índice del vector y para estos índices se verifica:
 
-1. $$IndiceHijoIzquierda(nodo) = 2nodo$$
-2. $$IndiceHijoDerecha(nodo) = 2nodo+1$$
+1. $$IndiceHijoIzquierda(nodo) =$$ $$ 2nodo$$
+2. $$IndiceHijoDerecha(nodo) =$$ $$ 2nodo+1$$
 
 Estas relaciones nos permiten acceder a los hijos de forma constante. Además, la longitud del vector que representa al segment tree es $$2n-1$$ donde $$n$$ es la longitud de $$V$$.
 
