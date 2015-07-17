@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Blog - DGIIM</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <style type="text/css">header .l-blog { color: #c0c0c0; }</style>
+
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/04/20/teorema-dini" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Teorema de Dini
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/andreshp">Andrés Herrera Poyatos</a>
+              
+            
+            
+            <div class="date">
+              20-04-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-4-20-teorema-dini.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <h2 id="convergencia-puntual-y-convergencia-uniforme">Convergencia Puntual y Convergencia Uniforme</h2>
+
+<p>En el Análisis Matemático es frecuente que la función solución a determinado problema sea desconocida o no la podamos expresar en términos de las funciones elementales que conocemos. Incluso en las funciones más simples, como la exponencial o el logaritmo, nos encontramos esta situación. Conocemos su existencia y propiedades características pero tenemos ciertas dificultades a la hora de evaluarlas en un punto. Es frecuente para ello utilizar los famosos polinomios de Taylor, en cuyo caso estamos aproximando la función por polinomios.</p>
+
+<p>En más situaciones es habitual disponer de funciones que se aproximan cada vez más a la solucion del problema. Para formalizar este hecho surge el concepto de convergencia para sucesiones de funciones. Podemos distinguir dos tipos de convergencia: convergencia puntual y convergencia uniforme.</p>
+
+<dl>
+  <dt>Definición 1</dt>
+  <dd>Sea <script type="math/tex">A \subseteq \mathbb{R}</script> y <script type="math/tex">\{f_n\}</script> una sucesión de funciones con <script type="math/tex">\ f_n : A \rightarrow \mathbb{R}</script>. Se dice que <script type="math/tex">\{f_n\}</script> <strong>converge puntualmente</strong> en <script type="math/tex">x \in A</script> si la sucesión <script type="math/tex">\{f_n(x)\}</script> converge. Podemos considerar el conjunto <script type="math/tex">C</script> de los elementos <script type="math/tex">x \in A</script> en los que hay convergencia puntual y definir la <strong>función límite</strong>:</dd>
+  <dd>
+    <script type="math/tex; mode=display">f : C \rightarrow \mathbb{R}, \ f(x) = \lim f_n(x) \ \forall x \in C</script>
+  </dd>
+</dl>
+
+<p><a href="/blog/2015/04/20/teorema-dini">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/04/20/teorema-dini/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/04/20/teorema-dini&text=Teorema de Dini" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/04/20/teorema-dini" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/04/20/teorema-dini&title=Teorema de Dini" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/24/algebra-tipos" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Álgebra de tipos
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              24-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-24-algebra-tipos.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>En este post formularemos un álgebra para los tipos de los lenguajes de
+programación. Veremos operaciones que se aplican sobre ellos para obtener nuevos
+tipos y qué leyes siguen estas operaciones. Usaremos como base el sistema de
+tipos de Haskell, pero estos mismos conceptos podrían aplicarse a cualquier
+lenguaje con un sistema algebraico de tipos. Para iniciarse en el sistema de
+tipos de Haskell sugiero leer antes la <a href="http://dgiim.github.io/blog/2014/10/01/intro-haskell/">Introducción a Haskell</a>.</p>
+
+<h2 id="notando-tipos-en-haskell">Notando tipos en Haskell</h2>
+
+<p>En Haskell, los <strong>tipos</strong> se escriben como un conjunto de constructores, que
+actúan como funciones teniendo como codominio el tipo definido. Por ejemplo,</p>
+
+<pre><code class="language-Haskell">data Colour = RGB Int Int Int
+            | HSV Int Int Int
+</code></pre>
+
+<p>este código define un tipo <code>Colour</code> con dos formas de construirlo, como <code>RGB</code> y
+como <code>HSV</code>. Ambos constructores usan como argumento tres enteros. Con tres
+enteros podremos construir un color de dos formas distintas.</p>
+
+<p><a href="/blog/2015/03/24/algebra-tipos">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/24/algebra-tipos/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/24/algebra-tipos&text=Álgebra de tipos" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/24/algebra-tipos" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/24/algebra-tipos&title=Álgebra de tipos" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/15/arch" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Learning from Arch Linux
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/NCordon">Ignacio Cordón</a>
+              
+            
+            
+            <div class="date">
+              15-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-15-arch.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>Arch is an open source, <em>rolling release</em> distribution. It’s a Linux distribution well-known for its extremely complete wiki. Almost certainly, you should have reached an Arch’s wiki entry searching for troubleshooting about other  distributions.</p>
+
+<p>If you’re wiling to enlarge your knowledge about Linux, it’s highly recommended trying to install Arch or another terminal-installation based distro at least once, because GUI Linux installers made that task easier. On the contrary, Arch installation is completely based on terminal commands.</p>
+
+<p>You can download Arch from <a href="https://www.archlinux.org/download/">here</a>.</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Beginners%27_guide">This</a> has been the guide followed to install Arch to a partition in my hard drive. You could also try it in a virtual machine!</p>
+
+<p>Beforehand you must know you’re gonna need an Internet Connection to install Arch. The main goal of installing Arch is learning, so if you follow my steps strictly to the letter, you aren’t gonna learn as much as if you found your own path. This would be handy in case you got stuck in a step.</p>
+
+<p><a href="/blog/2015/03/15/arch">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/15/arch/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/15/arch&text=Learning from Arch Linux" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/15/arch" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/15/arch&title=Learning from Arch Linux" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/14/latex" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          ¿Cómo aprender LaTeX?
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/pbaeyens">Pablo Baeyens</a>
+              
+            
+            
+            <div class="date">
+              14-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-14-latex.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p><a href="http://www.latex-project.org"><script type="math/tex">\LaTeX</script></a> es un lenguaje de marcado y composición de textos para crear documentos técnicos, crear gráficos, escribir matemáticas… Actualmente <script type="math/tex">\LaTeX</script> se utiliza junto con otros paquetes que añaden funcionalidades adicionales, por lo que dar una visión completa de sus capacidades es complejo. A continuación tienes una lista de recursos para aprender e utilizar <script type="math/tex">\LaTeX</script> y algunos de sus paquetes.</p>
+
+<p><a href="/blog/2015/03/14/latex">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/14/latex/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/14/latex&text=¿Cómo aprender LaTeX?" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/14/latex" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/14/latex&title=¿Cómo aprender LaTeX?" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/14/intro-beamer" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Introducción a Beamer
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/pbaeyens">Pablo Baeyens</a>
+              
+            
+            
+            <div class="date">
+              14-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-14-intro-beamer.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p><code>beamer</code> es una clase de documento de LaTeX que nos permite crear diapositivas en pdf
+y otros formatos. Permite el uso de transiciones, mostrar elementos selectivamente en la 
+pantalla y aprovechar las capacidades de <code>tikz</code>, <code>pgf</code> y la mayoría de paquetes de LaTeX
+para personalizar el aspecto de la presentación al detalle. </p>
+
+<p>Puedes encontrar una guía básica escrita en <code>beamer</code> <a href="https://github.com/dgiim/beamer">aquí</a>.
+No he podido cubrir todo, así que otros recursos que puedes utilizar son:</p>
+
+<ul>
+  <li><a href="http://osl.ugr.es/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf">La guía oficial de <code>beamer</code></a></li>
+  <li><a href="http://en.wikibooks.org/wiki/LaTeX/Presentations">Presentations Wikibooks</a></li>
+  <li><a href="http://tex.stackexchange.com/questions/tagged/beamer">TeX Stack Exchange</a></li>
+</ul>
+
+<p>Además, puedes utilizar las plantillas disponibles en <a href="https://github.com/M42/plantillas/tree/master/presentacion">M42/plantillas</a> para facilitar tu trabajo.</p>
+
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/14/intro-beamer/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/14/intro-beamer&text=Introducción a Beamer" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/14/intro-beamer" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/14/intro-beamer&title=Introducción a Beamer" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+
+
+<nav class="pagination pure-g">
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+    <div class="pure-g">
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-2-5">
+        
+          <span class="disabled-link"><i class="fa fa-arrow-left"></i></span>
+        
+      </div>
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-1-5">
+        <span class="page-number">Página 1 de 4</span>
+        <span class="archive-link"><a href="/blog/archive">Todos los posts</a></span>
+      </div>
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-2-5">
+        
+          <a href="/blog/page/2/" class="next "><i class="fa fa-arrow-right"></i></a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</nav>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Manual rápido de Github/Git</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2014/02/23/manualgit" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Manual rápido de Github/Git
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/fdavidcl">David Charte</a>
+              
+            
+            
+            <div class="date">
+              23-02-2014
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2014-2-23-manualgit.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <h2 id="tldr">TL;DR</h2>
+<p>Instala git. Crea un repositorio desde la página de Github. Descárgalo con <code>git clone</code>. Actualiza tu versión local con <code>git pull</code>. Empaqueta cambios con <code>git commit -a</code>. Envía cambios con <code>git pull &amp;&amp; git push</code>.</p>
+
+<!--more-->
+
+<h2 id="la-versin-larga">La versión larga</h2>
+
+<p>Github es un servicio de almacenamiento de código con control de versiones Git. Git permite a los desarrolladores llevar un registro de todos los cambios realizados a lo largo del tiempo. Con una cuenta en Github puedes crear tantos repositorios (públicos) como quieras, y 5 privados si registras tu correo de la Universidad en <a href="http://edu.github.com">Github Edu</a>. Cada repositorio puede estar compartido por el creador para varios colaboradores, de forma que todos pueden editarlo.</p>
+
+<p>La gran ventaja de Github/Git respecto de los sistemas de sincronización de archivos (como Dropbox o OneDrive) es que Git no almacena cada archivo completo generado tras cada cambio, sino únicamente los cambios que se han hecho desde la primera versión de cada archivo. Esto permite recuperar un código antiguo sin necesidad de hacer varias copias, y que varios colaboradores editen el mismo archivo sin crear conflictos de versiones, ya que los cambios se mezclan en un único archivo resultante.</p>
+
+<p>Existen más sistemas de control de versiones aparte de Git, pero son en su mayoría centralizados (solo el servidor almacena el código completo), mientras que Git es un sistema distribuido, es decir, en el que todos los colaboradores obtienen una copia completa del repo y hacen sus propios cambios, estando en el servidor la combinación de los códigos de todos.</p>
+
+<h3 id="terminologa">Terminología</h3>
+<ul>
+  <li><em>repository/repo</em> - Lugar en Github para almacenar todo el código de un proyecto e ir registrando los cambios.  </li>
+  <li><em>clone</em> - Descargar el código de un repositorio y activar git sobre él.  </li>
+  <li><em>commit</em> - Crear un paquete de cambios a partir de los cambios realizados en la versión local del repo.</li>
+  <li><em>pull</em> - Estando en la versión local del repo, descargar los cambios hasta la versión más actual.</li>
+  <li><em>push</em> - Enviar los cambios (empaquetados en commits) de la versión local del repo a Github (para que los demás colaboradores puedan descargarlos).</li>
+  <li><em>merge</em> - Mezcla de cambios de varios desarrolladores o cuando se envian commits realizados sobre versiones antiguas de los archivos.</li>
+  <li><em>fork</em> - Copiar el código de un repositorio (en el que no tenemos permiso de edición) a otro propio para poder editar (y mejorar o arreglar fallos).</li>
+</ul>
+
+<h3 id="estado-de-los-archivos">Estado de los archivos</h3>
+<p>Puede consultarse el estado del repositorio usando <code>git status</code>. Simplificando, podemos tener los archivos en los siguientes estados:  </p>
+
+<ul>
+  <li><em>No registrados (untracked)</em> - Archivos y modificaciones no añadidas al repositorio. No se enviarán con el próximo commit.  No se tienen en cuenta en el repositorio. Pueden añadirse con <code>git add</code>, y pasarán a estar registrados.</li>
+  <li><em>Registrados (tracked)</em> - Archivos y modificaciones añadidos, que serán parte del próximo commit.</li>
+  <li><em>Formando parte del commit (committed)</em> - Tras realizar un <code>git commit</code>, archivos y modificaciones que ya forman parte de un commit, aunque todavía no se haya enviado el commit al repositorio.</li>
+  <li><em>Enviados (pushed)</em> - Tras enviar el commit con <code>git push</code>, los archivos ya forman parte del repositorio de GitHub.  </li>
+</ul>
+
+<p>Además, se pueden especificar archivos a ignorar completamente por git en el archivo <code>.gitignore</code>. En este archivo 
+podemos añadir nombres de archivo y directorios (separados por saltos de línea) de forma que el registro de cambios 
+no se realice nunca sobre ellos y ni siquiera aparecerán como <em>untracked</em>.</p>
+
+<h3 id="creacin-del-repo">Creación del repo</h3>
+<p>Asumiendo que usamos Linux para utilizar Github, hemos de instalar primero el sistema de control de versiones (en
+ Ubuntu, <code>sudo apt-get install git</code> bastará). En Windows existe una <a href="http://windows.github.com">fantástica aplicación</a> 
+que hace todo el trabajo por nosotros, sin necesidad de línea de comandos (OS X también tiene <a href="http://mac.github.com/">la suya</a>).</p>
+
+<p>Un repositorio se puede crear desde la web de Github, que nos pedirá un nombre y nos sugerirá que comencemos añadiendo
+ un archivo README. Una vez creado, copiamos el enlace que aparecerá al final de la sección derecha en la página del 
+repo (terminado en <em>.git</em>) y ejecutamos en terminal <code>git clone URL</code> donde URL es la dirección obtenida. Esto creará 
+una carpeta con contenido idéntico al del repo.</p>
+
+<h3 id="modificacin">Modificación</h3>
+<p>Antes de modificar nada es conveniente ejecutar <code>git pull</code> para descargar la última versión de los archivos, en caso 
+de que algún colaborador los haya editado. Esto nos evitará merges innecesarios.</p>
+
+<p>Tras crear archivos en la versión local, ejecutamos <code>git add file1 file2 ...</code> para añadirlos al control de cambios, 
+o con <code>git add .</code>, para añadir todo lo que haya sido modificado, creado,… El comando <code>git rm file</code> se emplea para 
+borrar archivos del repositorio.</p>
+
+<p>Después de crear archivos o realizar varios cambios en los ya existentes es recomendable crear un commit con <code>git commit -a</code>. Esto nos abrirá una instancia del editor <code>nano</code> en la que podremos escribir un mensaje para el commit (no puede estar vacío), que describa los cambios realizados brevemente. Al pulsar Ctrl-O, Ctrl-X para guardar y salir, se termina la creación del commit. Aún no están enviados los cambios al repo online, sino que se ha realizado un registro de los mismos, y se puede decir que estamos un commit <em>por delante</em> de la versión en Github.</p>
+
+<p>Antes de enviar los cambios es importante asegurar que se sobreescribirán en las versiones más recientes de los archivos (el repo en Github también podría estar varios commits por delante de nosotros) y para ello ejecutamos <code>git pull</code>. Normalmente nos diría que estamos en la versión más actual, pero si no lo estuviéramos no pasa nada, crearía un merge automático mezclando los cambios realizados por nosotros con los más modernos en Github (el caso de que haya conflictos está descrito más abajo).</p>
+
+<p>Finalmente ejecutamos <code>git push origin master</code> que envía nuestros cambios y actualiza el repo en Github. Si ha sido necesario un merge se nos abrirá una instancia de <code>nano</code> con un mensaje por defecto para el mismo, que podremos cerrar (Ctrl-X) para mantener.</p>
+
+<p>En resumen, el orden de comandos necesarios es:</p>
+
+<p><code>git pull</code> -&gt; (modificaciones) -&gt; <code>git commit -a</code> -&gt; <code>git pull</code> -&gt; <code>git push origin master</code></p>
+
+<dl>
+  <dt>Consejo</dt>
+  <dd>Es cómodo añadir un alias a nuestro <em>.bashrc</em> para ejecutar las últimas tres órdenes de seguido. Para ello ejecutad</dd>
+  <dd>
+    <pre><code class="language-sh">echo "alias gitsync='git commit -a &amp;&amp; git pull &amp;&amp; git push origin master'" &gt;&gt; ~/.bashrc
+</code></pre>
+  </dd>
+</dl>
+
+<p>El comando <code>git push origin master</code> envía los cambios locales (<em>origin</em>) a la rama <em>master</em> (la principal) del repositorio en Github. Al trabajar con varias ramas podríamos ejecutar variaciones del tipo <code>git push origin rama_pruebas</code>.</p>
+
+<h3 id="conflictos">Conflictos</h3>
+<p>Si dos colaboradores trabajan simultáneamente sobre el mismo archivo es posible que se produzcan conflictos, es decir, que uno de ellos no tuviera actualizados los cambios del otro y envíe unos cambios que los sobreescribirían. En ese caso el merge automático falla y git deja que el usuario termine de mezclar los cambios manualmente (para ello separará en los archivos los cambios propios de los otros mediante marcas como <code>HEAD&gt;&gt;&gt;&gt;</code>). Tras terminar de mezclarlos, es suficiente con ejecutar de nuevo <code>git commit -a</code>, <code>git pull</code> y <code>git push</code>.</p>
+
+<h3 id="sitios-web">Sitios web</h3>
+<p>Un repositorio con el nombre <code>username.github.io</code> (con <em>username</em> nuestro usuario) podrá almacenar páginas HTML que se accedan desde http://username.github.io. Además, una rama <code>gh-pages</code> en cualquier otro repositorio se podrá acceder desde http://username.github.io/nombre_repo/.</p>
+
+<h3 id="ms-avanzado">Más avanzado</h3>
+<p>Este breve manual no abarca aún temas más avanzados como el aprovechamiento de las ramas (<em>branches</em>), los métodos para volver atrás en el código (<em>reverts</em> y demás), y la colaboración en otros proyectos mediante <em>forks</em> y <em>pull requests</em>.</p>
+
+
+    
+
+    
+      <p class="post-editors">
+        
+        
+          
+           
+          <a href="http://github.com/NCordon">Ignacio Cordón</a>
+        
+          
+           y 
+          <a href="http://github.com/M42">Mario Román</a>
+        
+
+        han colaborado en este artículo.
+      </p>
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2014/02/23/manualgit/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2014/02/23/manualgit&text=Manual rápido de Github/Git" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2014/02/23/manualgit" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2014/02/23/manualgit&title=Manual rápido de Github/Git" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Álgebra de tipos</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <article>
+  
+
+  <div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/24/algebra-tipos" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Álgebra de tipos
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              24-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-24-algebra-tipos.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>En este post formularemos un álgebra para los tipos de los lenguajes de
+programación. Veremos operaciones que se aplican sobre ellos para obtener nuevos
+tipos y qué leyes siguen estas operaciones. Usaremos como base el sistema de
+tipos de Haskell, pero estos mismos conceptos podrían aplicarse a cualquier
+lenguaje con un sistema algebraico de tipos. Para iniciarse en el sistema de
+tipos de Haskell sugiero leer antes la <a href="http://dgiim.github.io/blog/2014/10/01/intro-haskell/">Introducción a Haskell</a>.</p>
+
+<h2 id="notando-tipos-en-haskell">Notando tipos en Haskell</h2>
+
+<p>En Haskell, los <strong>tipos</strong> se escriben como un conjunto de constructores, que
+actúan como funciones teniendo como codominio el tipo definido. Por ejemplo,</p>
+
+<pre><code class="language-Haskell">data Colour = RGB Int Int Int
+            | HSV Int Int Int
+</code></pre>
+
+<p>este código define un tipo <code>Colour</code> con dos formas de construirlo, como <code>RGB</code> y
+como <code>HSV</code>. Ambos constructores usan como argumento tres enteros. Con tres
+enteros podremos construir un color de dos formas distintas.</p>
+
+<!--more-->
+
+<p>No sólo existen tipos simples, sino que pueden definirse
+<strong>constructores de tipos</strong>, que toman tipos como argumento para generar
+otros. Por ejemplo,</p>
+
+<pre><code class="language-Haskell">data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+</code></pre>
+
+<p>este código define un árbol binario con nodos de tipo <code>a</code> arbitrario. Así, para
+crear un árbol de enteros podríamos escribir <code>Tree Int</code>, y para usar un árbol de
+booleanos, <code>Tree Bool</code>. Observamos que hay dos formas de construir un árbol:
+bien como el árbol vacío, que no toma argumentos, o bien como un nodo de árbol,
+que toma como argumentos un subárbol izquierdo, un nodo de tipo <code>a</code> y un
+subárbol derecho.</p>
+
+<h2 id="tipos-bsicos">Tipos básicos</h2>
+
+<p>Los tipos fundamentales de nuestro álgebra de tipos serán los tipos unidad y el
+tipo vacío. El <strong>tipo unidad</strong> consiste en un sólo constructor, de la forma:</p>
+
+<pre><code class="language-Haskell">data Unit = Unit
+</code></pre>
+
+<p>Sólo se puede construir una instancia distinta del tipo, la propia <code>Unit</code>. En
+Haskell existe implementado el tipo <code>()</code>, isomorfo al que acabamos de definir.</p>
+
+<p>El <strong>tipo vacío</strong>, por otro lado, es un tipo sin constructores. No se puede
+generar ninguna instancia de este tipo, simbólicamente podría notarse
+como: <sup id="fnref:haskell-void-98"><a href="#fn:haskell-void-98" class="footnote">1</a></sup></p>
+
+<pre><code class="language-Haskell">data Void
+</code></pre>
+
+<p>Como detalle, nótese que se puede definir una función desde este tipo a
+cualquier otro por <em>pattern matching</em>.
+El tipo no puede tomar ningún valor, así que una función que lo trate no tiene
+que definirse para ningún valor. En la <code>Data.Void</code> está definida la función:</p>
+
+<pre><code class="language-Haskell">absurd :: Void -&gt; a
+</code></pre>
+
+<p>Que va del tipo <code>Void</code> a un tipo arbitrario cualquiera <code>a</code>.</p>
+
+<h2 id="los-tipos-como-categora">Los tipos como categoría</h2>
+
+<p>Vamos a trabajar ahora con la categoría <code>Hask</code> de los tipos en Haskell. Una
+lectura previa de la
+<a href="http://dgiim.github.io/blog/2014/10/04/intro-categorias/">Introducción a teoría de categorías</a>
+sería interesante antes de tratar este punto, que aporta una visión muy clara a
+lo que vamos a explicar luego. El lector al que no le apetezca leer sobre categorías, puede
+saltar este punto y seguir leyendo: no debería afectar a la comprensión de lo
+demás. Un isomorfismo puede entenderse en el sentido conjuntista.</p>
+
+<p>Veremos de esta categoría que tiene objeto inicial y final (¿puede el lector
+adivinarlos de lo anterior?), que tiene productos
+y coproductos para cualesquiera dos objetos (esto lo podrá ver más adelante), y
+que es <strong>cartesianamente cerrada</strong> (a lo anterior se une que los morfismos
+<code>a-&gt;b</code> son también un tipo, un objeto de la categoría en sí mismos). No
+volveremos a hablar de categorías en este post, pero es útil que el lector
+mantenga en mente la concepción de los tipos como categoría y que vaya
+descubriendo como ejercicio las propiedades universales que se presentan.</p>
+
+<p>Lo que vamos a extraer de la teoría de categorías es la noción de <strong>isomorfismo</strong>
+entre tipos. Dos tipos serán isomorfos si existe un isomorfismo (función con
+inversa a ambos lados) entre ellos. Que los tipos <code>X</code> e <code>Y</code> sean isomorfos quiere
+decir que existen:</p>
+
+<pre><code class="language-Haskell">f :: X -&gt; Y
+g :: Y -&gt; X
+
+f . g == id == g . f
+</code></pre>
+
+<p>Así, el lector podrá observar la unicidad salvo isomorfismos de los universales
+que irán surgiendo. Por ejemplo, todos los tipos con un sólo constructor son
+isomorfos por:</p>
+
+<pre><code class="language-Haskell">data UnitA = UnitA
+data UnitB = UnitB
+
+f :: UnitA -&gt; UnitB
+f UnitA = UnitB
+
+g :: UnitB -&gt; UnitA
+g UnitB = UnitA
+
+f . g == id == g .f
+</code></pre>
+
+<h2 id="suma-y-producto">Suma y producto</h2>
+
+<p>Empecemos el álgebra con sus dos operaciones básicas. El <strong>producto</strong> de dos
+tipos es el tipo tupla <code>(a,b)</code>, que contiene una instancia de cada uno de ellos.
+Es la tupla de la mayoría de lenguajes de programación y se construye tomando
+como argumentos una instancia de <code>a</code> y otra de <code>b</code>. La podríamos escribir a
+partir de ahora como <script type="math/tex">a b</script>.</p>
+
+<p>La <strong>suma</strong> es el tipo <code>Either a b</code>, que contiene una instancia de un tipo o
+del otro, como una unión disjunta de tipos (similar a la <code>union</code> de C++). Se
+construye usando una instancia de cualquiera de los dos tipos. La podríamos
+notar a partir de ahora como <script type="math/tex">a+b</script>.</p>
+
+<p>Para llamarlas con propiedad <em>suma</em> y <em>producto</em> queremos que cumplan las
+propiedades usuales del álgebra. La <strong>conmutatividad</strong> de ambas se conserva por
+isomorfismo. Veamos que</p>
+
+<script type="math/tex; mode=display">a+b \cong b+a</script>
+
+<script type="math/tex; mode=display">ab \cong ba</script>
+
+<p>Las siguientes funciones son isomorfismos:</p>
+
+<pre class="haskell"><code>prdcomm :: (a,b) -&gt; (b,a)
+prdcomm (x,y) = (y,x)
+
+sumcomm :: Either a b -&gt; Either b a
+sumcomm (Left  x) = (Right x)
+sumcomm (Right y) = (Left  y)
+</code></pre>
+
+<p>La <strong>asociatividad</strong>,</p>
+
+<script type="math/tex; mode=display">(ab)c \cong a(bc)</script>
+
+<script type="math/tex; mode=display">(a+b)+c \cong a+(b+c)</script>
+
+<p>se comprueba de igual manera. Son isomorfismos:</p>
+
+<pre class="haskell"><code>prdasoc :: (a,(b,c)) -&gt; ((a,b),c)
+prdasoc (x,(y,z)) = ((x,y),z)
+
+sumasoc :: (Either a (Either b c)) -&gt; ((Either a b) c)
+sumasoc (Left x)          = (Left (Left x))
+sumasoc (Right (Left y))  = (Left (Right y))
+sumasoc (Right (Right y)) = (Right y)
+</code></pre>
+
+<p>Y la <strong>distributividad</strong> del producto sobre la suma, que se obtiene también por
+isomorfismos. Veamos que</p>
+
+<script type="math/tex; mode=display">(a+b)c \cong ac+bc</script>
+
+<pre class="haskell"><code>distrib :: ((Either a b),c) -&gt; Either (a,c) (b,c)
+distrib (Left  x, z) = Left  (x,z)
+distrib (Right y, z) = Right (y,z)
+
+commonf :: Either (a,c) (b,c) -&gt; ((Either a b), c)
+commonf Left  (x,z) = (Left  x, z)
+commonf Right (y,z) = (Right y, z)
+</code></pre>
+
+<h2 id="contando">Contando</h2>
+
+<p>Con la suma y producto definidas, podemos ver que <code>Void</code> y <code>()</code> son el <script type="math/tex">0</script> y
+el <script type="math/tex">1</script> de nuestro álgebra, y que cumplen el ser neutros para la suma y el
+producto y el resto de propiedades que se esperan de ellos. Notándolos como
+<script type="math/tex">0</script> y <script type="math/tex">1</script>, se puede demostrar:</p>
+
+<script type="math/tex; mode=display">0a \cong 0</script>
+
+<script type="math/tex; mode=display">0+a \cong a \cong 1a</script>
+
+<p>Y desde aquí, definir naturalmente los naturales. Sumando unidades:</p>
+
+<script type="math/tex; mode=display"> 2 \cong 1 + 1 </script>
+
+<script type="math/tex; mode=display"> 3 \cong 2 + 1 </script>
+
+<script type="math/tex; mode=display"> \dots </script>
+
+<p>Nótese que, por ejemplo, <script type="math/tex">2 \cong \mathtt{Bool}</script>.</p>
+
+<p>Pero además ocurre que, para tipos con un número finito de instancias, tenemos
+que el número de instancias de la suma de dos tipos es la suma del número de
+instancias de cada tipo, y análogamente ocurre con el producto. Realmente,
+tenemos un homomorfismo del álgebra de tipos al álgebra de los naturales, que, de
+paso, respeta nuestros <em>tipos naturales</em> recién definidos. Compruébese que con
+<script type="math/tex">\phi(\mathtt{A}) = \#\mathtt{A}</script>, se cumple:</p>
+
+<script type="math/tex; mode=display">\begin{matrix}
+\phi(\mathtt{A}\mathtt{B}) = \phi(\mathtt{A}) \phi(\mathtt{B}) \\
+\phi(\mathtt{A}+\mathtt{B}) = \phi(\mathtt{A}) + \phi(\mathtt{B}) \\
+\phi(\mathtt{n}) = n
+\end{matrix}</script>
+
+<p>Para cualquier <em>tipo natural</em> <script type="math/tex">\mathtt{n}</script>.</p>
+
+<h2 id="tipos-funcin">Tipos función</h2>
+
+<p>Los <strong>tipos función</strong>, <code>-&gt;</code> van a hacer el papel de la exponencial.
+Una función <code>a-&gt;b</code> la notamos por <script type="math/tex">b^a</script> y se puede comprobar que la
+exponencial se distribuye correctamente.</p>
+
+<script type="math/tex; mode=display">(bc)^a \cong b^ac^a </script>
+
+<p>Porque esta función, que realmente lo que hace es enunciar la propiedad
+universal del producto, es isomorfismo:</p>
+
+<pre class="haskell"><code>expdist :: (a -&gt; (b,c)) -&gt; (a -&gt; b, a -&gt; c)
+expdist f = (fst . f, snd . f)
+</code></pre>
+
+<p>Esta definición de exponencial conserva el sentido con la suma de tipos:</p>
+
+<script type="math/tex; mode=display">a^{b+c} \cong a^ba^c</script>
+
+<p>Gracias a que esta función es isomorfismo:</p>
+
+<pre class="haskell"><code>expsum :: (Either b c -&gt; a) -&gt; ((b -&gt; a),(c -&gt; a))
+expsum f = Either (f . Left) (f . Right)
+</code></pre>
+
+<p>Y además, los tipos función conservan el homomorfismo anterior:</p>
+
+<script type="math/tex; mode=display">\phi(\mathtt{A}\rightarrow\mathtt{B}) = \phi(\mathtt{B}) ^{\phi(\mathtt{A})}</script>
+
+<h2 id="ecuaciones-listas-y-rboles">Ecuaciones. Listas y árboles</h2>
+
+<p>Vamos a ver los constructores de tipos como funciones de nuestro álgebra. Así,
+para cada constructor de tipos, tendremos una ecuación que lo defina. Veremos
+que estas ecuaciones de constructores de tipos pueden servir para aportarnos qué
+es, esencialmente, cada constructor de tipos. Las manipularemos con las reglas del
+álgebra antes definidas. Como ejemplos, hablaremos de listas y de
+árboles.</p>
+
+<p>Por ejemplo, el tipo <strong>lista</strong> podemos definirlo como:<sup id="fnref:haskell-list-def"><a href="#fn:haskell-list-def" class="footnote">2</a></sup></p>
+
+<pre class="haskell"><code>data [a] = []
+         | a : [a]
+</code></pre>
+
+<p>Pero esto nos da una ecuación en <script type="math/tex">a</script> para cualquier tipo. Sabiendo que
+<script type="math/tex">1 \cong []</script>, tenemos:</p>
+
+<script type="math/tex; mode=display">[a] = 1 + a[a]</script>
+
+<p>Y si lo desarrollamos, simplemente sustituyendo, obtendremos:</p>
+
+<script type="math/tex; mode=display">[a] \cong 1 + a + a^2 + a^3 + \dots \cong \sum_{i=0}^\infty a^i</script>
+
+<p>Lo que tiene perfecto sentido. Una lista puede ser un número cualquiera de
+elementos de <script type="math/tex">a</script>.</p>
+
+<p>Por otro lado, el tipo <strong>árbol</strong> lo definimos antes como:</p>
+
+<pre class="haskell"><code class="language-Haskell">data Tree a = Empty
+            | Node (Tree a) a (Tree a)
+</code></pre>
+
+<p>Y esto nos da la ecuación, llamando <script type="math/tex">T = \mathtt{Tree\ a}</script>:</p>
+
+<script type="math/tex; mode=display"> T = 1 + aT^2 </script>
+
+<p>Que cuando se desarrolla nos deja:</p>
+
+<script type="math/tex; mode=display"> T = 1 + a + 2a^2 + 5a^3 + 14a^4 + \dots = \sum_{i=0}^\infty C_i a^i </script>
+
+<p>Donde <script type="math/tex">C_i</script> es el <script type="math/tex">i</script>-ésimo
+<a href="http://en.wikipedia.org/wiki/Catalan_number">número de Catalan</a>.
+Que es exactamente el número de árboles binarios de <script type="math/tex">i</script> elementos.</p>
+
+<h2 id="ms-informacin">Más información</h2>
+
+<p>El álgebra de tipos puede seguir expandiéndose. En los recursos que se dejan a
+continuación se definen las derivadas (usando <em>one-hole contexts</em>), se estudian
+tipos no regulares (como los conjuntos) y se termina de relacionar con teoría de
+categorías.</p>
+
+<p>La charla de Chris Taylor sobre este tema <sup id="fnref:taylor-algebratypes"><a href="#fn:taylor-algebratypes" class="footnote">3</a></sup> es bastante
+amena y puede seguirse con unos conocimientos mínimos de Haskell. Para
+profundizar más en la relación con teoría de categorías están los posts sobre
+categorías para programadores de Bartosz Milewski<sup id="fnref:milewski-functiontypes"><a href="#fn:milewski-functiontypes" class="footnote">4</a></sup>.</p>
+
+<p>El lector que empiece a imaginar la teoría de categorías detrás de esto debería
+seguir leyendo sobre categorías cartesianamente cerradas y el isomorfismo de
+Curry-Howard-Lambert, que extiende al ya explicado por aquí isomorfismo de
+<a href="http://dgiim.github.io/blog/2014/12/04/curry-howard/">Curry-Howard</a>.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:haskell-void-98">
+      <p>Aunque para seguir el estándar <strong>Haskell 98</strong> requeriría de una definición ligeramente diferente. Puede consultarse el <a href="https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void">código fuente</a>. <a href="#fnref:haskell-void-98" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:haskell-list-def">
+      <p>Definición de lista en el preludio de Haskell. <a href="https://www.haskell.org/onlinereport/standard-prelude.html">https://www.haskell.org/onlinereport/standard-prelude.html</a> <a href="#fnref:haskell-list-def" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:taylor-algebratypes">
+      <p>The Algebra of algebraic data types. Chris Taylor. <a href="http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/">http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/</a> <a href="#fnref:taylor-algebratypes" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:milewski-functiontypes">
+      <p>Function types. Bartosz Milewski. <a href="http://bartoszmilewski.com/2015/03/13/function-types/">http://bartoszmilewski.com/2015/03/13/function-types/</a> <a href="#fnref:milewski-functiontypes" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/24/algebra-tipos/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/24/algebra-tipos&text=Álgebra de tipos" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/24/algebra-tipos" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/24/algebra-tipos&title=Álgebra de tipos" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div>
+
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+</article>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>

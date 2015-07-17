@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/github.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
+      <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="/blog/css/default.css" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed.xml" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="/blog/js/highlight.pack.js"></script>
+
+      <script type="text/javascript">
+         WebFont.load({
+            google: {
+               families: ["Lato:400,300,700,400italic:latin", "Source+Code+Pro:400,700:latin"]
+            }
+         });
+      </script>
+      <script>hljs.initHighlightingOnLoad();</script>
+      <script type="text/javascript">
+            MathJax.Hub.Config({
+               tex2jax: {
+                  inlineMath: [],
+                  displayMath: [],
+               }
+            });
+      </script>
+      <title>Blog - DGIIM</title>
+   </head>
+   <body>
+      <header>
+  <div class="pure-menu pure-menu-horizontal pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-u-1-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <a href="/blog/" class="site-title pure-menu-heading pure-u-1">&nbsp;</a>
+      </div>
+      <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="/blog/resources" class="l-res pure-menu-link" title="Recursos"><i class="fa fa-bookmark"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
+          </li>
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/dgiimBlog" title="Twitter" class="pure-menu-link"><i class="fa fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+  </div>
+</header>
+
+      <style type="text/css">header .l-blog { color: #c0c0c0; }</style>
+
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/14/induccion-estructural" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Inducción Estructural
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              14-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-14-induccion-estructural.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>Normalmente aplicamos inducción sobre los números naturales, y cuando
+necesitamos aplicar inducción en otro contexto lo llevamos a los números
+naturales. Por ejemplo, si queremos demostrar una propiedad sobre los árboles
+binarios, la demostraríamos por inducción sobre la altura del árbol. Pero el
+proceso de llevar todo a los naturales puede ser incómodo, tedioso y puede complicar
+la demostración innecesariamente. En este post vamos a desarrollar una forma de
+ampliar la inducción a la estructura de los tipos de datos para simplificar
+todas esas demostraciones.</p>
+
+<h2 id="conjuntos-bien-fundados">Conjuntos bien fundados</h2>
+
+<p>Vamos a definir las relaciones bien fundadas, que nos permitirán definir una
+inducción generalizada. <sup id="fnref:stackexchangeblog-induction"><a href="#fn:stackexchangeblog-induction" class="footnote">1</a></sup></p>
+
+<dl>
+  <dt><strong>Relación bien fundada</strong></dt>
+  <dd>Una relación en un conjunto de elementos es bien fundada si todo subconjunto
+no vacío tiene un elemento minimal. Dado un orden parcial, es bien fundado si
+todo subconjunto no vacío tiene un elemento tal que ninguno es menor que él.</dd>
+</dl>
+
+<p>Y podemos realizar inducción sobre cualquier conjunto con una relación bien
+fundada.</p>
+
+<dl>
+  <dt><strong>Inducción noetheriana</strong></dt>
+  <dd>Sea <script type="math/tex">X</script> un conjunto bien fundado con <script type="math/tex">A \subset X</script>. Si se cumple:
+
+    <script type="math/tex; mode=display">% <![CDATA[
+ (y<x \Rightarrow y \in A) \Rightarrow x \in A  %]]></script>
+
+    <p>Entonces <script type="math/tex">A = X</script>.</p>
+  </dd>
+</dl>
+
+<p><a href="/blog/2015/03/14/induccion-estructural">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/14/induccion-estructural/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/14/induccion-estructural&text=Inducción Estructural" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/14/induccion-estructural" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/14/induccion-estructural&title=Inducción Estructural" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/03/14/aproximacion-a-pi" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Aproximación a Pi
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/oxcar103">Óscar Bermúdez</a>
+              
+            
+            
+            <div class="date">
+              14-03-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-3-14-aproximacion-a-pi.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>Hoy es el día de <script type="math/tex">\pi</script> (3/14). En este post vamos a presentar una serie de
+métodos para conseguir aproximaciones numéricas de la constante.</p>
+
+<h2 id="serie-de-leibniz">Serie de Leibniz</h2>
+<p>Uno de los métodos de aproximación a <script type="math/tex">\pi</script> viene dado por la serie de Leibniz:</p>
+
+<script type="math/tex; mode=display">\frac{\pi}{4} = \displaystyle{\sum_{n=0}^\infty \frac{(-1)^n}{2n+1}} =
+\displaystyle{\left(1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots \right)}</script>
+
+<p>Se basa en desarrollar la serie de potencias de la arcotangente:</p>
+
+<script type="math/tex; mode=display">\arctan x = \displaystyle{\sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1}}=
+\displaystyle{\left(x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots \right)}</script>
+
+<p>Y evaluarla en 1.
+Esta fórmula tiene un pequeño inconveniente: es algo lenta para el cálculo de
+<script type="math/tex">\pi</script>.</p>
+
+<p>Para más información sobre el método, visita
+<a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">Wikipedia</a> y
+para su demostración, <a href="https://proofwiki.org/wiki/Leibniz%27s_Formula_for_Pi">Proofwiki</a>.</p>
+
+<p><a href="/blog/2015/03/14/aproximacion-a-pi">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/03/14/aproximacion-a-pi/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/03/14/aproximacion-a-pi&text=Aproximación a Pi" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/03/14/aproximacion-a-pi" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/03/14/aproximacion-a-pi&title=Aproximación a Pi" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2015/02/14/problema-fibonacci-gcd" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Problemas - Fibonacci GCD
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/andreshp">Andrés Herrera Poyatos</a>
+              
+                
+                 y 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+              14-02-2015
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2015-2-14-problema-fibonacci-gcd.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <h2 id="enunciado-del-problema">Enunciado del Problema</h2>
+
+<p>El problema original a resolver se encuentra en <a href="https://www.hackerrank.com/contests/infinitum9/challenges/fibonacci-gcd">Hackerrank</a>. Se muestra a continuación una versión traducida del mismo.</p>
+
+<p>Los números de Fibbonacci tienen la siguiente forma:</p>
+
+<script type="math/tex; mode=display">F_0 = 0</script>
+
+<script type="math/tex; mode=display">F_1 = 1</script>
+
+<script type="math/tex; mode=display">F_2 = 1</script>
+
+<script type="math/tex; mode=display">F_3 = 2</script>
+
+<script type="math/tex; mode=display">\vdots</script>
+
+<script type="math/tex; mode=display">F_n = F_{n-2} + F_{n-1}</script>
+
+<p>Dado un array <script type="math/tex">a_1,a_2,\dots,a_n</script> que contiene <script type="math/tex">n</script> elementos, calcular <script type="math/tex">\gcd(F_{a_1},F_{a_2},\dots,F_{a_n})</script>.</p>
+
+<p><a href="/blog/2015/02/14/problema-fibonacci-gcd">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2015/02/14/problema-fibonacci-gcd/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd&text=Problemas - Fibonacci GCD" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2015/02/14/problema-fibonacci-gcd&title=Problemas - Fibonacci GCD" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2014/12/04/curry-howard" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          El Isomorfismo de Curry-Howard
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/M42">Mario Román</a>
+              
+            
+            
+            <div class="date">
+               4-12-2014
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2014-12-4-curry-howard.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>El isomorfismo de Curry-Howard<sup id="fnref:curryhowardwiki"><a href="#fn:curryhowardwiki" class="footnote">1</a></sup> relaciona los sistemas de tipos con la lógica
+proposicional. Los tipos son teoremas, y las instancias de un tipo son
+demostraciones del teorema que representa.</p>
+
+<p>A los repositorios del doble grado hemos subido unos apuntes que explican 
+el isomorfismo con su código fuente bajo licencia CC BY-SA 3.0:
+<a href="https://github.com/dgiim/curryHoward">Isomorfismo de Curry Howard</a></p>
+
+<p>Los apuntes constan de una presentación general, unos apuntes más detallados,
+con ejemplos en Haskell y una introducción al asistente de demostraciones Coq.
+Sobre él, se explican los tipos básicos, demostraciones por inducción y demostraciones
+explícitas, donde puede verse en acción la correspondencia entre tipos y proposiciones.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:curryhowardwiki">
+      <p><a href="http://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence">Curry-Howard correspondence - Wikipedia, the free encyclopedia</a> <a href="#fnref:curryhowardwiki" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2014/12/04/curry-howard/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2014/12/04/curry-howard&text=El Isomorfismo de Curry-Howard" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2014/12/04/curry-howard" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2014/12/04/curry-howard&title=El Isomorfismo de Curry-Howard" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+  
+  
+		
+		
+	
+  <article><div class="pure-g">
+  <div class="pure-u-1">
+    <h1>
+      <a href="/blog/2014/11/08/algoritmos-geneticos" class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+          Algoritmos Genéticos
+        </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      </a>
+    </h1>
+
+    <div class="post-data pure-g">
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+      <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+        <div class="pure-g">
+          <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+            
+            
+              
+                
+                 
+                <a href="http://github.com/andreshp">Andrés Herrera Poyatos</a>
+              
+            
+            
+            <div class="date">
+               8-11-2014
+            </div>
+          </div>
+
+          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/_posts/2014-11-8-algoritmos-geneticos.md">
+              <i class="fa fa-pencil"></i> Editar
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content pure-g">
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+    <p>El objetivo de un buen Matemático e Informático consiste en resolver problemas. 
+Existen algunos (como el <em>Problema del Viajante de Comercio</em>) donde el conjunto 
+de soluciones posibles es muy grande. En estos problemas la aplicación de 
+algoritmos exactos que recorran de forma óptima todo el conjunto de soluciones 
+no es viable por el tiempo necesario. Tenemos que recurrir a otras herramientas:
+ las <strong>heurísticas</strong>.</p>
+
+<p><a href="/blog/2014/11/08/algoritmos-geneticos">Seguir leyendo...</a></p>
+
+    
+
+    
+
+    <div class="share">
+      <a class="dsq-comment-count" href="/blog/2014/11/08/algoritmos-geneticos/#disqus_thread"></a>
+      <a href="https://twitter.com/intent/tweet?url=http://dgiim.github.io/blog//2014/11/08/algoritmos-geneticos&text=Algoritmos Genéticos" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="/blog/assets/sq_twitter.png" /></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://dgiim.github.io/blog//2014/11/08/algoritmos-geneticos" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="/blog/assets/sq_facebook.png" /></a>
+      <a href="http://sharetodiaspora.github.io/?url=http://dgiim.github.io/blog//2014/11/08/algoritmos-geneticos&title=Algoritmos Genéticos" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="/blog/assets/sq_diaspora.png" /></a>
+      <a href="http://www.feedly.com/home#subscription/feed/http://dgiim.github.io/blog/feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="/blog/assets/sq_feedly.png" /></a>
+    </div>
+
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</div></article>	
+
+
+
+<nav class="pagination pure-g">
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+
+  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+    <div class="pure-g">
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-2-5">
+        
+          
+            <a href="/blog/"><i class="fa fa-arrow-left"></i></a>
+          
+        
+      </div>
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-1-5">
+        <span class="page-number">Página 2 de 4</span>
+        <span class="archive-link"><a href="/blog/archive">Todos los posts</a></span>
+      </div>
+      <div class="paginator pure-u-1-3 pure-u-md-1-3 pure-u-lg-2-5">
+        
+          <a href="/blog/page/3/" class="next "><i class="fa fa-arrow-right"></i></a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</nav>
+
+      <footer class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+      <div class="pure-g">
+		<div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Colaboradores</h3>
+	        <ul>
+				
+					
+					<li><a href="http://github.com/fdavidcl">David Charte</a></li>
+				
+					
+					<li><a href="http://github.com/M42">Mario Román</a></li>
+				
+					
+					<li><a href="http://github.com/pbaeyens">Pablo Baeyens</a></li>
+				
+					
+					<li><a href="http://github.com/NCordon">Ignacio Cordón</a></li>
+				
+					
+					<li><a href="http://github.com/andreshp">Andrés Herrera Poyatos</a></li>
+				
+					
+					<li><a href="http://github.com/oxcar103">Óscar Bermúdez</a></li>
+				
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Categorías</h3>
+	        <ul>
+		    	
+		            <li><a href="/blog/categories/#utilidades">Utilidades</a></li>
+		    	
+		            <li><a href="/blog/categories/#análisis">Análisis</a></li>
+		    	
+		            <li><a href="/blog/categories/#programación">Programación</a></li>
+		    	
+		            <li><a href="/blog/categories/#Álgebra">Álgebra</a></li>
+		    	
+		            <li><a href="/blog/categories/#ciencia de datos">Ciencia de datos</a></li>
+		    	
+		            <li><a href="/blog/categories/#heurísticas">Heurísticas</a></li>
+		    	
+		            <li><a href="/blog/categories/#problemas">Problemas</a></li>
+		    	
+		            <li><a href="/blog/categories/#lógica">Lógica</a></li>
+		    	
+		            <li><a href="/blog/categories/#linux">Linux</a></li>
+		    	
+	        </ul>
+		</div>
+        <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+			<h3>Licencia</h3>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" /></a><br />
+			El contenido de este blog, salvo que se explicite lo contrario, está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+		</div>
+      </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+</footer>
+
+      <script type="text/javascript">
+         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+         var disqus_shortname = 'dgiim'; // required: replace example with your forum shortname
+
+         /* * * DON'T EDIT BELOW THIS LINE * * */
+         (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);
+         }());
+      </script>
+   </body>
+</html>
