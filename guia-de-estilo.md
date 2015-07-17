@@ -230,7 +230,7 @@ El ancho de la figura se puede ajustar sustituyendo `.fig` por `.med.fig` para
 una figura mediana o `.small.fig` para una figura pequeña.
 
 {: .fig.med}
-![]({{ site.baseurl }}/images/ubuntu_press_s_to_mount.png)  
+![](https://placekitten.com/g/600/600)  
 **Figura 1.** Figura de ejemplo
 
 Nota
