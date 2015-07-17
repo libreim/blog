@@ -101,7 +101,7 @@ h1 {
     border: 1px solid #d0d0d0;
     overflow-x: auto;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     padding: 0.6rem 0.6rem 0.8rem;
     display: block;
 
@@ -111,7 +111,11 @@ h1 {
   }
 
   .med img {
-    max-width: 30em;
+    max-width: 30rem;
+  }
+
+  .small img {
+    max-width: 18rem;
   }
 
   .share {
@@ -143,12 +147,16 @@ h1 {
   }
 }
 
-dl dt {
-  font-weight: bold;
-}
+dl {
+  margin-bottom: 1rem;
 
-dl dd {
-  margin: 0.4em 0;
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0.4em 0;
+  }
 }
 
 dl, code.hljs {
@@ -156,7 +164,6 @@ dl, code.hljs {
   border: 1px solid #d0d0d0;
   overflow-x: auto;
   margin-top: 0;
-  margin-bottom: 0;
   padding: 0.6rem;
   display: block;
 }
