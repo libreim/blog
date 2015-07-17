@@ -12,15 +12,15 @@ body, .pure-g [class*="pure-u"] {
 
 h1, h1 .pure-g [class*="pure-u"] {
   font-weight: 300;
-  
+
   a {
     display: block;
     text-decoration: none;
   }
-} 
+}
 
 a {
-  color: darken($theme, 20%);
+  color: $theme;
   text-decoration: none;
 }
 
@@ -63,7 +63,7 @@ h1 {
   background: lighten($theme, 10%);
   margin: 0;
   font-size: 250%;
-  
+
   a {
     padding-top: 2rem;
     color: $foreground;
@@ -72,6 +72,11 @@ h1 {
 .post-data {
   background: lighten($theme, 30%);
   padding: 0.6rem 0;
+
+  a {
+    color: darken($theme, 20%);
+  }
+
   .date {
     display: inline-block;
     margin-left: 1.2rem;
@@ -86,24 +91,24 @@ h1 {
 .post-content {
   margin-bottom: 1.8rem;
   line-height: 1.3em;
-  
+
   img {
     max-width: 100%;
   }
-  
+
   .fig {
     text-align: center;
   }
-  
+
   .med img {
     max-width: 30em;
   }
-  
+
   .share {
     filter: gray;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
-    
+
     img {
       width: 1.6rem;
     }
@@ -121,7 +126,7 @@ h1 {
       filter: none;
       -webkit-filter: grayscale(0);
     }
-  
+
   .post-editors {
     font-style: italic;
     text-align: right;
@@ -170,17 +175,17 @@ div.MathJax_Display {
 /*** Pagination ***/
 nav.pagination {
   margin: 1.2rem 0;
-  
+
   .paginator {
     color: #888;
     text-align: center;
     vertical-align: middle;
-    
+
     a {
       display: block;
     }
   }
-  
+
   .paginator:first-child > *, .paginator:last-child > * {
     padding: 0.6rem 0;
   }
@@ -194,6 +199,11 @@ nav.pagination {
 footer {
   background: lighten($theme, 40%);
   padding-bottom: 1.2rem;
+
+
+  a {
+    color: darken($theme, 20%);
+  }
 }
 
 /**********
