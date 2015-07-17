@@ -214,6 +214,29 @@ Nota
   Además, al parecer kramdown tiene problemas con el carácter `|` y debemos
   sustituirlo por `\vert`.
 
+### Figuras
+
+Para incluir imágenes o figuras en el post, se pueden subir imágenes en la
+carpeta [images](https://github.com/dgiim/blog/tree/gh-pages/images), y crear
+una figura en el post con la siguiente sintaxis:
+
+~~~markdown
+{: .fig}
+![]({{ site.baseurl }}/images/camino_a_la_imagen.png)  
+**Figura 1.** Pie de la figura
+~~~
+
+El ancho de la figura se puede ajustar sustituyendo `.fig` por `.med.fig` para
+una figura mediana o `.small.fig` para una figura pequeña.
+
+{: .fig.med}
+![]({{ site.baseurl }}/images/ubuntu_press_s_to_mount.png)  
+**Figura 1.** Figura de ejemplo
+
+Nota
+: Es recomendable insertar dos espacios después de la imagen (`![](...)  `) para
+  asegurar que el pie aparezca en la línea de debajo de la imagen.
+
 ### Emoticonos y menciones
 Jekyll permite incluir [algunos](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/)
 plugins. En el blog, tenemos habilitados dos de ellos:
@@ -224,4 +247,3 @@ la lista completa de emoticonos junto con sus códigos [aquí](http://www.emoji-
 - [**Menciones**](https://help.github.com/articles/mentions-on-github-pages/) Puedes mencionar a
 otros usuarios de Github añadiendo una @ al principio del *username*: @pbaeyens. Esto añadirá un enlace
 a su página de Github.
-
