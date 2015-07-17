@@ -16,7 +16,7 @@ En este caso trataremos los **segment trees** o árboles de segmentos. Introduci
 
 Consideremos un vector con objetos de un tipo $$T$$ sobre el que se ha definido una relación de orden total. Por claridad, ejemplificaremos el problema sobre números enteros. Sea $$n$$ la longitud del vector, se define $$RMQ(i,j)$$ como el mínimo del subvector formado por las componentes entre $$i$$ y $$j$$ (inclusive) para $$i, j$$ en $$\{0,\ldots,n-1\}$$ con $$i \le j$$.  El problema consiste en proporcionar el valor de $$RMQ(i,j)$$ para cualquier número posible de consultas.
 
-Normalmente se denomina *subintervalo del vector* a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de range minimum query problem sería problema de las consultas del mínimo de cualquier subintervalo (pero mantendremos el nombre en inglés por ser el estándar).
+Normalmente se denomina *subintervalo del vector* a un subvector formado por componentes consecutivas, como los que se estudian en este caso. Una posible traducción al castellano de *range minimum query problem* sería *problema de las consultas del mínimo de cualquier subintervalo* (pero mantendremos el nombre en inglés por ser el estándar).
 
 La solución trivial para el problema consiste en calcular para cada consulta el mínimo del subintervalo correspondiente de forma lineal. Esto proporciona una eficiencia media de $$\theta(n)$$ para las consultas. Se pretende reducir esta eficiencia significativamente para poder atender el mayor número de consultas posible.
 
@@ -46,7 +46,7 @@ La idea subyacente consiste en preprocesar la información correspondiente a las
 La Imagen 1 muestra el árbol binario a generar si se tuviese $$n = 8$$. Nótese que las hojas del árbol son los subintervalos con una sola componente.
 
 {: .fig}
-![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)  
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_visualizacion.png)
 **Imagen 1.** Segment tree asociado a un vector $$V$$ de longitud 8 representado como un árbol binario.
 
 Tras generar el árbol binario podemos expresar un subintervalo $$V[i, j]$$ como la unión del menor número de subintervalos como los preprocesados previamente. Tiene sentido hablar de esta unión pues siempre existe (basta expresar $$V[i, j]$$ como unión de sus componentes).  Por ejemplo, para $$n=8$$ se tiene:
@@ -115,14 +115,14 @@ La construcción del segment tree consiste en crear un árbol binario como el de
 Estas relaciones nos permiten acceder a los hijos de forma constante. Además, la longitud del vector que representa al segment tree es $$2n-1$$ donde $$n$$ es la longitud de $$V$$.
 
 {: .fig}
-![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_heap.png)  
+![](https://raw.githubusercontent.com/dgiim/blog/post-segment-trees/images/segment_trees/segment_trees_heap.png)
 **Imagen 2.** Segment tree asociado a un vector $$V$$ de longitud 8 representado como un heap.
 
 Nótese que el subintervalo correspondiente a cada nodo se deduce de su índice, por lo que no es necesario almacenar esta información. Se puede construir el árbol recursivamente. Si el nodo actual es una hoja se obtiene su información mediante el método `assignLeaf`. Si no se da este caso, se construyen recursivamente los dos hijos y se obtiene la información para el nodo actual aplicando el método `merge` a ambos hijos.
 
 Con el proceso de construcción anterior obtendremos sin problemas el árbol aunque el vector no tenga como tamaño una potencia de dos. En tal caso el árbol resultante puede no ser completo. Por tanto, habrá componentes del heap en memoria sin usar. Esto nos es irrelevante puesto que el tamaño del heap será a lo sumo $$2m-1$$ donde $$m$$ es la menor potencia de 2 mayor que $$n$$ (si extendemos el vector con elementos nulos hasta que tenga longitud $$m$$ y construimos este heap necesitaremos un vector de longitud $$2m-1$$). Por tanto, la memoria utilizada será $$\theta(n)$$ en cualquier caso.
 
-El siguiente código proporciona un constructor para la clase SegmentTree.
+El siguiente código proporciona un constructor para la clase `SegmentTree`.
 
 ~~~python
 class SegmentTree(object):
