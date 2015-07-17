@@ -98,6 +98,16 @@ h1 {
 
   .fig {
     text-align: center;
+    border: 1px solid #d0d0d0;
+    overflow-x: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.6rem 0.6rem 0.8rem;
+    display: block;
+
+    img {
+      margin-bottom: 0.2rem;
+    }
   }
 
   .med img {
