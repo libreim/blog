@@ -6,13 +6,16 @@ authors:
 category: Álgebra
 ---
 
-Las n-categorías son la base de la
-Tienen aplicación en física teórica, topología y computación (en temas de
-concurrencia).
+Las n-categorías son la base de la teoría de categorías en altas dimensiones
+(higher category theory). Tienen aplicaciones en física teórica, topología y
+computación. Por ejemplo, son relevantes en el estudio de problemas de
+concurrencia y para la consecución de varias transacciones. Una explicación
+más detallada de sus aplicaciones se da en las referencias. [^ncats-applications]
 
 En este post vamos a usar conceptos básicos de teoría de categorías sin
 explicarlos. Para una introducción a la teoría de categorías, tenemos un post en
-este mismo blog, que será útil antes de empezar a leer sobre n-categorías.
+este mismo blog, que será útil antes de empezar a leer sobre
+n-categorías.
 
 ## Introducción: la categoría de las categorías
 
@@ -136,3 +139,5 @@ topológicos:
 
 https://www.youtube.com/watch?v=6bnU7_6CNa0
 http://www.cs.ox.ac.uk/quantum/slides/clap4-eugeniacheng.pdf
+
+[^ncats-applications]: Higher Categorical Structures and their Applications. [Proposed Research](http://www.math.uchicago.edu/~may/NCATS/ForWeb.pdf).
