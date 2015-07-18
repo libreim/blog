@@ -48,6 +48,9 @@ entre los morfismos entre los morfismos y repetir el proceso tantas veces
 como queramos. Con inducción podemos terminar de
 definirlo hasta cualquier $$n$$.
 
+De esta forma, las **2-categorías** son una generalización de las categorías
+que permiten también morfismos entre los morfismos.
+
 El último caso es el de las $$\infty$$-categorías, que simplemente poseen
 n-morfismos para todo natural.
 
@@ -64,3 +67,8 @@ n-morfismos para todo natural.
 ## (-1)-categorías
 
 ## La tabla periódica de categorías
+
+
+## Referencias
+
+https://www.youtube.com/watch?v=6bnU7_6CNa0
