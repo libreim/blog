@@ -104,6 +104,14 @@ n-morfismos para todo natural.
 
 ## Ejemplo: n-categorías fundamentales
 
+De la misma manera que el ejemplo prototípico de una categoría es **Set**, un
+ejemplo prototípico para una **(n+1)-categoría** es la colección de todas las
+**n-categorías**.
+
+En el ejemplo inicial, ya mostramos cómo la categoría **Cat**, de las
+1-categorías, era un ejemplo de **2-categoría**.
+
+
 ## Ejemplo: variedades
 
 ## Ejemplo: espacios topológicos
