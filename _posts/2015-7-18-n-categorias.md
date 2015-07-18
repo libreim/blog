@@ -6,7 +6,7 @@ authors:
 category: Álgebra
 ---
 
-Las n-categorías
+Las n-categorías son la base de la
 Tienen aplicación en física teórica, topología y computación (en temas de
 concurrencia).
 
@@ -51,6 +51,13 @@ pares de funtores tales que cada uno pueda componerse con el otro. En una imagen
 puede apreciarse mejor:
 
    $$<imagen>$$
+
+Para diferenciar ambas composiciones, notaremos la composición vertical con el
+signo usual $$(\circ)$$ y la composición horizontal con el signo $$(\ast)$$.
+
+Lo que tenemos aquí es un ejemplo de **2-categoría**. La idea de considerar
+morfismos sobre morfismos puede repetirse tantas veces como se quiera, dando
+lugar a las **n-categorías**.
 
 
 ## Una definición informal
@@ -100,6 +107,15 @@ n-morfismos para todo natural.
 ## Ejemplo: variedades
 
 ## Ejemplo: espacios topológicos
+
+Un ejemplo de $$\infty$$-categoría es **Top**, la categoría de los espacios
+topológicos:
+
+* Los objetos son los espacios topológicos.
+* Los 1-morfismos son las funciones continuas.
+* Los 2-morfismos son las homotopías entre funciones continuas.
+* Los 3-morfismos son las homotopías entre homotopías.
+* ...
 
 ## Definiciones formales de n-categoría
 
