@@ -173,4 +173,4 @@ http://www.cs.ox.ac.uk/quantum/slides/clap4-eugeniacheng.pdf
 
 [^ncats-applications]: Higher Categorical Structures and their Applications. [Proposed Research](http://www.math.uchicago.edu/~may/NCATS/ForWeb.pdf).
 [^ncats-def]: A Survey of Definitions of n-Category. Tom Leinster. [ArXiv Jul 2001](http://arxiv.org/pdf/math/0107188v1.pdf)
-[^ncats-nlab]: NLab: (N-Category)[http://ncatlab.org/nlab/show/n-category#list_of_definitions]
+[^ncats-nlab]: NLab: [N-Category](http://ncatlab.org/nlab/show/n-category#list_of_definitions)
