@@ -7,36 +7,54 @@ category: Álgebra
 ---
 
 Las n-categorías son la base de la teoría de categorías en altas dimensiones
-(higher category theory). Tienen aplicaciones en física teórica, topología y
+([higher category theory](http://ncatlab.org/nlab/show/higher+category+theory)). Tienen aplicaciones en física teórica, topología y
 computación. Por ejemplo, son relevantes en el estudio de problemas de
-concurrencia y para la consecución de varias transacciones. Una explicación
-más detallada de sus aplicaciones se da en las referencias. [^ncats-applications]
+concurrencia, para la consecución de varias transacciones concurrentes y en el
+estudio de la
+[teoría topológica cuántica de campo](https://es.wikipedia.org/wiki/Teor%C3%ADa_topol%C3%B3gica_cu%C3%A1ntica_de_campo). [^ncats-applications]
 
 En este post vamos a usar conceptos básicos de teoría de categorías sin
-explicarlos. Para una introducción a la teoría de categorías, tenemos un post en
-este mismo blog, que será útil antes de empezar a leer sobre
-n-categorías.
+explicar ninguno. Hay una
+[introducción a la teoría de categorías](http://0.0.0.0:4000/blog/2014/10/04/intro-categorias/)
+en este mismo
+blog, que puede ser útil antes de empezar a leer sobre **n-categorías**.
 
 ## Introducción: la categoría de las categorías
 
-Vamos a empezar motivando la definición posterior empezando a pensar sobre
-categorías. En particular, vamos a considerar la categoría de las categorías,
-**Cat**. En esta categoría, los objetos son categorías y los morfismos serán los
-funtores, que cumplen las propiedades que se esperan de los morfismos.
+Vamos a empezar motivando la definición de las n-categorías empezando a pensar
+sobre categorías. Consideremos la categoría de las categorías, una categoría en
+la que los objetos fueran las distintas categorías y los morfismos fueran los
+funtores, que cumplen las propiedades que se esperan de los morfismos. A esta
+categoría la llamamos **Cat**, y está formada por:
 
-(Hablar del problema de tener categorías de categorías)
+* **Objetos:** los objetos de esta categoría serán a su vez categorías en sí
+  mismas (!). En concreto, *categorías pequeñas*.
+  Es decir, aquellas cuyos objetos y morfismos forman un conjunto, no una clase.
+  La diferencia entre conjunto y clase consiste en que al primero no le
+  permitimos que tenga entre sus elementos a otros conjuntos. Con todo esto, lo
+  que evitamos son las paradojas que surgen en teoría de conjuntos cuando
+  permitimos que  un
+  conjunto pueda contenerse a sí mismo. Por ejemplo, la
+  [paradoja de Russell](https://es.wikipedia.org/wiki/Paradoja_de_Russell).
 
-En esta categoría podemos ir más allá de los funtores y empezar a considerar a
-las transformaciones naturales como morfismos entre los funtores. Es decir,
-tenemos tres niveles:
+* **Morfismos:** los *funtores* pueden ser vistos como morfismos entre
+  categorías. Son asociativos con la composición y tienen una identidad para
+  cada categoría, así que cumplen todo lo que debe cumplir un morfismo.
 
-* Los objetos, que son categorías.
-* Los morfismos, que son los funtores que unen categorías.
-* Los morfismos entre morfismos, que son las transformaciones naturales.
+
+Hasta aquí tendríamos la estructura de una categoría usual. Pero además, en esta
+categoría podemos ir más allá de los funtores. Podemos dotarla de más estructura
+de la que ya posee empezando a considerar las **transformaciones naturales**
+como morfismos entre los funtores.
+
+* **Morfismos entre morfismos**: las transformaciones naturales nos sirven como
+  morfismos entre los funtores. Fijadas dos categorías, tendríamos un conjunto
+  de funtores entre ellas, y las transformaciones naturales actuarían como
+  morfismos en este conjunto.
 
 Podemos comprobar que, dadas dos categorías fijas $$A,B$$, las transformaciones
-naturales entre los funtores que van de una a otra cumplen las reglas que se
-esperan de los morfismos. Es decir:
+naturales entre los funtores que van de una a otra vuelven a cumplir las reglas
+que se esperan de los morfismos. Es decir:
 
 * Existe una transformación natural identidad.
 
