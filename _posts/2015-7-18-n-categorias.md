@@ -65,7 +65,9 @@ que se esperan de los morfismos. Es decir:
    $$<imagen>$$
 
 Esta es la llamada **composición vertical**, pero no es la única que puede
-definirse entre transformaciones naturales.
+definirse entre transformaciones naturales. Las transformaciones naturales, al
+contrario que los funtores, no tendrán una sola manera de componerse, sino dos.
+
 Las transformaciones naturales pueden dotarse de otra composición, la
 **composición horizontal**, que se da entre transformaciones naturales entre dos
 pares de funtores tales que cada uno pueda componerse con el otro. En una imagen
@@ -85,40 +87,39 @@ lugar a las **n-categorías**.
 
 Para un $$n \in \mathbb{N} \cup \infty$$, una **n-categoría** consta de:
 
-* Un conjunto de objetos, similar al que posee una categoría:
+* Un conjunto de **objetos**, similar al que posee una categoría:
 
     $$A,B,\dots $$
 
-* 1-morfismos entre objetos, similares a los morfismos de una categoría:
+* **1-morfismos** entre objetos, similares a los morfismos de una categoría:
 
     $$A \rightarrow B$$
 
-* 2-morfismos, que serán morfismos entre 1-morfismos:
+* **2-morfismos**, que serán morfismos entre 1-morfismos:
 
     $$ <imagen> $$
 
-* 3-morfismos, que se definirán como morfismos entre 2-morfismos:
+* **3-morfismos**, que se definirán como morfismos entre 2-morfismos:
 
     $$ <imagen> $$
 
 * ...
 
-* n-morfismos, en general, que serán morfismos entre los (n-1)-morfismos.
+* **n-morfismos**, en general, que serán morfismos entre los (n-1)-morfismos.
 
-Es decir, además de los morfismos entre objetos, que es lo que dotaba de
-estructura a las categorías usuales, consideramos a su vez, morfismos entre
-estos morfismos. Una vez dado este primer paso, nada nos impide considerar
+Es decir, además de los morfismos entre objetos, que son lo que dotaba de
+estructura a las categorías usuales, consideramos morfismos entre
+estos morfismos. Y una vez dado este primer paso, nada nos impide considerar
 morfismos
 entre los morfismos entre los morfismos y repetir el proceso tantas veces
-como queramos. Con inducción podemos terminar de
-definirlo hasta cualquier $$n$$.
+como queramos. Con inducción podemos terminar de definirlo hasta cualquier $$n$$.
 
 De esta forma, las **2-categorías** son una generalización de las categorías
 que permiten también morfismos entre los morfismos. Y de la misma forma, las
 **n-categorías** son una generalización permitiendo morfismos entre
 (n-1)-morfismos.
 
-El último caso es el de las $$\infty$$-categorías, que simplemente poseen
+El último caso es el de las **$$\infty$$-categorías**, que simplemente poseen
 n-morfismos para todo natural.
 
 ## La composición de n-morfismos
@@ -148,6 +149,18 @@ topológicos:
 
 ## Definiciones formales de n-categoría
 
+Conforme la literatura sobre n-categorías aumentaba, quedaba una cuestión
+fundamental: "*¿qué es exactamente una n-categoría?*" El problema surge porque
+existen numerosas definiciones de n-categoría, sin que se
+hayan probado todas equivalentes entre sí. Sorprendentemente, no tenemos una
+definición única de n-categoría.
+
+Entre las referencias está el trabajo de **Tom Leinster**, que recopila varias
+definiciones [^ncats-def] y una lista de definiciones en **nLab**. [^ncats-nlab]
+
+
+
+
 ## (-1)-categorías
 
 ## La tabla periódica de categorías
@@ -159,3 +172,5 @@ https://www.youtube.com/watch?v=6bnU7_6CNa0
 http://www.cs.ox.ac.uk/quantum/slides/clap4-eugeniacheng.pdf
 
 [^ncats-applications]: Higher Categorical Structures and their Applications. [Proposed Research](http://www.math.uchicago.edu/~may/NCATS/ForWeb.pdf).
+[^ncats-def]: A Survey of Definitions of n-Category. Tom Leinster. [ArXiv Jul 2001](http://arxiv.org/pdf/math/0107188v1.pdf)
+[^ncats-nlab]: NLab: (N-Category)[http://ncatlab.org/nlab/show/n-category#list_of_definitions]
