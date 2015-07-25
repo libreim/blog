@@ -222,7 +222,7 @@ una figura en el post con la siguiente sintaxis:
 
 ~~~markdown
 {: .fig}
-![]({{ site.baseurl }}/images/camino_a_la_imagen.png)  
+{% raw %}![]({{ site.baseurl }}/images/camino_a_la_imagen.png)  {% endraw %}
 **Figura 1.** Pie de la figura
 ~~~
 
