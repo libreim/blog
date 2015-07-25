@@ -58,19 +58,17 @@ que se esperan de los morfismos. Es decir:
 
 * Existe una transformación natural identidad.
 
-   $$<imagen>$$
+![]({{ site.baseurl }}/images/n-categories/f-id.svg)
 
 * Se componen de manera asociativa.
 
    $$<imagen>$$
 
 Esta es la llamada **composición vertical**, pero no es la única que puede
-definirse entre transformaciones naturales. Las transformaciones naturales, al
-contrario que los funtores, no tendrán una sola manera de componerse, sino dos.
-
-Las transformaciones naturales pueden dotarse de otra composición, la
+definirse entre transformaciones naturales. Las transformaciones naturales
+pueden dotarse de otra composición, la
 **composición horizontal**, que se da entre transformaciones naturales entre dos
-pares de funtores tales que cada uno pueda componerse con el otro. En una imagen
+pares de funtores tales que uno pueda componerse con el otro. En una imagen
 puede apreciarse mejor:
 
    $$<imagen>$$
@@ -78,7 +76,7 @@ puede apreciarse mejor:
 Para diferenciar ambas composiciones, notaremos la composición vertical con el
 signo usual $$(\circ)$$ y la composición horizontal con el signo $$(\ast)$$.
 
-Lo que tenemos aquí es un ejemplo de **2-categoría**. La idea de considerar
+Esta categoría de las categorías que hemos definido aquí es un ejemplo de **2-categoría**. La idea de considerar
 morfismos sobre morfismos puede repetirse tantas veces como se quiera, dando
 lugar a las **n-categorías**.
 
@@ -152,8 +150,16 @@ topológicos:
 Conforme la literatura sobre n-categorías aumentaba, quedaba una cuestión
 fundamental: "*¿qué es exactamente una n-categoría?*" El problema surge porque
 existen numerosas definiciones de n-categoría, sin que se
-hayan probado todas equivalentes entre sí. Sorprendentemente, no tenemos una
-definición única de n-categoría.
+hayan probado equivalentes entre sí. Sorprendentemente, no tenemos una
+definición única de n-categoría. Ocurre además, que para comparar dos
+definiciones, lo razonable sería acudir a la categoría que generan los objetos
+definidos por ellas. Por ejemplo, si quisiéramos comparar dos definiciones de
+espacio topológico, podríamos acudir a las categorías de los espacios topológicos
+que dan cada una de las definiciones y comprobar que fueran iguales. Pero si
+hacemos esto para comprobar la igualdad en las **n-categorías**, nos
+encontraríamos comprobando la igualdad entre dos **(n+1)-categorías**. Claro,
+pero no tenemos definición de **(n+1)-categoría** y podríamos seguir ascendiendo
+indefinidamente.
 
 Entre las referencias está el trabajo de **Tom Leinster**, que recopila varias
 definiciones [^ncats-def] y una lista de definiciones en **nLab**. [^ncats-nlab]
