@@ -75,7 +75,9 @@ pueden dotarse de otra composición, la
 pares de funtores tales que uno pueda componerse con el otro. En una imagen
 puede apreciarse mejor:
 
-   $$<imagen>$$
+![]({{ site.baseurl }}/images/n-categories/f-hor.svg)
+![]({{ site.baseurl }}/images/n-categories/f-hor2.svg)
+{: .fig.med}
 
 Para diferenciar ambas composiciones, notaremos la composición vertical con el
 signo usual $$(\circ)$$ y la composición horizontal con el signo $$(\ast)$$.
