@@ -1,0 +1,18 @@
+\documentclass[class=minimal,border=0pt]{standalone}
+\usepackage{tikz-cd}
+\usetikzlibrary{cd}
+\listfiles
+\begin{document}
+\begin{tikzcd}%[scale=0.5]
+    A \arrow[bend left=40, "F"]{r}[name=F, below]{}
+    \arrow[bend right=40, "G" swap]{r}[name=G]{}
+    \arrow[Rightarrow,to path=(F) -- (G)\tikztonodes]{r}{\alpha}
+    & 
+    B
+    \arrow[bend left=40, "H"]{r}[name=F, below]{}
+    \arrow[bend right=40, "K" swap]{r}[name=G]{}
+    \arrow[Rightarrow,to path=(F) -- (G)\tikztonodes]{r}{\beta}
+    & 
+    C
+\end{tikzcd}
+\end{document}
