@@ -59,10 +59,13 @@ que se esperan de los morfismos. Es decir:
 * Existe una transformación natural identidad.
 
 ![]({{ site.baseurl }}/images/n-categories/f-id.svg)
+{: .fig.med}
 
 * Se componen de manera asociativa.
 
-   $$<imagen>$$
+![]({{ site.baseurl }}/images/n-categories/f-comp.svg)
+![]({{ site.baseurl }}/images/n-categories/f-comp2.svg)
+{: .fig.med}
 
 Esta es la llamada **composición vertical**, pero no es la única que puede
 definirse entre transformaciones naturales. Las transformaciones naturales
