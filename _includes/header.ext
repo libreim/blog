@@ -14,7 +14,7 @@
             <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
           </li>
           <li class="pure-menu-item">
-            <a href="{{ site.baseurl }}/awesome" class="l-res pure-menu-link" title="Awesome"><i class="fa fa-bookmark"></i></a>
+            <a href="/awesome" class="l-res pure-menu-link" title="Awesome"><i class="fa fa-bookmark"></i></a>
           </li>
           <li class="pure-menu-item">
             <a href="https://github.com/dgiim/blog" title="GitHub" class="pure-menu-link"><i class="fa fa-github"></i></a>
