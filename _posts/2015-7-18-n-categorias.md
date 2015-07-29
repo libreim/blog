@@ -41,6 +41,7 @@ categoría la llamamos **Cat**, y está formada por:
   categorías. Son asociativos con la composición y tienen una identidad para
   cada categoría, así que cumplen todo lo que debe cumplir un morfismo.
 
+<!--more-->
 
 Hasta aquí tendríamos la estructura de una categoría usual. Pero además, en esta
 categoría podemos ir más allá de los funtores. Podemos dotarla de más estructura
