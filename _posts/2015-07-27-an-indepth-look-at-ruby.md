@@ -326,11 +326,90 @@ This particular version of the fibonacci sequence is very slow, because it
 will recursively calculate every number in the sequence out of the previous
 ones. A memoized version can be written with a lambda function[^lazy-ruby].  
 
-## Blocks
+## Using blocks
 
-yield, call
+As we've seen before, a block in Ruby is just a piece of code wrapped between
+`do` and `end`. Method symbols can be used together with an ampersand (&) as
+a short-hand for blocks. This means that if we have a collection of objects
+of class `MyClass`, and they implement method `my_method`, then its symbol is
+`:my_method`, and one could use the syntax `&:my_method` to compact the following
+block:
 
-Procs, lambdas
+~~~ruby
+do |i|
+  i.my_method
+end
+~~~
+
+Any method defined by the programmer can receive and call a block, either via the
+`yield` statement of the `call` method. In this first example, we use `yield` to
+execute a block without parameters:
+
+~~~ruby
+def call_block
+  puts "Before calling block"
+  yield
+  puts "After calling block"
+end
+=> :call_block
+
+call_block do
+  puts "This is block"
+end
+~~~
+
+Output:
+
+    Before calling block
+    This is block
+    After calling block
+
+The second example shows how to receive a block as a parameter with the ampersand
+syntax, execute it with `call` and pass parameters to it:
+
+~~~ruby
+def call_block(&block)
+  puts "Before calling block"
+  block.call 4
+  puts "After calling block"
+end
+=> :call_block
+
+call_block do |arg|
+  puts "I was passed argument #{arg}"
+end
+~~~
+
+Output:
+
+    Before calling block
+    I was passed argument 4
+    After calling block
+
+Lastly, blocks can be stored as objects of class Proc in variables[^ruby-blocks].
+In order to do this, we can just pass the block to the initializer:
+
+~~~ruby
+square = Proc.new do |n|
+  n**2
+end
+
+square.call 5
+=> 25
+~~~
+
+Procs can be passed as blocks by using the same ampersand syntax. Notice that in
+this case the variable itself is used instead of a symbol (`:square`), because we
+want to pass the whole object instead of its name.
+
+~~~ruby
+def apply_proc(arg, &proc)
+  proc.call arg
+end
+
+apply_proc 5, &square
+=> 25
+~~~
 
 ## The Enumerator class
 
@@ -342,3 +421,4 @@ Procs, lambdas
 [^wiki-3comp]: [Three-way comparison - Wikipedia](https://en.wikipedia.org/wiki/Three-way_comparison)
 [^ruby-quicksort]: [Ruby Algorithms: Sorting, Trie and Heaps - Ilya Grigorik](https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/)
 [^lazy-ruby]: [Lazy Ruby - Effluence](https://sonnym.github.io/2014/04/05/lazy-ruby/)
+[^ruby-blocks]: [Understanding Ruby Blocks, Procs and Lambdas - Reactive.IO](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
