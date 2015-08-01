@@ -15,18 +15,14 @@ newer, more semantic one based on objects called Enumerators.
 Let's imagine we've got a collection of items, such as an array, a hash or a
 set. We may want to be able to iterate through all its elements, either with
 a determinate order or without it. To achieve this task in most programming
-languages we usually resort to loop structures, for example a *for* loop or a
-*while* loop. In any case, we will need to use a special syntax in order to
+languages we usually resort to loop structures, for example a *for* loop.
+In this case, we will need to use a special syntax in order to
 describe the conditions in which the iterations will be made. For example, in
 a C-like language:
 
 ~~~c
 for (int i = 0; i < arr_size; i++) {
     // Code goes here
-}
-
-while (work_to_do) {
-    // Do some work
 }
 ~~~
 
@@ -39,11 +35,6 @@ following:
 for index := 0 to arr_size do
 begin
     // Code goes here
-end;
-
-while work_to_do do
-begin
-    // Do some work
 end;
 ~~~
 
@@ -120,7 +111,7 @@ it can achieve the same task as `take`.
 
 ~~~ruby
 arr = [6, 2, 8, 3, 1, 8]
-=> [6, 2, 8, 3, 1, 8]
+
 arr.take 3
 => [6, 2, 8]
 arr.first
@@ -149,7 +140,7 @@ a boolean value; for instance `any?`, `all?`, `one?`, `none?`:
 
 ~~~ruby
 arr = [5, 2, 7]
-=> [5, 2, 7]
+
 arr.any? &:even?
 => true
 arr.all? &:even?
@@ -183,14 +174,17 @@ can serve as a comparison operator.
   i % 6 == 0
 end
 => 12
+
 (10..20).find_index do |i|
   i % 6 == 0
 end
 => 2
+
 arr.min
 => 2
 arr.max
 => 7
+
 %w(hola hi hei).min do |a, b|
   a.length <=> b.length
 end
@@ -211,7 +205,7 @@ which match a certain criterion. This can be achieved with two methods called
 
 ~~~ruby
 data = [0, 2, 3, 0, 0, 0, 1, 1, 5, 6, 0]
-=> [0, 2, 3, 0, 0, 0, 1, 1, 5, 6, 0]
+
 data.select &:zero?
 => [0, 0, 0, 0, 0]
 data.reject &:zero?
@@ -231,8 +225,9 @@ Note
   => [0, 0, 0, 0, 0]
   ~~~
 
-  The exclamation notation for methods that alter the object over which
-  they're called on is pretty common in Ruby, and the manipulation methods
+  The exclamation notation for methods that alter the object
+  they're called on, or have side effects in general,
+  is pretty common in Ruby, and the manipulation methods
   listed on the following subsection also have an "exclaimed" duplicate.
 
 ### Manipulating collections
@@ -244,9 +239,10 @@ A block can be passed to `sort` to be relied on as comparison operator.
 
 ~~~ruby
 l18n = ["Hola mundo!", "Hello world!", "Salut le monde!"]
-=> ["Hola mundo!", "Hello world!", "Salut le monde!"]
+
 l18n.sort # Lexicographic order
 => ["Hello world!", "Hola mundo!", "Salut le monde!"]
+
 l18n.sort do |a, b|
   b.length <=> a.length # Inverse length order
 end
@@ -295,8 +291,8 @@ the `map` method to gather information about the collection:
 
 ~~~ruby
 # Sum the length of all the words in a string
-%w(Greetings human).map(&:length).reduce(&:+)
-=> 14
+%w(I can has cheezburger).map(&:length).reduce(&:+)
+=> 18
 ~~~
 
 For its part, `lazy` can take any collection and create a lazy enumerator out
@@ -304,7 +300,6 @@ of it, but it's most useful when used with infinite sequences:
 
 ~~~ruby
 nonnegative = (0..Float::INFINITY).lazy
-=> #<Enumerator::Lazy: 0..Infinity>
 
 fibonacci = nonnegative.map do |n|
   if n <= 1
@@ -313,7 +308,7 @@ fibonacci = nonnegative.map do |n|
     fibonacci.take(n).drop(n - 2).reduce(&:+)
   end
 end
-=> #<Enumerator::Lazy: #<Enumerator::Lazy: 0..Infinity>:map>
+
 fibonacci.take(10).force
 => [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ~~~
@@ -326,7 +321,44 @@ This particular version of the fibonacci sequence is very slow, because it
 will recursively calculate every number in the sequence out of the previous
 ones. A memoized version can be written with a lambda function[^lazy-ruby].  
 
+### Using Enumerable in your class
+
+Adding all this functionality to a class in Ruby is as easy as implementing an
+`each` method and including the Enumerable mixin, like in the following example:
+
+~~~ruby
+class Blog
+  include Enumerable
+
+  def initialize
+    # The class uses any kind of internal collection
+    @posts = [
+      "Mean inequalities",
+      "introduction to JavaScript",
+      "Introduction to Category Theory",
+      "Genetic algorithms"
+    ]
+  end
+
+  # The each method should invoke 'yield' for every element
+  def each
+    @posts.each do |p|
+      yield p
+    end
+  end
+end
+
+dgiim = Blog.new
+dgiim.first
+=> "Mean inequalities"
+~~~
+
 ## Using blocks
+
+Being able to receive and call blocks of code within methods is the key point for
+Enumerable methods to work. The `each` method provides the ability to iterate
+through all elements, which allows the rest of the methods to act on each element
+according to the returned value of a block.
 
 As we've seen before, a block in Ruby is just a piece of code wrapped between
 `do` and `end`. Method symbols can be used together with an ampersand (&) as
@@ -351,7 +383,6 @@ def call_block
   yield
   puts "After calling block"
 end
-=> :call_block
 
 call_block do
   puts "This is block"
@@ -373,7 +404,6 @@ def call_block(&block)
   block.call 4
   puts "After calling block"
 end
-=> :call_block
 
 call_block do |arg|
   puts "I was passed argument #{arg}"
@@ -413,7 +443,129 @@ apply_proc 5, &square
 
 ## The Enumerator class
 
+Most of the methods seen above return processed results when they receive a block,
+but when they don't, they can return an object of class Enumerator[^ruby-enumerator]. This object
+is a wrapper that contains the information necessary to iterate through the
+collection.
 
+Additionally, Enumerators implement the `each` method as well, so
+Enumerable methods can also be called on them. This means Enumerators can be
+chained, which is useful to modify the way we act on collections without implementing
+new methods. For example, if we wanted to enumerate an array of items starting from
+the back and grouping them according to index modulo 3, we would write something
+like the following:
+
+~~~ruby
+arr = %w(a b c d e)
+arr.reverse_each.group_by.each_with_index do |item, index|
+  index % 3
+end
+=> {0=>["e", "b"], 1=>["d", "a"], 2=>["c"]}
+~~~
+
+Notice how the chaining order changes how elements are returned. Indexes are not
+returned in the example above, but they can be obtained by just swapping `group_by`
+and `each_with_index`:
+
+~~~ruby
+arr.reverse_each.each_with_index.group_by do |item, index|
+  index % 3
+end
+=> {0=>[["e", 0], ["b", 3]], 1=>[["d", 1], ["a", 4]], 2=>[["c", 2]]}
+~~~
+
+Enumerators need not be created out of existing collections, method `new` of the
+class can be used as well. This method accepts a block with a parameter that will
+act as "yielder object". The block is expected to iteratively push each element to
+the yielder, which will in turn retrieve only the elements needed, pausing the
+generation of elements otherwise. A simple Enumerator can be just a countdown from
+10 to 1:
+
+~~~ruby
+countdown = Enumerator.new do |yielder|
+  n = 10
+
+  until n == 0
+    yielder << n
+    n -= 1
+  end
+end
+
+countdown.take 5
+=> [10, 9, 8, 7, 6]  
+~~~
+
+Since the yielder will only use the necessary elements, Enumerators can generate
+infinite sequences. For example, the following Enumerator generates
+prime numbers, and the next one is a fast Fibonacci generator.
+
+~~~ruby
+primes = Enumerator.new do |yielder|
+  n = 2
+
+  loop do
+    yielder << n
+
+    # Find next prime
+    prime = false
+    until prime
+      n += 1
+
+      prime = (2..Math.sqrt(n).floor).all? do |i|
+        n % i != 0
+      end
+    end
+  end
+end
+
+primes.take 10
+=> [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+fibonacci = Enumerator.new do |yielder|
+  a, b = 0, 1
+
+  loop do
+    yielder << a
+
+    a, b = b, a + b
+  end
+end
+
+fibonacci.take(500).drop(499)
+=> [86168291600238450732788312165664788095941068326060883324529903470149056115823592713458328176574447204501]
+~~~
+
+Have you noticed the `loop` word used above to create an infinite loop? It's actually
+just a special Enumerator generating infinitely many `nil` values. It can be seen
+as well how the typical `[]` accesor can't be used on an Enumerator, simply because
+it's not implemented; but we can do that:
+
+~~~ruby
+class Enumerator
+  def [](index)
+    take(index)[index - 1]
+  end
+end
+
+fibonacci[100]
+=> 218922995834555169026
+~~~
+
+## Conclusions
+
+In this article we've studied how different syntaxes work for the same purposes of iteration. Classic
+`for` loops are generic and not very semantic. This means that, in addition to being a
+special structure, they commonly force the programmer to expose the logic used to
+iterate through a collection. This is something that generally should be avoided, and
+the class of the collection should be the one providing the functionality.
+
+Furthermore, different tasks can be achieved with generic loops, that then need an
+explanation of some comments. To solve this, the Enumerable mixin incorporates very
+specific iteration methods that are mostly self-explanatory, and ease programming as
+well as later readings of the code. Finally, in addition to iterating through existing collections, items can be generated
+on demand with Enumerator objects. Enumerators and lazy Enumerators are powerful
+tools to calculate elements of finite and infinite sequences. I'd encourage you to
+be creative and find new ways to use them.
 
 ## References
 
@@ -422,3 +574,4 @@ apply_proc 5, &square
 [^ruby-quicksort]: [Ruby Algorithms: Sorting, Trie and Heaps - Ilya Grigorik](https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/)
 [^lazy-ruby]: [Lazy Ruby - Effluence](https://sonnym.github.io/2014/04/05/lazy-ruby/)
 [^ruby-blocks]: [Understanding Ruby Blocks, Procs and Lambdas - Reactive.IO](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
+[^ruby-enumerator]: [Enumerator - Ruby Docs](http://ruby-doc.org/core-2.2.2/Enumerator.html)
