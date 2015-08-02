@@ -78,6 +78,28 @@ category: #{cat}
   puts "Done! Go write something in #{filepath}"
 end
 
+task :submit do
+  require 'git'
+
+  # Push changes to branch
+  g = Git.open "."
+  name = g.current_branch.sub "post-", ""
+  g.commit_all "[#{name}] Submit post to review"
+  g.push g.remote g.current_branch
+
+  puts "Now we will merge any current changes from the main branch and submit your post."
+  print "Do you want to continue? (y/N) "
+  selection = readline.chomp.downcase
+
+  if selection == "y"
+    puts g.pull(g.repo, g.branch("gh-pages"))
+    g.push g.remote g.current_branch
+
+    # Open GitHub on new pull request page
+    system "xdg-open https://github.com/dgiim/blog/compare/post-#{g.current_branch}?expand=1"
+  end
+end
+
 task :review do
 
 end
