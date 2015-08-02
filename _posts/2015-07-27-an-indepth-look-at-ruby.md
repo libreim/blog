@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An in-depth look at Ruby Enumerators
+title: "Iterating in Ruby: Enumerable and Enumerators"
 authors:
   - fdavidcl
 category: Programación
@@ -44,20 +44,19 @@ through the items of a collection:
 
 ~~~cpp
 // C++11
-for (auto& item : arr) { }
+for (auto& item : collection) { }
 ~~~
 
 ~~~pascal
 // Pascal
-for item in arr do ;
+for item in collection do ;
 ~~~
 
-These syntaxes can sometimes become cumbersome, for example, when we use the
+These syntaxes can sometimes become cumbersome, for example, when using the
 `::iterator` class of STL containers in C++:
 
 ~~~cpp
-for (vector<MyClass>::iterator it = arr.begin(); it != arr.end();
-     ++it) { }
+for (vector<MyClass>::iterator it = collection.begin(); it != collection.end; ++it) { }
 ~~~
 
 This makes the code more difficult to read and makes it less semantic, since
@@ -78,20 +77,20 @@ end
 ~~~
 
 Well that was easy. But still, a couple of things are happening here. First, we
-are calling the `each` method for `arr` (suppose this is an array, for example)
-which accepts no parameters (so we could have written `arr.each() do...`).
-Then, we are specifying a *block* between `do` and `end`, this is a piece of
+are calling the `each` method for `collection` (suppose this is an array, for example)
+which accepts no parameters (so we could have written `.each() do...`).
+Then, we are specifying a *block* between `do` and `end`; this is a piece of
 code received by the method, who can call it on demand (more on that later).
 The block does however receive one parameter, indicated between vertical bars
 `|item|`. Each time the block is run, `item` will contain a different element
-of the `arr` collection.
+of the collection.
 
 This method is nonetheless a very special one, since a whole module of code
 can be incorporated to any class that implements it. This new module is the
 Enumerable mixin[^ruby-enumerable]. A mixin is a piece of code that adds
 functionality but isn\'t autonomous on its own. Enumerable incorporates several
-methods that take advantage of the `each` method to be able to find elements
-and look for elements with certain properties, map functions to all items,
+methods that take advantage of the `each` method to be able to retrieve elements
+and look for items with certain properties, map functions to all of them,
 accumulate elements using an operator, etc.
 
 In the following subsections we will take a look at the main purposes these
@@ -305,6 +304,7 @@ fibonacci = nonnegative.map do |n|
   if n <= 1
     n
   else
+    # Sum the two previous elements
     fibonacci.take(n).drop(n - 2).reduce(&:+)
   end
 end
@@ -313,13 +313,12 @@ fibonacci.take(10).force
 => [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ~~~
 
-Note that in this last example that method `force` is used to make the interpreter
+Note that in this last example the `force` method is used to make the interpreter
 calculate the results. Otherwise, it would just return another lazy enumerator
-to allow chaining methods.
-
-This particular version of the fibonacci sequence is very slow, because it
+to allow chaining methods. This particular version of the fibonacci sequence is very slow, because it
 will recursively calculate every number in the sequence out of the previous
-ones. A memoized version can be written with a lambda function[^lazy-ruby].  
+ones. A memoized version can be written with a lambda function[^lazy-ruby]. Later
+on, another faster way to enumerate the Fibonacci sequence will be shown.
 
 ### Using Enumerable in your class
 
@@ -391,9 +390,11 @@ end
 
 Output:
 
-    Before calling block
-    This is block
-    After calling block
+~~~markdown
+Before calling block
+This is block
+After calling block
+~~~
 
 The second example shows how to receive a block as a parameter with the ampersand
 syntax, execute it with `call` and pass parameters to it:
@@ -417,7 +418,7 @@ Output:
     After calling block
 
 Lastly, blocks can be stored as objects of class Proc in variables[^ruby-blocks].
-In order to do this, we can just pass the block to the initializer:
+In order to do this, we can just pass the block to the constructor:
 
 ~~~ruby
 square = Proc.new do |n|
@@ -452,7 +453,7 @@ Additionally, Enumerators implement the `each` method as well, so
 Enumerable methods can also be called on them. This means Enumerators can be
 chained, which is useful to modify the way we act on collections without implementing
 new methods. For example, if we wanted to enumerate an array of items starting from
-the back and grouping them according to index modulo 3, we would write something
+the back and grouping them according to their index modulo 3, we would write something
 like the following:
 
 ~~~ruby
@@ -531,14 +532,15 @@ fibonacci = Enumerator.new do |yielder|
   end
 end
 
+# Calculate 500 elements, retrieve last
 fibonacci.take(500).drop(499)
 => [86168291600238450732788312165664788095941068326060883324529903470149056115823592713458328176574447204501]
 ~~~
 
 Have you noticed the `loop` word used above to create an infinite loop? It's actually
-just a special Enumerator generating infinitely many `nil` values. It can be seen
+just a function using an Enumerator which generates infinitely many `nil` values. It can be seen
 as well how the typical `[]` accesor can't be used on an Enumerator, simply because
-it's not implemented; but we can do that:
+it's not implemented; but we can do that for ourselves:
 
 ~~~ruby
 class Enumerator
@@ -565,7 +567,7 @@ specific iteration methods that are mostly self-explanatory, and ease programmin
 well as later readings of the code. Finally, in addition to iterating through existing collections, items can be generated
 on demand with Enumerator objects. Enumerators and lazy Enumerators are powerful
 tools to calculate elements of finite and infinite sequences. I'd encourage you to
-be creative and find new ways to use them.
+give them a try, be creative and find new ways to use them.
 
 ## References
 
