@@ -44,8 +44,7 @@ task :post do
   end
 
   branch_name = "post-#{filename}"
-  filename = "#{date}-#{filename}.md"
-  filepath = "_posts/" + filename
+  filepath = "_posts/#{date}-#{filename}.md"
 
   # Read data
   print "Author (#{Etc.getlogin}): "
@@ -75,7 +74,38 @@ category: #{cat}
 "
   end
 
+  g.commit_all "[#{filename}] New post"
+  g.push "origin", branch_name
+
   puts "Done! Go write something in #{filepath}"
+end
+
+task :submit do
+  require 'git'
+
+  # Push changes to branch
+  g = Git.open "."
+  name = g.current_branch.sub "post-", ""
+  begin
+    g.commit_all "[#{name}] Submit post to review"
+  rescue Git::GitExecuteError
+    puts "Nothing to commit. Updating changes on remote."
+  end
+  g.push "origin", g.current_branch
+
+  puts "Now we will merge any current changes from the main branch and submit your post."
+  print "Do you want to continue? (y/N) "
+  selection = STDIN.readline.chomp.downcase
+
+  if selection == "y"
+    puts g.pull(g.repo, g.branch("gh-pages"))
+    g.push "origin", g.current_branch
+
+    # Open GitHub on new pull request page
+    system "xdg-open https://github.com/dgiim/blog/compare/#{g.current_branch}?expand=1"
+  else
+    puts "Submit cancelled."
+  end
 end
 
 task :review do
