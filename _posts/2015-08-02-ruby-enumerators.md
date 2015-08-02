@@ -6,11 +6,12 @@ authors:
 category: Programación
 ---
 
-## Introduction
 The syntax of a programming language is one of the key points when it comes to
 the difficulty in its learning process. Here we examine the traditional syntaxes
 for iterating through a collection of any type, and place them face to face with a
 newer, more semantic one based on objects called Enumerators.
+
+## Introduction
 
 Let's imagine we've got a collection of items, such as an array, a hash or a
 set. We may want to be able to iterate through all its elements, either with
