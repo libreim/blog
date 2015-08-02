@@ -501,6 +501,7 @@ infinite sequences. For example, the following Enumerator generates
 prime numbers, and the next one is a fast Fibonacci generator.
 
 ~~~ruby
+# Primes Enumerator
 primes = Enumerator.new do |yielder|
   n = 2
 
@@ -522,6 +523,7 @@ end
 primes.take 10
 => [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
+# Fibonacci Enumerator
 fibonacci = Enumerator.new do |yielder|
   a, b = 0, 1
 
