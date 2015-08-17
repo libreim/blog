@@ -333,7 +333,7 @@ class Blog
     # The class uses any kind of internal collection
     @posts = [
       "Mean inequalities",
-      "introduction to JavaScript",
+      "Introduction to JavaScript",
       "Introduction to Category Theory",
       "Genetic algorithms"
     ]
