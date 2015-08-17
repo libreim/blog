@@ -334,7 +334,7 @@ class Blog
     # The class uses any kind of internal collection
     @posts = [
       "Mean inequalities",
-      "introduction to JavaScript",
+      "Introduction to JavaScript",
       "Introduction to Category Theory",
       "Genetic algorithms"
     ]
@@ -374,7 +374,7 @@ end
 ~~~
 
 Any method defined by the programmer can receive and call a block, either via the
-`yield` statement of the `call` method. In this first example, we use `yield` to
+`yield` statement or the `call` method. In this first example, we use `yield` to
 execute a block without parameters:
 
 ~~~ruby
