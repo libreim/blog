@@ -332,7 +332,7 @@ class Blog
 
   def initialize
     # The class uses any kind of internal collection
-    @posts = [
+    @posts= [
       "Mean inequalities",
       "Introduction to JavaScript",
       "Introduction to Category Theory",
