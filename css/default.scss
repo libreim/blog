@@ -189,6 +189,12 @@ div.MathJax_Display {
   overflow-y: hidden;
 }
 
+blockquote {
+  margin-left: 1.6rem;
+  padding-left: .8rem;
+  border-left: .4rem solid $foreground;
+}
+
 /*** Pagination ***/
 nav.pagination {
   margin: 1.2rem 0;
