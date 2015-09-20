@@ -4,6 +4,7 @@ title: "Iterating in Ruby: Enumerable and Enumerators"
 authors:
   - fdavidcl
 category: Programación
+lang: en
 ---
 
 The syntax of a programming language is one of the key points when it comes to
