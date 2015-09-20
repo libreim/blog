@@ -4,15 +4,7 @@ layout: default
 
 <article>
   {% assign post = page %}
+  {% assign comments = true %}
 
   {% include post.ext %}
-
-  <div class="pure-g">
-    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
-    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
-      <div id="disqus_thread"></div>
-    </div>
-    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
-  </div>
-  {% include disqus.ext %}
 </article>

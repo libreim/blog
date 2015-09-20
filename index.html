@@ -11,7 +11,7 @@ layout: default
 		{% assign content = content | split:'<!--more-->' | first %}
 		{% assign content = content | append: '<p><a href="' | append: site.baseurl | append: post.url | append: '">Seguir leyendo...</a></p>'%}
 	{% endif %}
-  <article>{% include post.ext %}</article>	
+  {% include post.ext %}
 {% endfor %}
 
 
