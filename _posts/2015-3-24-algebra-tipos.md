@@ -71,7 +71,7 @@ data Void
 Como detalle, nótese que se puede definir una función desde este tipo a
 cualquier otro por *pattern matching*.
 El tipo no puede tomar ningún valor, así que una función que lo trate no tiene
-que definirse para ningún valor. En la `Data.Void` está definida la función:
+que definirse para ningún valor. En `Data.Void` está definida la función:
 
 ~~~Haskell
 absurd :: Void -> a
