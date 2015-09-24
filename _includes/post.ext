@@ -23,7 +23,7 @@
                 <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
               {% endfor %}
             {% endif %}
-            
+
             <div class="date">
               {{ post.date | date: "%d-%m-%Y" }}
             </div>
@@ -58,9 +58,9 @@
         {% assign plural = false %}
         {% for editor in post.editors %}
           {% assign authdata = site.authors[editor] %}
-          {% if forloop.first %} {% elsif forloop.last %}{% assign plural = true %} y {% else %}, {% endif %}
-          <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-        {% endfor %}
+          {% if forloop.first %}{% elsif forloop.last %}{% assign plural = true %}--> y {% else %}-->, {% endif %}
+          <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a><!--
+        {% endfor %}-->
 
         {% if plural %}han{% else %}ha{% endif %} colaborado en este artículo.
       </p>
