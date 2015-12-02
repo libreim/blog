@@ -78,7 +78,7 @@ Consejo
 echo "alias gitsync='git commit -a && git pull && git push origin master'" >> ~/.bashrc
 ~~~
 
-El comando `git push origin master` envía los cambios locales (*origin*) a la rama *master* (la principal) del repositorio en Github. Al trabajar con varias ramas podríamos ejecutar variaciones del tipo `git push origin rama_pruebas`.
+El comando `git push origin master` envía los cambios locales a la rama *master* (la principal) del repositorio remoto (*origin*) en Github. Al trabajar con varias ramas podríamos ejecutar variaciones del tipo `git push origin rama_pruebas`.
 
 ### Conflictos
 Si dos colaboradores trabajan simultáneamente sobre el mismo archivo es posible que se produzcan conflictos, es decir, que uno de ellos no tuviera actualizados los cambios del otro y envíe unos cambios que los sobreescribirían. En ese caso el merge automático falla y git deja que el usuario termine de mezclar los cambios manualmente (para ello separará en los archivos los cambios propios de los otros mediante marcas como `HEAD>>>>`). Tras terminar de mezclarlos, es suficiente con ejecutar de nuevo `git commit -a`, `git pull` y `git push`.
