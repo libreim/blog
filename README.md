@@ -23,7 +23,7 @@ ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo
 necesitarás tener Ruby instalado. Para crear un nuevo post, escribe en tu
 terminal
 
-~~~shell
+~~~sh
 $ rake post
 ~~~
 
@@ -44,15 +44,30 @@ Para comprobar si tu post queda como quieres, puedes construir y servir el blog
 de forma local. Para ello necesitarás tener Ruby instalado en tu máquina. La
 primera vez que vayas a construir el blog tendrás que obtener las dependencias:
 
-~~~shell
+~~~sh
 $ gem install bundler
 $ bundle
 ~~~
 
 Tras este paso, cada vez que quieras construir el blog, simplemente ejecuta
 
-~~~shell
+~~~sh
 $ rake
 ~~~
 
 y lo tendrás disponible en `http://localhost:4000/blog/`.
+
+### Enviar a revisión
+
+Revisamos los posts entre colaboradores para asegurar en la medida de lo posible
+la corrección de los posts. Cuando creas que tu post está listo para revisar,
+solo tienes que utilizar el siguiente comando:
+
+~~~sh
+$ rake submit
+~~~
+
+Se abrirá una pestaña de navegador preparada para que crees una *pull request*
+al repositorio original del blog. Rellena un poco la descripción y créala. A
+partir de entonces espera a que al menos dos colaboradores den su visto bueno,
+y pide a alguno de ellos que mezcle la *pull request*.
