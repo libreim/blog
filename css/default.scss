@@ -37,6 +37,10 @@ header .pure-menu-link {
   padding-top: 1.1em;
   padding-bottom: 1.1em;
   color: $foreground;
+
+  &.social-link {
+    color: lighten($theme, 30%);
+  }
 }
 
 .site-title.pure-menu-heading {
@@ -75,6 +79,12 @@ h1 {
 
   a {
     color: darken($theme, 20%);
+
+    &.selected {
+      color: #000;
+      cursor: default;
+      text-decoration: none;
+    }
   }
 
   .date {
@@ -140,6 +150,10 @@ h1 {
       filter: none;
       -webkit-filter: grayscale(0);
     }
+
+  abbr {
+    text-decoration: none;
+  }
 
   .post-editors {
     font-style: italic;
