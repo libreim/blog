@@ -85,9 +85,9 @@ revisarlo y corregir posibles errores, clona el repositorio y cambia a la rama
 conveniente:
 
 ~~~sh
-git clone https://github.com/dgiim/blog.git
-cd blog
-git checkout post-nombre-del-post
+$ git clone https://github.com/dgiim/blog.git
+$ cd blog
+$ git checkout post-nombre-del-post
 ~~~
 
 Utiliza `rake` para [construir el blog localmente](#construir-localmente).
