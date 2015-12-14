@@ -6,7 +6,7 @@
 Blog de los estudiantes del Doble Grado. Este blog
 participó en el [hackatón UGR 2015](http://sl.ugr.es/hackatonugr).
 
-## Colaborar
+## Colaborar con posts
 
 Un post puede tratar sobre cualquier tema que te parezca interesante relacionado
 con matemáticas e informática. Exponer características de un lenguaje de programación,
@@ -71,3 +71,28 @@ Se abrirá una pestaña de navegador preparada para que crees una *pull request*
 al repositorio original del blog. Rellena un poco la descripción y créala. A
 partir de entonces espera a que al menos dos colaboradores den su visto bueno,
 y pide a alguno de ellos que mezcle la *pull request*.
+
+## Otras formas de colaborar
+
+Este blog no solo vive de los posts escritos. También puedes ayudar de otras
+maneras.
+
+### Revisión
+
+Si el blog recibe un post mediante una [*pull request*](https://github.com/dgiim/blog/pulls)
+y crees que tienes conocimientos generales sobre el tema suficientes para
+revisarlo y corregir posibles errores, clona el repositorio y cambia a la rama
+conveniente:
+
+~~~sh
+git clone https://github.com/dgiim/blog.git
+cd blog
+git checkout post-nombre-del-post
+~~~
+
+Utiliza `rake` para [construir el blog localmente](#construir-localmente).
+Los errores que encuentres y correcciones que quieras realizar puedes comentarlos
+en la *pull request* asociada.
+
+Cuando consideres que el post esté listo para ser publicado, asegúrate de dejar
+un comentario en la *pull request* dando tu visto bueno.
