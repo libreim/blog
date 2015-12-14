@@ -67,16 +67,6 @@
         <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo...</a></p>
       {% endif %}
 
-<<<<<<< HEAD
-      {% if post.editors != nil %}
-        <p class="post-editors">
-          {% assign plural = false %}
-          {% for editor in post.editors %}
-            {% assign authdata = site.authors[editor] %}
-            {% if forloop.first %} {% elsif forloop.last %}{% assign plural = true %} y {% else %}, {% endif %}
-            <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
-          {% endfor %}
-=======
     {% if post.editors != nil %}
       <p class="post-editors">
         {% assign plural = false %}
@@ -85,7 +75,6 @@
           {% if forloop.first %}{% elsif forloop.last %}{% assign plural = true %}--> y {% else %}-->, {% endif %}
           <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a><!--
         {% endfor %}-->
->>>>>>> gh-pages
 
           {% if plural %}han{% else %}ha{% endif %} colaborado en este artículo.
         </p>
