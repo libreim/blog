@@ -18,3 +18,23 @@ aplicación de la programación lineal, qué es un comonoide, cómo trata Ruby l
 visibilidad de los métodos o la sintaxis del cálculo lambda son ideas
 muy válidas para un post. Además, entre las [issues de este repositorio](https://github.com/dgiim/blog/labels/post) podrás encontrar
 varios temas que querríamos tratar y que están todavía abiertos.
+
+
+### Construir localmente
+
+Para comprobar si tu post queda como quieres, puedes construir y servir el blog
+de forma local. Para ello necesitarás tener Ruby instalado en tu máquina. La
+primera vez que vayas a construir el blog tendrás que obtener las dependencias:
+
+~~~shell
+$ gem install bundler
+$ bundle
+~~~
+
+Tras este paso, cada vez que quieras construir el blog, simplemente ejecuta
+
+~~~shell
+$ rake
+~~~
+
+y lo tendrás disponible en `http://localhost:4000/blog/`.
