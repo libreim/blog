@@ -16,5 +16,5 @@ con matemáticas e informática. Exponer características de un lenguaje de prog
 resolver un problema de geometría clásica, explicar un sistema de paquetes, una
 aplicación de la programación lineal, qué es un comonoide, cómo trata Ruby la
 visibilidad de los métodos o la sintaxis del cálculo lambda son ideas
-muy válidas para un post. Además, entre las (issues)[https://github.com/dgiim/blog/issues] de este repositorio podrás encontrar
+muy válidas para un post. Además, entre las [issues de este repositorio](https://github.com/dgiim/blog/labels/post) podrás encontrar
 varios temas que querríamos tratar y que están todavía abiertos.
