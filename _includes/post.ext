@@ -1,14 +1,29 @@
-<div class="pure-g">
-  <div class="pure-u-1">
-    <h1>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="pure-g">
+<article lang="{% if post.lang %}{{ post.lang }}{% else %}es{% endif %}">
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <h1>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="pure-g">
+          <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+          <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+            {{ post.title }}
+          </div>
+          <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+        </a>
+      </h1>
+
+      <div class="post-data pure-g">
         <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
         <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
-          {{ post.title }}
-        </div>
-        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
-      </a>
-    </h1>
+          <div class="pure-g">
+            <div class="author pure-u-1 pure-u-md-2-3 pure-u-lg-3-4">
+              {% assign authorCount = post.authors | size %}
+              {% if authorCount > 0 %}
+                {% for author in post.authors %}
+                  {% assign authdata = site.authors[author] %}
+                  {% if forloop.first %} {% elsif forloop.last %} y {% else %}, {% endif %}
+                  <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+                {% endfor %}
+              {% endif %}
 
     <div class="post-data pure-g">
       <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
@@ -27,32 +42,41 @@
             <div class="date">
               {{ post.date | date: "%d-%m-%Y" }}
             </div>
-          </div>
 
-          <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
-            <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/{{ post.path }}">
-              <i class="fa fa-pencil"></i> Editar
-            </a>
+            <div class="edit-button pure-u-0 pure-u-md-1-3 pure-u-lg-1-4">
+              <a class="edit" href="https://github.com/dgiim/blog/edit/gh-pages/{{ post.path }}">
+                <i class="fa fa-pencil"></i> Editar
+              </a>
+            </div>
           </div>
         </div>
+        <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
       </div>
-      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
     </div>
   </div>
-</div>
 
-<div class="post-content pure-g">
+  <div class="post-content pure-g">
 
-  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
 
-  <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
 
-    {{ content }}
+      {{ content }}
 
-    {% if excerpt == true %}
-      <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo...</a></p>
-    {% endif %}
+      {% if excerpt %}
+        <p><a href="{{ site.baseurl }}{{ post.url }}">Seguir leyendo...</a></p>
+      {% endif %}
 
+<<<<<<< HEAD
+      {% if post.editors != nil %}
+        <p class="post-editors">
+          {% assign plural = false %}
+          {% for editor in post.editors %}
+            {% assign authdata = site.authors[editor] %}
+            {% if forloop.first %} {% elsif forloop.last %}{% assign plural = true %} y {% else %}, {% endif %}
+            <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+          {% endfor %}
+=======
     {% if post.editors != nil %}
       <p class="post-editors">
         {% assign plural = false %}
@@ -61,20 +85,26 @@
           {% if forloop.first %}{% elsif forloop.last %}{% assign plural = true %}--> y {% else %}-->, {% endif %}
           <a href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a><!--
         {% endfor %}-->
+>>>>>>> gh-pages
 
-        {% if plural %}han{% else %}ha{% endif %} colaborado en este artículo.
-      </p>
-    {% endif %}
+          {% if plural %}han{% else %}ha{% endif %} colaborado en este artículo.
+        </p>
+      {% endif %}
 
-    <div class="share">
-      <a class="dsq-comment-count" href="{{ site.baseurl }}{{ post.url }}/#disqus_thread"></a>
-      <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="{{ site.baseurl }}/assets/sq_twitter.png" /></a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="{{ site.baseurl }}/assets/sq_facebook.png" /></a>
-      <a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="{{ site.baseurl }}/assets/sq_diaspora.png" /></a>
-      <a href="http://www.feedly.com/home#subscription/feed/{{ site.url | url_escape }}feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="{{ site.baseurl }}/assets/sq_feedly.png" /></a>
+      <div class="share">
+        <a class="dsq-comment-count" href="{{ site.baseurl }}{{ post.url }}/#disqus_thread"></a>
+        <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}" class="share-twt" target="_blank"><img alt="Twitter" title="Compartir en Twitter" src="{{ site.baseurl }}/assets/sq_twitter.png" /></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" class="share-fb" target="_blank"><img alt="Facebook" title="Compartir en Facebook" src="{{ site.baseurl }}/assets/sq_facebook.png" /></a>
+        <a href="http://sharetodiaspora.github.io/?url={{ site.url }}{{ post.url }}&title={{ post.title }}" class="share-di" target="_blank"><img alt="Diaspora" title="Compartir en Diaspora*" src="{{ site.baseurl }}/assets/sq_diaspora.png" /></a>
+        <a href="http://www.feedly.com/home#subscription/feed/{{ site.url | url_escape }}feed.xml" class="share-fd" target="_blank"><img alt="Feedly" title="Suscribirse con Feedly" src="{{ site.baseurl }}/assets/sq_feedly.png" /></a>
+      </div>
+
+      {% if comments %}
+        <div id="disqus_thread"></div>
+        {% include disqus.ext %}
+      {% endif %}
     </div>
 
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
   </div>
-
-  <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
-</div>
+</article>
