@@ -8,9 +8,6 @@ participó en el [hackatón UGR 2015](http://sl.ugr.es/hackatonugr).
 
 ## Colaborar
 
-Puedes añadir un post siguiendo las
-[reglas de estilo](http://dgiim.github.com/blog/styleguide).
-
 Un post puede tratar sobre cualquier tema que te parezca interesante relacionado
 con matemáticas e informática. Exponer características de un lenguaje de programación,
 resolver un problema de geometría clásica, explicar un sistema de paquetes, una
@@ -34,6 +31,12 @@ Esto lanzará una serie de preguntas (el título del post, el nombre del autor
 en [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml), etc.),
 creará una rama del repositorio para que trabajes a gusto y creará el archivo
 Markdown del post para que puedas escribir.
+
+### Contenido
+
+La [guía de estilo](http://dgiim.github.com/blog/styleguide) te servirá de
+chuleta para la sintaxis de Markdown y algunas peculiaridades acerca de como dar
+formato correctamente a tu post.
 
 ### Construir localmente
 
