@@ -103,3 +103,9 @@ en la *pull request* asociada.
 
 Cuando consideres que el post esté listo para ser publicado, asegúrate de dejar
 un comentario en la *pull request* dando tu visto bueno.
+
+### Parte técnica
+
+En el repositorio del blog tenemos más issues además de los posts, relacionadas con el aspecto técnico 
+de mantener un blog. Puedes colaborar intentando solucionar cualquiera de ellas, o abriendo una nueva en
+caso de que detectes algún error.
