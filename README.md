@@ -32,6 +32,13 @@ en [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml), etc
 creará una rama del repositorio para que trabajes a gusto y creará el archivo
 Markdown del post para que puedas escribir.
 
+Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha
+y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los
+anteriores; aunque se recomienda usar el `Rakefile`. En caso de que no funcionara lo anterior, puede enviarse
+el post a dgiim.blog@gmail.com y dejar que alguien se
+encargue de publicarlo.
+
+
 ### Contenido
 
 La [guía de estilo](http://dgiim.github.com/blog/styleguide) te servirá de
