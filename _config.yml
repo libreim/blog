@@ -6,7 +6,7 @@ lsi: false
 baseurl: /blog
 name: dgiim
 description: Blog de los alumnos del Doble Grado en Ingeniería Informática y Matemáticas de la Universidad de Granada
-url: http://dgiim.github.io/blog/
+url: http://dgiim.github.io/blog
 
 markdown: kramdown
 kramdown:
