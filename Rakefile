@@ -74,7 +74,8 @@ category: #{cat}
 "
   end
 
-  g.commit_all "[#{filename}] New post"
+  g.add filepath
+  g.commit "[#{filename}] New post"
   g.push "origin", branch_name
 
   puts "Done! Go write something in #{filepath}"
