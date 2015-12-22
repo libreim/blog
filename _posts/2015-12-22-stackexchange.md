@@ -35,12 +35,22 @@ Sobre matemáticas:
 * **Mathematics**: for people studying math at any level and professionals in related fields.
 * **MathOverflow**: for professional mathematicians.
 * **CrossValidated**: for people interested in statistics, machine learning, data analysis, data mining, and data visualization.
+* **Mathematics Educators**: for those involved in the field of teaching mathematics.
 * **History of Science and Mathematics**: for people interested in the history and origins of science and mathematics.
 
 Sobre software concreto:
 
 * **Tex - LaTeX**: for users of TeX, LaTeX, ConTeXt, and related typesetting systems.
 * **Ask Ubuntu**: for Ubuntu users and developers.
+* **Web Applications**: for power users of web applications.
+* **Emacs**: for those using, extending or developing Emacs.
+* **Vi and Vim**: for people using the vi and Vim families of text editors.
+* **Drupal Answers**: for Drupal developers and administrators.
+
+Otros:
+
+* **Open Data**: for developers and researchers interested in open data.
+* **Open Source**: for people organizing, marketing or licensing open source development projects.
 
 ## Referencias
 [^wiki-stackexchange]: [Wikipedia, StackExchange](https://en.wikipedia.org/wiki/Stack_Exchange)
