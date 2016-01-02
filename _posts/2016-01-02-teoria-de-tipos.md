@@ -14,6 +14,29 @@ y asistentes de demostración. En particular, sobre los tipos se puede definir u
 aplicaciones referenciando en cada caso artículos donde se exponen en profundidad.
 
 
+## Inducción estructural
+
+La inducción estructural es una generalización de la inducción usual sobre los
+naturales que la extiende a otras estructuras representables como tipos de un
+lenguaje funcional. Sobre la inducción estructural hemos escrito previamente en el blog una
+introducción:
+
+* [Inducción Estructural - Blog DGIIM](http://dgiim.github.io/blog/2015/03/14/induccion-estructural/)
+
+En ese post se escriben ejemplos sobre los naturales y los
+árboles. El artículo sobre el que se basa es:
+
+* [When can we do induction? - math.blogoverflow](http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/)
+
+Ejemplos y más detalles sobre inducción estructural y sus usos pueden
+encontrarse en:
+
+* [Some notes on Structural Induction - Michael Erdmann](http://www.cs.cmu.edu/~me/212/handouts/structural.pdf)
+* [Structural Induction Principles for Functional Programmers - James Caldwell](http://arxiv.org/pdf/1312.2696.pdf)
+
+Y varias demostraciones por inducción estructural implementadas en Coq en este
+repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
+
 ## Álgebra de tipos
 
 En un post anterior de este mismo blog hemos tratado el álgebra de tipos. Ese
@@ -74,23 +97,18 @@ Milewski y más formalmente en este paper de Philip Wadler:
 * [Theorems for free! - Philip Wadler](http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf)
 
 
-## Inducción estructural
+## Teoría de tipos
 
-Sobre la inducción estructural hemos escrito previamente en el blog una
-introducción:
+Los tipos pueden usarse para fundamentar las matemáticas, del mismo modo que lo
+hacen los conjuntos (en sistemas axiomáticos como
+[ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory)) o las
+categorías (en sistemas como [ETCS](https://ncatlab.org/nlab/show/ETCS)). En el
+siguiente artículo se discuten las diferencias de ambos con la **teoría de tipos
+dependientes de Martin-Löf**, que se expone por completo en las notas de
+Nordström, Petersson y Smith:
 
-* [Inducción Estructural - Blog DGIIM](http://dgiim.github.io/blog/2015/03/14/induccion-estructural/)
+* [From Set Theory to Type Theory - The n-Category Café](https://golem.ph.utexas.edu/category/2013/01/from_set_theory_to_type_theory.html)
+* [Martin-Löf Type Theory - B. Nordström, K. Petersson, J.M. Smith](http://www.cse.chalmers.se/~bengt/papers/hlcs.pdf)
 
-En ese post se escriben ejemplos sobre los naturales y los
-árboles. El artículo sobre el que se basa es:
-
-* [When can we do induction? - math.blogoverflow](http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/)
-
-Ejemplos y más detalles sobre inducción estructural y sus usos pueden
-encontrarse en:
-
-* [Some notes on Structural Induction - Michael Erdmann](http://www.cs.cmu.edu/~me/212/handouts/structural.pdf)
-* [Structural Induction Principles for Functional Programmers - James Caldwell](http://arxiv.org/pdf/1312.2696.pdf)
-
-Y varias demostraciones por inducción estructural implementadas en Coq en este
-repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
+Esto nos da una fundamentación de las matemáticas con una interpretación
+computacional clara.
