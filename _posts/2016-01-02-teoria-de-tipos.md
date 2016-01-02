@@ -6,6 +6,14 @@ authors:
 category: Álgebra
 ---
 
+Los sistemas de tipos tienen su utilidad en las matemáticas. Sirven para modelar
+una fundamentación de las matemáticas distinta de la usual fundamentación
+conjuntista; y tienen varias aplicaciones interesantes en lenguajes funcionales
+y asistentes de demostración. En particular, sobre los tipos se puede definir un
+álgebra y se pueden representar sistemas lógicos. Vamos a tratar esas
+aplicaciones referenciando en cada caso artículos donde se exponen en profundidad.
+
+
 ## Álgebra de tipos
 
 En un post anterior de este mismo blog hemos tratado el álgebra de tipos. Ese
@@ -22,6 +30,7 @@ funciones generadoras necesaria para entender el tratamiento de los árboles
 binarios la explica Mike Spivey en
 *[The catalan numbers from their generating function](https://mikespivey.wordpress.com/2013/03/19/the-catalan-numbers-from-their-generating-function/)*.
 
+<!--more-->
 Además, existe un resultado de **Fiore y Leinster** que afirma que si demostramos
 una relacion polinómica para números complejos, también será válida para
 cualquier semianillo. Y por tanto, para los tipos.
@@ -52,6 +61,7 @@ acompañando los apuntes está escrito en Coq y Haskell.
 El isomorfismo completo sobre los tipos en Haskell lo expone Philip Wadler aquí:
 
 * [The Girard-Reynolds Isomorphism - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/gr2/gr2.pdf)
+
 
 ## Parametricidad
 
@@ -84,4 +94,3 @@ encontrarse en:
 
 Y varias demostraciones por inducción estructural implementadas en Coq en este
 repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
-<!--more-->
