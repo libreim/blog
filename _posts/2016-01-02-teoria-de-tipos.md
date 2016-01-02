@@ -53,4 +53,35 @@ El isomorfismo completo sobre los tipos en Haskell lo expone Philip Wadler aquí
 
 * [The Girard-Reynolds Isomorphism - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/gr2/gr2.pdf)
 
+## Parametricidad
+
+La parametricidad limita las instancias posibles de los tipos de la forma
+`forall a. p(a)`, y nos permite obtener teoremas sobre todas las instancias de
+esos tipos. Se explica a nivel intuitivo en el siguiente post de Bartosz
+Milewski y más formalmente en este paper de Philip Wadler:
+
+* [Parametricity: Money for Nothing and Theorems for Free - Bartosz Milewski](http://bartoszmilewski.com/2014/09/22/parametricity-money-for-nothing-and-theorems-for-free/)
+* [Theorems for free! - Philip Wadler](http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf)
+
+
+## Inducción estructural
+
+Sobre la inducción estructural hemos escrito previamente en el blog una
+introducción:
+
+* [Inducción Estructural - Blog DGIIM](http://dgiim.github.io/blog/2015/03/14/induccion-estructural/)
+
+En ese post se escriben ejemplos sobre los naturales y los
+árboles. El artículo sobre el que se basa es:
+
+* [When can we do induction? - math.blogoverflow](http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/)
+
+Ejemplos y más detalles sobre inducción estructural y sus usos pueden
+encontrarse en:
+
+* [Some notes on Structural Induction - Michael Erdmann](http://www.cs.cmu.edu/~me/212/handouts/structural.pdf)
+* [Structural Induction Principles for Functional Programmers - James Caldwell](http://arxiv.org/pdf/1312.2696.pdf)
+
+Y varias demostraciones por inducción estructural implementadas en Coq en este
+repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
 <!--more-->
