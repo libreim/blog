@@ -38,4 +38,19 @@ usados para representar contextos. Puede leerse aquí:
 * [The derivative of a regular type is its type of one-hole contexts](http://strictlypositive.org/diff.pdf).
 
 
+## Lógica con tipos
+
+La aplicación de los tipos a la lógica y las demostraciones parte del
+isomorfismo de Curry-Howard, que relaciona los sistemas de tipos con sistemas
+lógicos. Los apuntes sobre
+[**Curry-Howard**](https://github.com/dgiim/curryHoward/blob/master/CurryHoward.pdf)
+de los repositorios del doble grado explican el isomorfismo sobre la deducción
+natural, un sistema de lógica intuicionista basado en la implicación. El
+[código fuente](https://github.com/dgiim/curryHoward/tree/master/src)
+acompañando los apuntes está escrito en Coq y Haskell.
+
+El isomorfismo completo sobre los tipos en Haskell lo expone Philip Wadler aquí:
+
+* [The Girard-Reynolds Isomorphism - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/gr2/gr2.pdf)
+
 <!--more-->
