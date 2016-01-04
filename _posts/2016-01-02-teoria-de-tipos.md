@@ -57,7 +57,7 @@ binarios la explica Mike Spivey en
 
 Además, existe un resultado de **Fiore y Leinster** que afirma que si demostramos
 una relacion polinómica para números complejos, también será válida para
-cualquier semianillo. Y por tanto, para los tipos.
+cualquier [semianillo](https://en.wikipedia.org/wiki/Semiring). Y por tanto, para los tipos.
 Esto quiere decir que, en la mayoría de las ocasiones, podemos usar
 la resta o la división de tipos como si existieran. La demostración excluye
 algunos casos particulares y se expone aquí:
@@ -65,7 +65,7 @@ algunos casos particulares y se expone aquí:
 * [Objects of categories as complex numbers - Marcelo Fiore y Tom Leinster](http://arxiv.org/pdf/math/0212377v1.pdf)
 
 Sobre el uso de las derivadas en el álgebra de tipos existe un resultado de
-**Conor McBride** que relaciona las derivadas parciales con los *zippers* de Haskell
+**Conor McBride** que relaciona las derivadas parciales con los [*zippers*](http://learnyouahaskell.com/zippers) de Haskell
 usados para representar contextos. Puede leerse aquí:
 
 * [The derivative of a regular type is its type of one-hole contexts](http://strictlypositive.org/diff.pdf).
@@ -75,14 +75,29 @@ usados para representar contextos. Puede leerse aquí:
 
 La aplicación de los tipos a la lógica y las demostraciones parte del
 isomorfismo de Curry-Howard, que relaciona los sistemas de tipos con sistemas
-lógicos. Los apuntes sobre
+lógicos. El sistema más simple donde puede apreciarse el isomorfismo es el
+[**cálculo lambda tipado**](https://en.wikipedia.org/wiki/Typed_lambda_calculus),
+que es isomorfo a la
+[**deducción natural**](https://en.wikipedia.org/wiki/Natural_deduction). La
+deducción natural es un ejemplo de lógica intuicionista, lo que en la práctica
+quiere decir que *no* (!) se tienen el *tercio excluso* y la *doble negación* como
+axiomas:
+
+$$ A \wedge \neg A$$
+
+$$ \neg \neg A \implies A $$
+
+
+
+Los apuntes sobre
 [**Curry-Howard**](https://github.com/dgiim/curryHoward/blob/master/CurryHoward.pdf)
 de los repositorios del doble grado explican el isomorfismo sobre la deducción
-natural, un sistema de lógica intuicionista basado en la implicación. El
+natural y el cálculo lambda tipado. El
 [código fuente](https://github.com/dgiim/curryHoward/tree/master/src)
 acompañando los apuntes está escrito en Coq y Haskell.
 
-El isomorfismo completo sobre los tipos en Haskell lo expone Philip Wadler aquí:
+El isomorfismo sobre un sistema más complejo como el sistema de tipos de Haskell
+lo expone Philip Wadler aquí:
 
 * [The Girard-Reynolds Isomorphism - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/gr2/gr2.pdf)
 
