@@ -36,6 +36,7 @@ encontrarse en:
 
 Y varias demostraciones por inducción estructural implementadas en Coq en este
 repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
+<!--more-->
 
 ## Álgebra de tipos
 
@@ -53,7 +54,7 @@ funciones generadoras necesaria para entender el tratamiento de los árboles
 binarios la explica Mike Spivey en
 *[The catalan numbers from their generating function](https://mikespivey.wordpress.com/2013/03/19/the-catalan-numbers-from-their-generating-function/)*.
 
-<!--more-->
+
 Además, existe un resultado de **Fiore y Leinster** que afirma que si demostramos
 una relacion polinómica para números complejos, también será válida para
 cualquier semianillo. Y por tanto, para los tipos.
