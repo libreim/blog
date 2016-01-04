@@ -113,3 +113,13 @@ Nordström, Petersson y Smith:
 
 Esto nos da una fundamentación de las matemáticas con una interpretación
 computacional clara.
+
+Una refinación de esas teorías para producir una fundamentación también
+constructivista de las matemáticas es el Cálculo de Construcciones (Calculus of
+constructions, COC) desarrollado por **Thierry Coquand** y **Gérard Huet**,
+que finalmente dará lugar al asistente de demostraciones **COQ**, desarrollado por
+el INRIA. El [**$$\lambda$$-cubo**](https://en.wikipedia.org/wiki/Lambda_cube) es un diagrama para exponer cómo este sistema amplía
+al *cálculo lambda tipado* y al *Sistema $$F_\omega$$* que usa Haskell.
+
+* [Calculus of Constructions - T. Coquand, G. Huet](http://ac.els-cdn.com/0890540188900053/1-s2.0-0890540188900053-main.pdf?_tid=3846e956-b301-11e5-8e78-00000aab0f02&acdnat=1451925532_87ac5a8e6a7bd6477746a55c17130f43).
+* [The Coq proof assistant - INRIA](https://coq.inria.fr/)
