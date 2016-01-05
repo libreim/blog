@@ -68,7 +68,7 @@ Sobre el uso de las derivadas en el álgebra de tipos existe un resultado de
 **Conor McBride** que relaciona las derivadas parciales con los [*zippers*](http://learnyouahaskell.com/zippers) de Haskell
 usados para representar contextos. Puede leerse aquí:
 
-* [The derivative of a regular type is its type of one-hole contexts](http://strictlypositive.org/diff.pdf).
+* [The derivative of a regular type is its type of one-hole contexts - Conor McBride](http://strictlypositive.org/diff.pdf).
 
 
 ## Lógica con tipos
@@ -96,9 +96,12 @@ natural y el cálculo lambda tipado. El
 [código fuente](https://github.com/dgiim/curryHoward/tree/master/src)
 acompañando los apuntes está escrito en Coq y Haskell.
 
-El isomorfismo sobre un sistema más complejo como el sistema de tipos de Haskell
-lo expone Philip Wadler aquí:
+La idea de tratar las proposiciones como tipos la expone **Philip Wadler** en los
+dos siguientes artículos: primero de manera didáctica, con una introducción
+histórica y sobre el sistema de la deducción natural, y luego de forma más
+compleja, exponiendo el isomorfismo sobre el sistema de tipos de Haskell.
 
+* [Propositions as Types - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf)
 * [The Girard-Reynolds Isomorphism - Philip Wadler](http://homepages.inf.ed.ac.uk/wadler/papers/gr2/gr2.pdf)
 
 
