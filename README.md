@@ -20,8 +20,8 @@ varios temas que querríamos tratar y que están todavía abiertos.
 
 Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de
 ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo
-necesitarás tener Ruby instalado. Para crear un nuevo post, escribe en tu
-terminal
+necesitarás tener Ruby instalado. Para crear un nuevo post, clona este repositorio
+y escribe en tu terminal
 
 ~~~sh
 $ rake post
@@ -31,6 +31,13 @@ Esto lanzará una serie de preguntas (el título del post, el nombre del autor
 en [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml), etc.),
 creará una rama del repositorio para que trabajes a gusto y creará el archivo
 Markdown del post para que puedas escribir.
+
+Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha
+y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los
+anteriores; aunque se recomienda usar el `Rakefile`. En caso de que no funcionara lo anterior, puede enviarse
+el post a dgiim.blog@gmail.com y dejar que alguien se
+encargue de publicarlo.
+
 
 ### Contenido
 
@@ -96,3 +103,9 @@ en la *pull request* asociada.
 
 Cuando consideres que el post esté listo para ser publicado, asegúrate de dejar
 un comentario en la *pull request* dando tu visto bueno.
+
+### Parte técnica
+
+En el repositorio del blog tenemos más issues además de los posts, relacionadas con el aspecto técnico 
+de mantener un blog. Puedes colaborar intentando solucionar cualquiera de ellas, o abriendo una nueva en
+caso de que detectes algún error.
