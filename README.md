@@ -20,7 +20,7 @@ varios temas que querríamos tratar y que están todavía abiertos.
 
 Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de
 ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo
-necesitarás tener Ruby instalado. Para crear un nuevo post, clona este repositorio
+necesitarás [tener Ruby instalado](https://rvm.io/). Para crear un nuevo post, clona este repositorio
 y escribe en tu terminal
 
 ~~~sh
@@ -106,6 +106,6 @@ un comentario en la *pull request* dando tu visto bueno.
 
 ### Parte técnica
 
-En el repositorio del blog tenemos más issues además de los posts, relacionadas con el aspecto técnico 
+En el repositorio del blog tenemos más issues además de los posts, relacionadas con el aspecto técnico
 de mantener un blog. Puedes colaborar intentando solucionar cualquiera de ellas, o abriendo una nueva en
 caso de que detectes algún error.
