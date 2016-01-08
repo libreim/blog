@@ -3,105 +3,109 @@
 
 [![Travis badge](https://travis-ci.org/dgiim/blog.svg?branch=gh-pages)](https://travis-ci.org/dgiim/blog)
 
-Blog de los estudiantes del Doble Grado. Si tienes algo que contar o algún 
-recurso que aportar, añade un post siguiendo las 
-[reglas de estilo](http://dgiim.github.com/blog/styleguide). Este blog 
+Blog de los estudiantes del Doble Grado. Este blog
 participó en el [hackatón UGR 2015](http://sl.ugr.es/hackatonugr).
 
-## Jekyll
+## Colaborar con posts
 
-El blog se genera usando [Jekyll](http://jekyllrb.com), un generador de sitios 
-estáticos escrito en Ruby.
+Un post puede tratar sobre cualquier tema que te parezca interesante relacionado
+con matemáticas e informática. Exponer características de un lenguaje de programación,
+resolver un problema de geometría clásica, explicar un sistema de paquetes, una
+aplicación de la programación lineal, qué es un comonoide, cómo trata Ruby la
+visibilidad de los métodos o la sintaxis del cálculo lambda son ideas
+muy válidas para un post. Además, entre las [issues de este repositorio](https://github.com/dgiim/blog/labels/post) podrás encontrar
+varios temas que querríamos tratar y que están todavía abiertos.
 
-### Instalación
+### Añadir un nuevo post
 
-Para utilizar y probar el blog localmente es necesario instalar Ruby y la gema
-[github-pages](https://github.com/github/pages-gem). Esto se puede conseguir
-utilizando el `Gemfile` provisto con el blog:
+Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de
+ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo
+necesitarás [tener Ruby instalado](https://rvm.io/). Para crear un nuevo post, clona este repositorio
+y escribe en tu terminal
 
-~~~bash
-git clone git@github.com:dgiim/blog.git dgiim-blog
-cd dgiim-blog
-bundle install
+~~~sh
+$ rake post
 ~~~
 
-o bien instalándola mediante `gem`:
+Esto lanzará una serie de preguntas (el título del post, el nombre del autor
+en [`_config.yml`](https://github.com/dgiim/blog/blob/gh-pages/_config.yml), etc.),
+creará una rama del repositorio para que trabajes a gusto y creará el archivo
+Markdown del post para que puedas escribir.
 
-~~~bash
-sudo gem install github-pages
+Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha
+y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los
+anteriores; aunque se recomienda usar el `Rakefile`. En caso de que no funcionara lo anterior, puede enviarse
+el post a dgiim.blog@gmail.com y dejar que alguien se
+encargue de publicarlo.
+
+
+### Contenido
+
+La [guía de estilo](http://dgiim.github.com/blog/styleguide) te servirá de
+chuleta para la sintaxis de Markdown y algunas peculiaridades acerca de como dar
+formato correctamente a tu post.
+
+### Construir localmente
+
+Para comprobar si tu post queda como quieres, puedes construir y servir el blog
+de forma local. Para ello necesitarás tener Ruby instalado en tu máquina. La
+primera vez que vayas a construir el blog tendrás que obtener las dependencias:
+
+~~~sh
+$ gem install bundler
+$ bundle
 ~~~
 
-### Uso
+Tras este paso, cada vez que quieras construir el blog, simplemente ejecuta
 
-Jekyll cuenta con un comando que genera el sitio estático (en `_site/`):
-
-~~~bash
-jekyll serve
+~~~sh
+$ rake
 ~~~
 
-Ahora el blog estará disponible en `localhost:4000/blog/`.
+y lo tendrás disponible en `http://localhost:4000/blog/`.
 
-### Directorios
+### Enviar a revisión
 
-Un blog de Jekyll se estructura en varios directorios, todos ellos empezando con
-un guion bajo `_`:
+Revisamos los posts entre colaboradores para asegurar en la medida de lo posible
+la corrección de los posts. Cuando creas que tu post está listo para revisar,
+solo tienes que utilizar el siguiente comando:
 
-* `_layouts` Aquí se guardan las plantillas que se utilizan para generar cada
-  página del blog. Este blog tiene una plantilla `post` y otra `resource`, 
-  ambas heredando de la plantilla `default`. La plantilla de un archivo se
-  especifica con la opción `layout` de la caja YAML al inicio del mismo. Si 
-  queremos que no se aplique ninguna plantilla a un archivo utilizaremos 
-  `layout: none`.
-* `_includes` Contiene archivos `.ext` que son fragmentos de código HTML que se
-  pueden incluir en cualquier parte de una página mediante 
-  `{% include ejemplo.ext %}`. Este blog cuenta con *includes* para la cabecera
-  y el pie de la página, para renderizar un post, una lista de posts y para
-  incluir el script de Disqus.
-* `_posts` Incluye todos los posts que se han de mostrar en la página principal,
-  en general escritos en Markdown. El nombre de cada archivo debe indicar la
-  fecha del post y el camino del URL en el que se encontrará. Por ejemplo, el
-  archivo `2015-3-14-pi-day.md` se mostraría en `/2015/03/14/pi-day`.
-* `_drafts` Esta carpeta guarda los posts que aún son borradores. Se pueden 
-  incluir en el blog localmente ejecutando `jekyll serve --drafts`.
-* `_plugins` Normalmente este directorio almacenaría plugins para Jekyll 
-  escritos en Ruby, pero Github Pages no permite añadir plugins por seguridad.
-* `_site` Este directorio se crea automáticamente al ejecutar `jekyll serve`, y
-  contiene el sitio estático generado por Jekyll.
-
-Además de estos directorios, Jekyll permite añadir más para almacenamiento de
-otros datos y páginas. Por ejemplo, en este blog usamos `_cs_resources` y 
-`_math_resources` para los listados de recursos de informática y de matemáticas
-respectivamente. Estos directorios son escaneados por el archivo `resources.md`
-gracias a que Jekyll los representa en las variables `site.cs_resources` y 
-`site.math_resources`.
-
-### Sintaxis de Jekyll
-
-Jekyll utiliza una sintaxis de marcado llamada 
-[Liquid](http://liquidmarkup.org/) simple pero potente y segura para la 
-generación de código HTML a partir de plantillas. Básicamente hay dos tipos de 
-mensajes que acepta. El primero es la sustitución:
-
-~~~
-{{ nombre_variable }}
+~~~sh
+$ rake submit
 ~~~
 
-Esto sustituye el contenido de la variable especificada en el lugar donde se
-encuentre. Si es necesario, se interpretará como Markdown mediante el parser
-especificado en `_config.yml` ([kramdown](http://kramdown.gettalong.org/) en
-nuestro caso).
+Se abrirá una pestaña de navegador preparada para que crees una *pull request*
+al repositorio original del blog. Rellena un poco la descripción y créala. A
+partir de entonces espera a que al menos dos colaboradores den su visto bueno,
+y pide a alguno de ellos que mezcle la *pull request*.
 
-El otro mensaje es la evaluación de órdenes, para estructuras *if*, *for* y 
-similares:
+## Otras formas de colaborar
 
+Este blog no solo vive de los posts escritos. También puedes ayudar de otras
+maneras.
+
+### Revisión
+
+Si el blog recibe un post mediante una [*pull request*](https://github.com/dgiim/blog/pulls)
+y crees que tienes conocimientos generales sobre el tema suficientes para
+revisarlo y corregir posibles errores, clona el repositorio y cambia a la rama
+conveniente:
+
+~~~sh
+$ git clone https://github.com/dgiim/blog.git
+$ cd blog
+$ git checkout post-nombre-del-post
 ~~~
-{% for post in site.posts %}
-  {% if post.mola %}
-    {{ post.content }}
-  {% endif %}
-{% endfor %}
-~~~
 
-El ejemplo es muy simple. Jekyll almacena todos los posts bajo `site.posts`, por
-el que podemos iterar y renderizar cada uno si tienen asignada la variable 
-`mola` a *true*.
+Utiliza `rake` para [construir el blog localmente](#construir-localmente).
+Los errores que encuentres y correcciones que quieras realizar puedes comentarlos
+en la *pull request* asociada.
+
+Cuando consideres que el post esté listo para ser publicado, asegúrate de dejar
+un comentario en la *pull request* dando tu visto bueno.
+
+### Parte técnica
+
+En el repositorio del blog tenemos más issues además de los posts, relacionadas con el aspecto técnico
+de mantener un blog. Puedes colaborar intentando solucionar cualquiera de ellas, o abriendo una nueva en
+caso de que detectes algún error.
