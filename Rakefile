@@ -11,6 +11,7 @@
 #
 
 # Default: Blog server
+
 def jekyll_serve
   system "jekyll serve --watch"
 end
