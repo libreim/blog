@@ -17,13 +17,13 @@ before_install:
   - echo ${TUX_KEY} > ~/.ssh/id_rsa
   - [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master ${TUX_REPO} _site # && rm -rf _site/*
 
-script: 
-  bundle exec jekyll build
+script: "bundle exec jekyll build"
 
 after_script:
   - grunt compress --force --verbose
   - cd _site/
-  - [ "${TRAVIS_PULL_REQUEST}" = "false" ] && (git ls-files --deleted -z | xargs -0 git rm) && \
+  - |
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && (git ls-files --deleted -z | xargs -0 git rm) && \
     git add * && \
     git add . && \
     git commit -m "`date`" && \
