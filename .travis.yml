@@ -6,12 +6,9 @@ rvm:
 # Adapted from https://github.com/iblancasa/blog_files/blob/master/.travis.yml
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y nodejs npm git
-  - npm install
-  - npm install -g grunt-cli
+  - sudo apt-get install -y git
   - gem install bundler
   - bundle install
-  - grunt
   - git config --global user.email "dgiimblog@gmail.com"
   - git config --global user.name "dgiimbot"
   - echo ${TUX_KEY} > ~/.ssh/id_rsa
@@ -21,7 +18,6 @@ before_install:
 script: "bundle exec jekyll build"
 
 after_script:
-  - grunt compress --force --verbose
   - cd _site/
   - |
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && (git ls-files --deleted -z | xargs -0 git rm) && \
