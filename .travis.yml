@@ -12,6 +12,7 @@ before_install:
   - git config --global user.email "dgiimblog@gmail.com"
   - git config --global user.name "dgiimbot"
   - echo ${TUX_KEY} > ~/.ssh/id_rsa
+  - echo ${KNOWN_HOST_RSA} >> ~/.ssh/known_hosts
   - |
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master "${TUX_REPO}" _site # && rm -rf _site/*
 
