@@ -14,15 +14,16 @@ markdown: kramdown
 kramdown:
   parse_span_html: false
 
-permalink: /:year/:month/:day/:title
-paginate: 5
-paginate_path: "/page/:num/"
-
 # Dependencies
 gems:
   - jemoji
   - jekyll-paginate
+  - jekyll-gist
 #  - jekyll-mentions
+
+permalink: /:year/:month/:day/:title
+paginate: 5
+paginate_path: "/page/:num/"
 
 excerpt_separator: "<!--more-->"
 
