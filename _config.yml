@@ -18,8 +18,10 @@ permalink: /:year/:month/:day/:title
 paginate: 5
 paginate_path: "/page/:num/"
 
+# Dependencies
 gems:
   - jemoji
+  - jekyll-paginate
 #  - jekyll-mentions
 
 excerpt_separator: "<!--more-->"
