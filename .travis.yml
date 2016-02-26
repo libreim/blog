@@ -11,13 +11,8 @@ before_install:
   - bundle install
   - git config --global user.email "dgiimblog@gmail.com"
   - git config --global user.name "dgiimbot"
-  - echo ${TUX_KEY} > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - echo ${TUX_KEY_PUB} > ~/.ssh/id_rsa.pub
-  - chmod 600 ~/.ssh/id_rsa.pub
-  - echo ${KNOWN_HOST_RSA} >> ~/.ssh/known_hosts
   - |
-    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master "${TUX_REPO}" _site # && rm -rf _site/*
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master ${TUX_SSH_REPO} _site # && rm -rf _site/*
 
 script: "bundle exec jekyll build"
 
