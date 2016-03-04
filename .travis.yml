@@ -16,7 +16,7 @@ before_install:
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && sshpass -p ${TUX_SSHPASS} git clone -b master ${TUX_SSH_REPO} _site # && rm -rf _site/*
     cat _config.tux.yml
 
-script: "bundle exec jekyll build --config _config.tux.yml"
+script: "bundle exec jekyll build --config _config.yml,_tux.yml"
 
 after_script:
   - cd _site/

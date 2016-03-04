@@ -7,8 +7,6 @@ baseurl: /blog
 name: dgiim
 description: Blog de los alumnos del Doble Grado en Ingeniería Informática y Matemáticas de la Universidad de Granada
 url: http://dgiim.github.io/blog
-exclude:
-  - "vendor"
 
 markdown: kramdown
 kramdown:
@@ -69,3 +67,5 @@ authors:
 #nav_list:
 # Inicio: '/'
 # Archivo: '/archive'
+
+exclude: ["vendor","lib", "config.rb", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
