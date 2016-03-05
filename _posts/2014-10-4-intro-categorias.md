@@ -11,7 +11,7 @@ años 40 para cubrir necesidades del álgebra homológica. La posterior teoría
 general de categorías fue una actualización del álgebra universal, que estudiaba
 las características comunes de diversas estructuras algebraicas. [^categoriaswikipedia]
 
-En los repositorios del doble grado hay unos apuntes de introducción 
+En los repositorios del doble grado hay unos apuntes de introducción
 a la Teoría de Categorías con su código fuente bajo licencia CC BY-NC-SA 3.0. En
 ellos se explican tipos de morfismos y propiedades universales. Se
 hace especial hincapié en productos y coproductos y se pasan a explicar

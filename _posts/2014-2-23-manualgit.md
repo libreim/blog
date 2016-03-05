@@ -39,26 +39,26 @@ Puede consultarse el estado del repositorio usando `git status`. Simplificando, 
  - *Formando parte del commit (committed)* - Tras realizar un `git commit`, archivos y modificaciones que ya forman parte de un commit, aunque todavía no se haya enviado el commit al repositorio.
  - *Enviados (pushed)* - Tras enviar el commit con `git push`, los archivos ya forman parte del repositorio de GitHub.  
 
-Además, se pueden especificar archivos a ignorar completamente por git en el archivo `.gitignore`. En este archivo 
-podemos añadir nombres de archivo y directorios (separados por saltos de línea) de forma que el registro de cambios 
+Además, se pueden especificar archivos a ignorar completamente por git en el archivo `.gitignore`. En este archivo
+podemos añadir nombres de archivo y directorios (separados por saltos de línea) de forma que el registro de cambios
 no se realice nunca sobre ellos y ni siquiera aparecerán como *untracked*.
 
 ### Creación del repo
 Asumiendo que usamos Linux para utilizar Github, hemos de instalar primero el sistema de control de versiones (en
- Ubuntu, `sudo apt-get install git` bastará). En Windows existe una [fantástica aplicación](http://windows.github.com) 
+ Ubuntu, `sudo apt-get install git` bastará). En Windows existe una [fantástica aplicación](http://windows.github.com)
 que hace todo el trabajo por nosotros, sin necesidad de línea de comandos (OS X también tiene [la suya](http://mac.github.com/)).
 
 Un repositorio se puede crear desde la web de Github, que nos pedirá un nombre y nos sugerirá que comencemos añadiendo
- un archivo README. Una vez creado, copiamos el enlace que aparecerá al final de la sección derecha en la página del 
-repo (terminado en *.git*) y ejecutamos en terminal `git clone URL` donde URL es la dirección obtenida. Esto creará 
+ un archivo README. Una vez creado, copiamos el enlace que aparecerá al final de la sección derecha en la página del
+repo (terminado en *.git*) y ejecutamos en terminal `git clone URL` donde URL es la dirección obtenida. Esto creará
 una carpeta con contenido idéntico al del repo.
 
 ### Modificación
-Antes de modificar nada es conveniente ejecutar `git pull` para descargar la última versión de los archivos, en caso 
+Antes de modificar nada es conveniente ejecutar `git pull` para descargar la última versión de los archivos, en caso
 de que algún colaborador los haya editado. Esto nos evitará merges innecesarios.
 
-Tras crear archivos en la versión local, ejecutamos `git add file1 file2 ...` para añadirlos al control de cambios, 
-o con `git add .`, para añadir todo lo que haya sido modificado, creado,... El comando `git rm file` se emplea para 
+Tras crear archivos en la versión local, ejecutamos `git add file1 file2 ...` para añadirlos al control de cambios,
+o con `git add .`, para añadir todo lo que haya sido modificado, creado,... El comando `git rm file` se emplea para
 borrar archivos del repositorio.
 
 Después de crear archivos o realizar varios cambios en los ya existentes es recomendable crear un commit con `git commit -a`. Esto nos abrirá una instancia del editor `nano` en la que podremos escribir un mensaje para el commit (no puede estar vacío), que describa los cambios realizados brevemente. Al pulsar Ctrl-O, Ctrl-X para guardar y salir, se termina la creación del commit. Aún no están enviados los cambios al repo online, sino que se ha realizado un registro de los mismos, y se puede decir que estamos un commit *por delante* de la versión en Github.
@@ -73,7 +73,7 @@ En resumen, el orden de comandos necesarios es:
 
 Consejo
 : Es cómodo añadir un alias a nuestro *.bashrc* para ejecutar las últimas tres órdenes de seguido. Para ello ejecutad
-: 
+:
 ~~~sh
 echo "alias gitsync='git commit -a && git pull && git push origin master'" >> ~/.bashrc
 ~~~

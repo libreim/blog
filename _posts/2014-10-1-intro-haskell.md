@@ -7,15 +7,15 @@ authors:
 category: Programación
 ---
 
-El lenguaje de programación Haskell es uno de los lenguajes puramente 
-funcionales más utilizados. [^rankingtiobe] Se creó en los años 1980 para reunir las 
+El lenguaje de programación Haskell es uno de los lenguajes puramente
+funcionales más utilizados. [^rankingtiobe] Se creó en los años 1980 para reunir las
 características de los múltiples lenguajes funcionales en un sólo lenguaje. [^haskellwikipedia]
 
 Es un lenguaje basado en funciones puras y permitiendo el paso de
-funciones como argumentos a funciones de orden superior. Y es un lenguaje 
-fuertemente tipificado, que comprueba todos los tipos en tiempo de compilación. 
+funciones como argumentos a funciones de orden superior. Y es un lenguaje
+fuertemente tipificado, que comprueba todos los tipos en tiempo de compilación.
 
-A los repositorios del doble grado hemos subido unos apuntes de introducción 
+A los repositorios del doble grado hemos subido unos apuntes de introducción
 a Haskell con su código fuente bajo licencia CC BY-NC-SA 3.0:
 [Introducción a Haskell](https://github.com/dgiim/introHaskell)
 

@@ -109,7 +109,7 @@ diccionario, de la forma `{ clave: "valor", clave2: "otro" }`. Solemos llamar
 *propiedad* a cada una de las parejas *clave-valor* de un objeto.
 
 ### Tipos
-JavaScript tiene algunos tipos básicos: `Number`, `String`, `Boolean`. 
+JavaScript tiene algunos tipos básicos: `Number`, `String`, `Boolean`.
 El resto de objetos (los de `Date`, `RegExp`...) serán de tipo
 `Object`, y las funciones y constructores son de tipo `Function`.
 Se puede comprobar el tipo de un objeto mediante `typeof`:

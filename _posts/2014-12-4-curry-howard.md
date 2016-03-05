@@ -10,7 +10,7 @@ El isomorfismo de Curry-Howard[^curryhowardwiki] relaciona los sistemas de tipos
 proposicional. Los tipos son teoremas, y las instancias de un tipo son
 demostraciones del teorema que representa.
 
-A los repositorios del doble grado hemos subido unos apuntes que explican 
+A los repositorios del doble grado hemos subido unos apuntes que explican
 el isomorfismo con su código fuente bajo licencia CC BY-SA 3.0:
 [Isomorfismo de Curry Howard](https://github.com/dgiim/curryHoward)
 

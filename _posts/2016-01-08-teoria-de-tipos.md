@@ -21,7 +21,7 @@ naturales que la extiende a otras estructuras representables como tipos de un
 lenguaje funcional. Sobre la inducción estructural hemos escrito previamente en el blog una
 introducción:
 
-* [Inducción Estructural - Blog DGIIM](http://dgiim.github.io/blog/2015/03/14/induccion-estructural/)
+* [Inducción Estructural - Blog DGIIM](http://tux.ugr.es/dgiim/blog/2015/03/14/induccion-estructural/)
 
 En ese post se escriben ejemplos sobre los naturales y los
 árboles. El artículo sobre el que se basa es:
@@ -43,7 +43,7 @@ repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridos
 En un post anterior de este mismo blog hemos tratado el álgebra de tipos. Ese
 post se basó sobre otros tres publicados en el blog de Chris Taylor:
 
-* [Álgebra de tipos - Blog DGIIM](http://dgiim.github.io/blog/2015/03/24/algebra-tipos/)
+* [Álgebra de tipos - Blog DGIIM](http://tux.ugr.es/dgiim/blog/2015/03/24/algebra-tipos/)
 * [The algebra of algebraic data types, Part I - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/)
 * [The algebra of algebraic data types, Part II - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/11/the-algebra-of-algebraic-data-types-part-ii/)
 * [The algebra of algebraic data types, Part III - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/13/the-algebra-of-algebraic-data-types-part-iii/)
