@@ -18,14 +18,13 @@ $$ (1,3,7,8), \ (1,5,7,8), \ (4,5,7,8) $$
 
 Una lista de longitud $$n$$ tiene $$2^n$$ sublistas posibles. Sin embargo, podemos utilizar programación dinámica para formular un algoritmo con eficiencia cuadrática que resuelva el problema. La idea consiste en calcular para cada sublista $$(x_0, \ldots, x_i)$$ una sublista ordenada que utilice la componente $$x_i$$ y que tenga la mayor longitud posible. Vamos a crear un vector, que denotaremos $$LIS$$, cuya componente i-ésima contenga la longitud de la sublista escogida para $$(x_0, \ldots, x_i)$$. Para resolver el problema basta calcular este vector y utilizar la siguiente observación.
 
-Observación
+Observación 1
 : La mayor longitud de una sublista ordenada de $$(x_0, x_1, \ldots, x_n)$$ es el máximo del vector $$LIS$$.
 
+Estudiemos cómo calcular el vector $$LIS$$. Es claro que $$LIS[0] = 1$$. Supongamos que se han calculado las $$k$$ primeras componentes con $$k < n$$ y veamos como calcular $$k+1$$. Buscamos una sublista ordenada de longitud máxima que termine en $$x_{k+1}$$. Hay dos opciones:
 
-Veamos cómo calcular el vector $$LIS$$. Es claro que $$LIS[0] = 1$$. Supongamos que se han calculado las $$k$$ primeras componentes con $$k < n$$ y veamos como calcular $$k+1$$. Buscamos una sublista ordenada de longitud máxima que termine en $$x_{k+1}$$. Hay dos opciones:
-
-- La única sublista posible es $$(x_{k+1})$$, esto es, $$LIS[k+1] = 1$$. Esto sucede si, y solo si, $$x_{k+1} < x_{i} \ \forall \ i \in \{0, \ldots, k\}$$.
-- $$LIS[k+1] > 1$$, en cuyo caso podemos tomar una lista ordenada $$(x_{i_0}, \ldots, x_{i_m}, x_{k+1})$$ de longitud $$LIS[k+1]$$. En este contexto se debe cumplir la igualdad $$LIS[i_m] = m$$. En efecto, si $$LIS[i_m] > m$$, entonces se podría tomar una sublista asociada a $$LIS[i_m]$$ y añadirle al final $$x_{k+1}$$ ya que $$x_{i_m} \le x_{k+1}$$. Hemos obtenido una sublista ordenada que termina en $$x_{k+1}$$ con longitud mayor que $$(x_{i_0}, \ldots, x_{i_m}, x_{k+1})$$, contradicción. Por tanto, $$LIS[k+1] = 1 + LIS[i_m]$$
+- $$LIS[k+1] = 1$$, esto es, la única sublista ordenada posible es $$(x_{k+1})$$. Esto sucede si, y solo si, $$x_{k+1} < x_{i} \ \forall \ i \in \{0, \ldots, k\}$$.
+- $$LIS[k+1] > 1$$, en cuyo caso podemos tomar una lista ordenada $$(x_{i_0}, \ldots, x_{i_m}, x_{k+1})$$ de longitud $$LIS[k+1]$$. En este contexto se debe cumplir la igualdad $$LIS[i_m] = m$$. En efecto, si $$LIS[i_m] > m$$, entonces se podría tomar una sublista asociada a $$LIS[i_m]$$ y añadirle al final $$x_{k+1}$$ ya que $$x_{i_m} \le x_{k+1}$$. Hemos obtenido una sublista ordenada que termina en $$x_{k+1}$$ con longitud mayor que $$(x_{i_0}, \ldots, x_{i_m}, x_{k+1})$$, contradicción. Por tanto, $$LIS[k+1] = 1 + LIS[i_m]$$.
 
 Como consecuencia se obtiene la siguiente relación recurrente:
 
@@ -37,11 +36,11 @@ A partir de esta proposición se puede calcular $$LSI$$ y, por tanto, la mayor l
 
 {: .code}
 ~~~Python
-def longestIncreasingSubsequenceLength(A):
-    LIS = [1] * len(A)
-    for i in range(1, len(A)):
+def longestIncreasingSubsequenceLength(L):
+    LIS = [1] * len(L)
+    for i in range(1, len(L)):
         for j in range(0, i):
-            if A[j] <= A[i]:
+            if L[j] <= L[i]:
                 LIS[i] = max(LIS[i], LIS[j]+1)
     return max(LIS)
 ~~~
@@ -53,14 +52,15 @@ $$ [i, P[i], P[P[i]], ...] $$
 
 El Código 2 muestra como implementar esta mejora del algoritmo.
 
+{: .code}
 ~~~Python
-def longestIncreasingSubsequence(A):
-    LIS = [1] * len(A)
-    P = [-1] * len(A)
+def longestIncreasingSubsequence(L):
+    LIS = [1] * len(L)
+    P = [-1] * len(L)
 
-    for i in range(1, len(A)):
+    for i in range(1, len(L)):
         for j in range(0, i):
-            if A[j] < A[i] and LIS[i] < LIS[j]+1:
+            if L[j] < L[i] and LIS[i] < LIS[j]+1:
                 LIS[i] = LIS[j]+1
                 P[i] = j
 
@@ -71,9 +71,62 @@ def longestIncreasingSubsequence(A):
         i = P[i]
     return  sol[::-1]
 ~~~
-
 **Código 2.** Algoritmo cuadrático para calcular la sublista ordenada de mayor longitud.
 
+## Solución utilizando segment trees
+
+Anteriormente en el blog hemos tratado la estructura de datos denominada [segment trees o árboles de segmentos](http://tux.ugr.es/dgiimblog/2015/07/17/segment-tree/). Esta nos permite realizar consultas sobre sobre determinada información de los intervalos de un vector en un tiempo reducido. Vamos a utilizar esta estructura de datos para acelerar el algoritmo previo y obtener una implementación con eficiencia $$\theta(n \log n)$$.
+
+Consideremos la permutación $$\sigma : \{0, \ldots, n\} \rightarrow \{0, \ldots, n\}$$ que ordena la lista $$L = (x_0, x_1, \ldots, x_n)$$. Si permitimos que haya elementos repetidos debemos elegir una entre las posibles permutaciones que ordenan la lista. Para que el algoritmo sea correcto necesitaremos tomar aquella que verifique que si $$i < j$$ y $$x_i = x_j$$, entonces $$\sigma^{-1}(i) < \sigma^{-1}(j)$$. Esto es, si dos elementos de la lista son iguales, entonces el que aparece antes en la lista ordenada es aquel que aparecía antes en la lista original. La necesidad de esta propiedad la justificaremos posteriormente.
+
+Vamos a inicializar el segment tree con el vector $$LIS$$ de manera que nos permita consultar el máximo de sus intervalos en tiempo logarítmico. Al finalizar el algoritmo la i-ésima hoja del árbol contendrá la longitud de la mayor sublista ordenada que termina en la componente $$i$$. Inicialmente todos estos valores serán 0.
+
+Calcularemos las componentes del vector $$LIS$$ siguiendo el orden que proporciona la permutación $$\sigma$$. El primer elemento visitado es aquel con el menor valor de $$L$$ que aparece en primer lugar. Es claro que el valor del vector $$LIS$$ para esta componente es 1. Si hubiese valores repetidos en la lista y se escogiese otra permutación distinta a la nuestra, no tendríamos garantizada esta propiedad. En efecto, si $$\sigma(0) > \sigma(1)$$ y $$x_{\sigma(0)} = x_{\sigma(1)}$$, entonces $$LIS[\sigma(0)] \ge 2$$.
+
+Supongamos que hemos calculado $$LIS[\sigma(i)]$$ para todo $$0 \le i \le k$$ con $$k < n$$ y veamos cómo obtener $$LIS[\sigma(k+1)]$$. Tenemos que $$J_{\sigma(k+1)} = \{i \in \{0, \ldots, k\} : x_i \le x_{k+1}\} = \{\sigma(i) : i \in \{0, \ldots, k\} \text{ y } \sigma(i) < \sigma(k+1)\} \ne \emptyset$$. Recordemos que las componentes no calculadas del vector $$LIS$$ tienen el valor 0. Teniendo en cuenta este detalle y que $$J_{k+1} \subset \{0, 1, \ldots, \sigma(k+1)-1\}$$ podemos aplicar la Proposición 1 y obtener la siguiente proposición:
+
+Proposición 2
+: En este contexto se verifica la siguiente igualdad:
+: $$ LIS[\sigma(k+1)] = 1 + \max_{i \ \in \ J_{k+1}}LIS[i] = 1 + \max_{0 \le i \le \sigma(k)}LIS[i] $$
+
+El segment tree nos permite calcular el último máximo en tiempo logarítmico, basta realizar la consulta para el intervalo $$[0, \ldots, \sigma(k)-1]$$. Por último, actualizamos el valor de $$LIS[\sigma(k+1)]$$ en el segment tree también en tiempo logarítmico.
+
+Este razonamiento prueba que el algoritmo dado en el Código 3 es correcto. Hemos utilizado la sintaxis de nuestra [implementación de los segment trees](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree). La eficiencia del algoritmo es $$\theta(n \log n)$$ ya que en cada iteración se realiza una consulta y una actualización del segment tree.
+
+{: .code}
+~~~Python
+def longestIncreasingSubsequenceLength(L):
+    st = SegmentTree([0]*len(L), SegmentTreeNodeMax)
+    # The list B contains the permutation which sorts L and verify that if
+    # B[i] < B[j] and L[i] = L[j], then i < j.
+    B = list(map(lambda x : -x[1], sorted([(L[i],-i) for i in range(0,len(L))])))
+    for i in range(0,len(B)):
+        st.update(B[i],st.getInfo(0,B[i])+1)
+    return st.getInfo(0,len(L)-1)
+~~~
+**Código 3.** Algoritmo basado en segment trees para calcular la mayor longitud de las sublistas ordenadas.
+
+Podemos modificar el Código 3 para obtener una implementación que devuelva la sublista ordenada de mayor longitud. Para ello utilizamos la misma idea que en el Código 2. La dificultad añadida reside en el uso de los segment trees. Tenemos que modificar la implementación de los nodos para que el árbol también devuelva el índice que alcanza el máximo de la consulta. El Código 4 contiene dicha modificación así como la nueva implementación del algoritmo.
+
+{: .code}
+~~~Python
+def longestIncreasingSubsequenceIndexes(L):
+    st = SegmentTree([0]*len(L),SegmentTreeNodeMax)
+    B = list(map(lambda x : -x[1], sorted([(L[i],-i) for i in range(0,len(L))])))
+    P = [-1]*len(L)
+    for i in range(0,len(L)):
+        # The method getInfo returns the maximum value in the interval and
+        # the index which reachs that value.
+        length, P[B[i]] = st.getInfo(0, B[i])
+        st.update(B[i],length+1)
+
+    LIS = []; i = st.getInfo(0,len(L)-1)[1]
+    while  i != -1:
+        LIS.append(i)
+        i = P[i]
+    return LIS[::-1]
+~~~
+**Código 4.** Algoritmo basado en segment trees para calcular la sublista ordenada de mayor longitud.
 
 ## Aplicaciones
 
