@@ -8,19 +8,19 @@
       <div class="sites pure-u-5-6 pure-u-md-1-2 pure-u-lg-1-2">
         <ul class="pure-menu-list">
           <li class="pure-menu-item">
-            <a href="{{ site.baseurl }}/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
+            <a href="{{ site.base_path }}/blog/" class="l-blog pure-menu-link" title="Inicio"><i class="fa fa-home"></i></a>
           </li>
           <li class="pure-menu-item">
-            <a href="/foro" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
+            <a href="{{ site.base_path }}/foro/" class="l-foro pure-menu-link" title="Foro"><i class="fa fa-comments"></i></a>
           </li>
           <li class="pure-menu-item">
-            <a href="/awesome" class="l-res pure-menu-link" title="Awesome"><i class="fa fa-bookmark"></i></a>
+            <a href="{{ site.base_path }}/awesome/" class="l-res pure-menu-link" title="Awesome"><i class="fa fa-bookmark"></i></a>
           </li>
           <li class="pure-menu-item">
             <a href="https://github.com/dgiim/blog" title="GitHub" class="social-link pure-menu-link"><i class="fa fa-github"></i></a>
           </li>
           <li class="pure-menu-item">
-            <a href="https://twitter.com/dgiimgr" title="Twitter" class="social-link pure-menu-link"><i 
+            <a href="https://twitter.com/dgiimgr" title="Twitter" class="social-link pure-menu-link"><i
 class="fa fa-twitter"></i></a>
           </li>
         </ul>
