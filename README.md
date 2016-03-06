@@ -1,4 +1,4 @@
-[/blog](http://dgiim.github.com/blog)
+[Blog DGIIM](http://tux.ugr.es/dgiim/blog/)
 ====
 
 [![Travis badge](https://travis-ci.org/dgiim/blog.svg?branch=gh-pages)](https://travis-ci.org/dgiim/blog)
