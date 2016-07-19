@@ -12,7 +12,7 @@ demostraciones del teorema que representa.
 
 A los repositorios del doble grado hemos subido unos apuntes que explican
 el isomorfismo con su código fuente bajo licencia CC BY-SA 3.0:
-[Isomorfismo de Curry Howard](https://github.com/dgiim/curryHoward)
+[Isomorfismo de Curry Howard](https://github.com/libreim/curryHoward)
 
 Los apuntes constan de una presentación general, unos apuntes más detallados,
 con ejemplos en Haskell y una introducción al asistente de demostraciones Coq.

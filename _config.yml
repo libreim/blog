@@ -1,4 +1,4 @@
-# Github defaults:
+﻿# Github defaults:
 safe: true
 lsi: false
 
@@ -7,7 +7,7 @@ baseurl: /blog
 name: libreim
 title: LibreIM
 description: Blog de la comunidad LibreIM
-url: http://dgiim.github.io/blog
+url: http://libreim.github.io/blog
 
 markdown: kramdown
 kramdown:

@@ -14,4 +14,4 @@ Dado determinado problema de optimización, una **heurística** es un proceso qu
 
 Los **algoritmos genéticos** son heurísticas basadas en poblaciones y en los conceptos de evolución y genética. En la naturaleza, las poblaciones de individuos evolucionan con el tiempo gracias a tres factores: la **selección natural**, la **reproducción** y la **mutación**. Los algoritmos genéticos imitan estos procesos para conseguir evolucionar una población de soluciones iniciales.
 
-En los repositorios del doble grado se encuentran unos [apuntes](https://github.com/dgiim/AlgoritmosGeneticos) que explican el funcionamiento de estos algoritmos de forma detallada. Se encuentran protegidos bajo licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
+En los repositorios del doble grado se encuentran unos [apuntes](https://github.com/libreim/AlgoritmosGeneticos) que explican el funcionamiento de estos algoritmos de forma detallada. Se encuentran protegidos bajo licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).

@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+﻿#!/usr/bin/env ruby
 #encoding: utf-8
 
 #
@@ -104,7 +104,7 @@ task :submit do
     g.push "origin", g.current_branch
 
     # Open GitHub on new pull request page
-    system "xdg-open https://github.com/dgiim/blog/compare/#{g.current_branch}?expand=1"
+    system "xdg-open https://github.com/libreim/blog/compare/#{g.current_branch}?expand=1"
   else
     puts "Submit cancelled."
   end

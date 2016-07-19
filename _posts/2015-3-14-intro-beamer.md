@@ -11,7 +11,7 @@ y otros formatos. Permite el uso de transiciones, mostrar elementos selectivamen
 pantalla y aprovechar las capacidades de `tikz`, `pgf` y la mayoría de paquetes de LaTeX
 para personalizar el aspecto de la presentación al detalle.
 
-Puedes encontrar una guía básica escrita en `beamer` [aquí](https://github.com/dgiim/beamer).
+Puedes encontrar una guía básica escrita en `beamer` [aquí](https://github.com/libreim/beamer).
 No he podido cubrir todo, así que otros recursos que puedes utilizar son:
 
 - [La guía oficial de `beamer`](http://osl.ugr.es/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf)
