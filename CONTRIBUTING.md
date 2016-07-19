@@ -12,3 +12,7 @@ Los contenidos del blog se publican por defecto en licencia de [Creative Commons
 Si nos envías tu artículo, asumiremos esta licencia a no ser que prefieras indicarnos otra licencia libre. En cualquier caso,
 incluye tu nombre para que podamos indicar tu autoría a la hora de publicarlo; así como el de otros autores o colaboradores
 del artículo.
+
+
+## Usando GitHub
+También puedes presentar tu artículo como un pull-request a este repositorio. Puedes orientarte viendo otros posts escritos en la carpeta `blog/_posts`.
