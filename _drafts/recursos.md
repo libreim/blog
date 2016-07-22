@@ -101,7 +101,7 @@
 [Learn you a Haskell for great good - learnyouahaskell.com](http://learnyouahaskell.com/chapters) - *Tutorial de introducción a Haskell*
 
 #### Control de versiones
-[Manual rápido de Github/Git - DGIIM](https://github.com/dgiim/dgiim.github.io/blob/master/manualgit.md) - *Tutorial rápido de introducción a Git*
+[Manual rápido de Github/Git - LibreIM](https://github.com/libreim/libreim.github.io/blob/master/manualgit.md) - *Tutorial rápido de introducción a Git*
 
 ## Sistemas y redes
 #### Guías docentes

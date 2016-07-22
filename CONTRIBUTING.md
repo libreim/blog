@@ -4,7 +4,7 @@ Cualquier tema relacionado con las matemáticas y la ingeniería informática es
 
 Si quieres empezar a escribir tu artículo, puedes usar [**StackEdit**](https://stackedit.io/), que es un editor online de [Markdown](https://daringfireball.net/projects/markdown/)
 y [Mathjax](https://www.mathjax.org/) con el que puedes previsualizar cómo quedarán las fórmulas matemáticas y el formato de tu artículo antes de enviarlo. 
-Cuando lo termines, puedes enviarlo a **dgiim.blog+posts@gmail.com**. A partir de ahí, empezaremos un proceso de revisión desde [GitHub](https://github.com/dgiim/blog/pulls)
+Cuando lo termines, puedes enviarlo a **dgiim.blog+posts@gmail.com**. A partir de ahí, empezaremos un proceso de revisión desde [GitHub](https://github.com/libreim/blog/pulls)
 para asegurarnos de que no haya ninguna errata y que sigue la [guía de estilo](http://tux.ugr.es/dgiimblog/styleguide/). En cuanto
 esté revisado, lo publicaremos en el blog.
 

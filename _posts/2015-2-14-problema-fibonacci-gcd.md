@@ -263,4 +263,4 @@ fib2 n
 ~~~
 
 
-Más material sobre el problema puede encontrarse en el [repositorio correspondiente del doble grado](https://github.com/dgiim/problemas/tree/master/Seminario14-FibonacciGCD).
+Más material sobre el problema puede encontrarse en el [repositorio correspondiente del doble grado](https://github.com/libreim/problemas/tree/master/Seminario14-FibonacciGCD).

@@ -18,7 +18,7 @@ hace especial hincapié en productos y coproductos y se pasan a explicar
 los functores y las transformaciones naturales. El objetivo no es aportar
 otra explicación formal de la teoría de categorias, sino dar una idea
 general de los conceptos básicos:  
-[Introducción a la Teoría de Categorías](https://github.com/dgiim/introCategorias)
+[Introducción a la Teoría de Categorías](https://github.com/libreim/introCategorias)
 
 
 [^categoriaswikipedia]: [Teoría de Categorías - Wikipedia, the free encyclopedia](http://es.wikipedia.org/wiki/Teor%C3%ADa_de_categor%C3%ADas)

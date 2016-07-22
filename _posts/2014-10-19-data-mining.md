@@ -13,7 +13,7 @@ datos que se poseen para predecir características de datos futuros.
 
 Se han redactado unos apuntes sobre clasificación y los algoritmos
 más utilizados para tratar el problema, disponibles en el [repositorio
-correspondiente de la organización del Doble Grado](http://github.com/dgiim/data-mining-classification/)
+correspondiente de la organización del Doble Grado](http://github.com/libreim/data-mining-classification/)
 en GitHub. En ellos se dan las definiciones pertinentes, se distinguen
 modalidades del problema y se explican técnicas y algoritmos para
 generar clasificadores. Se comparten bajo la licencia [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
