@@ -4,7 +4,7 @@ title: Apuntes de introducción al cálculo
 authors:
   - ncordon
 editors:
-  - m42
+  - M42
   - fdavidcl
 category: Análisis
 ---
