@@ -3,18 +3,20 @@ layout: post
 title: Apuntes de introducción al cálculo
 authors:
   - ncordon
+editors:
+  - m42
 category: Análisis
 ---
 
-Presentamos el código de unos excelsos apuntes de Cálculo, que sirven como estupenda
-introducción al Análisis Matemático. Los apuntes están licenciados en
+Presentamos el código fuente de un libro completo de Cálculo escrito por D. Francisco Javier Pérez González, profesor
+del departamento de Análisis Matemático de la Universidad de Granada, que sirve como una maravillosa
+introducción al Análisis y al razonamiento matemático. Los apuntes están escritos en Latex y licenciados en
 Creative Commons BY-NC-SA.
 
-Agradecimientos a D.Javier Pérez González, profesor de la Universidad de Granada
-que nos proporcionó el código de sus apuntes para que pudiésemos publicar liberar
-el código de los mismos, y que ha demostrado estar muy concenciado en hacer del
+Queremos agradecérselos a D. Javier Pérez,
+que nos proporcionó el código de sus apuntes para que pudiésemos publicarlo, y que ha ayudado a hacer del
 conocimiento algo libre y accesible a sus alumnos. En su [página web](http://www.ugr.es/~fjperez/)
-se puede encontrar mucho más material dedicado al análisis matemático: series de
-Fourier, variable compleja, análisis en $$\mathbbl{R}^n$$
+se puede encontrar mucho más material dedicado al análisis matemático, como series de
+Fourier, variable compleja o análisis en $$\mathbbl{R}^n$$.
 
-Enlace a los apuntes [aquí](https://github.com/libreim/calculo)
+El libro completo puede descargarse [aquí](https://github.com/libreim/calculo/releases/download/apuntes/calculo.pdf) y el código fuente lo alojamos en [este repositorio en GitHub](https://github.com/libreim/calculo).
