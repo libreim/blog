@@ -19,4 +19,4 @@ conocimiento algo libre y accesible a sus alumnos. En su [página web](http://ww
 se puede encontrar mucho más material dedicado al análisis matemático, como series de
 Fourier, variable compleja o análisis en $$\mathbbl{R}^n$$.
 
-El libro completo puede descargarse [aquí](https://github.com/libreim/calculo/releases/download/apuntes/calculo.pdf) y el código fuente lo alojamos en [este repositorio en GitHub](https://github.com/libreim/calculo).
+Está disponible [el libro completo en formato PDF](https://github.com/libreim/calculo/releases/download/apuntes/calculo.pdf) y el código fuente lo alojamos en [este repositorio en GitHub](https://github.com/libreim/calculo).
