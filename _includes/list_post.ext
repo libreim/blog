@@ -1,5 +1,5 @@
 <p class="post-list">
-  <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   {% assign authorCount = post.authors | size %}
   {% if authorCount > 0 %}
     <span class="author">por
