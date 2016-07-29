@@ -11,7 +11,7 @@
         <a href="{{ site.base_path }}/awesome/" class="pure-menu-link" title="Awesome">Awesome</a>
         <a href="{{ site.base_path }}/contributing/" class="pure-menu-link" title="Participa">Participa</a>
       </div>
-      <a href="{{ site.baseurl }}/" class="site-title pure-menu-heading">&nbsp;</a>
+      <a href="{{ site.base_path }}/" class="site-title pure-menu-heading">&nbsp;</a>
     </div>
     <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
   </div>
