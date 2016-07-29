@@ -22,7 +22,7 @@
           {% endfor %}
         {% endif %}
 
-        <a class="date" href="{{ post.url }}">
+        <a class="date" href="{{ post.url | prepend: site.baseurl }}">
           {{ post.date | date: "%d-%m-%Y" }}
         </a>
         <a class="dsq-comment-count comments" href="{{ post.url | prepend: site.baseurl }}#disqus_thread" data-disqus-identifier="{{ post.id }}">
