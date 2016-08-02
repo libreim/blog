@@ -79,7 +79,7 @@ pulsando `RET` cada vez que queramos abrir un archivo o una carpeta.
 Podemos además afectar a los archivos. Por ejemplo, si queremos eliminar algunos
 archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`. 
 
-## org-mode
+### org-mode
 **org-mode** es un completo lenguaje de marcado, similar a Markdown, que se creó 
 originalmente para gestionar listas de tareas, agendas y calendarios. Permite exportar 
 documentos a una gran variedad de formatos (pdf, html, latex o markdown) e incluir
@@ -88,9 +88,15 @@ un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para 
 sencillas. Por todo esto, puede ser usado en tareas como la ciencia reproducible o la
 programación literaria cuando Latex es demasiado complejo.
 
-## magit
+### magit
 **magit** permite integrar Emacs con **git** fácilmente para incluir los commits desde
 dentro del mismo editor.
+
+## Macros de teclado
+Las macros de teclado nos dejan grabar una secuencia de acciones y volver a repetirla
+tantas veces como sea necesaria. Se puede empezar a grabar con **"f3"** y terminar la
+grabación y repetirla tantas veces como sea necesario con **"f4"**.
+
 
 ### Referencias
 [^emacs-wiki]: [Emacs Wiki](https://www.emacswiki.org/emacs/SiteMap) documenta todo lo relacionado con emacs. 
