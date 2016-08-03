@@ -13,6 +13,7 @@ url: http://libreim.github.io/blog
 markdown: kramdown
 kramdown:
   parse_span_html: false
+highlighter: rouge
 
 # Dependencies
 gems:
