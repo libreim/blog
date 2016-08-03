@@ -98,6 +98,7 @@ archivo de configuración (`.emacs`/`init.el`), como se indica en las [instrucci
 de instalación](https://melpa.org/packages/) del repositorio.
 
 ### Paquetes
+
 Podemos listar los paquetes que podemos instalar usado `M-x list-packages` y podemos
 buscar entre los paquetes pulsando varias veces el comando `C-s`.
 
@@ -149,7 +150,17 @@ grabación y repetirla tantas veces como sea necesario con **"f4"**.
 
 [**.Emacs #9 - Keyboard macros** - *jekor*](https://youtu.be/JfZ9fCHzkJw)
 
-### Referencias
+## Elisp
+
+[Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/elisp/), o Elisp, es un
+lenguaje de programación diseñado específicamente para escribir un editor de texto.
+Facilita el tratamiento de texto y el manejo de archivos y buffers.
+
+Podemos escribir scripts en Elisp que se encarguen de tareas repetitivas en nuestro editor
+de texto y asignarlas a atajos de teclado o ampliarlo con más funcionalidad. Un tutorial
+básico sobre Elisp es [Learn Emacs Lisp in 15 minutes](http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html).
+
+## Referencias
 [^emacs-wiki]: [Emacs Wiki](https://www.emacswiki.org/emacs/SiteMap) documenta todo lo relacionado con emacs. 
 [^emacs-productivo]: Citation needed. Sólo puedo decir que a mí me funciona.
 [^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que emacs usa para esto es bastante más sofisticado.
