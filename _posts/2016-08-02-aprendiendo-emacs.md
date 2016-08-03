@@ -13,12 +13,12 @@ sobre el intérprete, por lo que podemos reescribir sus comandos o crear nuevos
 comandos simplemente programando sobre el intérprete.
 
 Emacs sirve como IDE la mayoría de lenguajes de programación, como
-editor para programación literaria y ciencia reproducible; se integra con git o
+editor para programación literaria y ciencia reproducible; se integra con git y
 con el sistema de archivos, y tiene extensiones disponibles para usarse como
 aplicación para organizar listas de tareas, leer el correo o servir como hoja
 de cálculo.
 
-> I use Emacs, which might be thought of as a thermonuclear word processor.
+> I use Emacs, which might be thought of as a thermonuclear word processor.  
 > **Neal Stephenson**, *In the Beginning... was the command line.*
 
 ### Instalación
@@ -39,12 +39,13 @@ versión estable es la **24.5**. La versión estable actual puede descargarse de
 En emacs se usa la siguiente notación para escribir un atajos de teclado.
 La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`:
 
+| Atajo   | Descripción                                   | Comando         |
 |---------|-----------------------------------------------|-----------------|
 | C-x     | Mantener control pulsado mientras se pulsa n  | Next line       |
 | C-x C-s | Mantener control pulsado pulsando x y luego s | Save file       |
 | M-x     | Mantener alt o pulsar esc para luego pulsar x | Execute Command |
 | RET     | Salto de línea, pulsar enter antes de seguir  |                 |
-|---------|-----------------------------------------------|-----------------|
+
 
 Usar atajos de teclado facilita mucho usar emacs rápidamente. [^emacs-productivo]
 
@@ -80,9 +81,21 @@ paquetes necesitarán configuración adicional que abrá que incluir en este arc
 
 ### Melpa
 Es necesario añadir un repositorio más grande que el que trae GNU por defecto.
+[MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de emacs más 
+grandes y actualizados.
 El repositorio de MELPA se añade desde `M-x customize-group RET package`. Dentro
-de la pestaña de repositorios puede añadirse el de MELPA. Para salir de cualquiera
-de las pantallas de customización se usa `q`.
+de la pestaña de repositorios puede insertarse la dirección de MELPA:
+
+```
+Archive name: melpa-stable  
+URL or directory name: https://stable.melpa.org/packages/
+```
+
+Para salir de cualquiera de las pantallas de customización se usa `q`.
+
+Otra forma de conseguir este mismo efecto es añadirlo directamente a nuestro
+archivo de configuración (`.emacs`/`init.el`), como se indica en las [instrucciones
+de instalación](https://melpa.org/packages/) del repositorio.
 
 ### Paquetes
 Podemos listar los paquetes que podemos instalar usado `M-x list-packages` y podemos
@@ -91,7 +104,9 @@ buscar entre los paquetes pulsando varias veces el comando `C-s`.
 [**.Emacs #3 - Installing packages and extensions** - *jekor*](https://youtu.be/Cf6tRBPbWKs)
 
 ## Paquetes útiles
+
 ### Dired
+
 Dired viene instalado por defecto con Emacs y permite navegar la estructura de 
 directorios del sistema operativo. Podemos empezar a navegarla usando `M-x dired` y
 pulsando `RET` cada vez que queramos abrir un archivo o una carpeta.
@@ -114,7 +129,18 @@ programación literaria cuando Latex es demasiado complejo.
 
 ### magit
 **magit** permite integrar Emacs con **git** fácilmente para incluir los commits desde
-dentro del mismo editor.
+dentro del mismo editor. Usando `magit-status` llegamos a una pantalla en la que podemos
+elegir qué ficheros añadir al commit con `s`, ejecutar el commit con `c c`, que nos mostrará
+el buffer con el mensaje de commit y por último usar `C-c C-c` para enviarlo. El push y
+pull los haremos desde `magit-status` con `P u` y `F u`, respectivamente.
+
+Es útil asignar un atajo de teclado al comando `magit-status`, que es el que muestra la 
+ventana desde la que controlamos el añadir y hacer commit de ficheros. Por ejemplo, podemos
+fijarlo en `f9` añadiendo a nuestro archivo de configuración:
+
+``` lisp
+(global-set-key (kbd "<f9>") 'magit-status)
+```
 
 ## Macros de teclado
 Las macros de teclado nos dejan grabar una secuencia de acciones y volver a repetirla
