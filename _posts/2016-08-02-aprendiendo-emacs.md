@@ -31,7 +31,7 @@ sudo apt install emacs
 ```
 
 Para escribir este artículo estoy usando `GNU Emacs 25.1`, pero la última 
-versión estable es la 24.5. La versión estable actual puede descargarse desde
+versión estable es la **24.5**. La versión estable actual puede descargarse desde
 [GNU](https://www.gnu.org/software/emacs/).
 
 ## Atajos de teclado
@@ -58,6 +58,24 @@ de forma muy simplificada: [^emacs-kill-buffer]
 * `C-w` corta.
 * `C-y` pega.
 
+Otros comandos útiles de aprender antes de empezar con nada más son `C-x C-s` para
+guardar y `C-x C-f` para abrir un archivo.
+
+## Personalización
+
+Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
+necesidad. Desde los atajos de teclado, que puedes configurar a tu gusto; hasta
+el tema de color y fuentes que usa el editor.
+
+La forma más básica de editar todas estas configuraciones es `M-x customize group`,
+que accede a un menú en el que se pueden modificar todas ellas. Todos los cambios
+que aquí se hagan se guardarán en un archivo `.emacs` (o `init.el`, en las versiones
+nuevas de emacs). Esta es la otra forma de configurar emacs, el archivo de inicio
+`.emacs` contiene código en Elisp que se ejecutará al iniciar el editor. Algunos
+paquetes necesitarán configuración adicional que abrá que incluir en este archivo.
+
+[**.Emacs #2 - Customizations and themes** - *jekor*](https://youtu.be/mMcc0IF1hV0)
+
 ## Sistemas de paquetes
 
 ### Melpa
@@ -70,6 +88,8 @@ de las pantallas de customización se usa `q`.
 Podemos listar los paquetes que podemos instalar usado `M-x list-packages` y podemos
 buscar entre los paquetes pulsando varias veces el comando `C-s`.
 
+[**.Emacs #3 - Installing packages and extensions** - *jekor*](https://youtu.be/Cf6tRBPbWKs)
+
 ## Paquetes útiles
 ### Dired
 Dired viene instalado por defecto con Emacs y permite navegar la estructura de 
@@ -78,6 +98,8 @@ pulsando `RET` cada vez que queramos abrir un archivo o una carpeta.
 
 Podemos además afectar a los archivos. Por ejemplo, si queremos eliminar algunos
 archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`. 
+
+[**.Emacs #4 - Exploring the filesystem** - *jekor*](https://youtu.be/7jZdul2fC94)
 
 ### org-mode
 **org-mode** es un completo lenguaje de marcado, similar a Markdown, que se creó 
@@ -88,6 +110,8 @@ un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para 
 sencillas. Por todo esto, puede ser usado en tareas como la ciencia reproducible o la
 programación literaria cuando Latex es demasiado complejo.
 
+[**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
+
 ### magit
 **magit** permite integrar Emacs con **git** fácilmente para incluir los commits desde
 dentro del mismo editor.
@@ -97,6 +121,7 @@ Las macros de teclado nos dejan grabar una secuencia de acciones y volver a repe
 tantas veces como sea necesaria. Se puede empezar a grabar con **"f3"** y terminar la
 grabación y repetirla tantas veces como sea necesario con **"f4"**.
 
+[**.Emacs #9 - Keyboard macros** - *jekor*](https://youtu.be/JfZ9fCHzkJw)
 
 ### Referencias
 [^emacs-wiki]: [Emacs Wiki](https://www.emacswiki.org/emacs/SiteMap) documenta todo lo relacionado con emacs. 
