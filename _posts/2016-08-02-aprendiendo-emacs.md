@@ -21,6 +21,19 @@ de cálculo.
 > I use Emacs, which might be thought of as a thermonuclear word processor.  
 > **Neal Stephenson**, *In the Beginning... was the command line.*
 
+En este artículo haré una referencia breve a todo lo que me ha ido sirviendo
+para aprender Emacs mientras enlazo a fuentes que tratan cada uno de los temas
+extensamente. Como recursos generales para aprender emacs, puedo recomendar:
+
+* **.Emacs Tutorials** de *jekor*, explican todo lo necesario para aprender
+  emacs en 10 videotutoriales que pueden seguirse progresivamente.
+* **Thoughbot Emacs keynotes**, que profundizan sobre temas concretos de uso
+  de emacs.
+* **El blog de Sacha Chua**, donde hace referencia periódicamente a noticias
+  de emacs, y tiene escritas hojas de referencia de atajos de teclado de emacs.
+* **C'est la z**, otro blog en el que se tratan temas relacionados con emacs.
+* **Emacs Rocks**, vídeos breves sobre casos concretos de uso de emacs.
+
 ### Instalación
 
 Emacs puede encontrarse en la mayoría de gestores de paquetes, pero puede no
