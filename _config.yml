@@ -34,14 +34,12 @@ pagination:
 
 excerpt_separator: "<!--more-->"
 
-collections:
-  math_resources:
-    output: true
-    permalink: /resources/m/:path/
-  cs_resources:
-    output: true
-    permalink: /resources/cs/:path/
-
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
 
 # Autores
 authors:
