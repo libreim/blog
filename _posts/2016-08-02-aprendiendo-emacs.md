@@ -7,8 +7,9 @@ category: Programación
 
 ## Emacs
 
-**Emacs** es un editor de texto construido sobre un intérprete del lenguaje 
-**Elisp** para hacerlo extensible. Cada acción del editor constituye un comando
+[**Emacs**](https://www.gnu.org/software/emacs/) es un editor de texto 
+construido sobre un intérprete del lenguaje 
+[**Elisp**](https://es.wikipedia.org/wiki/Emacs_Lisp) para hacerlo extensible. Cada acción del editor constituye un comando
 sobre el intérprete, por lo que podemos reescribir sus comandos o crear nuevos
 comandos simplemente programando sobre el intérprete.
 
@@ -23,17 +24,24 @@ de cálculo.
 
 En este artículo haré una referencia breve a todo lo que me ha ido sirviendo
 para aprender Emacs mientras enlazo a fuentes que tratan cada uno de los temas
-extensamente. Como recursos generales para aprender emacs, puedo recomendar:
+más extensamente. Como recursos generales para aprender emacs, puedo recomendar:
 
-* **.Emacs Tutorials** de *jekor*, explican todo lo necesario para aprender
+* [**.Emacs Tutorials**](https://www.youtube.com/playlist?list=PLxj9UAX4Em-IiOfvF2Qs742LxEK4owSkr) 
+  de *jekor*, explican todo lo necesario para aprender
   emacs en 10 videotutoriales que pueden seguirse progresivamente.
-* **Thoughbot Emacs keynotes**, que profundizan sobre temas concretos de uso
+* [**Emacs Meetups**](https://www.youtube.com/playlist?list=PL8tzorAO7s0he-pp7Y_JDl7-Kz2Qlr_Pj) 
+  de Thoughtbot, que profundizan sobre temas concretos de uso
   de emacs.
-* **El blog de Sacha Chua**, donde hace referencia periódicamente a noticias
+* [**Emacs Rocks**](http://emacsrocks.com/), vídeos breves sobre casos concretos de uso de emacs.
+* [**Emacs wiki**](https://www.emacswiki.org/emacs/SiteMap), una wiki que documenta
+  todo lo relacionado con emacs.
+* [**sachachua.com**](http://sachachua.com/blog/category/geek/emacs/),
+  donde se hace referencia periódicamente a noticias
   de emacs, y tiene escritas hojas de referencia de atajos de teclado de emacs.
-* **C'est la z**, otro blog en el que se tratan temas relacionados con emacs.
-* **Emacs Rocks**, vídeos breves sobre casos concretos de uso de emacs.
-* **GNU Emacs**, la documentación oficial de emacs.
+* [**C'est la z**](http://cestlaz.github.io/stories/emacs/), otro blog en el que se tratan temas relacionados con emacs.
+* [**GNU Emacs**](https://www.gnu.org/software/emacs/manual/), la documentación oficial de emacs.
+
+<!--more-->
 
 ### Instalación
 
