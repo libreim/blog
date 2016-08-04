@@ -120,13 +120,20 @@ y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
 El comportamiento de emacs sobre cada buffer que abra será distinto dependiendo 
 normalmente de la extensión del archivo. Esto le permite colorear de manera distinta
 distintas sintaxis, o tener comportamientos específicos (indentación, atajos de teclado,
-formateo) cuando está editando cada lenguaje.
+formateo) cuando está editando cada lenguaje. 
 
 Cada una de estas formas de edición se llama **modo**, y el **modo** actual aparece
 resaltado entre paréntesis en la barra inferior de Emacs. El modo básico es `Fundamental`,
 pero existen modos específicos para cada lenguaje de programación, por ejemplo; así, tendremos
 [`Ruby-mode`](https://www.emacswiki.org/emacs/RubyMode), [`Python-mode`](https://www.emacswiki.org/emacs?action=browse;oldid=PythonMode;id=PythonProgrammingInEmacs#toc2) 
-o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode).
+o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode). 
+
+Además de los *modos mayores*
+de los que hemos hablado hasta ahora, existen *modos menores* que son opcionales
+y complementan a los modos mayores. 
+Por ejemplo, mientras escribo este artículo estoy usando `Markdown` como modo mayor
+y `ARev` ([Auto-revert mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Reverting.html))
+como modo menor.
 
 ## Personalización
 
