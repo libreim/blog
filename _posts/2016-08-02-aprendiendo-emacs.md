@@ -75,6 +75,17 @@ de forma muy simplificada: [^emacs-kill-buffer]
 Otros comandos útiles de aprender antes de empezar con nada más son `C-x C-s` para
 guardar y `C-x C-f` para abrir un archivo.
 
+### Documentación
+
+Emacs es un editor autodocumentado, es decir, la documentación del editor puede consultarse
+dentro del propio programa. Para llamar a la ayuda se puede pulsar `C-h ?`, que nos
+dejará elegir si necesitamos ayuda sobre comandos, atajos de teclados, variables,
+licencias, etc. Especialmente útiles son:
+
+* `C-h c <atajo de teclado>` nos da el nombre de la función que se ejecuta al pulsar
+  esas teclas.
+* `C-h f <nombre de función>` documenta la función.
+
 ## Personalización
 
 Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
