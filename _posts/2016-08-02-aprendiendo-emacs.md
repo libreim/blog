@@ -59,7 +59,13 @@ versión estable es la **24.5**. La versión estable actual puede descargarse de
 ## Atajos de teclado
 
 En emacs se usa la siguiente notación para escribir un atajos de teclado.
-La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`:
+La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`.
+Usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
+`x` y `s`.
+Y por último, usará `M-x`; donde la `M` se referirá a la tecla `Meta`.
+La tecla `Meta` en Emacs se refiere normalmente a
+dos opciones equivalentes, o bien pulsar `alt izq.` mientras se pulsa `x`, o pulsar `Esc` y luego pulsar
+`x`. En resumen:
 
 | Atajo   | Descripción                                   | Comando         |
 |---------|-----------------------------------------------|-----------------|
@@ -227,6 +233,6 @@ de texto y asignarlas a atajos de teclado o ampliarlo con más funcionalidad. Un
 básico sobre Elisp es [Learn Emacs Lisp in 15 minutes](http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html).
 
 ## Notas
-[^emacs-productivo]: Citation needed. Sólo puedo decir que a mí me funciona y que parece ser [mejor que usar el ratón](http://ux.stackexchange.com/a/30749).
+[^emacs-productivo]: Realmente solo puedo decir que a mí me funciona y que en general los atajos de teclado parecen ser [mejores que usar el ratón](http://ux.stackexchange.com/a/30749).
 [^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que emacs usa para esto es bastante más sofisticado.
 [^magit-select]: De hecho, podemos seleccionar qué párrafos dentro de un fichero queremos añadir al commit.
