@@ -155,8 +155,10 @@ archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`.
 [**.Emacs #4 - Exploring the filesystem** - *jekor*](https://youtu.be/7jZdul2fC94)
 
 ### org-mode
-**org-mode** es un completo lenguaje de marcado, similar a Markdown, que se creó 
-originalmente para gestionar listas de tareas, agendas y calendarios. Permite exportar 
+
+**org-mode** es un modo de Emacs que se creó 
+originalmente para gestionar listas de tareas, agendas y calendarios; pero
+contiene en su interior un completo lenguaje de marcado. Permite exportar 
 documentos a una gran variedad de formatos (pdf, html, latex o markdown) e incluir
 internamente trozos de código (programación literaria) y ejecutarlos. Además, tiene
 un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para tareas
@@ -166,9 +168,11 @@ programación literaria cuando Latex es demasiado complejo.
 [**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
 
 ### magit
+
 **magit** permite integrar Emacs con **git** fácilmente para incluir los commits desde
 dentro del mismo editor. Usando `magit-status` llegamos a una pantalla en la que podemos
-elegir qué ficheros añadir al commit con `s`, ejecutar el commit con `c c`, que nos mostrará
+elegir qué ficheros añadir al commit con `s` y visualizar las diferencias con el commit
+anterior usando `tab`; ejecutar el commit con `c c`, que nos mostrará
 el buffer con el mensaje de commit y por último usar `C-c C-c` para enviarlo. El push y
 pull los haremos desde `magit-status` con `P u` y `F u`, respectivamente.
 
