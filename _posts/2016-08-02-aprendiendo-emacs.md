@@ -9,9 +9,14 @@ category: Programación
 
 [**Emacs**](https://www.gnu.org/software/emacs/) es un editor de texto 
 construido sobre un intérprete del lenguaje 
-[**Elisp**](https://es.wikipedia.org/wiki/Emacs_Lisp) para hacerlo extensible. Cada acción del editor constituye un comando
-sobre el intérprete, por lo que podemos reescribir sus comandos o crear nuevos
-comandos simplemente programando sobre el intérprete.
+[**Elisp**](https://es.wikipedia.org/wiki/Emacs_Lisp) para hacerlo extensible. Cada acción 
+del editor constituye un comando sobre el intérprete, por lo que podemos reescribir sus 
+comandos o crear nuevos comandos simplemente programando sobre el intérprete.
+
+![](https://github.com/libreim/blog/blob/post-emacs/images/emacs.png) 
+{: .fig.med}
+*Emacs editando este mismo artículo*
+
 
 Emacs sirve como IDE la mayoría de lenguajes de programación, como
 editor para programación literaria y ciencia reproducible; se integra con git y
