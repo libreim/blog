@@ -69,13 +69,14 @@ La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`
 | RET     | Salto de línea, pulsar enter antes de seguir  |                 |
 
 
-Usar atajos de teclado facilita mucho usar emacs rápidamente. [^emacs-productivo]
+Usar atajos de teclado facilita mucho usar emacs rápidamente después del tiempo
+de aprendizaje. [^emacs-productivo]
 
 Cuando abras el programa por primera vez, te ofrecerá seguir un tutorial de emacs
 escrito en emacs. El tutorial es muy útil para aprender a moverse dentro de
 emacs, pero la mayoría de lo que cuenta no es especialmente fácil de aprender 
-de una vez. Lo más chocante para un usuario nuevo es el sistema de copiar-pegar;
-de forma muy simplificada: [^emacs-kill-buffer]
+de una sola vez. Lo más chocante para un usuario nuevo puede ser el sistema de copiar-pegar;
+que de forma muy simplificada se resume en: [^emacs-kill-buffer]
 
 * `M-w` copia.
 * `C-w` corta.
@@ -214,7 +215,6 @@ de texto y asignarlas a atajos de teclado o ampliarlo con más funcionalidad. Un
 básico sobre Elisp es [Learn Emacs Lisp in 15 minutes](http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html).
 
 ## Notas
-[^emacs-wiki]: [Emacs Wiki](https://www.emacswiki.org/emacs/SiteMap) documenta todo lo relacionado con emacs. 
-[^emacs-productivo]: Citation needed. Sólo puedo decir que a mí me funciona.
+[^emacs-productivo]: Citation needed. Sólo puedo decir que a mí me funciona y que parece ser [mejor que usar el ratón](http://ux.stackexchange.com/a/30749).
 [^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que emacs usa para esto es bastante más sofisticado.
 [^magit-select]: De hecho, podemos seleccionar qué párrafos dentro de un fichero queremos añadir al commit.
