@@ -86,6 +86,19 @@ licencias, etc. Especialmente útiles son:
   esas teclas.
 * `C-h f <nombre de función>` documenta la función.
 
+### Buffers y ventanas
+
+Cada vez que abrimos un archivo, o pedimos un apartado de documentación, o abrimos
+la configuración, se abre un nuevo buffer. Podemos movernos entre los buffers 
+actualmente abiertos pulsando `C-x <left>` o `C-x <right>`; y podemos mostrar la
+lista de buffers actualmente con `C-x C-b` (¡en un nuevo buffer!).
+
+Además de los buffers que tengamos actualmente abiertos, tenemos ventanas que los
+muestran. Podemos partir la pantalla de Emacs en varias ventanas con `C-x 2` y
+`C-x 3` para partirla horizontal y verticalmente respectivamente. Para volver a
+quedarnos sólo con la ventana en la que está el cursor, podemos pulsar `C-x 1`;
+y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
+
 ## Personalización
 
 Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
