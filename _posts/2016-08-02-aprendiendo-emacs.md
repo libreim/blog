@@ -46,7 +46,7 @@ más extensamente. Como recursos generales para aprender emacs, puedo recomendar
 ### Instalación
 
 Emacs puede encontrarse en la mayoría de gestores de paquetes, pero puede no
-estar en su versión más actualizada
+estar en su versión más actualizada.
 
 ``` bash
 sudo apt install emacs
@@ -107,11 +107,11 @@ licencias, etc. Especialmente útiles son:
 Cada vez que abrimos un archivo, o pedimos un apartado de documentación, o abrimos
 la configuración, se abre un nuevo buffer. Podemos movernos entre los buffers 
 actualmente abiertos pulsando `C-x <left>` o `C-x <right>`; y podemos mostrar la
-lista de buffers actualmente con `C-x C-b` (¡en un nuevo buffer!).
+lista de buffers actualmente abiertos con `C-x C-b` (¡en un nuevo buffer!).
 
 Además de los buffers que tengamos actualmente abiertos, tenemos ventanas que los
 muestran. Podemos partir la pantalla de Emacs en varias ventanas con `C-x 2` y
-`C-x 3` para partirla horizontal y verticalmente respectivamente. Para volver a
+`C-x 3`, que la parten horizontal y verticalmente respectivamente. Para volver a
 quedarnos sólo con la ventana en la que está el cursor, podemos pulsar `C-x 1`;
 y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
 
