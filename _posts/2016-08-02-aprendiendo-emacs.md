@@ -109,6 +109,19 @@ muestran. Podemos partir la pantalla de Emacs en varias ventanas con `C-x 2` y
 quedarnos sólo con la ventana en la que está el cursor, podemos pulsar `C-x 1`;
 y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
 
+### Modos de emacs
+
+El comportamiento de emacs sobre cada buffer que abra será distinto dependiendo 
+normalmente de la extensión del archivo. Esto le permite colorear de manera distinta
+distintas sintaxis, o tener comportamientos específicos (indentación, atajos de teclado,
+formateo) cuando está editando cada lenguaje.
+
+Cada una de estas formas de edición se llama **modo**, y el **modo** actual aparece
+resaltado entre paréntesis en la barra inferior de Emacs. El modo básico es `Fundamental`,
+pero existen modos específicos para cada lenguaje de programación, por ejemplo; así, tendremos
+[`Ruby-mode`](https://www.emacswiki.org/emacs/RubyMode), [`Python-mode`](https://www.emacswiki.org/emacs?action=browse;oldid=PythonMode;id=PythonProgrammingInEmacs#toc2) 
+o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode).
+
 ## Personalización
 
 Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
@@ -134,9 +147,8 @@ El repositorio de MELPA se añade desde `M-x customize-group RET package`. Dentr
 de la pestaña de repositorios puede insertarse la dirección de MELPA:
 
 ```
-Archive name: melpa-stable  
-
-URL or directory name: https://stable.melpa.org/packages/
+ Archive name: melpa-stable  
+ URL or directory name: https://stable.melpa.org/packages/
 ```
 
 Para salir de cualquiera de las pantallas de customización se usa `q`.
