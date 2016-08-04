@@ -33,6 +33,7 @@ extensamente. Como recursos generales para aprender emacs, puedo recomendar:
   de emacs, y tiene escritas hojas de referencia de atajos de teclado de emacs.
 * **C'est la z**, otro blog en el que se tratan temas relacionados con emacs.
 * **Emacs Rocks**, vídeos breves sobre casos concretos de uso de emacs.
+* **GNU Emacs**, la documentación oficial de emacs.
 
 ### Instalación
 
@@ -125,6 +126,7 @@ de la pestaña de repositorios puede insertarse la dirección de MELPA:
 
 ```
 Archive name: melpa-stable  
+
 URL or directory name: https://stable.melpa.org/packages/
 ```
 
@@ -157,13 +159,14 @@ archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`.
 ### org-mode
 
 **org-mode** es un modo de Emacs que se creó 
-originalmente para gestionar listas de tareas, agendas y calendarios; pero
+originalmente para gestionar listas de tareas, agendas y calendarios; pero además,
 contiene en su interior un completo lenguaje de marcado. Permite exportar 
 documentos a una gran variedad de formatos (pdf, html, latex o markdown) e incluir
 internamente trozos de código (programación literaria) y ejecutarlos. Además, tiene
 un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para tareas
 sencillas. Por todo esto, puede ser usado en tareas como la ciencia reproducible o la
-programación literaria cuando Latex es demasiado complejo.
+programación literaria cuando Latex es demasiado complejo, ayudando además a manejar
+la bibliografía o enlaces externos y entre archivos.
 
 [**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
 
@@ -171,20 +174,21 @@ programación literaria cuando Latex es demasiado complejo.
 
 **magit** permite integrar Emacs con **git** fácilmente para incluir los commits desde
 dentro del mismo editor. Usando `magit-status` llegamos a una pantalla en la que podemos
-elegir qué ficheros añadir al commit con `s` y visualizar las diferencias con el commit
+elegir qué ficheros añadir al commit con `s` [^magit-select] y visualizar las diferencias con el commit
 anterior usando `tab`; ejecutar el commit con `c c`, que nos mostrará
 el buffer con el mensaje de commit y por último usar `C-c C-c` para enviarlo. El push y
 pull los haremos desde `magit-status` con `P u` y `F u`, respectivamente.
 
 Es útil asignar un atajo de teclado al comando `magit-status`, que es el que muestra la 
 ventana desde la que controlamos el añadir y hacer commit de ficheros. Por ejemplo, podemos
-fijarlo en `f9` añadiendo a nuestro archivo de configuración:
+fijarlo en `f5` añadiendo a nuestro archivo de configuración:
 
 ``` lisp
-(global-set-key (kbd "<f9>") 'magit-status)
+(global-set-key (kbd "<f5>") 'magit-status)
 ```
 
 ## Macros de teclado
+
 Las macros de teclado nos dejan grabar una secuencia de acciones y volver a repetirla
 tantas veces como sea necesaria. Se puede empezar a grabar con **"f3"** y terminar la
 grabación y repetirla tantas veces como sea necesario con **"f4"**.
@@ -201,7 +205,8 @@ Podemos escribir scripts en Elisp que se encarguen de tareas repetitivas en nues
 de texto y asignarlas a atajos de teclado o ampliarlo con más funcionalidad. Un tutorial
 básico sobre Elisp es [Learn Emacs Lisp in 15 minutes](http://emacs-doctor.com/learn-emacs-lisp-in-15-minutes.html).
 
-## Referencias
+## Notas
 [^emacs-wiki]: [Emacs Wiki](https://www.emacswiki.org/emacs/SiteMap) documenta todo lo relacionado con emacs. 
 [^emacs-productivo]: Citation needed. Sólo puedo decir que a mí me funciona.
 [^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que emacs usa para esto es bastante más sofisticado.
+[^magit-select]: De hecho, podemos seleccionar qué párrafos dentro de un fichero queremos añadir al commit.
