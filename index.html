@@ -1,9 +1,8 @@
 ---
 title: Blog
 layout: default
-
+paginate: true
 ---
-<style type="text/css">header .l-blog { color: #c0c0c0; }</style>
 
 {% for post in paginator.posts %}
   {% assign content = post.content %}

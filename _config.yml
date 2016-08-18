@@ -1,5 +1,6 @@
-﻿# Github defaults:
-safe: true
+
+# Github defaults
+# safe: true
 lsi: false
 
 # Settings
@@ -12,28 +13,33 @@ url: http://libreim.github.io/blog
 markdown: kramdown
 kramdown:
   parse_span_html: false
+highlighter: rouge
 
 # Dependencies
 gems:
   - jemoji
-  - jekyll-paginate
+  - octopress-paginate
   - jekyll-gist
 #  - jekyll-mentions
 
-permalink: /:year/:month/:day/:title
-paginate: 5
-paginate_path: "/page/:num/"
+permalink: /:year/:month/:day/:title/
+# paginate: 5
+# paginate_path: "/page/:num/"
+# Configure octopress-paginate:
+pagination:
+  per_page: 5
+  limit: false
+  permalink: /page/:num/
+  title_suffix: ""
 
 excerpt_separator: "<!--more-->"
 
-collections:
-  math_resources:
-    output: true
-    permalink: /resources/m/:path/
-  cs_resources:
-    output: true
-    permalink: /resources/cs/:path/
-
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
 
 # Autores
 authors:
