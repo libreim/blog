@@ -63,7 +63,8 @@ versión estable es la **24.5**. La versión estable actual puede descargarse de
 
 ## Atajos de teclado
 
-En emacs se usa la siguiente notación para escribir un atajos de teclado.
+En emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation) 
+para escribir un atajos de teclado.
 La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`.
 Usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
 `x` y `s`.
@@ -127,31 +128,35 @@ normalmente de la extensión del archivo. Esto le permite colorear de manera dis
 distintas sintaxis, o tener comportamientos específicos (indentación, atajos de teclado,
 formateo) cuando está editando cada lenguaje. 
 
-Cada una de estas formas de edición se llama **modo**, y el **modo** actual aparece
+Cada una de estas formas de edición se llama 
+[**modo**](https://www.gnu.org/software/emacs/manual/html_node/emacs/Major-Modes.html), 
+y el **modo** actual aparece
 resaltado entre paréntesis en la barra inferior de Emacs. El modo básico es `Fundamental`,
-pero existen modos específicos para cada lenguaje de programación, por ejemplo; así, tendremos
+pero para cada propósito existen modos específicos. Para casi todos los lenguajes de programación
+tendremos un modo. Existen, por ejemplo,
 [`Ruby-mode`](https://www.emacswiki.org/emacs/RubyMode), [`Python-mode`](https://www.emacswiki.org/emacs?action=browse;oldid=PythonMode;id=PythonProgrammingInEmacs#toc2) 
 o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode). 
 
 Además de los *modos mayores*
 de los que hemos hablado hasta ahora, existen *modos menores* que son opcionales
 y complementan a los modos mayores. 
-Por ejemplo, mientras escribo este artículo estoy usando `Markdown` como modo mayor
+Por ejemplo, mientras escribo este artículo estoy usando 
+[`Markdown`](https://www.emacswiki.org/emacs/MarkdownMode) como modo mayor
 y `ARev` ([Auto-revert mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Reverting.html))
 como modo menor.
 
 ## Personalización
 
 Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
-necesidad. Desde los atajos de teclado, que puedes configurar a tu gusto; hasta
-el tema de color y fuentes que usa el editor.
+necesidad. Desde los atajos de teclado hasta el tema de color y fuentes que usa el editor.
 
 La forma más básica de editar todas estas configuraciones es `M-x customize group`,
 que accede a un menú en el que se pueden modificar todas ellas. Todos los cambios
 que aquí se hagan se guardarán en un archivo `.emacs` (o `init.el`, en las versiones
-nuevas de emacs). Esta es la otra forma de configurar emacs, el archivo de inicio
-`.emacs` contiene código en Elisp que se ejecutará al iniciar el editor. Algunos
-paquetes necesitarán configuración adicional que abrá que incluir en este archivo.
+nuevas de emacs). Este archivo es la otra forma de configurar emacs; el archivo de inicio
+`.emacs` contiene código en Elisp que se ejecutará al iniciar el editor y podemos incluir
+allí todo lo que queramos configurar. Algunos
+paquetes, por ejemplo, necesitarán configuración adicional que habrá que incluir en este archivo.
 
 [**.Emacs #2 - Customizations and themes** - *jekor*](https://youtu.be/mMcc0IF1hV0)
 
