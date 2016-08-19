@@ -163,7 +163,7 @@ paquetes, por ejemplo, necesitarán configuración adicional que habrá que incl
 ## Sistemas de paquetes
 
 ### Melpa
-Es necesario añadir un repositorio más grande que el que trae GNU por defecto.
+Es conveniente añadir un repositorio más grande que el que trae GNU por defecto, y
 [MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de emacs más 
 grandes y actualizados.
 El repositorio de MELPA se añade desde `M-x customize-group RET package`. Dentro
@@ -174,7 +174,7 @@ de la pestaña de repositorios puede insertarse la dirección de MELPA:
  URL or directory name: https://stable.melpa.org/packages/
 ```
 
-Para salir de cualquiera de las pantallas de customización se usa `q`.
+Para salir de cualquiera de las pantallas de personalización se usa `q`.
 
 Otra forma de conseguir este mismo efecto es añadirlo directamente a nuestro
 archivo de configuración (`.emacs`/`init.el`), como se indica en las [instrucciones
@@ -183,7 +183,9 @@ de instalación](https://melpa.org/packages/) del repositorio.
 ### Paquetes
 
 Podemos listar los paquetes que podemos instalar usado `M-x list-packages` y podemos
-buscar entre los paquetes pulsando varias veces el comando `C-s`.
+buscar entre los paquetes pulsando varias veces el comando `C-s`. Si pulsamos `i` al lado
+de uno de ellos se marcará para instalar y al pulsar `x` se ejecutará la instalación de
+todos los paquetes marcados.
 
 [**.Emacs #3 - Installing packages and extensions** - *jekor*](https://youtu.be/Cf6tRBPbWKs)
 
@@ -215,7 +217,13 @@ la bibliografía y los enlaces tanto externos como entre archivos.
 [**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
 
 Especialmente útil para matemáticas es la 
-[previsualización de Latex](http://orgmode.org/worg/org-tutorials/org-latex-preview.html).
+[previsualización de Latex](http://orgmode.org/worg/org-tutorials/org-latex-preview.html)
+y el poder incluir los paquetes de la [AMS](ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf)
+para marcar teoremas o definiciones.
+
+![](https://github.com/libreim/blog/blob/post-emacs/images/org-math.png) 
+{: .fig.med}
+*Apuntes de matemáticas en org-mode*
 
 ### magit
 
