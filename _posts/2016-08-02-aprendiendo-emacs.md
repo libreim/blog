@@ -201,13 +201,16 @@ archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`.
 originalmente para gestionar listas de tareas, agendas y calendarios; pero además,
 contiene en su interior un completo lenguaje de marcado. Permite exportar 
 documentos a una gran variedad de formatos (pdf, html, latex o markdown) e incluir
-internamente trozos de código (programación literaria) y ejecutarlos. Además, tiene
+internamente trozos de código y ejecutarlos. Además, tiene
 un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para tareas
 sencillas. Por todo esto, puede ser usado en tareas como la ciencia reproducible o la
 programación literaria cuando Latex es demasiado complejo, ayudando además a manejar
-la bibliografía o enlaces externos y entre archivos.
+la bibliografía y los enlaces tanto externos como entre archivos.
 
 [**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
+
+Especialmente útil para matemáticas es la 
+[previsualización de Latex](http://orgmode.org/worg/org-tutorials/org-latex-preview.html).
 
 ### magit
 
