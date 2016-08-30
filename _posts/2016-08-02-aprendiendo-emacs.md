@@ -7,15 +7,15 @@ category: Programación
 
 ## Emacs
 
-[**Emacs**](https://www.gnu.org/software/emacs/) es un editor de texto 
-construido sobre un intérprete del lenguaje 
-[**Elisp**](https://es.wikipedia.org/wiki/Emacs_Lisp) para hacerlo extensible. Cada acción 
-del editor constituye un comando sobre el intérprete, por lo que podemos reescribir sus 
+[**Emacs**](https://www.gnu.org/software/emacs/) es un editor de texto
+construido sobre un intérprete del lenguaje
+[**Elisp**](https://es.wikipedia.org/wiki/Emacs_Lisp) para hacerlo extensible. Cada acción
+del editor constituye un comando sobre el intérprete, por lo que podemos reescribir sus
 comandos o crear nuevos comandos simplemente programando sobre el intérprete.
 
-![](https://github.com/libreim/blog/blob/post-emacs/images/emacs.png) 
 {: .fig.med}
-*Emacs editando este mismo artículo*
+![](https://github.com/libreim/blog/raw/post-emacs/images/emacs.png)
+Emacs editando este mismo artículo
 
 
 Emacs sirve como IDE la mayoría de lenguajes de programación, como
@@ -24,17 +24,18 @@ con el sistema de archivos, y tiene extensiones disponibles para usarse como
 aplicación para organizar listas de tareas, leer el correo o servir como hoja
 de cálculo.
 
-> I use Emacs, which might be thought of as a thermonuclear word processor.  
-> **Neal Stephenson**, *In the Beginning... was the command line.*
+> I use Emacs, which might be thought of as a thermonuclear word processor.
+>
+> -- **Neal Stephenson**, *In the Beginning... was the command line.*
 
 En este artículo haré una referencia breve a todo lo que me ha ido sirviendo
 para aprender Emacs mientras enlazo a fuentes que tratan cada uno de los temas
 más extensamente. Como recursos generales para aprender emacs, puedo recomendar:
 
-* [**.Emacs Tutorials**](https://www.youtube.com/playlist?list=PLxj9UAX4Em-IiOfvF2Qs742LxEK4owSkr) 
+* [**.Emacs Tutorials**](https://www.youtube.com/playlist?list=PLxj9UAX4Em-IiOfvF2Qs742LxEK4owSkr)
   de *jekor*, explican todo lo necesario para aprender
   emacs en 10 videotutoriales que pueden seguirse progresivamente.
-* [**Emacs Meetups**](https://www.youtube.com/playlist?list=PL8tzorAO7s0he-pp7Y_JDl7-Kz2Qlr_Pj) 
+* [**Emacs Meetups**](https://www.youtube.com/playlist?list=PL8tzorAO7s0he-pp7Y_JDl7-Kz2Qlr_Pj)
   de Thoughtbot, que profundizan sobre temas concretos de uso
   de emacs.
 * [**Emacs Rocks**](http://emacsrocks.com/), vídeos breves sobre casos concretos de uso de emacs.
@@ -53,17 +54,17 @@ más extensamente. Como recursos generales para aprender emacs, puedo recomendar
 Emacs puede encontrarse en la mayoría de gestores de paquetes, pero puede no
 estar en su versión más actualizada.
 
-``` bash
+~~~ bash
 sudo apt install emacs
-```
+~~~
 
-Para escribir este artículo estoy usando `GNU Emacs 25.1`, pero la última 
+Para escribir este artículo estoy usando `GNU Emacs 25.1`, pero la última
 versión estable es la **24.5**. La versión estable actual puede descargarse desde
 [GNU](https://www.gnu.org/software/emacs/).
 
 ## Atajos de teclado
 
-En emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation) 
+En emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation)
 para escribir un atajos de teclado.
 La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`.
 Usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
@@ -86,7 +87,7 @@ de aprendizaje. [^emacs-productivo]
 
 Cuando abras el programa por primera vez, te ofrecerá seguir un tutorial de emacs
 escrito en emacs. El tutorial es muy útil para aprender a moverse dentro de
-emacs, pero la mayoría de lo que cuenta no es especialmente fácil de aprender 
+emacs, pero la mayoría de lo que cuenta no es especialmente fácil de aprender
 de una sola vez. Lo más chocante para un usuario nuevo puede ser el sistema de copiar-pegar;
 que de forma muy simplificada se resume en: [^emacs-kill-buffer]
 
@@ -111,7 +112,7 @@ licencias, etc. Especialmente útiles son:
 ### Buffers y ventanas
 
 Cada vez que abrimos un archivo, o pedimos un apartado de documentación, o abrimos
-la configuración, se abre un nuevo buffer. Podemos movernos entre los buffers 
+la configuración, se abre un nuevo buffer. Podemos movernos entre los buffers
 actualmente abiertos pulsando `C-x <left>` o `C-x <right>`; y podemos mostrar la
 lista de buffers actualmente abiertos con `C-x C-b` (¡en un nuevo buffer!).
 
@@ -123,24 +124,24 @@ y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
 
 ### Modos de emacs
 
-El comportamiento de emacs sobre cada buffer que abra será distinto dependiendo 
+El comportamiento de emacs sobre cada buffer que abra será distinto dependiendo
 normalmente de la extensión del archivo. Esto le permite colorear de manera distinta
 distintas sintaxis, o tener comportamientos específicos (indentación, atajos de teclado,
-formateo) cuando está editando cada lenguaje. 
+formateo) cuando está editando cada lenguaje.
 
-Cada una de estas formas de edición se llama 
-[**modo**](https://www.gnu.org/software/emacs/manual/html_node/emacs/Major-Modes.html), 
+Cada una de estas formas de edición se llama
+[**modo**](https://www.gnu.org/software/emacs/manual/html_node/emacs/Major-Modes.html),
 y el **modo** actual aparece
 resaltado entre paréntesis en la barra inferior de Emacs. El modo básico es `Fundamental`,
 pero para cada propósito existen modos específicos. Para casi todos los lenguajes de programación
 tendremos un modo. Existen, por ejemplo,
-[`Ruby-mode`](https://www.emacswiki.org/emacs/RubyMode), [`Python-mode`](https://www.emacswiki.org/emacs?action=browse;oldid=PythonMode;id=PythonProgrammingInEmacs#toc2) 
-o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode). 
+[`Ruby-mode`](https://www.emacswiki.org/emacs/RubyMode), [`Python-mode`](https://www.emacswiki.org/emacs?action=browse;oldid=PythonMode;id=PythonProgrammingInEmacs#toc2)
+o [`CC-mode`](https://www.emacswiki.org/emacs/CcMode).
 
 Además de los *modos mayores*
 de los que hemos hablado hasta ahora, existen *modos menores* que son opcionales
-y complementan a los modos mayores. 
-Por ejemplo, mientras escribo este artículo estoy usando 
+y complementan a los modos mayores.
+Por ejemplo, mientras escribo este artículo estoy usando
 [`Markdown`](https://www.emacswiki.org/emacs/MarkdownMode) como modo mayor
 y `ARev` ([Auto-revert mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Reverting.html))
 como modo menor.
@@ -164,15 +165,15 @@ paquetes, por ejemplo, necesitarán configuración adicional que habrá que incl
 
 ### Melpa
 Es conveniente añadir un repositorio más grande que el que trae GNU por defecto, y
-[MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de emacs más 
+[MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de emacs más
 grandes y actualizados.
 El repositorio de MELPA se añade desde `M-x customize-group RET package`. Dentro
 de la pestaña de repositorios puede insertarse la dirección de MELPA:
 
-```
- Archive name: melpa-stable  
+~~~ plaintext
+ Archive name: melpa-stable
  URL or directory name: https://stable.melpa.org/packages/
-```
+~~~
 
 Para salir de cualquiera de las pantallas de personalización se usa `q`.
 
@@ -193,20 +194,20 @@ todos los paquetes marcados.
 
 ### Dired
 
-Dired viene instalado por defecto con Emacs y permite navegar la estructura de 
+Dired viene instalado por defecto con Emacs y permite navegar la estructura de
 directorios del sistema operativo. Podemos empezar a navegarla usando `M-x dired` y
 pulsando `RET` cada vez que queramos abrir un archivo o una carpeta.
 
 Podemos además afectar a los archivos. Por ejemplo, si queremos eliminar algunos
-archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`. 
+archivos, podemos marcarlos con `d` y eliminarlos definitivamente con `x`.
 
 [**.Emacs #4 - Exploring the filesystem** - *jekor*](https://youtu.be/7jZdul2fC94)
 
 ### org-mode
 
-**org-mode** es un modo de Emacs que se creó 
+**org-mode** es un modo de Emacs que se creó
 originalmente para gestionar listas de tareas, agendas y calendarios; pero además,
-contiene en su interior un completo lenguaje de marcado. Permite exportar 
+contiene en su interior un completo lenguaje de marcado. Permite exportar
 documentos a una gran variedad de formatos (pdf, html, latex o markdown) e incluir
 internamente trozos de código y ejecutarlos. Además, tiene
 un sistema de tablas en texto plano capaz de sustituir la hoja de cálculo para tareas
@@ -216,14 +217,14 @@ la bibliografía y los enlaces tanto externos como entre archivos.
 
 [**Getting started with org-mode** - *Harry Schwartz*](https://youtu.be/SzA2YODtgK4)
 
-Especialmente útil para matemáticas es la 
+Especialmente útil para matemáticas es la
 [previsualización de Latex](http://orgmode.org/worg/org-tutorials/org-latex-preview.html)
 y el poder incluir los paquetes de la [AMS](ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf)
 para marcar teoremas o definiciones.
 
-![](https://github.com/libreim/blog/blob/post-emacs/images/org-math.png) 
 {: .fig.med}
-*Apuntes de matemáticas en org-mode*
+![](https://github.com/libreim/blog/raw/post-emacs/images/org-math.png)
+Apuntes de matemáticas en org-mode
 
 ### magit
 
@@ -234,13 +235,13 @@ anterior usando `tab`; ejecutar el commit con `c c`, que nos mostrará
 el buffer con el mensaje de commit y por último usar `C-c C-c` para enviarlo. El push y
 pull los haremos desde `magit-status` con `P u` y `F u`, respectivamente.
 
-Es útil asignar un atajo de teclado al comando `magit-status`, que es el que muestra la 
+Es útil asignar un atajo de teclado al comando `magit-status`, que es el que muestra la
 ventana desde la que controlamos el añadir y hacer commit de ficheros. Por ejemplo, podemos
 fijarlo en `f5` añadiendo a nuestro archivo de configuración:
 
-``` lisp
+~~~ lisp
 (global-set-key (kbd "<f5>") 'magit-status)
-```
+~~~
 
 ## Macros de teclado
 
