@@ -18,7 +18,7 @@ comandos o crear nuevos comandos simplemente programando sobre el intérprete.
 Emacs editando este mismo artículo
 
 
-Emacs sirve como IDE la mayoría de lenguajes de programación, como
+Emacs sirve como IDE para la mayoría de lenguajes de programación, como
 editor para programación literaria y ciencia reproducible; se integra con git y
 con el sistema de archivos, y tiene extensiones disponibles para usarse como
 aplicación para organizar listas de tareas, leer el correo o servir como hoja
@@ -240,7 +240,7 @@ ventana desde la que controlamos el añadir y hacer commit de ficheros. Por ejem
 fijarlo en `f5` añadiendo a nuestro archivo de configuración:
 
 ~~~ lisp
-(global-set-key (kbd "<f5>") 'magit-status)
+(global-set-key (kbd "<f5>") 'magit-status')
 ~~~
 
 ## Macros de teclado
