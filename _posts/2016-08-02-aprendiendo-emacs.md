@@ -64,19 +64,19 @@ versión estable es la **24.5**. La versión estable actual puede descargarse de
 
 ## Atajos de teclado
 
-En Emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation)
+En Emacs se usa una [notación específica](https://www.emacswiki.org/emacs/EmacsKeyNotation)
 para escribir un atajos de teclado.
-La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`.
-Usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
-`x` y `s`.
-Y por último, usará `M-x`; donde la `M` se referirá a la tecla `Meta`.
+La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`;
+usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
+`x` y `s`;
+y por último, usará `M-x`, donde la `M` se referirá a la tecla `Meta`.
 La tecla `Meta` en Emacs se refiere normalmente a
 dos opciones equivalentes, o bien pulsar `alt izq.` mientras se pulsa `x`, o pulsar `Esc` y luego pulsar
 `x`. En resumen:
 
 | Atajo   | Descripción                                   | Comando         |
 |---------|-----------------------------------------------|-----------------|
-| C-x     | Mantener control pulsado mientras se pulsa n  | Next line       |
+| C-n     | Mantener control pulsado mientras se pulsa n  | Next line       |
 | C-x C-s | Mantener control pulsado pulsando x y luego s | Save file       |
 | M-x     | Mantener alt o pulsar esc para luego pulsar x | Execute Command |
 | RET     | Salto de línea, pulsar enter antes de seguir  |                 |
