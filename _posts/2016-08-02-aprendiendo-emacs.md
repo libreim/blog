@@ -112,7 +112,9 @@ licencias, etc. Especialmente útiles son:
 ### Buffers y ventanas
 
 Cada vez que abrimos un archivo, o pedimos un apartado de documentación, o abrimos
-la configuración, se abre un nuevo buffer. Podemos movernos entre los buffers
+la configuración, se abre un nuevo buffer. Un [buffer](https://www.emacswiki.org/emacs/Buffer) 
+es el equivalente a un documento 
+o un espacio de trabajo en otros editores Podemos movernos entre los buffers
 actualmente abiertos pulsando `C-x <left>` o `C-x <right>`; y podemos mostrar la
 lista de buffers actualmente abiertos con `C-x C-b` (¡en un nuevo buffer!).
 
