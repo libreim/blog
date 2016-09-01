@@ -240,7 +240,7 @@ ventana desde la que controlamos el añadir y hacer commit de ficheros. Por ejem
 fijarlo en `f5` añadiendo a nuestro archivo de configuración:
 
 ~~~ lisp
-(global-set-key (kbd "<f5>") 'magit-status')
+(global-set-key (kbd "<f5>") 'magit-status)
 ~~~
 
 ## Macros de teclado
