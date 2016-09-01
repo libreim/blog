@@ -30,22 +30,22 @@ de cálculo.
 
 En este artículo haré una referencia breve a todo lo que me ha ido sirviendo
 para aprender Emacs mientras enlazo a fuentes que tratan cada uno de los temas
-más extensamente. Como recursos generales para aprender emacs, puedo recomendar:
+más extensamente. Como recursos generales para aprender Emacs, puedo recomendar:
 
 * [**.Emacs Tutorials**](https://www.youtube.com/playlist?list=PLxj9UAX4Em-IiOfvF2Qs742LxEK4owSkr)
   de *jekor*, explican todo lo necesario para aprender
-  emacs en 10 videotutoriales que pueden seguirse progresivamente.
+  Emacs en 10 videotutoriales que pueden seguirse progresivamente.
 * [**Emacs Meetups**](https://www.youtube.com/playlist?list=PL8tzorAO7s0he-pp7Y_JDl7-Kz2Qlr_Pj)
   de Thoughtbot, que profundizan sobre temas concretos de uso
-  de emacs.
-* [**Emacs Rocks**](http://emacsrocks.com/), vídeos breves sobre casos concretos de uso de emacs.
+  de Emacs.
+* [**Emacs Rocks**](http://emacsrocks.com/), vídeos breves sobre casos concretos de uso de Emacs.
 * [**Emacs wiki**](https://www.emacswiki.org/emacs/SiteMap), una wiki que documenta
-  todo lo relacionado con emacs.
+  todo lo relacionado con Emacs.
 * [**sachachua.com**](http://sachachua.com/blog/category/geek/emacs/),
   donde se hace referencia periódicamente a noticias
-  de emacs, y tiene escritas hojas de referencia de atajos de teclado de emacs.
-* [**C'est la z**](http://cestlaz.github.io/stories/emacs/), otro blog en el que se tratan temas relacionados con emacs.
-* [**GNU Emacs**](https://www.gnu.org/software/emacs/manual/), la documentación oficial de emacs.
+  de Emacs, y tiene escritas hojas de referencia de atajos de teclado de Emacs.
+* [**C'est la z**](http://cestlaz.github.io/stories/emacs/), otro blog en el que se tratan temas relacionados con Emacs.
+* [**GNU Emacs**](https://www.gnu.org/software/emacs/manual/), la documentación oficial de Emacs.
 
 <!--more-->
 
@@ -64,7 +64,7 @@ versión estable es la **24.5**. La versión estable actual puede descargarse de
 
 ## Atajos de teclado
 
-En emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation)
+En Emacs se usa la [siguiente notación](https://www.emacswiki.org/emacs/EmacsKeyNotation)
 para escribir un atajos de teclado.
 La mayoría de documentación que consultes usará `C-x` en lugar de `Control+x`.
 Usará `C-x C-s` para indicar que debes dejar pulsado `Control` mientras pulsas
@@ -82,12 +82,12 @@ dos opciones equivalentes, o bien pulsar `alt izq.` mientras se pulsa `x`, o pul
 | RET     | Salto de línea, pulsar enter antes de seguir  |                 |
 
 
-Usar atajos de teclado facilita mucho usar emacs rápidamente después del tiempo
+Usar atajos de teclado facilita mucho usar Emacs rápidamente después del tiempo
 de aprendizaje. [^emacs-productivo]
 
-Cuando abras el programa por primera vez, te ofrecerá seguir un tutorial de emacs
-escrito en emacs. El tutorial es muy útil para aprender a moverse dentro de
-emacs, pero la mayoría de lo que cuenta no es especialmente fácil de aprender
+Cuando abras el programa por primera vez, te ofrecerá seguir un tutorial de Emacs
+escrito en Emacs. El tutorial es muy útil para aprender a moverse dentro de
+Emacs, pero la mayoría de lo que cuenta no es especialmente fácil de aprender
 de una sola vez. Lo más chocante para un usuario nuevo puede ser el sistema de copiar-pegar;
 que de forma muy simplificada se resume en: [^emacs-kill-buffer]
 
@@ -122,9 +122,9 @@ muestran. Podemos partir la pantalla de Emacs en varias ventanas con `C-x 2` y
 quedarnos sólo con la ventana en la que está el cursor, podemos pulsar `C-x 1`;
 y para cambiar de ventana sobre la que actúa el cursor podemos usar `C-x o`.
 
-### Modos de emacs
+### Modos de Emacs
 
-El comportamiento de emacs sobre cada buffer que abra será distinto dependiendo
+El comportamiento de Emacs sobre cada buffer que abra será distinto dependiendo
 normalmente de la extensión del archivo. Esto le permite colorear de manera distinta
 distintas sintaxis, o tener comportamientos específicos (indentación, atajos de teclado,
 formateo) cuando está editando cada lenguaje.
@@ -148,13 +148,13 @@ como modo menor.
 
 ## Personalización
 
-Prácticamente todos los parámetros que uses en emacs pueden ser ajustados a tu
+Prácticamente todos los parámetros que uses en Emacs pueden ser ajustados a tu
 necesidad. Desde los atajos de teclado hasta el tema de color y fuentes que usa el editor.
 
 La forma más básica de editar todas estas configuraciones es `M-x customize group`,
 que accede a un menú en el que se pueden modificar todas ellas. Todos los cambios
 que aquí se hagan se guardarán en un archivo `.emacs` (o `init.el`, en las versiones
-nuevas de emacs). Este archivo es la otra forma de configurar emacs; el archivo de inicio
+nuevas de Emacs). Este archivo es la otra forma de configurar Emacs; el archivo de inicio
 `.emacs` contiene código en Elisp que se ejecutará al iniciar el editor y podemos incluir
 allí todo lo que queramos configurar. Algunos
 paquetes, por ejemplo, necesitarán configuración adicional que habrá que incluir en este archivo.
@@ -165,7 +165,7 @@ paquetes, por ejemplo, necesitarán configuración adicional que habrá que incl
 
 ### Melpa
 Es conveniente añadir un repositorio más grande que el que trae GNU por defecto, y
-[MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de emacs más
+[MELPA](https://melpa.org/#/) es uno de los repositorios de paquetes de Emacs más
 grandes y actualizados.
 El repositorio de MELPA se añade desde `M-x customize-group RET package`. Dentro
 de la pestaña de repositorios puede insertarse la dirección de MELPA:
@@ -263,5 +263,5 @@ básico sobre Elisp es [Learn Emacs Lisp in 15 minutes](http://emacs-doctor.com/
 
 ## Notas
 [^emacs-productivo]: Realmente solo puedo decir que a mí me funciona y que en general los atajos de teclado parecen ser [mejores que usar el ratón](http://ux.stackexchange.com/a/30749).
-[^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que emacs usa para esto es bastante más sofisticado.
+[^emacs-kill-buffer]: El [sistema](https://www.gnu.org/software/emacs/manual/html_node/emacs/Killing.html#Killing) que Emacs usa para esto es bastante más sofisticado.
 [^magit-select]: De hecho, podemos seleccionar qué párrafos dentro de un fichero queremos añadir al commit.
