@@ -95,6 +95,8 @@ que de forma muy simplificada se resume en: [^emacs-kill-buffer]
 * `C-w` corta.
 * `C-y` pega.
 
+Pero si no te convence, puedes usar [CUA Mode](https://www.emacswiki.org/emacs/CuaMode), 
+que te permite volver a usar `C-c` y `C-v` para copiar y pegar.
 Otros comandos útiles de aprender antes de empezar con nada más son `C-x C-s` para
 guardar y `C-x C-f` para abrir un archivo.
 
