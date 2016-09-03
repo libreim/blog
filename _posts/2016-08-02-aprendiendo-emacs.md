@@ -46,6 +46,8 @@ más extensamente. Como recursos generales para aprender Emacs, puedo recomendar
   de Emacs, y tiene escritas hojas de referencia de atajos de teclado de Emacs.
 * [**C'est la z**](http://cestlaz.github.io/stories/emacs/), otro blog en el que se tratan temas relacionados con Emacs.
 * [**GNU Emacs**](https://www.gnu.org/software/emacs/manual/), la documentación oficial de Emacs.
+* [**El baúl del programador**](https://elbauldelprogramador.com/chuleta-atajos-teclado-emacs/) ha empeazado
+  una recopilación colaborativa de los comandos y paquetes más útiles para Emacs.
 
 <!--more-->
 
