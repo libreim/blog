@@ -2,6 +2,8 @@
 layout: post
 authors:
   - M42
+editors:
+  - ncordon
 category: Programación
 ---
 
@@ -97,7 +99,7 @@ que de forma muy simplificada se resume en: [^emacs-kill-buffer]
 * `C-w` corta.
 * `C-y` pega.
 
-Pero si no te convence, puedes usar [CUA Mode](https://www.emacswiki.org/emacs/CuaMode), 
+Pero si no te convence, puedes usar [CUA Mode](https://www.emacswiki.org/emacs/CuaMode),
 que te permite volver a usar `C-c` y `C-v` para copiar y pegar.
 Otros comandos útiles de aprender antes de empezar con nada más son `C-x C-s` para
 guardar y `C-x C-f` para abrir un archivo.
@@ -116,8 +118,8 @@ licencias, etc. Especialmente útiles son:
 ### Buffers y ventanas
 
 Cada vez que abrimos un archivo, o pedimos un apartado de documentación, o abrimos
-la configuración, se abre un nuevo buffer. Un [buffer](https://www.emacswiki.org/emacs/Buffer) 
-es el equivalente a un documento 
+la configuración, se abre un nuevo buffer. Un [buffer](https://www.emacswiki.org/emacs/Buffer)
+es el equivalente a un documento
 o un espacio de trabajo en otros editores Podemos movernos entre los buffers
 actualmente abiertos pulsando `C-x <left>` o `C-x <right>`; y podemos mostrar la
 lista de buffers actualmente abiertos con `C-x C-b` (¡en un nuevo buffer!).
