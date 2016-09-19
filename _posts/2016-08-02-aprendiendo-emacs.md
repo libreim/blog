@@ -3,6 +3,7 @@ layout: post
 authors:
   - M42
 editors:
+  - fdavidcl
   - ncordon
 category: Programación
 ---
