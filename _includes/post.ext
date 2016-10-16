@@ -18,7 +18,9 @@
           {% for author in post.authors %}
             {% assign authdata = site.authors[author] %}
             {% if forloop.first %} {% elsif forloop.last %} y {% else %}, {% endif %}
-            <a class="author" href="http://github.com/{{ authdata.github }}">{{ authdata.name }}</a>
+            {% if authdata.github %}<a class="author" href="http://github.com/{{ authdata.github }}">{%else%}<span class="author">{%endif%}
+              {{ authdata.name }}
+            {% if authdata.github %}</a>{%else%}</span>{%endif%}
           {% endfor %}
         {% endif %}
 
