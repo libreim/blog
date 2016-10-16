@@ -45,7 +45,6 @@ exclude:
 authors:
   fdavidcl:
     name: David Charte
-    github: fdavidcl
   M42:
     name: Mario Román
     github: M42
@@ -85,6 +84,12 @@ authors:
   ludvins:
     name: Luis Ortega
     github: ludvins
+  pedrobn23:
+    name: Pedro Bonilla
+    github: pedrobn23
+  guillegalor:
+    name: Guillermo Galindo
+    github: guillegalor
 
 #nav_list:
 # Inicio: '/'
