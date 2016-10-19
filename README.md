@@ -23,4 +23,4 @@ Creemos en el trabajo colaborativo y comunitario. Creado por y para toda la comu
 
 [¿Quieres participar?](http://tux.ugr.es/dgiim/contributing/)
 
-Para más información sobre cómo colaborar, [README.md](https://github.com/libreim/blog/blob/gh-pages/README.md)
+Para más información sobre cómo colaborar en este blog, puedes leer [su CONTRIBUTING.md](https://github.com/libreim/blog/blob/gh-pages/CONTRIBUTING.md).
