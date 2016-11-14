@@ -17,7 +17,7 @@ del editor constituye un comando sobre el intérprete, por lo que podemos reescr
 comandos o crear nuevos comandos simplemente programando sobre el intérprete.
 
 {: .fig.med}
-![](https://github.com/libreim/blog/raw/post-emacs/images/emacs.png)
+![](https://github.com/libreim/blog/raw/gh-pages/images/emacs.png)
 Emacs editando este mismo artículo
 
 
@@ -232,7 +232,7 @@ y el poder incluir los paquetes de la [AMS](ftp://ftp.ams.org/pub/tex/doc/amsmat
 para marcar teoremas o definiciones.
 
 {: .fig.med}
-![](https://github.com/libreim/blog/raw/post-emacs/images/org-math.png)
+![](https://github.com/libreim/blog/raw/gh-pages/images/org-math.png)
 Apuntes de matemáticas en org-mode
 
 ### magit
