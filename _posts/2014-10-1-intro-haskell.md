@@ -17,7 +17,7 @@ fuertemente tipificado, que comprueba todos los tipos en tiempo de compilación.
 
 A los repositorios del doble grado hemos subido unos apuntes de introducción
 a Haskell con su código fuente bajo licencia CC BY-NC-SA 3.0:
-[Introducción a Haskell](https://github.com/libreim/introHaskell)
+[Introducción a Haskell](https://github.com/libreim/haskell#Íntroducción-a-haskell)
 
 
 [^haskellwikipedia]: [Haskell - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Haskell_%28programming_language%29)
