@@ -36,6 +36,8 @@ fundada.
 
   Entonces $$A = X$$.
 
+Nótese que, en particular, esta condición exige que el mínimo de $$X$$ esté en $$A$$.
+El caso base es aquí un paso más de la inducción.  
 
 [^stackexchangeblog-induction]: Sobre generalizaciones de la inducción <http://math.blogoverflow.com/2015/03/10/when-can-we-do-induction/>
 
