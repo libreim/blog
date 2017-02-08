@@ -96,6 +96,12 @@ authors:
   guillegalor:
     name: Guillermo Galindo
     github: guillegalor
+  rjraya:
+    name: Rodrigo Raya
+    github: rjraya
+  diegoasterio:
+    name: Diego Asterio
+    github: DiegoAsterio
 
 #nav_list:
 # Inicio: '/'
