@@ -8,6 +8,7 @@
         <a href="{{ site.base_path }}/" class="pure-menu-link" title="Inicio">Inicio</a>
         <a href="{{ site.base_path }}/blog/" class="pure-menu-link" title="Inicio">Blog</a>
         <a href="{{ site.base_path }}/overflow/" class="pure-menu-link" title="Foro">Overflow</a>
+        <a href="{{ site.base_path }}/awesome/apuntes" class="pure-menu-link" title="Apuntes">Apuntes</a>
         <a href="{{ site.base_path }}/awesome/" class="pure-menu-link" title="Awesome">Awesome</a>
         <a href="{{ site.base_path }}/contributing/" class="pure-menu-link" title="Participa">Participa</a>
       </div>
