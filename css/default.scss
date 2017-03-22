@@ -209,6 +209,18 @@ blockquote {
   border-left: .4rem solid $foreground;
 }
 
+.ejercicio {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #efefef;
+}
+
+.ejercicio > details {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #efefef;
+}
+
 /*** Pagination ***/
 nav.pagination {
   margin: 1.2rem 0;
