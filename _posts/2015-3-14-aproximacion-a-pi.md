@@ -102,3 +102,13 @@ Y en este algoritmo, se obtiene que la sucesción $$\{a_n\} \rightarrow \frac{1}
 
 
 Más información puede encontrarse [aquí](https://en.wikipedia.org/wiki/Borwein's_algorithm).
+
+## Otra forma de aproximar Pi mediante una sucesión.
+La sucesión:
+
+$$ \pi(N) = \frac{4}{N} \sum_{i=1}^{N}\frac{1}{1+\big(\frac{1-\frac{1}{2}}{N}\big)^2} $$
+
+Converge a \pi con orden de convergencia lineal.
+
+Podeis ver unos programas en C++ que implementan esta serie y permiten aproximar Pi sabiendo el error que cometemos.
+https://github.com/RNogales94/Serie_PI
