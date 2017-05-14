@@ -18,6 +18,8 @@ initialization file (usually `~/.emacs` or `~/.emacs.d/init.el`) and
 add the snippets there. You will also need to install and enable `use-package` 
 beforehand ([why?](http://www.lunaryorn.com/posts/my-emacs-configuration-with-use-package.html)).
 
+<!--more-->
+
 Smex
 ----
 
