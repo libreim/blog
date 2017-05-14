@@ -76,7 +76,8 @@ a custom command becomes
 Which-key
 ---------
 
-![](/assets/images/emacs-which-key.png)
+![]({{ site.baseurl }}/images/emacs-which-key.png)
+{: .fig.med}
 
 [Which-key](https://github.com/justbur/emacs-which-key) displays the key
 bindings following your currently entered incomplete command. That way,
