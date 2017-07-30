@@ -10,7 +10,7 @@ permalink: /styleguide/
 ---
 
 Esta guía recoge algunos consejos sobre el estilo a seguir
-a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/libreim/blog/gh-pages/guia-de-estilo.md).
+a la hora de escribir un post, y además podrá servir de [plantilla](https://raw.githubusercontent.com/libreim/blog/site/guia-de-estilo.md).
 
 ## Datos del post
 Los datos del post forman la cajita que debe aparecer al principio
@@ -38,7 +38,7 @@ Algunas aclaraciones:
      puntos. Por ejemplo, "*Introducción a Javascript. Programación
      con prototipos*".
  * El autor es el identificador que hayáis añadido a
- [`_config.yml`](https://github.com/libreim/blog/blob/gh-pages/_config.yml).
+ [`_config.yml`](https://github.com/libreim/blog/blob/site/_config.yml).
  Si aún no tenéis un identificador, añadidlo.
  * En `category` solo puede haber una categoría. Debe ser más genérica
  que el tema que trate el post, pero no tanto como *informática*. Se
@@ -217,7 +217,7 @@ Nota
 ### Figuras
 
 Para incluir imágenes o figuras en el post, se pueden subir imágenes en la
-carpeta [images](https://github.com/libreim/blog/tree/gh-pages/images), y crear
+carpeta [images](https://github.com/libreim/blog/tree/site/images), y crear
 una figura en el post con la siguiente sintaxis:
 
 ~~~markdown
@@ -230,7 +230,7 @@ El ancho de la figura se puede ajustar sustituyendo `.fig` por `.med.fig` para
 una figura mediana o `.small.fig` para una figura pequeña.
 
 {: .fig.med}
-![](https://placekitten.com/g/600/600)  
+![](https://placekitten.com/g/600/600)
 **Figura 1.** Figura de ejemplo
 
 Nota

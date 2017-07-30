@@ -24,7 +24,7 @@ $ rake post
 ~~~
 
 Esto lanzará una serie de preguntas (el título del post, el nombre del autor
-en [`_config.yml`](https://github.com/libreim/blog/blob/gh-pages/_config.yml), etc.),
+en [`_config.yml`](https://github.com/libreim/blog/blob/site/_config.yml), etc.),
 creará una rama del repositorio para que trabajes a gusto y creará el archivo
 Markdown del post para que puedas escribir.
 
@@ -37,7 +37,7 @@ encargue de publicarlo.
 
 ### Contenido
 
-La [guía de estilo](http://libreim.github.io/blog/styleguide) te servirá de
+La [guía de estilo](//libreim.github.io/blog/styleguide) te servirá de
 chuleta para la sintaxis de Markdown y algunas peculiaridades acerca de como dar
 formato correctamente a tu post.
 
@@ -114,7 +114,7 @@ Cualquier tema relacionado con las matemáticas y la ingeniería informática es
 Si quieres empezar a escribir tu artículo, puedes usar [**StackEdit**](https://stackedit.io/), que es un editor online de [Markdown](https://daringfireball.net/projects/markdown/)
 y [Mathjax](https://www.mathjax.org/) con el que puedes previsualizar cómo quedarán las fórmulas matemáticas y el formato de tu artículo antes de enviarlo. 
 Cuando lo termines, puedes enviarlo a **dgiim.blog+posts@gmail.com**. A partir de ahí, empezaremos un proceso de revisión desde [GitHub](https://github.com/libreim/blog/pulls)
-para asegurarnos de que no haya ninguna errata y que sigue la [guía de estilo](http://tux.ugr.es/dgiimblog/styleguide/). En cuanto
+para asegurarnos de que no haya ninguna errata y que sigue la [guía de estilo](libreim.github.io/blog/styleguide/). En cuanto
 esté revisado, lo publicaremos en el blog.
 
 ### Licencia
@@ -126,9 +126,6 @@ del artículo.
 
 ### Usando GitHub
 También puedes presentar tu artículo como un pull-request a este repositorio. Puedes orientarte viendo otros posts escritos en la carpeta `blog/_posts`.
-
-### Usando nuestro formulario
-Si GitHub se te hace demasiado complicado, puedes usar directamente el editor de Markdown que tenemos preparado en nuestro formulario de [nuevo artículo](http://tux.ugr.es/dgiim/new/post). Cuando envíes un artículo, [**@libreimbot**](https://github.com/libreimbot) hará todo el trabajo para presentar tu artículo en GitHub y pasaremos a revisarlo desde allí. 
 
 ## Contribuciones técnicas
 

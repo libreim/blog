@@ -349,8 +349,8 @@ class Blog
   end
 end
 
-dgiim = Blog.new
-dgiim.first
+libreim = Blog.new
+libreim.first
 => "Mean inequalities"
 ~~~
 

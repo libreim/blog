@@ -1,5 +1,5 @@
 ﻿#!/usr/bin/env ruby
-#encoding: utf-8
+#encoding: utf-8-with-signature
 
 #
 # Rakefile
@@ -100,7 +100,7 @@ task :submit do
   selection = STDIN.readline.chomp.downcase
 
   if selection == "y"
-    puts g.pull(g.repo, g.branch("gh-pages"))
+    puts g.pull(g.repo, g.branch("site"))
     g.push "origin", g.current_branch
 
     # Open GitHub on new pull request page

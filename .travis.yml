@@ -12,4 +12,4 @@ after_script:
 
 branches:
   only:
-    - gh-pages
+    - site

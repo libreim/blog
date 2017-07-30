@@ -32,7 +32,7 @@
         </a>
         <!--
         {% if comments %}
-          <a class="edit" href="https://github.com/libreim/blog/blob/gh-pages/{{ post.path }}">
+          <a class="edit" href="https://github.com/libreim/blog/blob/site/{{ post.path }}">
             Ver y editar en GitHub
           </a>
         {% endif %}
