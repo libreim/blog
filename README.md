@@ -2,7 +2,7 @@
 ========================================================
 
 [![Travis badge](https://travis-ci.org/libreim/blog.svg?branch=site)](https://travis-ci.org/libreim/blog)
-Blog de los estudiantes del Doble grado. Este blog participó en el [hackatón UGR 2015](http://sl.ugr.es/hackatonugr).
+Blog de la comunidad de LibreIM. Este blog participó en el [hackatón UGR 2015](http://sl.ugr.es/hackatonugr).
 
 ¿Quiénes somos?
 ==================
