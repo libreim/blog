@@ -2,7 +2,7 @@
 layout: post
 title: Teorema de Dini
 authors:
-  - andreshp
+  - Andrés Herrera
 category: Análisis
 ---
 
@@ -163,4 +163,4 @@ $$\tag*{$\blacksquare$}$$
 ## Referencias
 
 [^ejercicios]: [Ejercicios de sucesiones y series de funciones. Javier Pérez](http://www.ugr.es/~fjperez/textos/sucesiones_series_funciones.pdf)
-[^medias]: [La desigualdad de las medias. Mario Román](//libreim.github.io/blog/2014/04/12/desigualdad-medias/)
+[^medias]: [La desigualdad de las medias. Mario Román](/blog/2014/04/12/desigualdad-medias/)

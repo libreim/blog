@@ -2,10 +2,10 @@
 layout: post
 title: Apuntes de introducción al cálculo
 authors:
-  - ncordon
+  - Ignacio Cordón
 editors:
-  - M42
-  - fdavidcl
+  - Mario Román
+  - David Charte
 category: Análisis
 ---
 

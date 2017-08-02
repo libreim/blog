@@ -2,7 +2,7 @@
 layout: post
 title: Algoritmos de clasificación en Minería de datos
 authors:
-  - fdavidcl
+  - David Charte
 category: Ciencia de datos
 ---
 

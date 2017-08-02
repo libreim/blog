@@ -2,8 +2,8 @@
 layout: post
 title: Problemas - Fibonacci GCD
 authors:
-  - andreshp
-  - M42
+  - Andrés Herrera
+  - Mario Román
 category: Problemas
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Introducción a JavaScript. Programación con prototipos
 authors:
- - fdavidcl
+ - David Charte
 category: Programación
 ---
 

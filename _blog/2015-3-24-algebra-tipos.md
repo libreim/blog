@@ -2,7 +2,7 @@
 layout: post
 title: Álgebra de tipos
 authors:
-  - M42
+  - Mario Román
 category: Álgebra
 ---
 
@@ -12,7 +12,7 @@ programación. Veremos operaciones que se aplican sobre ellos para obtener nuevo
 tipos y qué leyes siguen estas operaciones. Usaremos como base el sistema de
 tipos de Haskell, pero estos mismos conceptos podrían aplicarse a cualquier
 lenguaje con un sistema algebraico de tipos. Para iniciarse en el sistema de
-tipos de Haskell sugiero leer antes la [Introducción a Haskell](//libreim.github.io/blog/2014/10/01/intro-haskell).
+tipos de Haskell sugiero leer antes la [Introducción a Haskell](/blog/2014/10/01/intro-haskell).
 
 ## Notando tipos en Haskell
 
@@ -83,7 +83,7 @@ Que va del tipo `Void` a un tipo arbitrario cualquiera `a`.
 
 Vamos a trabajar ahora con la categoría `Hask` de los tipos en Haskell. Una
 lectura previa de la
-[Introducción a teoría de categorías](//libreim.github.io/blog/2014/10/04/intro-categorias/)
+[Introducción a teoría de categorías](/blog/2014/10/04/intro-categorias/)
 sería interesante antes de tratar este punto, que aporta una visión muy clara a
 lo que vamos a explicar luego. El lector al que no le apetezca leer sobre categorías, puede
 saltar este punto y seguir leyendo: no debería afectar a la comprensión de lo
@@ -332,7 +332,7 @@ categorías para programadores de Bartosz Milewski[^milewski-functiontypes].
 El lector que empiece a imaginar la teoría de categorías detrás de esto debería
 seguir leyendo sobre categorías cartesianamente cerradas y el isomorfismo de
 Curry-Howard-Lambert, que extiende al ya explicado por aquí isomorfismo de
-[Curry-Howard](//libreim.github.io/blog/2014/12/04/curry-howard/).
+[Curry-Howard](/blog/2014/12/04/curry-howard/).
 
 [^taylor-algebratypes]: The Algebra of algebraic data types. Chris Taylor. <http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/>
 [^milewski-functiontypes]: Function types. Bartosz Milewski. <http://bartoszmilewski.com/2015/03/13/function-types/>

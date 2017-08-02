@@ -2,7 +2,7 @@
 layout: post
 title: Inducción Estructural
 authors:
-  - M42
+  - Mario Román
 category: Lógica
 ---
 
@@ -116,6 +116,6 @@ sabiendo que la cumplen sus subárboles derecho e izquierdo, la hemos demostrado
 para todos los árboles binarios.
 
 En el repositorio
-[M42/recorridosArboles](https://github.com/M42/recorridosArboles) hay varias
+[Mario Román/recorridosArboles](https://github.com/Mario Román/recorridosArboles) hay varias
 demostraciones por inducción sobre árboles binarios, explicados en
 lenguaje natural y demostrados luego sobre el asistente de demostraciones Coq.

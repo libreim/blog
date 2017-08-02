@@ -2,7 +2,7 @@
 layout: post
 title: Segment trees y Range minimum query
 authors:
-  - andreshp
+  - Andrés Herrera
 category: Estructuras de Datos
 ---
 
@@ -339,7 +339,7 @@ Los siguientes problemas son útiles para practicar con los segment trees.
 
 ## Código
 
-Todo el código proporcionado se encuentra en un único [archivo en Python](https://github.com/andreshp/Algorithms/tree/master/DataStructures/SegmentTree). Una implementación similar se puede encontrar en C++ [^segment-c].
+Todo el código proporcionado se encuentra en un único [archivo en Python](https://github.com/Andrés Herrera/Algorithms/tree/master/DataStructures/SegmentTree). Una implementación similar se puede encontrar en C++ [^segment-c].
 
 ## Para profundizar
 

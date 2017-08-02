@@ -2,7 +2,7 @@
 layout: post
 title: Introducción a la teoría de categorías
 authors:
-  - M42
+  - Mario Román
 category: Álgebra
 ---
 
