@@ -1,7 +1,7 @@
 ---
 title: Apuntes DGIIM
 authors:
-- Múltiples (+28)
+- Múltiples
 - Javier Sáez
 - José María Martín
 - Daniel Pozo
