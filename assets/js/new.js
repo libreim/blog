@@ -5,14 +5,14 @@ var filename = function(title) {
   var month = time.getMonth() + 1;
   var year = time.getFullYear();
   
-  return year + "-" + month + "-" + day + "-" + title.toLowerCase().replace(/\s/g, "-") + ".md";
+  return "_posts/" + year + "-" + month + "-" + day + "-" + title.toLowerCase().replace(/\s/g, "-") + ".md";
 }
 
 
 var yml = function(title, link, author, tag, license, content) {
   var template = `---
 title: ${title}
-author: ${author}
+authors: [${author}]
 link: "${link}"
 tags: [${tag}]
 license: ${license}
@@ -39,6 +39,13 @@ form.onsubmit = function(event) {
     form.querySelector("[name='tag']").value,
     form.querySelector("[name='content']").value
   );
+
+  form.querySelector("[name='title']").disabled = true;
+  form.querySelector("[name='link']").disabled = true;
+  form.querySelector("[name='author']").disabled = true;
+  form.querySelector("[name='license']").disabled = true;
+  form.querySelector("[name='tag']").disabled = true;
+  form.querySelector("[name='content']").disabled = true;
   
   return true;
 };
