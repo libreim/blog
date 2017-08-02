@@ -2,7 +2,7 @@
 layout: post
 title: "Iterating in Ruby: Enumerable and Enumerators"
 authors:
-  - fdavidcl
+  - David Charte
 category: Programación
 lang: en
 ---

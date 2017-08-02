@@ -12,7 +12,7 @@ var filename = function(title) {
 var yml = function(title, link, author, tag, license, content) {
   var template = `---
 title: ${title}
-author: ${author}
+authors: [${author}]
 link: "${link}"
 tags: [${tag}]
 license: ${license}

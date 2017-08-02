@@ -1,10 +1,10 @@
 ---
 layout: post
 authors:
-  - M42
+  - Mario Román
 editors:
-  - fdavidcl
-  - ncordon
+  - David Charte
+  - Ignacio Cordón
 category: Programación
 ---
 

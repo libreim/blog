@@ -2,7 +2,7 @@
 layout: post
 title: Introducción a Beamer
 authors:
-  - pbaeyens
+  - Pablo Baeyens
 category: Programación
 ---
 
@@ -18,4 +18,4 @@ No he podido cubrir todo, así que otros recursos que puedes utilizar son:
 - [Presentations Wikibooks](http://en.wikibooks.org/wiki/LaTeX/Presentations)
 - [TeX Stack Exchange](http://tex.stackexchange.com/questions/tagged/beamer)
 
-Además, puedes utilizar las plantillas disponibles en [M42/plantillas](https://github.com/M42/plantillas/tree/master/presentacion) para facilitar tu trabajo.
+Además, puedes utilizar las plantillas disponibles en [Mario Román/plantillas](https://github.com/Mario Román/plantillas/tree/master/presentacion) para facilitar tu trabajo.

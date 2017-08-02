@@ -2,10 +2,10 @@
 layout: post
 title: Manual rápido de Github/Git
 authors:
-  - fdavidcl
+  - David Charte
 editors:
-  - ncordon
-  - M42
+  - Ignacio Cordón
+  - Mario Román
 category: Utilidades
 ---
 

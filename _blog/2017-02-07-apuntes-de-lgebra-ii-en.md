@@ -2,9 +2,9 @@
 layout: post
 title: Apuntes de Álgebra II
 authors:
-  - rjraya
+  - Rodrigo Raya
 editors:
-  - diegoasterio
+  - Diego Asterio
 category: Álgebra
 ---
 
