@@ -30,6 +30,7 @@ exclude:
   - CONTRIBUTING.md
   - deploy.sh
   - README.md
+  - vendor
 
 # Tag configuration
 tag_dir: "/t"

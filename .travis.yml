@@ -19,7 +19,7 @@ before_install:
 
 script: "./deploy.sh"
 
-after_script:
+after_success:
   - cd .site/
   - |
     [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
