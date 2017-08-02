@@ -2,7 +2,7 @@
 layout: post
 title: Emacs for lazy people
 authors:
-    - fdavidcl
+    - David Charte
 lang: en
 category: Programación
 ---
@@ -109,10 +109,10 @@ Emacs](http://pragmaticemacs.com/emacs/automatically-revert-buffers/)):
 
 {:.note}
 The [magit](https://magit.vc/) plugin for version control with git does
-refresh the files without the need for this configuration (thanks [Nacho](https://ncordon.github.io/)
+refresh the files without the need for this configuration (thanks [Nacho](https://Ignacio Cordón.github.io/)
 for the remark!).
 
 Still want more?
 -------------------
 
-These are the main tools that have eased my way into Emacs. You can check out the rest of my configuration in [my dotfiles repository](https://github.com/fdavidcl/dotfiles/tree/master/emacs).
+These are the main tools that have eased my way into Emacs. You can check out the rest of my configuration in [my dotfiles repository](https://github.com/David Charte/dotfiles/tree/master/emacs).

@@ -2,7 +2,7 @@
 layout: post
 title: El Isomorfismo de Curry-Howard
 authors:
-  - M42
+  - Mario Román
 category: Programación
 ---
 

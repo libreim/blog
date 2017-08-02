@@ -2,8 +2,8 @@
 layout: post
 title: Introducción a Haskell
 authors:
-  - M42
-  - pbaeyens
+  - Mario Román
+  - Pablo Baeyens
 category: Programación
 ---
 

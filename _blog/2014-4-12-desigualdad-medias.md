@@ -2,7 +2,7 @@
 layout: post
 title: La desigualdad de las medias
 authors:
-  - M42
+  - Mario Román
 category: Análisis
 ---
 

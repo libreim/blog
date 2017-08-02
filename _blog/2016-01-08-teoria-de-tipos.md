@@ -2,7 +2,7 @@
 layout: post
 title: Teoría de tipos
 authors:
-  - M42
+  - Mario Román
 category: Álgebra
 ---
 
@@ -35,7 +35,7 @@ encontrarse en:
 * [Structural Induction Principles for Functional Programmers - James Caldwell](http://arxiv.org/pdf/1312.2696.pdf)
 
 Y varias demostraciones por inducción estructural implementadas en Coq en este
-repositorio sobre [**recorridos en árboles**](https://github.com/M42/recorridosArboles).
+repositorio sobre [**recorridos en árboles**](https://github.com/Mario Román/recorridosArboles).
 <!--more-->
 
 ## Álgebra de tipos

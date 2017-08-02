@@ -2,7 +2,7 @@
 layout: post
 title: Algoritmos Genéticos
 authors:
-  - andreshp
+  - Andrés Herrera
 category: Heurísticas
 ---
 

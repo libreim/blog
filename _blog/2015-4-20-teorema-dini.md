@@ -2,7 +2,7 @@
 layout: post
 title: Teorema de Dini
 authors:
-  - andreshp
+  - Andrés Herrera
 category: Análisis
 ---
 

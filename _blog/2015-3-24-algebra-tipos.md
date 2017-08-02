@@ -2,7 +2,7 @@
 layout: post
 title: Álgebra de tipos
 authors:
-  - M42
+  - Mario Román
 category: Álgebra
 ---
 
