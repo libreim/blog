@@ -2,8 +2,8 @@
 title: Teoría de la información
 authors: [Nicolò Cesa-Bianchi, Mario Román]
 link: "https://github.com/libreim/shannon-kolmogorov"
-tags: [CC BY-SA-NC]
-license: 
+tags: [apuntes,apuntes/matemáticas,apuntes/matemáticas/estadística]
+license: CC BY-SA-NC
 ---
 
 Estos apuntes son una traducción sobre los apuntes de Teoria dell'Informazione e della Trasmissione 
