@@ -4,6 +4,7 @@ deploy_all() {
   rm $site_path/* -rf
 
   bundle exec jekyll build -d $site_path
+  touch $site_path/.nojekyll
 }
 
 deploy_all
