@@ -1,15 +1,29 @@
 language: ruby
 
 rvm:
- - 2.3.1
+ - 2.4.1
+
+git:
+  submodules: false
 
 # Adapted from https://github.com/iblancasa/blog_files/blob/master/.travis.yml
 before_install:
+#  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+#  - git submodule update --init --recursive
+  - |
+    gem install bundler
+    git config --global user.email "dgiimblog@gmail.com"
+    git config --global user.name "dgiimbot"
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master https://${DGIIMBOT_TOKEN}@github.com/libreim/libreim.github.io.git .site
+    chmod u+x deploy.sh
 
-script: "bundle exec jekyll build --config _config.yml"
+script: "./deploy.sh"
 
 after_script:
-
-branches:
-  only:
-    - site
+  - cd .site/
+  - |
+    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
+    git add * && \
+    git add . --all && \
+    git commit -m "`date`" && \
+    git push origin master --quiet

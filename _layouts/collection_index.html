@@ -1,0 +1,7 @@
+---
+layout: content
+---
+
+{% for element in page.col %}
+<p><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a>
+{% endfor %}

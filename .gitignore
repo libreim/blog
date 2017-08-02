@@ -1,4 +1,4 @@
 _site/
-.fuse*
-.bundle/
-*.lock
+.sass-cache/
+.jekyll-metadata
+*~

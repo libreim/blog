@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" />
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css" />
       <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/menus-min.css" /-->
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/fonts/css/iconim.css" />
       <link rel="stylesheet" type="text/css" href="{{ site.assets_path }}/css/default.css" />
       <link rel="stylesheet" type="text/css" href="{{ site.assets_path }}/css/pygments-friendly.css" />
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.assets_path }}/feed.xml" />
@@ -37,11 +38,11 @@
       </script>
       <title>{{ page.title }} - {{ site.title }}</title>
    </head>
-   <body>
-      {% include header.ext %}
+   <body class="{% for cl in page.bodyclass %}{{ cl }} {% endfor %}">
+      {% include header.html %}
       {{ content }}
-      {% include footer.ext %}
+      {% include footer.html %}
 
-      <script id="dsq-count-scr" src="//dgiim.disqus.com/count.js" async></script>
+      <!--script id="dsq-count-scr" src="//dgiim.disqus.com/count.js" async></script-->
    </body>
 </html>

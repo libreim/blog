@@ -1,0 +1,72 @@
+---
+title: Blog
+layout: content-outer
+paginate:
+  collection: blog
+  reversed: true
+---
+
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-md-2-3 pure-u-lg-2-3">
+
+    {% for post in paginator.blog %}
+
+    {% assign content = post.content %}
+    {% if content contains '<!--more-->' %}
+    {% assign content = content | split:'<!--more-->' | first %}
+    {% assign content = content | append: '<p><a href="' | append: site.baseurl | append: post.url | append: '">Seguir leyendo...</a></p>'%}
+    {% endif %}
+
+    <article class="post">
+      
+      <div class="category">
+        {% if post.category %}
+        {{ post.category }}
+        {% else %}
+        Sin categorizar
+        {% endif %}
+      </div>
+      
+      <h1>
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
+      
+      <span class="post-data">
+        {% for author in post.authors %}
+        {% if forloop.first %} {% elsif forloop.last %} y {% else %}, {% endif %}
+        <span class="author">{{ author }}</span>
+        {% endfor %}
+
+        {% if post.license %}
+        <span class="license">
+          {{ post.license }}
+        </span>
+        {% endif %}
+        
+        <a class="date" href='{{ site.baseurl }}{{ post.url }}'><time datetime='{{ post.date | date: "%Y-%m-%d" }}'>{{ post.date | date: "%d/%m/%Y" }}</time></a>
+      </span>
+      {{ content }}
+    </article>
+    {% endfor %}
+
+    {% include pagination.html archive=true site="blog" %}
+
+  </div>
+  <div class="pure-u-1 pure-u-md-1-24 pure-u-lg-1-24"></div>
+  <div class="pure-u-1 pure-u-md-7-24 pure-u-lg-7-24">
+<!--
+    <h3>Categorías</h3>
+    <ul class="tag-tree level-1">
+
+      {% assign groups = site.blog | group_by: "category" | sort: "name" %}
+      {% for group in groups %}
+      <li>
+        <a href="{{ site.baseurl }}{{ site.tag_dir }}/{{ group.name }}">{{ group.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+-->
+  </div>
+</div>

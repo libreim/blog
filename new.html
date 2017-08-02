@@ -1,0 +1,66 @@
+---
+title: Nuevo recurso
+layout: content
+breadcrumbs: true
+---
+
+<form id="new_resource" class="pure-form" action="https://github.com/libreim/recursos/new/master/_posts" method="GET">
+  <input name="filename" placeholder="filename" hidden />
+  <textarea name="value" hidden></textarea>
+  <input name="message" placeholder="commit" hidden />
+  <div class="pure-g">
+    <fieldset class="pure-group pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+      <input name="title" placeholder="Título del recurso" class="pure-input-1 title-field" required />
+      <input name="link" placeholder="Enlace al recurso" class="pure-input-1" />
+      <input name="author" placeholder="Autor(a)" class="pure-input-1" />
+      <input name="license" placeholder="Licencia" class="pure-input-1" />
+    </fieldset>
+
+    <fieldset class="pure-group pure-u-1 pure-u-md-1 pure-u-lg-1">
+      <input name="content" placeholder="Descripción corta (opcional)" class="pure-input-1" />
+      <input name="tag" placeholder="Etiquetas (separadas por comas)" class="pure-input-1" />
+    </fieldset>
+    
+    <div class="pure-u-1">
+      <p class="em">Necesitas una cuenta de GitHub para enviarnos recursos.</p>
+    </div>
+
+    <fieldset class="pure-group pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+      <button type="submit" class="pure-button pure-button-primary pure-input-1">
+        <i class="fa icon icon-paper-plane"></i>
+        Enviar
+      </button>
+    </fieldset>
+  </div>
+
+  
+  <details class="ejercicio">
+    <summary>Paso a paso</summary>
+    <h3>Si tienes acceso al repositorio</h3>
+    <p>Tras pulsar <em>Enviar</em> haz clic en <em>Commit new file</em>.</p>
+    <h3>Si no tienes acceso de escritura</h3>
+    <p>
+      Hemos tratado de que este proceso sea lo más simple posible. Únicamente, pulsa <em>Enviar</em> y sigue los botones verdes:
+    </p>
+    
+    <figure class="fig">
+      <img src="{{ site.baseurl }}/assets/images/new-resource-1-fork.jpeg" />
+      Primero, confirma que quieres hacer un fork del repositorio.
+    </figure>
+
+    <figure class="fig">
+
+      <img src="{{ site.baseurl }}/assets/images/new-resource-2-propose.jpeg" />
+      Después, propón el nuevo archivo (los datos estarán rellenos, no tienes que hacer nada más).
+    </figure>
+
+    <figure class="fig">
+      <img src="{{ site.baseurl }}/assets/images/new-resource-3-compare.jpeg" />
+      <img src="{{ site.baseurl }}/assets/images/new-resource-4-create.jpeg" />
+      Finalmente, crea la <em>pull request</em>.
+    </figure>
+</p>
+</details>
+</form>
+
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/new.js"></script>

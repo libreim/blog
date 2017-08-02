@@ -1,0 +1,6 @@
+<figure class="fig {{ include.size }}">
+  <a href="{{ site.assets_path }}/images/blog/{{ include.path }}" title="Ver imagen completa">
+    <img src="{{ site.assets_path }}/images/blog/{{ include.path }}" />
+  </a>
+  {{ include.caption }}
+</figure>

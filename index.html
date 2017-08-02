@@ -1,17 +1,119 @@
 ---
-title: Blog
 layout: default
-paginate: true
+title: Inicio
+bodyclass:
+- home-site
 ---
+<div class="splash">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
 
-{% for post in paginator.posts %}
-  {% assign content = post.content %}
-  {% if post.content contains '<!--more-->' %}
-		{% assign content = content | split:'<!--more-->' | first %}
-		{% assign content = content | append: '<p><a href="' | append: site.baseurl | append: post.url | append: '">Seguir leyendo...</a></p>'%}
-	{% endif %}
-  {% include post.ext %}
-{% endfor %}
+      <p class="big-text">
+        Somos una comunidad dedicada al estudio y divulgación de las matemáticas y la informática.</p><p> Realizamos proyectos como un <a href="http://tux.ugr.es/dgiim/blog/">blog colaborativo</a>, un <a href="http://tux.ugr.es/dgiim/overflow/">foro de preguntas y respuestas</a>, <a href="https://github.com/dgiim/">repositorios comunes</a> y recopilaciones de <a href="http://tux.ugr.es/dgiim/awesome/">recursos</a>.
+      </p>
+
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>
+
+<div class="introduction right blackboard">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+      <div class="pure-g">
+        <div class="pure-u-1-6 pure-u-lg-1-2"></div>
+        <div class="pure-u-5-6 pure-u-lg-1-2">
+          <h1>Divulgación</h1>
+          <p>Nuestro objetivo principal es la divulgación de las matemáticas y de la ingeniería informática. Queremos facilitar y hacer accesible el conocimiento en los campos que estudiamos a todo aquel que esté interesado.</p>
+        </div>
+      </div>
+
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>
+
+<div class="introduction left software">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+      <div class="pure-g">
+        <div class="pure-u-5-6 pure-u-lg-1-2">
+          <h1>Software libre</h1>
+          <p>Apoyamos y divulgamos el software libre. Creemos que facilita la educación, el acceso al software y la creación de comunidades centradas en compartir el conocimiento.</p>
+        </div>
+        <div class="pure-u-1-6 pure-u-lg-1-2"></div>
+      </div>
+
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>
+
+<div class="introduction right knowledge">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+      <div class="pure-g">
+        <div class="pure-u-1-6 pure-u-lg-1-2"></div>
+        <div class="pure-u-5-6 pure-u-lg-1-2">
+          <h1>Conocimiento libre</h1>
+          <p>Apoyamos el conocimiento libre. Creemos que cualquier persona interesada debería poder acceder al conocimiento y que facilitar el mismo es un deber cívico. Por eso preferimos las obras científicas que permitan el acceso a cualquier interesado, con licencias libres y formatos abiertos.</p>
+        </div>
+      </div>
+
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>
+
+<div class="introduction left community">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+      <div class="pure-g">
+        <div class="pure-u-5-6 pure-u-lg-1-2">
+          <h1>Comunidad</h1>
+          <p>Creemos en el trabajo colaborativo y comunitario. Creado por y para
+            toda la comunidad. Abierto y disponible para todos.
+            <br></br>
+            <a class="button"
+               href="/dgiim/contributing/"
+               id="colabora">
+              ¡Participa!
+            </a>
+          </p>
+        </div>
+        <div class="pure-u-1-6 pure-u-lg-1-2"></div>
+      </div>
+
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>
+
+<div class="projects">
+  <div class="pure-g">
+    <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div>
+    <div class="pure-u-22-24 pure-u-md-22-24 pure-u-lg-3-5">
+
+      <div class="projects-inner">
+        <h1>Nuestros proyectos</h1>
+
+        <a class="card" href="http://tux.ugr.es/dgiim/blog/">
+          <p class="name">blog</p>
+          <p class="description">Un blog de divulgación de temas de estudio relacionados con la informática y las matemáticas</p>
+        </a>
+        <a class="card" href="https://libreim.github.io/awesome/seminars/">
+          <p class="name">seminarios</p>
+          <p class="description">Charlas y talleres sobre informática y matemáticas</p>
+        </a>
+        <a class="card" href="http://tux.ugr.es/dgiim/awesome/">
+          <p class="name">recursos</p>
+          <p class="description">Un almacén de listas de recursos útiles para el estudio y el aprendizaje</p>
+        </a>
+        <a class="card more" href="https://github.com/libreim/">
+          <p class="name">...</p>
+          <p class="description">Todos nuestros proyectos están en GitHub</p>
+        </a>
+      </div>
 
 
-{% include pagination.ext %}
+      <div class="pure-u-1-24 pure-u-md-1-24 pure-u-lg-1-5"></div></div></div>
+</div>

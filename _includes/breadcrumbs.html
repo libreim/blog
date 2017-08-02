@@ -1,0 +1,12 @@
+<div class="breadcrumbs category">
+  <a href="{{ site.baseurl }}/recursos">recursos</a><span class="separator"></span>
+  {% assign tag_path = include.tag | split: "/" %}
+  {% assign prev_path = "" %}
+  
+  {% for prev in tag_path %}
+  {% if forloop.last == false %}
+  {% assign prev_path = prev_path | append: "/" | append: prev %}
+  <a href="{{ site.baseurl }}{{ site.tag_dir }}{{ prev_path }}">{{ prev }}</a><span class="separator"></span>
+  {% endif %}
+  {% endfor %}
+</div>

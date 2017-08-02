@@ -1,108 +1,58 @@
+title: libreim
 
-# Github defaults
-# safe: true
-lsi: false
+# theme: minima
+baseurl: ""
+assets_path: /assets
 
-# Settings
-baseurl: /blog
-name: libreim
-title: LibreIM
-description: Blog de la comunidad LibreIM
-url: http://libreim.github.io/blog
+locale: "es"
+permalink: pretty
 
 markdown: kramdown
 kramdown:
   parse_span_html: false
 highlighter: rouge
 
-# Dependencies
-gems:
-  - jemoji
+plugins:
   - octopress-paginate
-  - jekyll-gist
-#  - jekyll-mentions
+#  - jemoji
+#  - jekyll-gist
 
-permalink: /:year/:month/:day/:title/
-# paginate: 5
-# paginate_path: "/page/:num/"
-# Configure octopress-paginate:
 pagination:
   per_page: 5
   limit: false
   permalink: /page/:num/
   title_suffix: ""
 
-excerpt_separator: "<!--more-->"
-
 exclude:
+  - LICENSE
   - Gemfile
   - Gemfile.lock
-  - LICENSE
+  - CONTRIBUTING.md
+  - deploy.sh
   - README.md
-  - Rakefile
 
-# Autores
-authors:
-  fdavidcl:
-    name: David Charte
-  M42:
-    name: Mario Román
-    github: M42
-  pbaeyens:
-    name: Pablo Baeyens
-    github: mx-psi
-  ncordon:
-    name: Ignacio Cordón
-    github: NCordon
-  andreshp:
-    name: Andrés Herrera Poyatos
-    github: andreshp
-  oxcar:
-    name: Óscar Bermúdez
-    github: oxcar103
-  jj:
-    name: Juan Julián Merelo
-    github: JJ
-  makixun:
-    name: Miguel Anguita
-    github: makixun
-  jcentrena:
-    name: José Carlos Entrena
-    github: JCEntrena
-  martaandres:
-    name: Marta Andrés
-    github: martaandres
-  robertohueso:
-    name: Roberto Hueso
-    github: robertohueso
-  fjsaezm:
-    name: Javier Sáez
-    github: fjsaezm
-  jmml97:
-    name: José María Martín
-    github: jmml97
-  danipozodg:
-    name: Daniel Pozo
-    github: danipozodg
-  antcc:
-    name: Antonio Coín
-    github: antcc
-  ludvins:
-    name: Luis Ortega
-    github: ludvins
-  pedrobn23:
-    name: Pedro Bonilla
-    github: pedrobn23
-  guillegalor:
-    name: Guillermo Galindo
-    github: guillegalor
-  rjraya:
-    name: Rodrigo Raya
-    github: rjraya
-  diegoasterio:
-    name: Diego Asterio
-    github: DiegoAsterio
+# Tag configuration
+tag_dir: "/t"
+tag_title_prefix: ""
+tag_title_suffix: ""
+category_collection: "blog"
+category_dir: "/c"
+category_title_prefix: ""
+category_title_suffix: ""
 
-#nav_list:
-# Inicio: '/'
-# Archivo: '/archive'
+defaults:
+  -
+    scope:
+      path: "_posts" # an empty string here means all files in the project
+    values:
+      layout: "post"
+      side: true
+  - scope:
+      path: "_blog"
+    values:
+      layout: "post"
+      side: true
+
+collections:
+  blog:
+    output: true
