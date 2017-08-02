@@ -1,6 +1,6 @@
 ---
 title: Deep Learning Book
-author: Ian Goodfellow
+authors: [Ian Goodfellow, Yoshua Bengio, Aaron Courville]
 link: "http://www.deeplearningbook.org/"
 tags: [libros, libros/informática, libros/informática/inteligencia-artificial]
 ---
