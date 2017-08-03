@@ -13,7 +13,6 @@ body, .pure-g [class*="pure-u"] {
 
 body {
     background: #ffffff;
-    line-height: 1.6em;
 }
 
 /*** Generic styles ***/
@@ -504,6 +503,10 @@ nav.side {
 
         a {
             text-decoration: underline;
+        }
+
+        p {
+            line-height: 1.6em;
         }
         
         &.left {
