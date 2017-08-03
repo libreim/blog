@@ -5,7 +5,7 @@ var filename = function(title) {
   var month = time.getMonth() + 1;
   var year = time.getFullYear();
   
-  return "_posts/" + year + "-" + month + "-" + day + "-" + title.toLowerCase().replace(/\s/g, "-") + ".md";
+  return "recursos/_posts/" + year + "-" + month + "-" + day + "-" + title.toLowerCase().replace(/\s/g, "-") + ".md";
 }
 
 
