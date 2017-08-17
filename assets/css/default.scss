@@ -44,6 +44,7 @@ header {
     //border-bottom: 1px solid $theme;
     box-shadow: 0 2px 2px -1px $theme;
     font-size: 0.9em;
+    line-height: normal;
 
     .pure-menu-link {
         padding-top: 1.1em;
@@ -496,9 +497,18 @@ nav.side {
 
     .introduction {
         color: white;
+        display: block;
         padding: 3rem 0 5rem;
         text-shadow: 0 2px rgba(0,0,0,0.4);
 
+        a {
+            text-decoration: underline;
+        }
+
+        p {
+            line-height: 1.6em;
+        }
+        
         &.left {
             h1, p {
                 text-align: right;
@@ -530,6 +540,42 @@ nav.side {
         &.community {
             background-image: url({{ site.assets_path }}/images/home/community.jpg);
             background-position: 20% center;
+        }
+
+        &.amat {
+            background: #555555;
+        }
+        &.gtg {
+            background: darken(#eba9e7, 10%);
+        }
+        &.intf {
+            background: darken(#7ec147, 10%);
+        }
+        &.pyg {
+            background: #3c79d6;
+        }
+        &.osl {
+            background: darken(#a9b6c8, 10%);
+        }
+
+        &.odd {
+            background: #eeeeee;
+            color: $foreground;
+            text-shadow: 0 2px rgba(255,255,255,0.4);
+        }
+        &.even {
+            background: lighten($accent, 50%);
+            color: $foreground;
+            text-shadow: 0 2px rgba(255,255,255,0.4);
+        }
+    }
+
+    a.introduction {
+        transition: box-shadow .2s ease;
+        
+        &:hover {
+            text-decoration: none;
+            box-shadow: inset 0 0 2rem rgba(0,0,0,0.4);
         }
     }
 

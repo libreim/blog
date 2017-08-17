@@ -6,7 +6,7 @@ Blog de la comunidad de LibreIM. Este blog participó en el [hackatón UGR 2015]
 
 ¿Quiénes somos?
 ==================
-Somos una comunidad dedicada al estudio y divulgación de las matemáticas y la informática. Realizamos proyectos como un [blog colaborativo](//libreim.github.io/blog/), un [foro de preguntas y respuestas](//libreim.github.io/overflow/), [repositorios comunes](https://github.com/libreim) y recopilaciones de [recursos](//libreim.github.io/awesome/)
+Somos una comunidad dedicada al estudio y divulgación de las matemáticas y la informática. Realizamos proyectos como un [blog colaborativo](//libreim.github.io/blog/), un [foro de preguntas y respuestas](//libreim.github.io/overflow/), [repositorios comunes](https://github.com/libreim) y recopilaciones de [recursos](//libreim.github.io/recursos/)
 
 ## Divulgación
 Nuestro objetivo principal es la divulgación de las matemáticas y de la ingeniería informática. Queremos facilitar y hacer accesible el conocimiento en los campos que estudiamos a todo aquel que esté interesado.

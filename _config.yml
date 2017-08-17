@@ -5,7 +5,7 @@ baseurl: ""
 assets_path: /assets
 
 locale: "es"
-permalink: pretty
+permalink: /:year/:month/:day/:title/
 
 markdown: kramdown
 kramdown:
@@ -44,16 +44,14 @@ category_title_suffix: ""
 defaults:
   -
     scope:
-      path: "_posts" # an empty string here means all files in the project
+      path: "recursos/_posts" # an empty string here means all files in the project
     values:
       layout: "post"
       side: true
+      permalink: /recursos/:year/:month/:day/:title/
   - scope:
-      path: "_blog"
+      path: "blog/_posts"
     values:
       layout: "post"
       side: true
-
-collections:
-  blog:
-    output: true
+      permalink: /blog/:year/:month/:day/:title/

@@ -23,7 +23,7 @@ pueden ser buenos lugares). Sube el documento a Internet y ¡compártelo!
 puedes escoger una licencia [Creative Commons](https://creativecommons.org/choose/)
 o [una para código](http://opensource.org/licenses/). Te recomendamos que subas
 el código a una plataforma con control de versiones, por ejemplo GitHub (también
-[te podemos ayudar](https://libreim.github.io/blog/2014/02/23/manualgit/) con eso).
+[te podemos ayudar](/blog/2014/02/23/manualgit/) con eso).
 Una vez hecho esto, ya puedes compartir tu código con cualquiera.
 
 * Si quieres liberar tu software, te recomendamos que sigas

@@ -31,7 +31,7 @@ Markdown del post para que puedas escribir.
 Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha
 y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los
 anteriores; aunque se recomienda usar el `Rakefile`. En caso de que no funcionara lo anterior, puede enviarse
-el post a dgiim.blog@gmail.com y dejar que alguien se
+el post a libreim.blog@gmail.com y dejar que alguien se
 encargue de publicarlo.
 
 
@@ -112,8 +112,8 @@ caso de que detectes algún error.
 Cualquier tema relacionado con las matemáticas y la ingeniería informática es apto para este blog.
 
 Si quieres empezar a escribir tu artículo, puedes usar [**StackEdit**](https://stackedit.io/), que es un editor online de [Markdown](https://daringfireball.net/projects/markdown/)
-y [Mathjax](https://www.mathjax.org/) con el que puedes previsualizar cómo quedarán las fórmulas matemáticas y el formato de tu artículo antes de enviarlo. 
-Cuando lo termines, puedes enviarlo a **dgiim.blog+posts@gmail.com**. A partir de ahí, empezaremos un proceso de revisión desde [GitHub](https://github.com/libreim/blog/pulls)
+y [Mathjax](https://www.mathjax.org/) con el que puedes previsualizar cómo quedarán las fórmulas matemáticas y el formato de tu artículo antes de enviarlo.
+Cuando lo termines, puedes enviarlo a **libreim.blog+posts@gmail.com**. A partir de ahí, empezaremos un proceso de revisión desde [GitHub](https://github.com/libreim/blog/pulls)
 para asegurarnos de que no haya ninguna errata y que sigue la [guía de estilo](libreim.github.io/blog/styleguide/). En cuanto
 esté revisado, lo publicaremos en el blog.
 

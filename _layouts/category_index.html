@@ -4,7 +4,7 @@ breadcrumbs: false
 tag_list: false
 ---
 
-{% for post in site.blog %}
+{% for post in site.categories.blog %}
 {% if post.category == page.category %}
 <article>
   <p class="post-title">
