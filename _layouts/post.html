@@ -3,4 +3,8 @@ layout: post-outer
 tag_list: true
 ---
 
+{% if page.toc %}
+{{ content | toc }}
+{% else %}
 {{ content }}
+{% endif %}

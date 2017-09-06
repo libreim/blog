@@ -274,6 +274,18 @@ article {
         line-height: 2em;
     }
 
+    .section-nav { /** toc (jekyll-toc) **/
+        border: 1px solid #d0d0d0;
+        padding: 0.6rem 0.6rem 0.8rem 2.6rem;
+
+        &:before {
+            content: "Índice";
+            font-weight: bold;
+            display: block;
+            margin: 0 0 0.6rem -2rem;
+        }
+    }
+
     img {
         max-width: 100%;
     }
