@@ -1,8 +1,10 @@
 ---
 title: Aprendizaje PAC. Clasificación no binaria
-authors: [Nacho Cordón]
+authors:
+- Nacho Cordón
 link: "https://github.com/ncordon/tfg"
-tags: [trabajos]
+tags: 
+- trabajos
 license: CC-BY-NC-SA/ GPLv3
 ---
 
