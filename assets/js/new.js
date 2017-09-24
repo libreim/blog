@@ -35,16 +35,16 @@ form.onsubmit = function(event) {
     form.querySelector("[name='title']").value,
     form.querySelector("[name='link']").value,
     form.querySelector("[name='author']").value,
-    form.querySelector("[name='license']").value,
     form.querySelector("[name='tag']").value,
+    form.querySelector("[name='license']").value,
     form.querySelector("[name='content']").value
   );
 
   form.querySelector("[name='title']").disabled = true;
   form.querySelector("[name='link']").disabled = true;
   form.querySelector("[name='author']").disabled = true;
+  form.querySelector("[name='tag']").disabled = true;  
   form.querySelector("[name='license']").disabled = true;
-  form.querySelector("[name='tag']").disabled = true;
   form.querySelector("[name='content']").disabled = true;
   
   return true;
