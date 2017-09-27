@@ -1,5 +1,5 @@
 ---
-title: Una lógica multiagente para nociones epistemológicas básicas: conocimiento, creencia y justificación
+title: "Una lógica multiagente para nociones epistemológicas básicas: conocimiento, creencia y justificación"
 authors: [Antonio Yuste Ginel]
 link: "https://github.com/Antonioyuste/TFM"
 tags: [trabajos, trabajos/lógica]
