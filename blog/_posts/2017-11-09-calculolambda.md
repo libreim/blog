@@ -7,8 +7,22 @@ lang: es
 category: Lógica
 ---
 
+> 1936 - Alonzo Church also invents every language that will ever be
+> but does it better. His lambda calculus is ignored because it is
+> insufficiently C-like. This criticism occurs in spite of the fact
+> that C has not yet been invented.
+>
+> -- *[A Brief, Incomplete, and Mostly Wrong History of programming languages](http://james-iry.blogspot.com.es/2009/05/brief-incomplete-and-mostly-wrong.html)*
+
+Alonzo Church desarrolló el cálculo lambda en los años 30 como un
+sistema formal que capturaba una noción abstracta de función. Este
+sistema puede interpretarse a su vez como un modelo de computación
+equivalente a las máquinas de Turing.  Refinamientos posteriores
+añadieron tipos al lenguaje, que serían la base de una correspondencia
+entre modelos de computación y sistemas lógicos.
+
 ## Apuntes generales
-Apuntes generales sobre el cálculo lambda pueden encontrarse en:
+Pueden encontrarse presentaciones generales sobre el cálculo lambda en:
 
  * Peter Selinger, [Lecture notes on the lambda calculus](http://www.mathstat.dal.ca/~selinger/papers/lambdanotes.pdf).
  * Raúl Rojas, [A Tutorial Introduction to the Lambda Calculus](https://www.utdallas.edu/%7Egupta/courses/apl/lambda.pdf)
@@ -16,8 +30,8 @@ Apuntes generales sobre el cálculo lambda pueden encontrarse en:
 
 <!--more-->
 
-Como parte del trabajo fin de grado, he publicado un repositorio con [tres capítulos sobre cálculo lambda](https://github.com/M42/lambda.notes) que se irá extendiendo conforme avance. Actualmente
-contiene notas sobre:
+En particular, hemos publicado [tres capítulos sobre cálculo lambda](https://github.com/M42/lambda.notes)
+como parte de una serie de notas sobre categorías y computación. Tratan
 
  * 1. cálculo lambda no tipado,
  * 2. cálculo lambda simplemente tipado, y
@@ -26,15 +40,15 @@ contiene notas sobre:
 La mayoría de las demostraciones allí expuestas usan [inducción estructural](/blog/2015/03/14/induccion-estructural/).
 
 ## Intérpretes de cálculo lambda
-Como parte de ese mismo trabajo, se ofrece un intérprete de cálculo
-lambda tipado y simplemente tipado.
+Junto a esas notas, se ofrece un intérprete de cálculo lambda no tipado y
+simplemente tipado.
 
  * [Mikrokosmos](https://m42.github.io/mikrokosmos/), intérprete de cálculo lambda.
  * [Tutorial de Mikrokosmos](https://m42.github.io/mikrokosmos/tutorial.html), explicando cómo programar en el cálculo lambda.
  * [Código fuente](https://github.com/M42/mikrokosmos), en Haskell y licenciado bajo GPLv3.
 
-Muchos otros intérpretes de cálculo lambda están disponibles, así como tutoriales para escribir un
-intérprete
+Muchos otros intérpretes de cálculo lambda pueden encontrarse en
+Internet, así como tutoriales para escribir un intérprete
 
  * [The Glambda interpreter](https://github.com/goldfirere/glambda),
    cuyo código sirve como introducción a GADTs en Haskell;
