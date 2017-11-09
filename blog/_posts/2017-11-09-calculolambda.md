@@ -26,16 +26,16 @@ Pueden encontrarse presentaciones generales sobre el cálculo lambda en:
 
  * Peter Selinger, [Lecture notes on the lambda calculus](http://www.mathstat.dal.ca/~selinger/papers/lambdanotes.pdf).
  * Raúl Rojas, [A Tutorial Introduction to the Lambda Calculus](https://www.utdallas.edu/%7Egupta/courses/apl/lambda.pdf)
- * H.P. Barendregt, The Lambda Calculus, its sintax and semantics.
+ * H.P. Barendregt, The Lambda Calculus, its syntax and semantics.
 
 <!--more-->
 
 En particular, hemos publicado [tres capítulos sobre cálculo lambda](https://github.com/M42/lambda.notes)
 como parte de una serie de notas sobre categorías y computación. Tratan
 
- * 1. cálculo lambda no tipado,
- * 2. cálculo lambda simplemente tipado, y
- * 3. el isomorfismo de Curry-Howard.
+ 1. cálculo lambda no tipado,
+ 2. cálculo lambda simplemente tipado, y
+ 3. el isomorfismo de Curry-Howard.
 
 La mayoría de las demostraciones allí expuestas usan [inducción estructural](/blog/2015/03/14/induccion-estructural/).
 
