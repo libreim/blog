@@ -31,7 +31,8 @@ Pueden encontrarse presentaciones generales sobre el cálculo lambda en:
 <!--more-->
 
 En particular, hemos publicado [tres capítulos sobre cálculo lambda](https://github.com/M42/lambda.notes)
-como parte de una serie de notas sobre categorías y computación. Tratan
+como parte de una serie de notas sobre categorías y computación, y una [presentación](https://m42.github.io/talks/untypedlambda.pdf)
+sobre las bases del cálculo lambda. Tratan
 
  1. cálculo lambda no tipado,
  2. cálculo lambda simplemente tipado, y
