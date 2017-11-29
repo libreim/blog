@@ -3,7 +3,7 @@ title: Curso de Álgebra básica
 authors: [M. Bullejos Lorenzo, P. Carrasco Carrasco, P. A. García Sánchez, A. Martínez Cegarra, E. Miranda Palacios, A. Rodríguez Garzón]
 link: "http://ocw.ugr.es/course/view.php?id=23"
 tags: [apuntes,apuntes/matemáticas,apuntes/matemáticas/álgebra]
-license: MIT
+license: CC-BY-NC-SA
 ---
 
 1.	Aritmética entera y modular
