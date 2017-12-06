@@ -1,7 +1,7 @@
 ---
 title: Curso-0 de Matemáticas
 authors: [Pedro A. García-Sánchez, María Burgos]
-link: "https://pedritomelenas.github.io/Curso-0-Informatica/"
+link: "https://github.com/pedritomelenas/Curso-0-Matematicas"
 tags: [apuntes,apuntes/matemáticas]
 license: MIT
 ---
