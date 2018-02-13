@@ -579,5 +579,5 @@ give them a try, be creative and find new ways to use them.
 [^wiki-3comp]: [Three-way comparison - Wikipedia](https://en.wikipedia.org/wiki/Three-way_comparison)
 [^ruby-quicksort]: [Ruby Algorithms: Sorting, Trie and Heaps - Ilya Grigorik](https://www.igvita.com/2009/03/26/ruby-algorithms-sorting-trie-heaps/)
 [^lazy-ruby]: [Lazy Ruby - Effluence](https://sonnym.github.io/2014/04/05/lazy-ruby/)
-[^ruby-blocks]: [Understanding Ruby Blocks, Procs and Lambdas - Reactive.IO](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
+[^ruby-blocks]: [Understanding Ruby Blocks, Procs and Lambdas - Reactive.IO](https://web.archive.org/web/20180110035044/http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
 [^ruby-enumerator]: [Enumerator - Ruby Docs](http://ruby-doc.org/core-2.2.2/Enumerator.html)
