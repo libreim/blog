@@ -109,7 +109,7 @@ Emacs](http://pragmaticemacs.com/emacs/automatically-revert-buffers/)):
 
 {:.note}
 The [magit](https://magit.vc/) plugin for version control with git does
-refresh the files without the need for this configuration (thanks [Nacho](https://Ignacio Cordón.github.io/)
+refresh the files without the need for this configuration (thanks [Nacho](https://ncordon.github.io/)
 for the remark!).
 
 Still want more?
