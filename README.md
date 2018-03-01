@@ -23,4 +23,4 @@ Creemos en el trabajo colaborativo y comunitario. Creado por y para toda la comu
 
 [¿Quieres participar?](//libreim.github.io/contributing/)
 
-Para más información sobre cómo colaborar en este blog, puedes leer [su CONTRIBUTING.md](//github.com/libreim/blog/blob/site/CONTRIBUTING.md).
+Para más información sobre cómo colaborar en este blog, puedes leer [su CONTRIBUTING.md](//github.com/libreim/blog/blob/sites/CONTRIBUTING.md).
