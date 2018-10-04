@@ -39,7 +39,7 @@
         });
       </script>
       
-      <title>{{- page.title -}} - {{- site.title -}}</title>
+      <title>{{- page.title -}} - {{ site.title }}</title>
    </head>
    <body class="{%- for cl in page.bodyclass -%}{{- cl -}} {%- endfor -%}">
       {%- include header.html -%}
