@@ -5,4 +5,4 @@ permalink: /overflow/
 redirect_from: /foro/
 ---
 
-[&larr; Volver a LibreIM]({{ site.baseurl }}/)
+[&larr; Volver a LibreIM]({{- site.baseurl -}}/)
