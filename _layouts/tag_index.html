@@ -30,7 +30,7 @@ tag_prefix: true
     </span>
     {%- endif -%}
     
-    <a class="date" href='{{- site.baseurl -}}{{- post.url -}}'><time datetime='{{- post.date | date: "%Y-%m-%d" -}}'>Añadido el {{- post.date | date: "%d/%m/%Y" -}}</time></a>
+    <a class="date" href='{{- site.baseurl -}}{{- post.url -}}'><time datetime='{{- post.date | date: "%Y-%m-%d" -}}'>Añadido el {{ post.date | date: "%d/%m/%Y" }}</time></a>
   
     <p class="tag-list">
       <i class="icon icon-tags"></i>
