@@ -3,60 +3,60 @@ layout: content-outer
 ---
 
 
-{% if page.category %}
+{%- if page.category -%}
 <div class="category">
-  {{ page.category }}
+  {{- page.category -}}
 </div>
-{% endif %}
+{%- endif -%}
 
-{% if page.breadcrumbs %}
-{% include breadcrumbs.html tag=page.tag %}
-{% endif %}
+{%- if page.breadcrumbs -%}
+{%- include breadcrumbs.html tag=page.tag -%}
+{%- endif -%}
 
-{% if page.title %}
+{%- if page.title -%}
 <h1>
-  {% if page.link %}
+  {%- if page.link -%}
   <span>
-    <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+    <a href="{{- site.baseurl -}}{{- page.url -}}">{{ page.title }}</a>
     
-    <a class="post-link" href="{{ page.link }}">
+    <a class="post-link" href="{{- page.link -}}">
       <i class="icon icon-link-ext"></i>
-      {{ page.link | split: "://" | last | split: "/" | first }}
+      {{- page.link | split: "://" | last | split: "/" | first -}}
     </a>
   </span>
-  {% else %}
-  <a href="{{ site.baseurl }}{{ page.url }}">
-    {{ page.title }}
+  {%- else -%}
+  <a href="{{- site.baseurl -}}{{- page.url -}}">
+    {{- page.title -}}
   </a>
-  {% endif %}
+  {%- endif -%}
 </h1>
-{% endif %}
+{%- endif -%}
 
-{% if page.tag_list or page.side %}
+{%- if page.tag_list or page.side -%}
 
 <div class="pure-g">
   <div class="pure-u-1 pure-u-md-2-3 pure-u-lg-2-3">
-    {{ content }}        
+    {{- content -}}        
   </div>
   <div class="pure-u-1 pure-u-md-1-24 pure-u-lg-1-24"></div>
   <div class="pure-u-1 pure-u-md-7-24 pure-u-lg-7-24">
-    {% if page.tag_list %}
-    <a href="{{ site.baseurl }}/recursos/new" class="pure-button pure-button-primary">
+    {%- if page.tag_list -%}
+    <a href="{{- site.baseurl -}}/recursos/new" class="pure-button pure-button-primary">
       <i class="fa icon icon-plus"></i>
       Añadir un nuevo recurso
     </a>
     
-    <h3>Etiquetas{% if page.tag_prefix %} descendientes{% endif %}</h3>
-    {% if page.tag_prefix %}
-    {% include tag_list.html level=2 prefix=page.tag %}
-    {% else %}
-    {% include tag_list.html level=2 %}
-    {% endif %}
+    <h3>Etiquetas{%- if page.tag_prefix -%} descendientes{%- endif -%}</h3>
+    {%- if page.tag_prefix -%}
+    {%- include tag_list.html level=2 prefix=page.tag -%}
+    {%- else -%}
+    {%- include tag_list.html level=2 -%}
+    {%- endif -%}
 
-    {% endif %}
+    {%- endif -%}
   </div>
 </div>
 
-{% else %}
-{{ content }}
-{% endif %}
+{%- else -%}
+{{- content -}}
+{%- endif -%}
