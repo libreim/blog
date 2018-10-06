@@ -16,7 +16,7 @@ Instala git. Crea un repositorio desde la página de Github. Descárgalo con `gi
 
 ## La versión larga
 
-Github es un servicio de almacenamiento de código con control de versiones Git. Git permite a los desarrolladores llevar un registro de todos los cambios realizados a lo largo del tiempo. Con una cuenta en Github puedes crear tantos repositorios (públicos) como quieras, y 5 privados si registras tu correo de la Universidad en [Github Edu](http://edu.github.com). Cada repositorio puede estar compartido por el creador para varios colaboradores, de forma que todos pueden editarlo.
+Github es un servicio de almacenamiento de código con control de versiones Git. Git permite a los desarrolladores llevar un registro de todos los cambios realizados a lo largo del tiempo. Con una cuenta en Github puedes crear tantos repositorios (públicos) como quieras, y tantos privados como quieras si registras tu correo de la Universidad en [Github Edu](http://edu.github.com). Cada repositorio puede estar compartido por el creador para varios colaboradores, de forma que todos pueden editarlo.
 
 La gran ventaja de Github/Git respecto de los sistemas de sincronización de archivos (como Dropbox o OneDrive) es que Git no almacena cada archivo completo generado tras cada cambio, sino únicamente los cambios que se han hecho desde la primera versión de cada archivo. Esto permite recuperar un código antiguo sin necesidad de hacer varias copias, y que varios colaboradores editen el mismo archivo sin crear conflictos de versiones, ya que los cambios se mezclan en un único archivo resultante.
 
