@@ -334,6 +334,6 @@ seguir leyendo sobre categorías cartesianamente cerradas y el isomorfismo de
 Curry-Howard-Lambert, que extiende al ya explicado por aquí isomorfismo de
 [Curry-Howard](/blog/2014/12/04/curry-howard/).
 
-[^taylor-algebratypes]: The Algebra of algebraic data types. Chris Taylor. <http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/>
+[^taylor-algebratypes]: The Algebra of algebraic data types. Chris Taylor. <https://web.archive.org/web/20131221121829/https://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/>
 [^milewski-functiontypes]: Function types. Bartosz Milewski. <http://bartoszmilewski.com/2015/03/13/function-types/>
 [^haskell-void-98]: Aunque para seguir el estándar **Haskell 98** requeriría de una definición ligeramente diferente. Puede consultarse el [código fuente](https://hackage.haskell.org/package/void-0.7/docs/src/Data-Void.html#Void).

@@ -333,7 +333,7 @@ Los siguientes problemas son útiles para practicar con los segment trees.
 - Dado un vector $$V$$ con $$N$$ elementos, se pide realizar $$Q$$ consultas. Cada consulta consiste en obtener la suma de los elementos del subintervalo $$V[i,j]$$. Encontrar una estructura de datos con preprocesamiento lineal y tiempo de consulta constante (diferente al segment tree) que resuelva el problema. ¿Es válida la solución si en lugar de la suma se utilizase la operación OR lógica de los números en binario? ¿Por qué? Extender el algoritmo a este último caso, estudiar las nuevas eficiencias obtenidas y compararlas con las de una solución basada en segment trees.
 
 - [Hackerrank - Functional Programming Contest - Range Minimum Query](https://www.hackerrank.com/contests/hindley-milner-feb14/challenges/range-minimum-query)
-- [Hackerrank - Minimum Product Subinterval](https://www.hackerrank.com/contests/indeed-prime-challenge/challenges/minimum-product-sub-interval)
+- [Hackerrank - Minimum Product Subinterval](https://www.hackerrank.com/contests/indeed-prime-challenge-june-2015/challenges/minimum-product-sub-interval/problem)
 
 - [90 Segment Trees Problems](http://www.ahmed-aly.com/Category.jsp?ID=25)
 

@@ -128,7 +128,7 @@ de las medias de Hölder. Además de los casos triviales, puede demostrarse
 como ejercicio que los casos $$0,+\infty,-\infty$$ efectivamente se corresponden
 con la media geométrica, el máximo y el mínimo.  [^gmeanproof]
 
-[^gmeanproof]: [Derivación de la media geométrica como media de Hölder](http://planetmath.org/sites/default/files/texpdf/35741.pdf)
+[^gmeanproof]: [Derivación de la media geométrica como media de Hölder](https://web.archive.org/web/20170414083358/https://planetmath.org/sites/default/files/texpdf/35741.pdf)
 
 $$
 \begin{array}{l|c|c}

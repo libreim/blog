@@ -31,7 +31,7 @@ Pueden encontrarse presentaciones generales sobre el cálculo lambda en:
 <!--more-->
 
 En particular, hemos publicado [tres capítulos sobre cálculo lambda](https://github.com/M42/lambda.notes)
-como parte de una serie de notas sobre categorías y computación, y una [presentación](https://m42.github.io/talks/untypedlambda.pdf)
+como parte de una serie de notas sobre categorías y computación, y una [presentación](https://mroman42.github.io/talks/untypedlambda.pdf)
 sobre las bases del cálculo lambda. Tratan
 
  1. cálculo lambda no tipado,
@@ -44,8 +44,8 @@ La mayoría de las demostraciones allí expuestas usan [inducción estructural](
 Junto a esas notas, se ofrece un intérprete de cálculo lambda no tipado y
 simplemente tipado.
 
- * [Mikrokosmos](https://m42.github.io/mikrokosmos/), intérprete de cálculo lambda.
- * [Tutorial de Mikrokosmos](https://m42.github.io/mikrokosmos/tutorial.html), explicando cómo programar en el cálculo lambda.
+ * [Mikrokosmos](https://mroman42.github.io/mikrokosmos/), intérprete de cálculo lambda.
+ * [Tutorial de Mikrokosmos](https://mroman42.github.io/mikrokosmos/tutorial.html), explicando cómo programar en el cálculo lambda.
  * [Código fuente](https://github.com/M42/mikrokosmos), en Haskell y licenciado bajo GPLv3.
 
 Muchos otros intérpretes de cálculo lambda pueden encontrarse en

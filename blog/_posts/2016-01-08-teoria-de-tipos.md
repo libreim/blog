@@ -44,9 +44,9 @@ En un post anterior de este mismo blog hemos tratado el álgebra de tipos. Ese
 post se basó sobre otros tres publicados en el blog de Chris Taylor:
 
 * [Álgebra de tipos - Blog LibreIM](/blog/2015/03/24/algebra-tipos/)
-* [The algebra of algebraic data types, Part I - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/)
-* [The algebra of algebraic data types, Part II - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/11/the-algebra-of-algebraic-data-types-part-ii/)
-* [The algebra of algebraic data types, Part III - Chris Taylor](http://chris-taylor.github.io/blog/2013/02/13/the-algebra-of-algebraic-data-types-part-iii/)
+* [The algebra of algebraic data types, Part I - Chris Taylor](https://web.archive.org/web/20131221121829/https://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/)
+* [The algebra of algebraic data types, Part II - Chris Taylor](https://web.archive.org/web/20140222144454/https://chris-taylor.github.io/blog/2013/02/11/the-algebra-of-algebraic-data-types-part-ii/)
+* [The algebra of algebraic data types, Part III - Chris Taylor](https://web.archive.org/web/20130613144904/http://chris-taylor.github.io/blog/2013/02/13/the-algebra-of-algebraic-data-types-part-iii/)
 
 En el segundo de los artículos se usan funciones generadoras para probar
 resultados sobre los números de Catalan y los árboles binarios. La teoría de

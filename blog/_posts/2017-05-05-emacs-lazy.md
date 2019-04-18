@@ -16,7 +16,7 @@ and see if they help you get a more comfortable development environment.
 To add any of these packages to your Emacs configuration, find your 
 initialization file (usually `~/.emacs` or `~/.emacs.d/init.el`) and
 add the snippets there. You will also need to install and enable `use-package` 
-beforehand ([why?](http://www.lunaryorn.com/posts/my-emacs-configuration-with-use-package.html)).
+beforehand ([why?](https://web.archive.org/web/20150303120448/http://www.lunaryorn.com/2015/01/06/my-emacs-configuration-with-use-package.html)).
 
 <!--more-->
 
