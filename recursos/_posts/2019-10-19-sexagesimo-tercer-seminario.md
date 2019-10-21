@@ -6,7 +6,7 @@ tags: [seminarios]
 ---
 
 
-* Linux, Git y software libre -- David Charte
+* [Linux, Git y software libre](https://github.com/libreim/herramientas-im/releases/tag/2019) -- David Charte
 * Introducción a LaTeX -- José María Martín
 * apuntesDGIIM -- Daniel Pozo
 * [Técnicas de estudio](https://mx-psi.github.io/studying/) -- Pablo Baeyens
