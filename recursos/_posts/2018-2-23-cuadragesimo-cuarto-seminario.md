@@ -4,4 +4,4 @@ authors: ["José Antonio Álvarez"]
 tags: [seminarios]
 ---
 
-* Árboles y grafos: conceptos básicos - José Antonio Álvarez
+* [Árboles y grafos: conceptos básicos](https://github.com/Ocete/SeminarioGrafos) - José Antonio Álvarez
