@@ -14,16 +14,19 @@ before_install:
     gem install bundler
     git config --global user.email "dgiimblog@gmail.com"
     git config --global user.name "dgiimbot"
-    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && git clone -b master https://${DGIIMBOT_TOKEN}@github.com/libreim/libreim.github.io.git .site
+    if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then 
+      git clone -b master https://${DGIIMBOT_TOKEN}@github.com/libreim/libreim.github.io.git .site
+    fi
     chmod u+x deploy.sh
 
 script: "./deploy.sh"
 
 after_success:
-  - cd .site/
   - |
-    [ "${TRAVIS_PULL_REQUEST}" = "false" ] && \
-    git add * && \
-    git add . --all && \
-    git commit -m "`date`" && \
-    git push origin master --quiet
+    if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+      cd .site
+      git add * && \
+      git add . --all && \
+      git commit -m "`date`" && \
+      git push origin master --quiet
+    fi
