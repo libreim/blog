@@ -55,7 +55,7 @@ $ bundle
 Tras este paso, cada vez que quieras construir el blog, simplemente ejecuta
 
 ~~~sh
-$ rake
+$ bundle exec jekyll serve
 ~~~
 
 y lo tendrás disponible en `http://localhost:4000/blog/`.
