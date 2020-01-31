@@ -14,23 +14,23 @@ varios temas que querríamos tratar y que están todavía abiertos.
 
 ### Añadir un nuevo post
 
-Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de
-ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo
-necesitarás [tener Ruby instalado](https://rvm.io/). Para crear un nuevo post, clona este repositorio
-y escribe en tu terminal
+~~Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de~~
+~~ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo~~
+~~necesitarás [tener Ruby instalado](https://rvm.io/). Para crear un nuevo post, clona este repositorio~~
+~~y escribe en tu terminal~~
 
 ~~~sh
 $ rake post
 ~~~
 
-Esto lanzará una serie de preguntas (el título del post, el nombre del autor
-en [`_config.yml`](https://github.com/libreim/blog/blob/site/_config.yml), etc.),
-creará una rama del repositorio para que trabajes a gusto y creará el archivo
-Markdown del post para que puedas escribir.
+~~Esto lanzará una serie de preguntas (el título del post, el nombre del autor~~
+~~en [`_config.yml`](https://github.com/libreim/blog/blob/site/_config.yml), etc.),~~
+~~creará una rama del repositorio para que trabajes a gusto y creará el archivo~~
+~~Markdown del post para que puedas escribir.~~
 
-Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha
-y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los
-anteriores; aunque se recomienda usar el `Rakefile`. En caso de que no funcionara lo anterior, puede enviarse
+~~Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha~~
+~~y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los~~
+~~anteriores; aunque se recomienda usar el `Rakefile`.~~ En caso de que no funcionara lo anterior, puede enviarse
 el post a libreim.blog@gmail.com y dejar que alguien se
 encargue de publicarlo.
 
@@ -64,7 +64,7 @@ y lo tendrás disponible en `http://localhost:4000/blog/`.
 
 Revisamos los posts entre colaboradores para asegurar en la medida de lo posible
 la corrección de los posts. Cuando creas que tu post está listo para revisar,
-solo tienes que utilizar el siguiente comando:
+solo tienes que ~~utilizar el siguiente comando:~~
 
 ~~~sh
 $ rake submit
@@ -93,7 +93,7 @@ $ cd blog
 $ git checkout post-nombre-del-post
 ~~~
 
-Utiliza `rake` para [construir el blog localmente](#construir-localmente).
+Utiliza `Jekyll` para [construir el blog localmente](#construir-localmente).
 Los errores que encuentres y correcciones que quieras realizar puedes comentarlos
 en la *pull request* asociada.
 
