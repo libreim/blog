@@ -37,7 +37,7 @@ encargue de publicarlo.
 
 ### Contenido
 
-La [guía de estilo](//libreim.github.io/blog/styleguide) te servirá de
+La [guía de estilo](//github.com/libreim/blog/blob/sites/guia-de-estilo.md) te servirá de
 chuleta para la sintaxis de Markdown y algunas peculiaridades acerca de como dar
 formato correctamente a tu post.
 
