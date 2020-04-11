@@ -14,23 +14,22 @@ varios temas que querríamos tratar y que están todavía abiertos.
 
 ### Añadir un nuevo post
 
-~~Hemos tratado de ponerlo fácil, y para las tareas sistemáticas de creación de~~
-~~ramas y posts tenemos un archivo `Rakefile` que las automatiza. Para usarlo~~
-~~necesitarás [tener Ruby instalado](https://rvm.io/). Para crear un nuevo post, clona este repositorio~~
-~~y escribe en tu terminal~~
+En primer lugar, debes hacer un fork del blog en tu cuenta de Github. Trabajaremos en nuestra propia rama y cuando consideremos que nuestro post esta terminado realizaremos una Pull Request.
 
-~~~sh
-$ rake post
+Para añadir un nuevo post basta con añadir el archivo con nombre `YYYY-MM-DD-nombre-de-mi-post.md` dentro de la carpeta `./blog/_posts` con el contenido de nuestro post. Además, debes añadir a tu archivo una cabecera con datos sobre el post como la del recuadro inferior.
+
+~~~yaml
+---
+layout: post
+title: Nuestro título
+authors:
+  - Mi Nombre Y Apellido
+lang: es
+category: Categoría
+---
 ~~~
 
-~~Esto lanzará una serie de preguntas (el título del post, el nombre del autor~~
-~~en [`_config.yml`](https://github.com/libreim/blog/blob/site/_config.yml), etc.),~~
-~~creará una rama del repositorio para que trabajes a gusto y creará el archivo~~
-~~Markdown del post para que puedas escribir.~~
-
-~~Los posts así creados se encuentran en la carpeta `/_posts`, ordenados por fecha~~
-~~y nombre. En esta carpeta pueden añadirse posts manualmente en el formato de los~~
-~~anteriores; aunque se recomienda usar el `Rakefile`.~~ En caso de que no funcionara lo anterior, puede enviarse
+En caso de que no funcionara lo anterior, puede enviarse
 el post a libreim.blog@gmail.com y dejar que alguien se
 encargue de publicarlo.
 
@@ -64,16 +63,10 @@ y lo tendrás disponible en `http://localhost:4000/blog/`.
 
 Revisamos los posts entre colaboradores para asegurar en la medida de lo posible
 la corrección de los posts. Cuando creas que tu post está listo para revisar,
-solo tienes que ~~utilizar el siguiente comando:~~
-
-~~~sh
-$ rake submit
-~~~
-
-Se abrirá una pestaña de navegador preparada para que crees una *pull request*
-al repositorio original del blog. Rellena un poco la descripción y créala. A
-partir de entonces espera a que al menos dos colaboradores den su visto bueno,
-y pide a alguno de ellos que mezcle la *pull request*.
+realiza una pull request desde tu navegador al repositorio original del blog. 
+Rellena un poco la descripción y créala. A partir de entonces espera a que 
+al menos dos colaboradores den su visto bueno, y pide a alguno de ellos 
+que mezcle la *pull request*.
 
 ## Otras formas de colaborar
 
