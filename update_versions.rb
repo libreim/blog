@@ -45,6 +45,7 @@ end
 if __FILE__ == $0
   uri = URI('https://pages.github.com/versions.json')
   res = Net::HTTP.get_response(uri)
+  # Ends execution if resource is not found
   return unless res.class.body_permitted? and !res.body.nil?
   msg = res.body
   versions = JSON.parse(msg)
@@ -54,6 +55,7 @@ if __FILE__ == $0
     File.open(path,mode="r") do |file|
       file.each_line do |line|
         repl = replacement_gem(line, versions)
+        # if exists a replacement replace it
         if repl
           temp_file.puts repl
         else
