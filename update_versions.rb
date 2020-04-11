@@ -1,4 +1,5 @@
-#     Script for updating Gemfiles in our Jekyll site
+#     Script for updating Gemfile in our Jekyll site
+#     Usage: ruby update_versions.rb
 #     Copyright (C) 2020  Diego Asterio de Zaballa
 
 #     This program is free software: you can redistribute it and/or modify
