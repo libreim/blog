@@ -1,3 +1,20 @@
+#     Script for updating Gemfiles in our Jekyll site
+#     Copyright (C) 2020  Diego Asterio de Zaballa
+
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 require 'net/http'
 require 'json'
 require 'uri'
@@ -5,14 +22,18 @@ require 'tempfile'
 require 'fileutils'
 
 name_vers = Struct.new(:name, :version)
+# Regex for finding gems
 GEM_RE = /^(?<space>\s*)gem\s+[\"\'](?<name>(?:\w|[-_\/])+)[\"\']\s*(?:,\s*[\"\']((?:<=|>=|~>)\s*)?(?<version>(?:.|\d)+)[\"\'])?$/
+
 
 def replacement_gem(line, versions)
   ret = nil
+  # Checks if the line is a gem 
   m = line.match GEM_RE
   if m
     name = m[:name]
     indent = m[:space]
+    # If inside versions recommended by github change the line
     if versions[name]
       ret = "#{indent}gem \"#{name}\", \"#{versions[name]}\""
     end
