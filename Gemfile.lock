@@ -52,10 +52,10 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-    nokogiri (1.13.4)
+    nokogiri (1.13.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.4-x64-mingw32)
+    nokogiri (1.13.5-x64-mingw32)
       racc (~> 1.4)
     octopress-hooks (2.6.2)
       jekyll (>= 2.0)
@@ -86,7 +86,7 @@ DEPENDENCIES
   jekyll-redirect-from (= 0.15.0)
   jekyll-toc
   minima (= 2.5.1)
-  nokogiri (= 1.13.4)
+  nokogiri (= 1.13.5)
   octopress-paginate
 
 BUNDLED WITH

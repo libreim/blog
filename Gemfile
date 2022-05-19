@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "jekyll", "3.8.5"
 gem "minima", "2.5.1"
 gem "ffi", "~> 1.9.24"
-gem "nokogiri", "1.13.4"
+gem "nokogiri", "1.13.5"
 
 group :jekyll_plugins do
   #  gem "jekyll-feed", "~> 0.6"
